@@ -1,0 +1,17 @@
+OpenIMU300ZA - EZ Embed
+=======================
+.. contents:: Contents
+    :local:
+    
+OpenIMU300ZA is an embedded IMU module intended to use as a precision component.   
+
+* Multi-platform Build System
+* Development platform and package managers
+
+.. toctree::
+    :maxdepth: 2
+
+    300ZA/mechanical
+    300ZA/pinout
+    300ZA/sensors
+    300ZA/electrical
