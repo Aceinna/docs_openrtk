@@ -1,5 +1,5 @@
 
-Download App with JTAG
+Download APP with JTAG
 ======================
 
 .. contents:: Contents
