@@ -1,5 +1,5 @@
-OpenIMU Hardware Setup
-======================
+OpenIMU Setup 
+=============
 
 .. contents:: Contents
     :local:
