@@ -25,7 +25,6 @@ Contents
     :maxdepth: 1
 
     intro
-    openimu
     tools
 
 .. toctree::

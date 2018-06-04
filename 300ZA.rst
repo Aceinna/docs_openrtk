@@ -11,7 +11,10 @@ OpenIMU300ZA is an embedded IMU module intended to use as a precision component.
 .. toctree::
     :maxdepth: 2
 
-    300ZA/mechanical
     300ZA/pinout
-    300ZA/sensors
+    300ZA/imu-sensors
+    300ZA/gps-and-external-sensors
+    300ZA/arm-coretex-cpu
+    300ZA/spi-uart
     300ZA/electrical
+    300ZA/mechanical
