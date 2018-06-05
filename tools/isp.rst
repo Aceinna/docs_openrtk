@@ -1,5 +1,5 @@
-JTAG Debugging
-==============
+In-System Update
+================
 
 .. contents:: Contents
     :local:

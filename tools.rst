@@ -14,8 +14,8 @@ OpenIMU is a precisely calibrated, open-source Inertial Measurement Unit Platfor
 
     tools/evb
     tools/vscode
-    tools/jtag
-    tools/bootloader
+    tools/debug
+    tools/isp
     tools/python
     tools/ans
     tools/imujson
