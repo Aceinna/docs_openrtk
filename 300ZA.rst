@@ -30,3 +30,4 @@ OpenIMU300ZA has excellent acceleration and gyro performance that matches system
     300ZA/pinout
     300ZA/arm-coretex-cpu
     
+.. include:: <isonum.txt>

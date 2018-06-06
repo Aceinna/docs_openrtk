@@ -12,10 +12,10 @@ Other Specifications
 |                       |                       |
 +-----------------------+-----------------------+
 | Operating Temperature |                       |
-| (|deg| C)             |                       |
+| (|deg|C)              |                       |
 +-----------------------+-----------------------+
 | Non-Operating         |                       |
-| Temperature (|deg| C) |                       |
+| Temperature (|deg|C)  |                       |
 +-----------------------+-----------------------+
 | Enclosure             |                       |
 +-----------------------+-----------------------+
@@ -54,3 +54,5 @@ Other Specifications
 | Interface Connector   | 20-Pin (10x2)         |
 |                       | 1.0mm pitch header    |
 +-----------------------+-----------------------+
+
+.. include:: <isonum.txt>
