@@ -14,4 +14,5 @@ The OpenIMU EVB is a robust easy-to-use development board and fixture.
 
     EVB/mechanical
     EVB/features
+    EVB/schematic
    

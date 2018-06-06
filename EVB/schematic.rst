@@ -1,0 +1,6 @@
+Schematic
+=========
+
+.. contents:: Contents
+    :local:
+

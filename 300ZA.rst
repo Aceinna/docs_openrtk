@@ -3,18 +3,30 @@ OpenIMU300ZA - EZ Embed
 .. contents:: Contents
     :local:
     
-OpenIMU300ZA is an embedded IMU module intended to use as a precision component.   
+OpenIMU300ZA *EZ Embed* module integrates highly-reliable MEMS inertial sensors (acceleration, angular rate/gyro, and magnetic field) in a miniature factory-calibrated package to provide consistent performance through the extreme operating environments.
 
-* Multi-platform Build System
-* Development platform and package managers
+OpenIMU300ZA has excellent acceleration and gyro performance that matches systems ten times more expensive.  It is easy to syncronize and interface with external GPS, as well as other sensors.  
+
+* Integrated 3-Axis Angular Rate
+* Integrated 3-Axis Accelerometer
+* Integrated 3-Axis Magnetic Sensor
+* 168MHz STM32 M4 CPU
+* SPI / UART Interfaces
+* Update Rate to 800Hz
+* Syncronization Input
+* In-System Upgrade
+* Small Size (24x37x9.5mm)
+* Drop-in Upgrade for IMU380ZA, IMU381ZA
+* Wide Temp Range -40 to 85 |deg| C
+* High Reliability > 50,000hr MTBF
 
 .. toctree::
     :maxdepth: 2
-
-    300ZA/pinout
+    
     300ZA/imu-sensors
-    300ZA/gps-and-external-sensors
-    300ZA/arm-coretex-cpu
-    300ZA/spi-uart
     300ZA/electrical
     300ZA/mechanical
+    300ZA/spi-uart
+    300ZA/pinout
+    300ZA/arm-coretex-cpu
+    
