@@ -1,15 +1,12 @@
 Tutorial APP
 ============
 
-.. contents:: Contents
-    :local:
-
 A simple static tilt sensor demo is provided here to show how to add your own algorithm and output algorithm results.
 
 OpenIMU provides a user-friendly interface to add your own algorithms. To do that, you need to get sensor data, run the algorithm and output algorithm results. All interfaces related to these operations are handled in src/dataProcessingAndPresentation.c. And all user codes implementing the algorithms and results packaging are located in src/user/ directory.
 
 Get algorithm input
-====================
+-------------------
 The platform provides APIs to access all available sensor data, as shown in the following table.
 
 +-------------------------------+-------------------------------------------+
@@ -33,7 +30,7 @@ The platform provides APIs to access all available sensor data, as shown in the 
 Usually, the accelerometer and gyroscope data are already temperature-calibrated.
 
 Run the algorithm
-====================
+-----------------
 A user defined algorithm should provide its main procedure as:
 
 ::
@@ -99,7 +96,7 @@ User may also need to implement an algorithm initialization procedure. It is not
 Now, a simple user-fined algorithm is done. The framework will automatically call **InitUserAlgorithm** at the initialization stage, and periodically call **RunUserNavAlgorithm** to run the user-defined algorithm and get results.
 
 Output results via debug UART
-==============================
+-----------------------------
 This section shows how to use the debug UART (default baud rate is 38400) on the EVB to output algorithm results. You could also output other information you are interested in.
 
 To use the debug UART, you need include **debug.h**. For example, I want to output algorithm results after the algorithm is called in **dataProcessingAndPresentation.c**.
@@ -133,12 +130,11 @@ To use the debug UART, you need include **debug.h**. For example, I want to outp
 
 Compile the project, upload the firmware, and you can get result via debug UART.
 
-Output results via the interface UART
-======================================
+Implementing user-defined packets via UART
+------------------------------------------
 The debug UART is mainly intended for debug usage. You may want to output algorithm results via the interface UART (default baud rate is 57600) on the EVB. OpenIMU provides an easy-to-use framework for you to define your own packets. User-defined packets are declared and implemented in **UserMessaging.h** and **UserMessaging.c**.
 
-Implementing user-defined packets
----------------------------------
+
 - Add your packet code in **UserMessaging.h**. 
 
 I added a **USR_OUT_TLT** packet as an example.
@@ -234,8 +230,6 @@ After I added my encoding codes, this procedure is as follows.
 
 This procedure will be called at the defined rate by the framework.
 
-Outputting the user-defined packets
-------------------------------------
 The framework default outputs calibrated IMU sensor data. To output your own packets, you should tell the framework the packet code of your packet, and then feed the algorithm results to the encoding procedure we just implemented above.
 
 - Register the user-defined packet in the framework.
@@ -285,3 +279,5 @@ where **tlt** is a global variable declared as
  static float *tlt;  // pointer to algorithm results
 
 Now, compile the project, upload the firmware, and you can get results via the interface UART.
+
+

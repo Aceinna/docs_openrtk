@@ -52,10 +52,10 @@ Contents
     :maxdepth: 1
 
     apps
+    tutorial
     software
     algorithms
     mags
-    advanced
 
 .. toctree::
     :caption: Miscellaneous
