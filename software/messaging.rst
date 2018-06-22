@@ -164,7 +164,21 @@ Initial value = 0xFFFF
 
 No XOR performed on the final value.
 
-See Appendix C for sample code that implements the 16-bit CRC algorithm.
+See Appendix A for sample code that implements the 16-bit CRC algorithm.
+
+
+3.6 NAK Packet
+~~~~~~~~~~~~~
+
+NAK packet sent in response to the unknown or corrupted input message.
+NAK packet has next format:
+ 
++-------------+-------------+-------------+-------------+-------------+
+| 0x5555      || 0x0000     || 2          || code of    ||  <2-byte   |
+|             |             |             || received   || CRC (U2)>  |
+|             |             |             || packet or 0|             |
++-------------+-------------+-------------+-------------+-------------+
+ 
 
 4. Messaging Overview
 ------------------
@@ -888,4 +902,164 @@ User Arbitrary Data Message payload has next format:
 +-----------+---------------------+-----------+-----------+
 
 
+7 Steps to create your own interactive or output packet in embedded OpenIMU software framework
+-------------------
+ 
+User packet processing engine located in the file UserMessaging.c.
 
+7.1 To create new interactive packet: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+1. Add new input packet type into the enumerator structure **UserInPacketType** in the file **UserMessaging.h** before USR_IN_MAX
+
+::
+
+       typedef enum {
+	USR_IN_NONE         = 0 ,
+	USR_IN_PING             ,     
+	USR_IN_UPDATE_CONFIG    ,
+	USR_IN_UPDATE_PARAM     ,
+	USR_IN_UPDATE_ALL       ,
+	USR_IN_SAVE_CONFIG      ,
+	USR_IN_RESTORE_DEFAULTS ,
+	USR_IN_GET_CONFIG       ,
+	USR_IN_GET_PARAM        ,
+	USR_IN_GET_ALL          ,
+	USR_IN_GET_VERSION      ,
+	// add new packet type here, before USR_IN_MAX
+	USR_IN_MAX              ,
+       }UserInPacketType;
+
+
+2. Add new packet type and code into the structure **UserInputPackets** in the file **UserMessaging.c**. Packet code consists of 
+   two bytes and can be chosen arbitrary, but first byte SHOULD have value more or equal **0x61**.
+
+::
+
+     usr_packet_t userInputPackets[] = {		//       
+	{USR_IN_NONE,               {0,0}},   //  "  "
+	{USR_IN_PING,               "pG"}, 
+	{USR_IN_UPDATE_CONFIG,      "uC"}, 
+	{USR_IN_UPDATE_PARAM,       "uP"}, 
+	{USR_IN_UPDATE_ALL,         "uA"}, 
+	{USR_IN_SAVE_CONFIG,        "sC"}, 
+	{USR_IN_RESTORE_DEFAULTS,   "rD"}, 
+	{USR_IN_GET_CONFIG,         "gC"}, 
+	{USR_IN_GET_PARAM,          "gP"}, 
+	{USR_IN_GET_ALL,            "gA"}, 
+	{USR_IN_GET_VERSION,        "gV"}, 
+     // place new input packet code here, before USR_IN_MAX
+	{USR_IN_MAX,                {0xff, 0xff}},   //  "" 
+     };
+     
+
+
+3. Add code which handles input packet into the function **HandleUserInputPacket** in the file **UserMessaging.c** . As a part of packet handling 
+   fill up desired response payload (starting from address ptrUcbPacket->payload) and provide response payload length in the parameter 
+   ptrUcbPacket->payloadLength. If no response payload required – provide payload length of 0. The packet code in the response will be 
+   the same as in the command. If erroneous conditions discovered during packet processing – set valid variable to FALSE so sustem will 
+   respond with NAK packet. Additional diagnostics in arbitrary format can be provided in the response payload (see uP packet example above).  
+::
+
+	case USR_IN_UPDATE_PARAM:
+             UpdateUserParam((userParamPayload*)ptrUcbPacket->payload, &ptrUcbPacket->payloadLength);
+             break;
+
+
+
+4. Done
+
+7.2 To create new output packet: 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ 
+1. Add new output packet type into the enumerator structure UserOutPacketType in the file **UserMessaging.h**
+
+::
+
+    // User input packet codes, change at will
+    typedef enum {
+	USR_OUT_NONE  = 0,  // 0
+	USR_OUT_TEST,       // 1
+	USR_OUT_DATA1 ,     // 2            
+	USR_OUT_DATA2 ,     // 2            
+    // add new output packet type here, before USR_OUT_MAX    
+	USR_OUT_MAX
+    }UserOutPacketType;
+    
+
+2. Add new packet type and code into the structure **UserOutputPackets** in the file **UserMessaging.c**. Packet code can be chosen arbitrary, 
+but first byte SHOULD have value more or equal 0x61 and the packet code should be unique among input and output packets.
+
+::
+
+    // packet codes here should be unique - 
+    // should not overlap codes for input packets and system packets
+    // First byte of Packet code should have value  >= 0x61  
+    usr_packet_t userOutputPackets[] = {	
+    //   Packet Type                Packet Code
+	{USR_OUT_NONE,              {0x00, 0x00}}, 
+	{USR_OUT_TEST,              "zT"},   
+	{USR_OUT_DATA1,             "z1"},   
+	{USR_OUT_DATA2,             "z2"},   
+    // place new type and code here
+	{USR_OUT_MAX,               {0xff, 0xff}},   //  "" 
+    };
+    
+
+3. Add code which handles input packet into the function HandleUserOutputPacket in the file UserMessaging.c. Fill up desired packet payload
+(starting from address payload) and provide response payload length in the parameter payloadLen. If no response payload required – provide payload length of 0.
+
+::
+
+ case USR_OUT_DATA1:
+     {   int n = 0;
+         double accels[3];
+         double mags[3];
+         double rates[3];
+         data1_payload_t *pld = (data1_payload_t *)payload;  
+
+         pld->timer  = getDacqTime();
+         GetAccelsData(accels);
+         for (int i = 0; i < 3; i++, n++){
+             pld->sensorsData[n] = (float)accels[i];
+         }
+         GetRatesData(rates);
+         for (int i = 0; i < 3; i++, n++){
+             pld->sensorsData[n] = (float)rates[i];
+         }
+         GetMagsData(mags);
+         for (int i = 0; i < 3; i++, n++){
+             pld->sensorsData[n] = (float)mags[i];
+         }
+         *payloadLen = sizeof(data1_payload_t);
+     }
+
+
+4. To activate output of the packet use function SetUserPacketType in file UserMessaging.c  and provide desired packet type as a parameter. Or provide output packet
+type and packet rate in default user configuration in filr UserConfiguration.c. Output of specific packet can also be changed "on-the-fly" by sending to unit
+command "uP" with parameter number 3 and desired parameter value. Output packet rate can be changed "on-the-fly " by sending to unit command "uP" with parameter
+number 4 and desired parameter value.
+   
+::
+   
+    // Default user configuration structure
+    // Saved into EEPROM of first startup after reloading the code
+    // or as a result of processing "rD" command
+    // Do Not remove - just add extra parameters if needed
+    // Change default settings  if desired
+    const UserConfigurationStruct gDefaultUserConfig = {
+	.dataCRC             =  0,
+	.dataSize            =  sizeof(UserConfigurationStruct),
+	.userUartBaudRate    =  57600,  
+	.userPacketType      =  "zT",  
+	.userPacketRate      =  0,  
+	.lpfAccelFilterFreq  =  50,
+	.lpfRateFilterFreq   =  50,
+	.orientation         =  "+X+Y+Z"
+	// add default parameter values here, if desired
+    } ;
+       
+
+5. Done
+
+ 
