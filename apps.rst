@@ -1,5 +1,5 @@
 Ready-to-Use Applications
-=========================
+**************************
 
 .. contents:: Contents
     :local:
@@ -9,8 +9,11 @@ and downloaded to your unit.  All OpenIMU modules by default ship with the IMU a
 describe the functionality of each pre-buit example app.  To build a custom app, please follow the tutorial: Building a Custom APP
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     apps/imu
+    apps/leveler
+    apps/compass
+    apps/vg
     apps/ahrs
     apps/ins

@@ -1,4 +1,4 @@
-Coordinate Frames
+Attitude Parameters
 ==================
 
 .. contents:: Contents
@@ -9,12 +9,15 @@ Coordinate Frames
 
 A body's position and orientation can only be measured relative to another coordinate-frame (set of basis vectors).  In this formulation, inertial sensors provide the information to compute the attitude and position of a body in space relative to an "inertial" frame, such as the Earth-Centered, Earth-Fixed frame (ECEF) or the North/East/Down-frame (NED) .  The equations to come use the superscripts listed in Table 1 to specify the frame in which a variable is measured.
 
-
-
-** Table 1: Frames and their identifiers used throughout Algorithm Derivation **
-
-
-
+.. |Perp| replace:: :raw-html:`&perp;`
+.. |Perp2| replace:: :raw-html:`&perp;`
+.. |H2O| replace:: H\ :sub:`&perp;`\ O
+.. |xSubPerp| replace:: x\ :sub:`⊥`
+.. |ySubPerp| replace:: y\ :sub:`⊥`
+.. |zSubPerp| replace:: z\ :sub:`⊥`
+.. |xSubB| replace:: x\ :sub:`⊥`
+.. |ySubB| replace:: y\ :sub:`⊥`
+.. |zSubB| replace:: z\ :sub:`⊥`
 
 +-------------+-----------------+-----------------------------------------------------------------------------------+
 |  **Frame**  | **Superscript** |  **Description**                                                                  |
@@ -98,24 +101,6 @@ The `Perp`:sub: symbol...
 The :raw-html:`&perp;`:sub: symbol...
 
 
-
-.. |Perp| replace:: :raw-html:`&perp;`
-
-.. |Perp2| replace:: :raw-html:`&perp;`
-
-.. |H2O| replace:: H\ :sub:`&perp;`\ O
-
-.. |xSubPerp| replace:: x\ :sub:`⊥`
-
-.. |ySubPerp| replace:: y\ :sub:`⊥`
-
-.. |zSubPerp| replace:: z\ :sub:`⊥`
-
-.. |xSubB| replace:: x\ :sub:`⊥`
-
-.. |ySubB| replace:: y\ :sub:`⊥`
-
-.. |zSubB| replace:: z\ :sub:`⊥`
 
 
 And then you can write:
