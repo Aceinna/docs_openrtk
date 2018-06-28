@@ -4,6 +4,9 @@ IMU Sensors
 .. contents:: Contents
     :local:
 
+.. role:: raw-html(raw)
+    :format: html
+
 .. envvar:: ANGULAR RATE
 
 +-----------------------+-----------------------+
@@ -31,7 +34,9 @@ IMU Sensors
 | Non-Linearity (%)     | < 0.1                 |
 +-----------------------+-----------------------+
 | Angle Random Walk     | < 0.3                 |
-| (|deg|/rt(hr))        |                       |
+| (|deg|/\              |                       |
+| :raw-html:`&radic;`\  |                       |
+| hr)                   |                       |
 +-----------------------+-----------------------+
 | Bandwidth (Hz)        | 5-50Hz                |
 |                       | (Configurable)        |
@@ -53,7 +58,8 @@ IMU Sensors
 | (g)                   |                       |
 +-----------------------+-----------------------+
 | Bias Instability      | < 20                  |
-| (|micro|g)            |                       |
+| (:raw-html:`&micro;`\ |                       | 
+| g)                    |                       |
 | :sup:`1,2`            |                       |
 +-----------------------+-----------------------+
 | Bias Stability        | < 5                   |
@@ -69,7 +75,9 @@ IMU Sensors
 | Non-Linearity (%)     | < 0.1                 |
 +-----------------------+-----------------------+
 | Velocity Random Walk  | < 0.05                |
-| (m/s/|radic|(hr))     |                       |
+| (m/s/\                |                       |
+| :raw-html:`&radic;`\  |                       |
+| hr)                   |                       |
 +-----------------------+-----------------------+
 | Bandwidth (Hz)        | 5-50Hz                |
 |                       | (Configurable)        |
@@ -93,7 +101,9 @@ IMU Sensors
 | Resolution (mG)       | < 5                   |
 +-----------------------+-----------------------+
 | Noise Density         | < 0.25                |
-| (mG/rt(Hz))           |                       |
+| (mG/\                 |                       |
+| :raw-html:`&radic;`\  |                       |
+| Hz)                   |                       |
 +-----------------------+-----------------------+
 | Bandwidth (Hz)        | 5                     |
 +-----------------------+-----------------------+

@@ -9,19 +9,24 @@
     See the License for the specific language governing permissions and
     limitations under the License.
 
-OpenIMU and Aceinna Navigation Studio
+OpenIMU and ANS Programming Guide
 ==========================================================
 
-**Open-source precisely calbrated Inertial Measurement Units. Aceinna Navigation Studio for data-logging, simulation and algorithm development.**
+OpenIMU is a precisely calibrated open source Inertial Measurement Unit platform.  Users
+are able to quickly develop and deploy custom navigation/localization algorithms and custom sensor integrations on top of the OpenIMU platform.  OpenIMU also 
+has pre-built customizable hardware interface scripts in Python as well as a developer website - Aceinna Navigation Studio (ANS).  These tools support to make logging and plotting data, including
+custom data structures and packets simple.
 
-**Social:** `Twitter <https://twitter.com/Aceinna>`_ |
+
+
+**Social:** `Twitter <https://twitter.com/MEMSsensortech>`_ |
 `Medium <https://medium.com/@mikehorton>`_ 
 
 Contents
 --------
 
 .. toctree::
-    :caption: Getting Started
+    :caption: About OpenIMU
     :maxdepth: 1
 
     intro

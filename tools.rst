@@ -1,16 +1,10 @@
 Development Tools
 =================
-
-.. contents:: Contents
-    :local:
     
-OpenIMU is a precisely calibrated, open-source Inertial Measurement Unit Platform 
-
-* Multi-platform Build System
-* Development platform and package managers
+The OpenIMU development environment consists of the following main components:
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     tools/evb
     tools/vscode
@@ -19,3 +13,9 @@ OpenIMU is a precisely calibrated, open-source Inertial Measurement Unit Platfor
     tools/python
     tools/ans
     tools/imujson
+
+The easy way to get stared quickly is to purchase an OpenIMU Developer's Kit
+from Aceinna https://www.aceinna.com or a local distributor.  The developer's kit includes an OpenIMU300EZ OpenIMU300EZ, JTAG Pod, Eval board, and precision test fixture.  
+The precision test fixture makes it easy to propery align and install the IMU in a target vehicle for integration testing.
+
+

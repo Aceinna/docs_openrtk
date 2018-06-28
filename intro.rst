@@ -4,10 +4,21 @@ Overview
 .. contents:: Contents
     :local:
 
-OpenIMU is a precisely calibrated, open-source Inertial Measurement Unit Platform 
+OpenIMU is a precisely calibrated, open-source Inertial Measurement Unit platform for the development of navigation and localization algorithms.
+A free Visual Studio Code (VSCode) extension is installed which contains all the software and tools necessary to get create and deploy custom
+embedded apps using OpenIMU.  Visual Studio Code is the recommended IDE and the extension configures VS Code to include easy access to compilation, code download, JTAG debug, IMU data logging 
+as well as OpenIMU platform updates and news.  A developer website called Aceinna Navigation Studio (ANS) includes additional support tools including 
+a GUI for controlling, plotting and managing data files logged by your Custom IMU.
 
-* Multi-platform Build System
-* Development platform and package managers
+The OpenIMU and ANS platform and tool-chain enables is supported on all three Major OS platforms for convenient development:
+
+* Windows
+* MAC OS
+* Ubuntu 
+
+.. note::
+
+    Contributions to the public repositories related to this project are welcomed.  Please submit a pull request.
 
 .. toctree::
     :maxdepth: 2
