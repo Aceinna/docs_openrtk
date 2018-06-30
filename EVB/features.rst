@@ -246,6 +246,26 @@ GPS data from PC.
 Third serial port mapped to IMU's debug serial port, which can be used for sending diagnostics messages from IMU and/or as CLI interface to IMU.
    
    
-  
+7. OpenIMU Evaluation Kit Important Notice
+----------------------------------
+
+::
+
+     This evaluation kit is intended for use for FURTHER ENGINEERING, DEVELOPMENT,
+     DEMONSTRATION, OR EVALUATION PURPOSES ONLY. It is not a finished product and may not (yet) 
+     comply with some or any technical or legal requirements that are applicable to finished products,
+     including, without limitation, directives regarding electromagnetic compatibility, recycling (WEEE), 
+     FCC, CE or UL (except as may be otherwise noted on the board/kit). Aceinna supplied this board/kit 
+     "AS IS," without any warranties, with all faults, at the buyer's and further users' sole risk. The 
+     user assumes all responsibility and liability for proper and safe handling of the goods. Further, 
+     the user indemnifies Aceinna from all claims arising from the handling or use of the goods. Due to
+     the open construction of the product, it is the user's responsibility to take any and all appropriate
+     precautions with regard to electrostatic discharge and any other technical or legal concerns.
+     EXCEPT TO THE EXTENT OF THE INDEMNITY SET FORTH ABOVE, NEITHER USER NOR ACEINNA
+     SHALL BE LIABLE TO EACH OTHER FOR ANY INDIRECT, SPECIAL, INCIDENTAL, OR
+     CONSEQUENTIAL DAMAGES.
+     No license is granted under any patent right or other intellectual property right of Aceinna covering
+     or relating to any machine, process, or combination in which such Aceinna products or services might 
+     be or are used.
   
 

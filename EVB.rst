@@ -1,18 +1,15 @@
-OpenIMU300ZA EVB
+OpenIMU300ZA Evaluation kit
 ================
 
 .. contents:: Contents
     :local:
     
-The OpenIMU EVB is a robust easy-to-use development board and fixture.
-
-* Multi-platform Build System
-* Development platform and package managers
+The OpenIMU300ZA evaluation kit is a robust easy-to-use development board and fixture.
 
 .. toctree::
     :maxdepth: 2
 
-    EVB/mechanical
     EVB/features
+    EVB/mechanical
     EVB/schematic
    
