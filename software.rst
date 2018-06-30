@@ -1,5 +1,5 @@
-Building a Custom APP
-=====================
+OpenIMU Software Support
+=========================
 
 .. contents:: Contents
     :local:
@@ -9,7 +9,7 @@ OpenIMU ships with a number of ready to use and download applications to help yo
 .. toctree::
     :maxdepth: 2
 
-    software/tutorial
+    software/software
     software/flowchart
     software/RTOS
     software/sampling

@@ -848,7 +848,7 @@ Other things to improve performance:
 
 .. math::
 
-    \psi_{GPS} = \psi_{GPS}- \dot{\psi} \cdot \Delta{T}
+    \psi_{GPS} = \psi_{GPS} - \dot{\psi} \cdot \Delta{T}
 
     6) Much of the math on which the EKF is based consists of sparse matrices.  Using algorithms
     that take advantage of sparse matrices make the algorithms run much faster and permit higher
@@ -903,40 +903,51 @@ Q^*≝2 \cdot ∆t \cdot [■(■(q_{1}@-q_{0} )&■(q_{2}@q_{3} )&■(q_{3}@-q_
 The second term, Q^*, is:
 Q^*≝[■(■(q_{1}@-q_{0} )&■(q_{2}@q_{3} )&■(q_{3}@-q_{2} )@■(-q_{3}@q_{2} )&■(-q_{0}@-q_{1} )&■(q_{1}@-q_{0} ))]=[■((\vec{q}_{v} )^T@-(q_{0}⋅I_3+[\vec{q}_{v} \times]) )]=-Ξ_(k-1)
 
- 
+
 Software Implementation
+
 Initialization:
+
 a_sum=∑_(k=1)^N▒a ⃑_k^B
 m_sum=∑_(k=1)^N▒m ⃑_k^B
+
 After N data-points are collected, average data and from the ICs:
 a ̅^B=a_sum/N
 m ̅^B=m_sum/N
+
 Compute the gravity and magnetic-field unit-vectors:
 g ̂^B=-a ̅^B/|a ̅^B |
 m ̂^B=-m ̅^B/|m ̅^B |
+
 Find the components of the magnetic-field that are parallel and perpendicular to the gravity vector:
 m ⃑_(∥g)^B=(m ̂^B⋅g ̂^B ) \cdot g ̂^B
 m ⃑_(⊥g)^B=m ̂^B-m ⃑_(∥g)^B
+
 Form the axes of the NED-frame from the magnetic and gravity field vectors.  The D-axis is parallel to the gravity vector while the N-axis is parallel to the magnetic field vector that is perpendicular to the gravity vector:
 z ̂_N^B=g ̂^B
 x ̂_N^B=(m ⃑_(⊥g)^B)/|m ⃑_(⊥g)^B |
 〖y ̂_N^B=z ̂_N^B \timesx ̂〗_N^B
+
 The transformation matrix, (_^N)R_^B , is formed from these unit-vectors:
 (_^N)R_^B =[■((x ̂_N^B )^T@(y ̂_N^B )^T@(z ̂_N^B )^T )]=[■(x ̂_B^N&y ̂_B^N&z ̂_B^N )]
+
 The attitude quaternion, (_^N)q_^B , can be calculated from (_^N)R_^B :
 (_^N)q_^B =f((_^N)R_^B )
+
 The initial state-vector is formed from these values:
 \vec{x}_0={■(■(r@v@(_^N)q_^B  )@ω ⃑_bias@a ⃑_bias )}
 
 
- 
+
 Appendix Q:
+
 Quaternion process covariance:
-〖w_q \cdot 〖w_q〗^T=(Δt/2)〗^{2} \cdot (Ξ \cdot Σ_ω \cdot Ξ^T )
+〖w_q \cdot {\vec{w}_{q}}^T=(Δt/2)〗^{2} \cdot (Ξ \cdot Σ_ω \cdot Ξ^T )
+
 The rate-sensor noise is treated as a stationary process, so the time subscript, k, can be dropped from the noise terms.  However, the attitude does change with time and k should remain on the quaternion terms (removed here for ease of reading).  Additionally, the sensor noise is assumed to be the same for all sensor channels.
 Ξ≡[■(-〖\vec{q}_{v}〗^T@q_{0} \cdot I_3+[\vec{q}_{v} \times] )]
-〖w_q \cdot 〖w_q〗^T=(Δt/2)〗^{2} \cdot [■(■(-q_{1}&-q_{2}@q_{0}&-q_{3} )&■(-q_{3}@q_{2} )@■(q_{3}&q_{0}@-q_{2}&q_{1} )&■(-q_{1}@q_{0} ))] \cdot [■(〖σ_ω〗^{2}&0&0@0&〖σ_ω〗^{2}&0@0&0&〖σ_ω〗^{2} )] \cdot [■(■(-q_{1}&q_{0} )&■(q_{3}&-q_{2} )@■(-q_{2}&-q_{3} )&■(q_{0}&q_{1} )@■(-q_{3}&q_{2} )&■(-q_{1}&q_{0} ))]
-〖w_q \cdot 〖w_q〗^T=(Δt/2)〗^{2} \cdot 〖σ_ω〗^{2} \cdot [■(■(-q_{1}&-q_{2}@q_{0}&-q_{3} )&■(-q_{3}@q_{2} )@■(q_{3}&q_{0}@-q_{2}&q_{1} )&■(-q_{1}@q_{0} ))] \cdot [■(■(-q_{1}&q_{0} )&■(q_{3}&-q_{2} )@■(-q_{2}&-q_{3} )&■(q_{0}&q_{1} )@■(-q_{3}&q_{2} )&■(-q_{1}&q_{0} ))]
+〖w_q \cdot {\vec{w}_{q}}^T=(Δt/2)〗^{2} \cdot [■(■(-q_{1}&-q_{2}@q_{0}&-q_{3} )&■(-q_{3}@q_{2} )@■(q_{3}&q_{0}@-q_{2}&q_{1} )&■(-q_{1}@q_{0} ))] \cdot [■(〖σ_ω〗^{2}&0&0@0&〖σ_ω〗^{2}&0@0&0&〖σ_ω〗^{2} )] \cdot [■(■(-q_{1}&q_{0} )&■(q_{3}&-q_{2} )@■(-q_{2}&-q_{3} )&■(q_{0}&q_{1} )@■(-q_{3}&q_{2} )&■(-q_{1}&q_{0} ))]
+〖w_q \cdot {\vec{w}_{q}}^T=(Δt/2)〗^{2} \cdot 〖σ_ω〗^{2} \cdot [■(■(-q_{1}&-q_{2}@q_{0}&-q_{3} )&■(-q_{3}@q_{2} )@■(q_{3}&q_{0}@-q_{2}&q_{1} )&■(-q_{1}@q_{0} ))] \cdot [■(■(-q_{1}&q_{0} )&■(q_{3}&-q_{2} )@■(-q_{2}&-q_{3} )&■(q_{0}&q_{1} )@■(-q_{3}&q_{2} )&■(-q_{1}&q_{0} ))]
 Performing the multiplication (and crossing out terms that cancel) results in:
 \Sigma_{q} = ((σ_ω \cdot ∆t)/2)^{2} \cdot [■(■(1-{q_{0}}^{2}&-q_{0} \cdot q_{1}@-q_{0} \cdot q_{1}&1-{q_{1}}^{2} )&■(-q_{0} \cdot q_{2}&-q_{0} \cdot q_{3}@-q_{1} \cdot q_{2}&-q_{1} \cdot q_{3} )@■(-q_{0} \cdot q_{2}&-q_{1} \cdot q_{2}@-q_{0} \cdot q_{3}&-q_{1} \cdot q_{3} )&■(1-{q_{2}}^{2}&-q_{2} \cdot q_{3}@-q_{2} \cdot q_{3}&1-{q_{3}}^{2} ))]
 

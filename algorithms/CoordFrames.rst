@@ -52,7 +52,8 @@ N-frame.
 .. |zSubB| replace:: z\ :sub:`⊥`
 
 .. [#inertial] Strictly speaking, neither the ECEF-frame nor the NED-frame are inertial.  Both move and rotate relative to the
-stars; the NED-frame changes with location as well.  However, the two are sufficient for use with the OpenIMU line of products.
+               stars; the NED-frame changes with location as well.  However, the two are sufficient for use with the OpenIMU
+               line of products.
 
 .. |CoordFrames| image:: ../media/CoordFrames.png
    :width: 5.0in

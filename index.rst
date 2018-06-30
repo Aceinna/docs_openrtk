@@ -56,9 +56,9 @@ Contents
     :caption: Software Development
     :maxdepth: 1
 
-    apps
     tutorial
     software
+    apps
     algorithms
     mags
 
