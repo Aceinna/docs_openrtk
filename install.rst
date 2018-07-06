@@ -1,4 +1,4 @@
-Installation and first steps
+Installation of development tools and first steps
 ============================
 
 .. contents:: Contents
@@ -40,12 +40,42 @@ To install OpenIMU development platform:
 -----------------------------------
 
 After installation of "Aceinna" extension click on "Home" icon at the bottom of the screen. It will bring
-up Aceinna OpenIMU platform homepage. Click on "Custom IMU examples", chose desired and click "Import".
-The required example will be imported into working directory in folder C:\Users\<username>\Documents\platformio\Projects\ProjectName
-(Windows)
-Now you can edit, build and test the project. All your changes will remain in the abovementioned directory.
+up Aceinna OpenIMU platform homepage. Click on "Custom IMU examples", chose desired example and click "Import".
+
+.. image:: media/HomePage.png  
+
+The required example will be imported into working directory in folder:
+
+C:\\Users\\<username>\\Documents\platformio\\Projects\\ProjectName (Windows)
+
+Now you can edit, build and test the project. All your changes will remain in the above-mentioned directory and subdirectories.
 Next time when you return to development - open Aceinna "Home" page and click "Open Project", choose "Projects" and select
 required project from the list.
+
+The source tree of imported project has next structure:
+
+:: 
+
+    project directory -|
+                       |
+                       |---build directory (.pioenvs)
+                       |
+                       |                                                               libraries
+                       |---platform library directory (.piolibdeps)-|                     |
+                       |                                            |--library name-|     V
+                       |                                                            |---lib1--| 
+                       |                                                            |         |--src  
+                       |                                                            |         |--include   
+                       |                                                            |            
+                       |                                                            |            
+                       |                                                            |---lib2--|  
+                       |                                                            |         |--src  
+                       |--include (user include files)                              |         |--include   
+                       |                                                             ........            
+                       |--lib (optional library directory) 				   
+                       | 				   
+                       |--src (user source files) 				   
+                       | 				   
     
     
  
