@@ -1,10 +1,10 @@
-ARM Coretex CPU
+ARM Cortex CPU
 ===============
 
 .. contents:: Contents
     :local:
 
-The OpenIMU300ZA uses ST's powerful Coretex M4 series of Microcontrollers. 
+The OpenIMU300ZA uses ST's powerful Cortex M4 series of Microcontrollers. 
 
 * DSP and FPU
 * 1MByte Flash

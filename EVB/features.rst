@@ -14,12 +14,13 @@ OpenIMU300ZA and explains how to integrate the device in a custom design.
 The OpenIMU evaluation kit include OpenIMU300ZA, evaluation board with various interface
 connectors and test adapter for mounting OpenIMU300ZA unit.
  
+.. image:: ../media/EvalKit.jpg  
+ 
 2. Components
 ------------
 
-a. OpenIMU300ZA unit.
 
-b. OpenIMU Evaluation board, which includes:
+a. OpenIMU Evaluation board, which includes:
 
 	- Virtual COM-port USB interface, providing connectivity to OpenIMU300ZA unit from PC
 
@@ -27,7 +28,9 @@ b. OpenIMU Evaluation board, which includes:
 
 	- Connector for interfacing OpenIMU300ZA from custom-designed system.
 
-	- Test terminals for connecting oscilloscope or logic analysers to the dedicated OpenIMU300ZA signals.
+	- Test terminals for connecting oscilloscope or logic analyzers to the dedicated OpenIMU300ZA signals.
+
+b. OpenIMU300ZA unit. Please note, that it installed on the bottom side of evaluation board. 
 
 c. Test adapter for convenient aligned mounting of OpenIMU evaluation board and OpenIMU300ZA unit 
 d. ST-Link debugger for in-system development of application code 
@@ -184,7 +187,7 @@ Otherwise remove jumpers not to interfere with possible external connections via
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 20-pin connector P3 used for connecting ST-Link or J-Link debuggers to the unit for
-in-system debugging of applications via SWD interface. It has standard pinout.
+in-system debugging of applications via SWD interface. It has standard pin-out.
 
 +-------------------+-------------------------+
 | **Pin**           |   Main Function         |

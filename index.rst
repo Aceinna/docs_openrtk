@@ -36,8 +36,8 @@ Contents
     :caption: Quick Start
     :maxdepth: 1
 
-    install
     run
+    install
 
 .. toctree::
     :caption: IMU Modules
