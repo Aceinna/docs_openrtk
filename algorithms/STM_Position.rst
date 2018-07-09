@@ -25,12 +25,9 @@ which is directly related to the velocity process noise:
 
 .. math::
 
-    \vec{w}_{r,k-1}	= {\vec{w}_{v,k-1}} \cdot dt
-
-
-.. math::
-
-    = {^{N}{R}_{k-1}^{B}} \cdot {\vec{a}_{noise}^{B}} \cdot {dt}^{2}
+    \vec{w}_{r,k-1}	&= {\vec{w}_{v,k-1}} \cdot dt\\
+                    {\hspace{5mm}} \\
+                    &= {^{N}{R}_{k-1}^{B}} \cdot {\vec{a}_{noise}^{B}} \cdot {dt}^{2}
 
 
 Like the previous process models, this expression is used to compute the elements of the process

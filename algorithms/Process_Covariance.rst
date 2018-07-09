@@ -35,40 +35,42 @@ Covariance Matrix is:
 
 .. math::
 
-    Q_{k} =  { \begin{bmatrix} { { \Sigma_{r} \\
-                                       0_{3} \\
-                                       0_{4 \times 3} \\
-                                       0_{3} \\
-                                       0_{3}
-                                     } \hspace{5mm}
-                                     { 0_{3} \\
-                                       \Sigma_{v} \\
-                                       0_{4 \times 3} \\
-                                       0_{3} \\
-                                       0_{3}
-                                     } \hspace{5mm}
-                                     { 0_{3 \times 4} \\
-                                       0_{3 \times 4} \\
-                                       \Sigma_{q} \\
-                                       0_{3 \times 4} \\
-                                       0_{3 \times 4}
-                                     } \hspace{5mm}
-                                     { 0_{3} \\
-                                       0_{3} \\
-                                       0_{4 \times 3} \\
-                                       \Sigma_{\omega b} \\
-                                       0_{3}
-                                     } \hspace{5mm}
-                                     { 0_{3} \\
-                                       0_{3} \\
-                                       0_{4 \times 3} \\
-                                       0_{3} \\
-                                       \Sigma_{ab}
-                                     }
+    Q_{k} = {
+                   \begin{bmatrix} {
+                                     \begin{array}{ccccc} 
+                                                          {\Sigma_{r}} &
+                                                          {0_{3}} &
+                                                          {0_{3 \times 4}} &
+                                                          {0_{3}} &
+                                                          {0_{3}}
+                                                          \cr
+                                                          {0_{3}} &
+                                                          {\Sigma_{v}} &
+                                                          {0_{3 \times 4}} &
+                                                          {0_{3}} &
+                                                          {0_{3}}
+                                                          \cr
+                                                          {0_{4 \times 3}} &
+                                                          {0_{4 \times 3}} &
+                                                          {\Sigma_{q}} &
+                                                          {0_{4 \times 3}} &
+                                                          {0_{4 \times 3}}
+                                                          \cr
+                                                          {0_{3}} &
+                                                          {0_{3}} &
+                                                          {0_{3 \times 4}} &
+                                                          {\Sigma_{\omega b}} &
+                                                          {0_{3}}
+                                                          \cr
+                                                          {0_{3}} &
+                                                          {0_{3}} &
+                                                          {0_{3 \times 4}} &
+                                                          {0_{3}} &
+                                                          {\Sigma_{ab}}
+                                     \end{array}
                      } \end{bmatrix}
                    }
-
-
+                   
 
 The individual process covariance (derived in the sections above) are repeated here:
 
@@ -76,40 +78,51 @@ The individual process covariance (derived in the sections above) are repeated h
 
     \Sigma_{r} = {\begin{pmatrix} { \sigma_{a} \cdot {dt}^{2} } \end{pmatrix}}^{2} \cdot I_3
 
+    
 .. math::
 
     \Sigma_{v} = {\begin{pmatrix} { \sigma_{a} \cdot dt } \end{pmatrix}}^{2} \cdot I_3
 
+    
 .. math::
 
-    \Sigma_{q} = {\begin{pmatrix} {{\sigma_{\omega} \cdot dt } \over {2}} \end{pmatrix}}^{2}
+    \Sigma_{q} = { { \begin{pmatrix} {
+                                       {\sigma_{\omega} \cdot dt } \over {2}
+                     } \end{pmatrix} }^{2}
+                 }
                  \cdot
-                 \begin{bmatrix} { { {1 - q_0^2}\\
-                                     -{q_0 \cdot q_1}\\
-                                     -{q_0 \cdot q_2}\\
-                                     -{q_0 \cdot q_3}
-                                   } \hspace{5mm}
-                                   { -{q_0 \cdot q_1}\\
-                                     {1 - q_1^2}\\
-                                     -{q_1 \cdot q_2}\\
-                                     -{q_1 \cdot q_3}
-                                   } \hspace{5mm}
-								   { -{q_0 \cdot q_2}\\
-                                     -{q_1 \cdot q_2}\\
-                                     {1 - q_2^2}\\
-                                     -{q_2 \cdot q_3}
-                                   } \hspace{5mm}
-								   { -{q_0 \cdot q_3}\\
-                                     -{q_1 \cdot q_3}\\
-                                     -{q_2 \cdot q_3}\\
-                                     {1 - q_3^2}
-                                   }
-                 } \end{bmatrix}
+                 {
+                   \begin{bmatrix} {
+                                     \begin{array}{cccc} 
+                                                           {1 - q_0^2} &
+                                                           {-{q_0 \cdot q_1}} &
+                                                           {-{q_0 \cdot q_2}} &
+                                                           {-{q_0 \cdot q_3}}
+                                                           \cr
+                                                           {-{q_0 \cdot q_1}} &
+                                                           {1 - q_1^2} &
+                                                           {-{q_1 \cdot q_2}} &
+                                                           {-{q_1 \cdot q_3}}
+                                                           \cr
+                                                           {-{q_0 \cdot q_2}} &
+                                                           {-{q_1 \cdot q_2}} &
+                                                           {1 - q_2^2} &
+                                                           {-{q_2 \cdot q_3}}
+                                                           \cr
+                                                           {-{q_0 \cdot q_3}} &
+                                                           {-{q_1 \cdot q_3}} &
+                                                           {-{q_2 \cdot q_3}} &
+                                                           {1 - q_3^2}
+                                     \end{array}
+                     } \end{bmatrix}
+                   }
+
 
 .. math::
 
     \Sigma_{\omega b} = {\begin{pmatrix} { \sigma_{dd,\omega} \cdot dt } \end{pmatrix}}^{2} \cdot I_3
 
+    
 .. math::
 
     \Sigma_{ab} = {\begin{pmatrix} { \sigma_{dd,a} \cdot dt } \end{pmatrix}}^{2} \cdot I_3

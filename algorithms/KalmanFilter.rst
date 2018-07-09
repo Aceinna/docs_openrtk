@@ -54,16 +54,16 @@ Update (Low DR):
 
     \begin{aligned}
     {
-    S_{k} = H_{k} \cdot P_{k|k-1} \cdot {H_{k} }^{T} + R_{k}
-    
-    K_{k} = P_{k|k-1} \cdot {H_{k} }^{T} \cdot  {S_{k}}^{-1}
-    
-    \Delta{\vec{x}_{k}} = K_{k} \cdot \vec{\nu}_{k}
-    
-    \vec{x}_{k|k} = \vec{x}_{k|k-1} + \Delta{\vec{x}_{k}}
-    
-    \Delta{P_{k}} = -K_{k} \cdot H_{k} \cdot P_{k|k-1}
-    
+    S_{k} = H_{k} \cdot P_{k|k-1} \cdot {H_{k} }^{T} + R_{k}\\
+    {\hspace{5mm}} \\
+    K_{k} = P_{k|k-1} \cdot {H_{k} }^{T} \cdot  {S_{k}}^{-1}\\
+    {\hspace{5mm}} \\
+    \Delta{\vec{x}_{k}} = K_{k} \cdot \vec{\nu}_{k}\\
+    {\hspace{5mm}} \\
+    \vec{x}_{k|k} = \vec{x}_{k|k-1} + \Delta{\vec{x}_{k}}\\
+    {\hspace{5mm}} \\
+    \Delta{P_{k}} = -K_{k} \cdot H_{k} \cdot P_{k|k-1}\\
+    {\hspace{5mm}} \\
     P_{k|k} = P_{k|k-1} + \Delta{P_{k}}
     }
     \end{aligned}

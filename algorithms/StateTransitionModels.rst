@@ -25,22 +25,30 @@ roles:
 
 The complete system state equation consists of 16 total states\ [#LLA_Conv]_
 
-.. math::
 
-    \vec{x} = { \begin{Bmatrix} { {\vec{r}^{N}} \\
-                                  {\vec{v}^{N}} \\
-                                  {{^N}\vec{q}{^B}} \\
-                                  {\vec{\omega}_{bias}^{B}} \\
-                                  {\vec{a}_{bias}^{B}}
-                                }
-                \end{Bmatrix} }
-            = { \begin{Bmatrix} { {\text{NED Position (3)}} \\
-                                  {\text{NED Velocity (3)}} \\
-                                  {\text{Body Attitude (4)}} \\
-                                  {\text{Angular-Rate Bias (3)}} \\
-                                  {\text{Accelerometer Bias (3)}}
-                                }
-                \end{Bmatrix} }
+.. math::
+    \vec{x} = {
+                \begin{Bmatrix} {
+                                  \begin{array}{c} 
+                                                   {\vec{r}^{N}} \\
+                                                   {\vec{v}^{N}} \\
+                                                   {{^N}\vec{q}{^B}} \\
+                                                   {\vec{\omega}_{bias}^{B}} \\
+                                                   {\vec{a}_{bias}^{B}}
+                                  \end{array}
+                } \end{Bmatrix}
+              }
+            = {
+                \begin{Bmatrix} {
+                                  \begin{array}{c} 
+                                                   {\text{NED Position (3)}} \\
+                                                   {\text{NED Velocity (3)}} \\
+                                                   {\text{Body Attitude (4)}} \\
+                                                   {\text{Angular-Rate Bias (3)}} \\
+                                                   {\text{Accelerometer Bias (3)}}
+                                  \end{array}
+                } \end{Bmatrix}
+              }
 
 
 with the state-transition model, :math:`\vec{f}`, made up of five individual models (developed
@@ -48,7 +56,8 @@ below):
 
 .. math::
 
-    \vec{x}_{k} = \vec{f} { \begin{pmatrix} { \vec{x}_{k-1},
+    \vec{x}_{k} = \vec{f} { \begin{pmatrix} {
+                                              \vec{x}_{k-1}, \hspace{2mm}
                                               \vec{u}_{k-1}
                                             }
                             \end{pmatrix} } + \vec{w}_{k-1}
@@ -61,33 +70,49 @@ The expanded state-transition vector, :math:`\vec{f}`, is:
 
 .. math::
 
-    \vec{f} { \begin{pmatrix} { \vec{x}_{k-1},
+    \vec{f} { \begin{pmatrix} {
+                                \vec{x}_{k-1}, \hspace{2mm}
                                 \vec{u}_{k-1}
-              } \end{pmatrix} } = { \begin{Bmatrix} { {\vec{r}_{k-1}^{N} + \vec{v}_{k-1}^{N} \cdot dt} \\
-                                                      {\vec{v}_{k-1}^{N} + \begin{bmatrix} { {{{^N}{R}_{k-1}^{B}} \cdot \begin{pmatrix} {
+              } \end{pmatrix} } = { \begin{Bmatrix} {
+                                                      \begin{array}{c} 
+                                                                       {\vec{r}_{k-1}^{N} + \vec{v}_{k-1}^{N} \cdot dt} \\
+                                                                       {\vec{v}_{k-1}^{N} + \begin{bmatrix} {
+                                                                                                             {{{^N}{R}_{k-1}^{B}} \cdot \begin{pmatrix} {
                                                                                                                                         \vec{a}_{meas,k-1}^{B} - \hat{a}_{bias,k-1}^{B}
-                                                                                                                        } \end{pmatrix} - \vec{a}_{grav,k-1}^{N}    }
-                                                                           } \end{bmatrix}  \cdot dt } \\
-                                                      {\begin{bmatrix} { I_4 + {{dt} \over {2}} \cdot \begin{pmatrix} { \Omega_{meas,k-1} - \Omega_{bias,k-1}
+                                                                                                                        } \end{pmatrix} - \vec{a}_{grav,k-1}^{N}
+                                                                                                             }
+                                                                                            } \end{bmatrix}  \cdot dt
+                                                                       } \\
+                                                                       { \begin{bmatrix} { 
+                                                                                           I_4 + {{dt} \over {2}} \cdot \begin{pmatrix} { \Omega_{meas,k-1} - \Omega_{bias,k-1}
                                                                                                    } \end{pmatrix}
-                                                       } \end{bmatrix} \cdot {^N}\vec{q}_{k-1}^{B}} \\
-                                                      {I_3} \\
-                                                      {I_3}
+                                                                         } \end{bmatrix} \cdot {^N}\vec{q}_{k-1}^{B}
+                                                                       } \\
+                                                                       {I_3} \\
+                                                                       {I_3}
+                                                      \end{array}
                                     } \end{Bmatrix}
-                                  }
+              }
 
 
 and the process-noise vector, :math:`\vec{w}_{k-1}`, is:
 
 .. math::
 
-    \vec{w}_{k-1} = { \begin{Bmatrix} { {-{^{N}{R}_{k-1}^{B}} \cdot \vec{a}_{noise}^{B} \cdot {dt}^{2}} \\
-                                        {-{^{N}{R}_{k-1}^{B}} \cdot \vec{a}_{noise}^{B} \cdot {dt}} \\
-                                        {-{{dt} \over {2}} \cdot \Xi_{k-1} \cdot {\vec{w}_{noise}^{B}}} \\
-                                        {\vec{N} \begin{pmatrix} { 0, \sigma_{dd,\omega}^{2}
-                                                 } \end{pmatrix} } \\
-                                        {\vec{N} \begin{pmatrix} { 0, \sigma_{dd,a}^{2}
-                                                 } \end{pmatrix} }
+    \vec{w}_{k-1} = { \begin{Bmatrix} {
+                                        \begin{array}{c} 
+                                                         {-{^{N}{R}_{k-1}^{B}} \cdot \vec{a}_{noise}^{B} \cdot {dt}^{2}} \\
+                                                         {-{^{N}{R}_{k-1}^{B}} \cdot \vec{a}_{noise}^{B} \cdot {dt}} \\
+                                                         {-{{dt} \over {2}} \cdot \Xi_{k-1} \cdot {\vec{w}_{noise}^{B}}} \\
+                                                         { \vec{N} \begin{pmatrix} {
+                                                                                     0, \hspace{1mm}
+                                                                                     \sigma_{dd,\omega}^{2}
+                                                                   } \end{pmatrix} } \\
+                                                         { \vec{N} \begin{pmatrix} {
+                                                                                     0, \hspace{1mm}
+                                                                                     \sigma_{dd,a}^{2}
+                                                                   } \end{pmatrix} }
+                                        \end{array}
                       } \end{Bmatrix}
                     }
 

@@ -49,26 +49,28 @@ The quaternion propagation matrix, :math:`\Omega_{k-1}`, at time-step k-1 is:
 
 .. math::
 
-    \Omega_{k-1} = { \begin{bmatrix} { { 0 \\
-                                         \omega_{x,k-1}^{B} \\
-                                         \omega_{y,k-1}^{B} \\
-                                         \omega_{z,k-1}^{B}
-                                       } \hspace{5mm}
-                                       { -\omega_{x,k-1}^{B} \\
-                                         0 \\
-                                         -\omega_{z,k-1}^{B} \\
-                                         \omega_{y,k-1}^{B}
-                                       } \hspace{5mm}
-									   { -\omega_{y,k-1}^{B} \\
-                                         \omega_{z,k-1}^{B} \\
-                                         0 \\
-                                         -\omega_{x,k-1}^{B}
-                                       } \hspace{5mm}
-									   { -\omega_{z,k-1}^{B} \\
-                                         -\omega_{y,k-1}^{B} \\
-                                         \omega_{x,k-1}^{B} \\
-                                         0
-                                         }
+    \Omega_{k-1} = { \begin{bmatrix} {
+                                       \begin{array}{cccc} 
+                                                           {0} &
+                                                           {-\omega_{x,k-1}^{B}} &
+                                                           {-\omega_{y,k-1}^{B}} &
+                                                           {-\omega_{z,k-1}^{B}}
+                                                           \cr
+                                                           {\omega_{x,k-1}^{B}} &
+                                                           {0} &
+                                                           {\omega_{z,k-1}^{B}} &
+                                                           {-\omega_{y,k-1}^{B}}
+                                                           \cr
+                                                           {\omega_{y,k-1}^{B}} &
+                                                           {-\omega_{z,k-1}^{B}} &
+                                                           {0} &
+                                                           {\omega_{x,k-1}^{B}}
+                                                           \cr
+                                                           {\omega_{z,k-1}^{B}} &
+                                                           {\omega_{y,k-1}^{B}} &
+                                                           {-\omega_{x,k-1}^{B}} &
+                                                           {0}
+                                       \end{array}
                      } \end{bmatrix}
                    }
 
@@ -104,16 +106,16 @@ Substitute this result into the expression for the attitude state-transition mod
 
 .. math::
 
-    \vec{q}_{k} = { { \begin{bmatrix} {
-                        I_4 + {{dt} \over {2}} \cdot \begin{pmatrix} { \Omega_{meas,k-1} - \Omega_{bias,k-1} } \end{pmatrix}
-                            - {{dt} \over {2}} \cdot \Omega_{noise,k-1}
-                    } \end{bmatrix}
-                  } \cdot {\vec{q}}_{k-1} }
-
-
-.. math::
-
-    = { \Phi_{k-1} \cdot \vec{q}_{k-1} + \vec{w}_{q,k-1} }
+    \vec{q}_{k} &= { { \begin{bmatrix} {
+                                         I_4 + {{dt} \over {2}} \cdot \begin{pmatrix} { \Omega_{meas,k-1} - \Omega_{bias,k-1} } \end{pmatrix}
+                                         - {{dt} \over {2}} \cdot \Omega_{noise,k-1}
+                       } \end{bmatrix}
+                     } \cdot {\vec{q}}_{k-1}
+                   } \\
+                   {\hspace{5mm}} \\
+                &= {
+                     \Phi_{k-1} \cdot \vec{q}_{k-1} + \vec{w}_{q,k-1}
+                   }
 
 
 :math:`\Phi_{k-1}` is the state-transition matrix, defined as:
@@ -148,8 +150,11 @@ with the variable :math:`\Xi_{k-1}` relating the change in process noise to syst
 
 .. math::
 
-    \Xi_{k-1} \equiv \begin{bmatrix} { {-\vec{q}_{v}^{T}} \\
-                                       {q_0 \cdot I_3 + \begin{bmatrix} {\vec{q}_{v} \times} \end{bmatrix}}
+    \Xi_{k-1} \equiv \begin{bmatrix} {
+                                       \begin{array}{c} 
+                                                        {-\vec{q}_{v}^{T}} \\
+                                                        {q_0 \cdot I_3 + \begin{bmatrix} {\vec{q}_{v} \times} \end{bmatrix}}
+                                       \end{array}
                      } \end{bmatrix}
 
 
@@ -190,25 +195,29 @@ for :math:`\Sigma_{q}` (Appendix Q):
                      } \end{pmatrix} }^{2}
                  }
                  \cdot
-                 { \begin{bmatrix} { {  {1 - q_0^2}\\
-                                       -{q_0 \cdot q_1}\\
-                                       -{q_0 \cdot q_2}\\
-                                       -{q_0 \cdot q_3}
-                                     } \hspace{5mm}
-                                     { -{q_0 \cdot q_1}\\
-                                        {1 - q_1^2}\\
-                                       -{q_1 \cdot q_2}\\
-                                       -{q_1 \cdot q_3}
-                                     } \hspace{5mm}
-    								                 { -{q_0 \cdot q_2}\\
-                                       -{q_1 \cdot q_2}\\
-                                        {1 - q_2^2}\\
-                                       -{q_2 \cdot q_3}
-                                     } \hspace{5mm}
-    								                 { -{q_0 \cdot q_3}\\
-                                       -{q_1 \cdot q_3}\\
-                                       -{q_2 \cdot q_3}\\
-                                        {1 - q_3^2}
-                                     }
-                    } \end{bmatrix}
-                  }
+                 {
+                   \begin{bmatrix} {
+                                     \begin{array}{cccc} 
+                                                           {1 - q_0^2} &
+                                                           {-{q_0 \cdot q_1}} &
+                                                           {-{q_0 \cdot q_2}} &
+                                                           {-{q_0 \cdot q_3}}
+                                                           \cr
+                                                           {-{q_0 \cdot q_1}} &
+                                                           {1 - q_1^2} &
+                                                           {-{q_1 \cdot q_2}} &
+                                                           {-{q_1 \cdot q_3}}
+                                                           \cr
+                                                           {-{q_0 \cdot q_2}} &
+                                                           {-{q_1 \cdot q_2}} &
+                                                           {1 - q_2^2} &
+                                                           {-{q_2 \cdot q_3}}
+                                                           \cr
+                                                           {-{q_0 \cdot q_3}} &
+                                                           {-{q_1 \cdot q_3}} &
+                                                           {-{q_2 \cdot q_3}} &
+                                                           {1 - q_3^2}
+                                     \end{array}
+                     } \end{bmatrix}
+                   }
+

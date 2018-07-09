@@ -73,26 +73,35 @@ listed below.
 
 where :math:`\overline{Q}_{F}` is:
 
+
 .. math::
 
-    \overline{Q}_{F} = \begin{bmatrix} { { q_{1} \\
-                                           q_{2} \\
-                                           q_{3}
-                                         } \hspace{5mm}
-                                         { q_{0} \\
-                                           q_{3} \\
-                                           -q_{2}
-                                         } \hspace{5mm}
-                                         { -q_{3} \\
-                                           q_{0} \\
-                                           q_{1}
-                                         } \hspace{5mm}
-                                         { q_{2} \\
-                                           -q_{1} \\
-                                           q_{0}
-                                         }
-                       } \end{bmatrix}
-                     = \begin{bmatrix} { {\vec{q}_{v}} \hspace{5mm} {q_0 \cdot I_{3} + \begin{bmatrix} { {\vec{q}_{v}} \times } \end{bmatrix}} } \end{bmatrix}
+    \overline{Q}_{F} &= {
+                          \begin{bmatrix} {
+                                            \begin{array}{cccc} 
+                                                                {q_{1}} &
+                                                                {q_{0}} &
+                                                                {-q_{3}} &
+                                                                {q_{2}}
+                                                                \cr
+                                                                {q_{2}} &
+                                                                {q_{3}} &
+                                                                {q_{0}} &
+                                                                {-q_{1}}
+                                                                \cr
+                                                                {q_{3}} &
+                                                                {-q_{2}} &
+                                                                {q_{1}} &
+                                                                {q_{0}}
+                                            \end{array}
+                          } \end{bmatrix}
+                        } \\
+                        {\hspace{5mm}} \\
+                     &= {
+                          \begin{bmatrix} {
+                                            {\vec{q}_{v}} \hspace{5mm} {q_0 \cdot I_{3} + \begin{bmatrix} { {\vec{q}_{v}} \times } \end{bmatrix}}
+                          } \end{bmatrix}
+                        }
 
 
 and

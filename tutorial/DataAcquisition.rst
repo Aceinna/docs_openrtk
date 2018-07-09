@@ -8,7 +8,7 @@ OpenIMU makes data-acquision simple by reducing the steps required to get high-q
 sensor data.  Sensor drivers and calibration steps are handled without the need for additional
 effort.
 
-*TaskDataAcqusition* calls the routines that acquire sensor data, filters it, and applies
+*TaskDataAcqusition* calls the routines that acquire sensor measurements, filters the data, and applies
 calibration.  After these steps are complete, the task calls the following function:
 
 ::
@@ -22,7 +22,7 @@ which provides functions to acquire sensor data for use by the user.
 Acquiring Sensor Data
 ======================
 
-Inside *inertialAndPositionDataProcessing()* several getter-functions, which obtain sensors data,
+Inside *inertialAndPositionDataProcessing()* several getter-functions, which obtain sensor data,
 are provided.  Function names, which are described in the following table, were selected to
 explicitly state their tasks:
 
@@ -33,23 +33,23 @@ explicitly state their tasks:
 |                             |                           |                                   |
 +=============================+===========================+===================================+
 |                             |                           |                                   |
-| *GetAccelsData_g()*         |                           | :math:`[g]`                       |        
+| *GetAccelData_g()*          |                           | :math:`[g]`                       |        
 |                             |                           |                                   |
 +-----------------------------+ Obtain accelerometer data +-----------------------------------+
 |                             |                           |                                   |
-| *GetAccelsData_mPerSecSq()* |                           | :math:`[{m \over s^2}]`           |                             
+| *GetAccelData_mPerSecSq()*  |                           | :math:`[{m \over s^2}]`           |                             
 |                             |                           |                                   |
 +-----------------------------+---------------------------+-----------------------------------+
 |                             |                           |                                   |
-| *GetRatesData_radPerSec()*  |                           | :math:`[{r \over s}]`             |               
+| *GetRateData_radPerSec()*   |                           | :math:`[{r \over s}]`             |               
 |                             |                           |                                   |
 +-----------------------------+ Obtain rate-sensor data   +-----------------------------------+
 |                             |                           |                                   |
-| *GetRatesData_degPerSec()*  |                           | :math:`[{° \over s}]`             |               
+| *GetRateData_degPerSec()*   |                           | :math:`[{° \over s}]`             |               
 |                             |                           |                                   |
 +-----------------------------+---------------------------+-----------------------------------+
 |                             |                           |                                   |
-| *GetMagsData_G()*           | Obtain magnetometer data  | :math:`[G]`                       |               
+| *GetMagData_G()*            | Obtain magnetometer data  | :math:`[G]`                       |               
 |                             |                           |                                   |
 +-----------------------------+---------------------------+-----------------------------------+
 |                             |                           |                                   |
@@ -62,7 +62,7 @@ Most inertial algorithm development will use :math:`[{m \over s^2}]`, :math:`[{r
 :math:`[G]`, however :math:`[g]` and :math:`[{° \over s}]` are also available for the designer who
 chooses to use data with these units.
 
-These getters populate the arrays *accels*, *rates*, and *mags* then passes the arrays to the
+These getters populate the arrays *accels*, *rates*, and *mags* then pass the arrays to the
 function *RunUserNavAlgorithm()*.  This function is left as a placeholder inside which algorithm
 development takes place.
 
