@@ -58,5 +58,5 @@ N-Frame while the dashed blue lines indicate the projection of the B-Frame axes 
                However, the two are sufficient for use with the OpenIMU line of products.
                
 
-.. |CoordFrames| image:: .\media\CoordFrames.png
+.. |CoordFrames| image:: ./media/CoordFrames.png
    :width: 5.0in

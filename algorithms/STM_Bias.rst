@@ -36,7 +36,7 @@ where
     \dot{\vec{\omega}}_{drift,k-1}^{B} = N \begin{pmatrix} { 0,\sigma_{dd,ω}^{2} } \end{pmatrix}
 
 
-Note: the subscript *dd* stands for drift-dot.  Based on this model, the process variance for
+Note: the subscript *dd* stands for "drift-dot".  Based on this model, the process variance for
 :math:`\vec{\omega}_{drift}^{B}` at time, t, is given by:
 
 .. math::
@@ -59,7 +59,7 @@ To find the rate-bias process-noise covariance, set :math:`t = dt` in the proces
     \Sigma_{\omega b} = \sigma_{d,\omega}^{2} (dt) \cdot I_3 = {\begin{pmatrix} { \sigma_{dd,\omega} \cdot dt } \end{pmatrix}}^{2} \cdot I_3
 
 
-The accelerometer drift model mirrors this formulation.
+The accelerometer drift model mirrors this formulation and results in:
 
 .. math::
 

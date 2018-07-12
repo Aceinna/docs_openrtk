@@ -72,7 +72,7 @@ Covariance Matrix is:
                    }
                    
 
-The individual process covariance (derived in the sections above) are repeated here:
+The individual process covariance (derived in previous sections) are repeated here:
 
 .. math::
 

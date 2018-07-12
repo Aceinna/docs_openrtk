@@ -22,38 +22,41 @@ specific system state.  Performing this operation results in:
 
 .. math::
 
-    F = I_{16} + { \begin{bmatrix} { { 0_{3} \\
-                                       0_{3} \\
-                                       0_{4 \times 3} \\
-                                       0_{3} \\
-                                       0_{3}
-                                     } \hspace{5mm}
-                                     { I_{3} \\
-                                       0_{3} \\
-                                       0_{4 \times 3} \\
-                                       0_{3} \\
-                                       0_{3}
-                                     } \hspace{5mm}
-                                     { 0_{3 \times 4} \\
-                                       {\partial{v}\partial{q}} \\
-                                       {{1} \over {2}} \cdot \Omega \\
-                                       0_{3 \times 4} \\
-                                       0_{3 \times 4}
-                                     } \hspace{5mm}
-                                     { 0_{3} \\
-                                       0_{3} \\
-                                       {-{{1} \over {2}} \cdot \Xi} \\
-                                       0_{3} \\
-                                       0_{3}
-                                     } \hspace{5mm}
-                                     { 0_{3} \\
-                                       {-{^{N}{R}^{B}}} \\
-                                       0_{4 \times 3} \\
-                                       0_{3} \\
-                                       0_{3}
-                                     }
-                     } \end{bmatrix}
-                   } \cdot {dt}
+    F = I_{16} + { 
+                   \begin{bmatrix} {
+                                     \begin{array}{cccc}
+                                                         {0_{3}} &
+                                                         {I_{3}} &
+                                                         {0_{3 \times 4}} &
+                                                         {0_{3}} &
+                                                         {0_{3}}
+                                                         \cr
+                                                         {0_{3}} &
+                                                         {0_{3}} &
+                                                         {\partial{v}\partial{q}} &
+                                                         {0_{3}} &
+                                                         {-{^{N}{R}^{B}}}
+                                                         \cr
+                                                         {0_{4 \times 3}} &
+                                                         {0_{4 \times 3}} &
+                                                         {{{1} \over {2}} \cdot \Omega} &
+                                                         {-{{1} \over {2}} \cdot \Xi} &
+                                                         {0_{4 \times 3}}
+                                                         \cr
+                                                         {0_{3}} &
+                                                         {0_{3}} &
+                                                         {0_{3 \times 4}} &
+                                                         {0_{3}} &
+                                                         {0_{3}}
+                                                         \cr
+                                                         {0_{3}} &
+                                                         {0_{3}} &
+                                                         {0_{3 \times 4}} &
+                                                         {0_{3}} &
+                                                         {0_{3}}
+                                     \end{array}
+                   } \end{bmatrix}
+                 } \cdot {dt}
 
 
 The one new term in the matrix, :math:`{\partial{v}\partial{q}}` is derived in the Appendix B and
@@ -61,18 +64,21 @@ listed below.
 
 .. math::
 
-    {\partial{v}\partial{q}} \equiv 2 \cdot \overline{Q}_{F} \cdot { \begin{bmatrix} { { 0 \\
-                                                                                         \vec{a}^{B}
-                                                                                       } \hspace{5mm}
-                                                                                       { \begin{pmatrix} { {\vec{a}^{B}} } \end{pmatrix} ^{T} \\
-                                                                                         -\begin{bmatrix} { {\vec{a}^{B}} \times } \end{bmatrix}
-                                                                                       }
-                                                                     } \end{bmatrix}
-                                                                   }
+    {\partial{v}\partial{q}} \equiv {
+                                      2 \cdot \overline{Q}_{F} \cdot { \begin{bmatrix} {
+                                                                                         \begin{array}{cc} 
+                                                                                                             {0} &
+                                                                                                             {\begin{pmatrix} { {\vec{a}^{B}} } \end{pmatrix} ^{T}}
+                                                                                                             \cr
+                                                                                                             {\vec{a}^{B}} &
+                                                                                                             {-\begin{bmatrix} { {\vec{a}^{B}} \times } \end{bmatrix}}
+                                                                                         \end{array}
+                                                                       } \end{bmatrix}
+                                                                     }
+                                    }
 
 
 where :math:`\overline{Q}_{F}` is:
-
 
 .. math::
 

@@ -12,7 +12,7 @@ The position process model is based on the following first-order model:
     \vec{r}_{k} = \vec{r}_{k-1} + \dot{\vec{r}}_{k-1} \cdot dt
 
 
-where :math:`\dot{\vec{r}}_{k-1}` is equal to the estimated velocity state, :math:`\vec{v}_{k-1}`.
+where :math:`\dot{\vec{r}}_{k-1}` is the estimated velocity state, :math:`\vec{v}_{k-1}`.
 Substituting in the velocity term (including noise) results in:
 
 .. math::

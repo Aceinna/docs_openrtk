@@ -23,3 +23,9 @@ Kane
 
 
 
+
+.. Comment --> Complete list of mathematical formatting commands found at http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm#cr.
+.. Comment --> Decent examples found at http://jterrace.github.io/sphinxtr/html/index.html
+.. Comment --> Centered caption examples found at https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html#glossary-centered-index-download-and-field-list
+
+
