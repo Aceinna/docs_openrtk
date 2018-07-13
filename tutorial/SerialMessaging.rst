@@ -1,3 +1,4 @@
+******************
 Serial Messaging
 ******************
 
@@ -16,47 +17,50 @@ consists of:
     3. Roll and pitch angles, in degrees
     4. Acceleration readings, in meters-per-second-squared
 
-To generate this output message, an output message was created in *UserMessaging.c* and
-*UserMessaging.h*. In the firmware, the message is given the name, *USR_OUT_LEV1*, and the packet
-code “l1” (with lower-case L representing leveler).
+
+To generate this output, an serial-message was created in *UserMessaging.c* and *UserMessaging.h*.
+In the firmware, the message is given the name, *USR_OUT_LEV1*, and the packet code “l1” (with
+lower-case L representing leveler).
 
 
-The first step is to define the message components and determine the number of bytes the message
-will occupy. The components or the message, variable type, and number of bytes are listed in the
-following table:
+The first step is to define the message components and determine the total number of bytes the
+message will occupy.  The components of the message, variable type, and number of bytes are listed
+in the following table:
 
 
-+-----------------------+----------------------+----------------+------------+
-|                       | **Description**      |                |            |
-| **Message Component** |                      || **Number of** || **Total** |
-|                       +----------+-----------+| **Variables** || **Bytes** |
-|                       |          |           |                |            |
-|                       | **Type** | **Bytes** |                |            |
-|                       |          |           |                |            |
-+=======================+==========+===========+================+============+
-|                       |          |           |                |            |
-| Integer counter       | uint32_t | 4         | 1              | 4          |        
-|                       |          |           |                |            |
-+-----------------------+----------+-----------+----------------+------------+
-|                       |          |           |                |            |
-| Time variable         | Double   | 8         | 1              | 8          |                             
-|                       |          |           |                |            |
-+-----------------------+----------+-----------+----------------+------------+
-|                       |          |           |                |            |
-|| Attitude measurement | Float    | 4         | 2              | 8          |               
-|| (roll/pitch)         |          |           |                |            |
-|                       |          |           |                |            |
-+-----------------------+----------+-----------+----------------+------------+
-|                       |          |           |                |            |
-|| Acceleration         | Float    | 4         | 3              | 12         |               
-|| (3 axis)             |          |           |                |            |
-|                       |          |           |                |            |
-+-----------------------+----------+-----------+----------------+------------+
+.. table:: **User-Defined Serial Message Components**
+
+    +-----------------------+----------------------+----------------+------------+
+    |                       | **Description**      |                |            |
+    | **Message Component** |                      || **Number of** || **Total** |
+    |                       +----------+-----------+| **Variables** || **Bytes** |
+    |                       |          |           |                |            |
+    |                       | **Type** | **Bytes** |                |            |
+    |                       |          |           |                |            |
+    +=======================+==========+===========+================+============+
+    |                       |          |           |                |            |
+    | Integer counter       | uint32_t | 4         | 1              | 4          |        
+    |                       |          |           |                |            |
+    +-----------------------+----------+-----------+----------------+------------+
+    |                       |          |           |                |            |
+    | Time variable         | Double   | 8         | 1              | 8          |                             
+    |                       |          |           |                |            |
+    +-----------------------+----------+-----------+----------------+------------+
+    |                       |          |           |                |            |
+    || Attitude measurement | Float    | 4         | 2              | 8          |               
+    || (roll/pitch)         |          |           |                |            |
+    |                       |          |           |                |            |
+    +-----------------------+----------+-----------+----------------+------------+
+    |                       |          |           |                |            |
+    || Acceleration         | Float    | 4         | 3              | 12         |               
+    || (3 axis)             |          |           |                |            |
+    |                       |          |           |                |            |
+    +-----------------------+----------+-----------+----------------+------------+
 
 
 
-This indicates that the data section of the output message (not including preamble, message type,
-and CRC) consists of 32 bytes.
+This indicates that the *payload* section of the output message (not including preamble, message
+type, and CRC) consists of 32 bytes.
 
 To add this message to the firmware requires modifications to two files: *UserMessaging.c* and
 *UserMessaging.h*.
@@ -139,11 +143,11 @@ using the output name added to *UserMessaging.h*:
     break;
 
 
-Data is appended to the payload array using pointers to enable variables of different data-types
-to fit into the payload array (defined as an array of 8-bit unsigned integers). To do this,
-generate a pointer of the desired type to a typecast version of the payload address. In the example
-above, 32-bit unsigned integer data is appended to the payload, followed by double and floating-
-point variables.
+Data is appended to the payload array using pointers.  This enables variables of different data-
+types to fit into the payload array (defined as an array of 8-bit unsigned integers); this approach
+is highlighted in the previous code snippet.  To do this, generate a pointer of the desired type to
+a typecast version of the payload address. In the example above, 32-bit unsigned integer data is
+appended to the payload, followed by double and floating-point variables.
 
 
 Finally, the packet type must be added to the switch-statement in *setUserPacketType()* to enable
@@ -181,8 +185,8 @@ These changes are found in *UserMessaging.c*.
 Default Configuration Settings
 ===============================
 
-To enable OpenIMU to output the serial message created previously (by default) make changes to the
-default user-configuration structure found in *UserConfiguration.c*:
+To make serial message created previously the default output, make changes to the default user-
+configuration structure found in *UserConfiguration.c*:
 
 ::
 
@@ -211,22 +215,22 @@ respectively).
 Testing using Serial Terminal Emulator
 =======================================
 
-
 At this point, the leveler algorithm has been implemented and the output messaging created. Build
 and upload the firmware to the OpenIMU. A serial terminal (such as TeraTerm) can be used to verify
 if a message is being generated by the device. In the following figure, output messaging creation
 can be verified by searching for the string “UUl1”. If present, the message is being generated;
 whether the message is populated correctly requires the use of additional tools.
 
-|SerialTest|
 
-**Figure 1: Serial Message Output Test**
+.. _fig-ser-msg-test:
+
+.. figure:: ./media/Leveler_OutputMessageCapture.PNG
+    :alt: SerialMessageTest
+    :width: 5.1in
+    :align: center
+
+    **Figure 2: Test of Serial Message Output**
 
 
-
-
-.. |SerialTest| image:: ../media/tutorial/Leveler_OutputMessageCapture.PNG
-   :width: 5.1in
-   
    
    

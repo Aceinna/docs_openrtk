@@ -1,11 +1,14 @@
+*******************
 Measurement Models
 *******************
 
 
 .. toctree::
     :maxdepth: 4
-    
-    
+
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
+
+
 Overview
 =========
 
@@ -63,7 +66,7 @@ Both :math:`{^{N}}{\vec{\Theta}}{_{meas}^{B}}` and :math:`{^{N}}{\vec{\Theta}}{_
 
 
 Formation of :math:`\vec{z}_{k}` from sensor measurements:
------------------------------------------------------------
+===========================================================
 
 The measurement vector, :math:`\vec{z}_{k}` is comprised of position, velocity, and attitude
 information as defined above.  However, only the GPS velocity is available directly from
@@ -72,7 +75,7 @@ described below.
 
 
 Roll and Pitch Measurements:
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------------
 
 Roll and pitch values are computed from the accelerometer signal.  Under static conditions,
 measurements made by the accelerometer consists solely of gravity and sensor noise.  Along the axis
@@ -162,16 +165,17 @@ required as the :math:`atan` function uses the ratio of the two (the normalizati
 out).
 
 
-Heading Measurements:
-^^^^^^^^^^^^^^^^^^^^^^
+Heading Measurements
+----------------------
 
 Heading measurements are determined from the following:
 
     1) Magnetometers
     2) GPS Velocity
 
-Magnetometer-Based Heading:
-"""""""""""""""""""""""""""""
+    
+Magnetometer-Based Heading
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Magnetometers measure the local magnetic field at a high DRs but the readings can be affected by
 hard and soft-iron disturbances in the system or by changes in the external magnetic field.  Hard
@@ -201,7 +205,7 @@ the corrected signal.
 
 
 Heading calculation
-~~~~~~~~~~~~~~~~~~~~~~
+""""""""""""""""""""
 
 The heading is computed using the fact that, in the magnetic NED-frame, the y-axis component of the
 magnetic field is zero.  In the true-north NED-frame this is not the case; a magnetic declination
@@ -288,38 +292,38 @@ pitch increase.  This can be accounted for by adjusting the measurement covarian
 :math:`R`, accordingly.  Additionally, the solution also begins to degrade as the iron in the system
 increases.
 
-GPS Heading:
-""""""""""""""
+
+GPS Heading
+^^^^^^^^^^^^
 
 Heading is also provided directly from the GPS messages.  The four messages currently decoded by the
 IMU381/OpenIMU firmware provide true heading via messages listed in Table 6.
 
 
-**Table 6: GPS Messaging and Heading Measurement**
+.. table:: **Table 6: GPS Messaging and Heading Measurement**
 
-
-+------------+-----------------------+----------------------------------+-------------+
-| **System** | **Message**           | **Description**                  | **Units**   |
-+============+=======================+==================================+=============+
-| NovAtel    | BESTVEL               || Actual direction of motion over | [deg]       |
-|            |                       || ground (track over ground) with |             |
-|            |                       || respect to True North           |             |
-+------------+-----------------------+----------------------------------+-------------+
-| NMEA       | VTG                   | True track made good             | [deg]       |
-+------------+-----------------------+----------------------------------+-------------+
-| SiRF       || Geodetic Navigation  || Course Over Ground              | [deg x 100] |
-|            || Data – Message ID 41 || (COG, True)                     |             |
-+------------+-----------------------+----------------------------------+-------------+
-| ublox      | NAV-VELNED            | Heading of motion 2-D            | [deg]       |
-+------------+-----------------------+----------------------------------+-------------+
+    +------------+-----------------------+----------------------------------+-------------+
+    | **System** | **Message**           | **Description**                  | **Units**   |
+    +============+=======================+==================================+=============+
+    | NovAtel    | BESTVEL               || Actual direction of motion over | [deg]       |
+    |            |                       || ground (track over ground) with |             |
+    |            |                       || respect to True North           |             |
+    +------------+-----------------------+----------------------------------+-------------+
+    | NMEA       | VTG                   | True track made good             | [deg]       |
+    +------------+-----------------------+----------------------------------+-------------+
+    | SiRF       || Geodetic Navigation  || Course Over Ground              | [deg x 100] |
+    |            || Data – Message ID 41 || (COG, True)                     |             |
+    +------------+-----------------------+----------------------------------+-------------+
+    | ublox      | NAV-VELNED            | Heading of motion 2-D            | [deg]       |
+    +------------+-----------------------+----------------------------------+-------------+
 
 
 of the PS  readings  and angles derived from accelerometer readings (equations provided in
 Measurement Covariance section):
 
 
-GPS Position and Velocity:
-"""""""""""""""""""""""""""""
+GPS Position and Velocity
+--------------------------
 
 GPS-based position is derived from the GPS lat/lon/alt message (BestPos, GGA, etc) and converted to
 NED-position using the WGS84 model.

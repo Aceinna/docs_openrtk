@@ -2,7 +2,9 @@
 
 
 Velocity State-Transition Model
-**********************************
+--------------------------------
+
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
 The velocity propagation equation is based on the following first-order model:

@@ -1,12 +1,14 @@
+***************************************
 Capturing, Displaying, and Saving Data
 ***************************************
 
 .. contents:: Contents
     :local:
 
-With the algorithm and message created and running on the OpenIMU hardware, the message description
-added to *openimu.json*, and *python-openimu* installed on your system, we are ready to collect
-data.
+With the algorithm and serial output-message created and running on the OpenIMU hardware, the
+message description added to *openimu.json*, and *python-openimu* installed on your system, we are
+ready to collect data.
+
 
 OpenIMU Server
 ===============
@@ -20,24 +22,35 @@ sending the following command at a terminal prompt:
     python server.py
 
 
-This will initiate a search for the OpenIMU device on the machine's COM ports. When detected, the
-terminal will return a message similar to the following:
+This initiates a search for the OpenIMU device on the machine's COM ports. When detected, the
+terminal returns a message similar to the following:
 
-|ServerCapture|
 
-**Figure 1: Server Connection Message at the Terminal Prompt**
+.. _fig-server-connect:
+
+.. figure:: ./media/Leveler_ServerCapture.PNG
+    :alt: ServerConnection
+    :width: 6.5in
+    :align: center
+
+    **Figure 3: Server-Connection Message at the Terminal Prompt**
 
 
 Connect to Aceinna Navigation Studio
 =====================================
 
-To capture and display the data on the Aceinna Navigation Studio, open a browser to
+To capture and display data on the Aceinna Navigation Studio, open a browser to
 https://developers.aceinna.com and log in.  From the menu on the left, select Devices, and connect.
 The following will appear if connected properly:
 
-|ANS_Connection|
+.. _fig-ans-connect:
 
-**Figure 2: Connection to IMU Server**
+.. figure:: ./media/Leveler_DevelopersPage.PNG
+    :alt: AnsConnection
+    :width: 6.5in
+    :align: center
+
+    **Figure 4: Connection to IMU Server**
 
 
 If desired, the packet output rate and other settings can be changed here.
@@ -48,41 +61,36 @@ Connect to Aceinna Navigation Studio
 
 For a live display of data from the device, select the ‘Record’ menu. An example capture follows:
 
-|ANS_Plot|
+.. _fig-ans-att-plot:
 
-**Figure 3: Leveler Angle Data Plot**
+.. figure:: ./media/Leveler_AttitudePlot.PNG
+    :alt: AnsAttitudePlot
+    :width: 6.5in
+    :align: center
+
+    **Figure 5: Plot of Leveler Angle Data**
 
 
 Logging Data
 =============
 
-To log data select the “Log Control” switch.  The output file consists of the the data in the
-serial message.  In particular the message consists of:
+To log data select the “Log Control” switch.  The output file consists of data found in the serial
+message.  In particular the message consists of:
 
     * Time (in counts and seconds)
     * Roll and pitch angles (in degrees)
-    * Accelerometer data (in m/s^2)
+    * Accelerometer data (in :math:`m/s^2`)
 
 
 The following figure shows the contents of the captured data file, indicating that all selected
 data are saved as intended.
 
-|ANS_Collect|
+.. _fig-ans-att-plot:
 
-**Figure 4: Leveler Angle Data File**
+.. figure:: ./media/Leveler_OutputData.PNG
+    :alt: AnsAttitudePlot
+    :width: 6.5in
+    :align: center
 
+    **Figure 6: Leveler Angle Data File**
 
-
-.. Image locations are specified below
-
-.. |ServerCapture| image:: ../media/tutorial/Leveler_ServerCapture.PNG
-   :width: 6.5in
-
-.. |ANS_Connection| image:: ../media/tutorial/Leveler_DevelopersPage.PNG
-   :width: 8.0in
-
-.. |ANS_Plot| image:: ../media/tutorial/Leveler_AttitudePlot.PNG
-   :width: 6.5in
-
-.. |ANS_Collect| image:: ../media/tutorial/Leveler_OutputData.PNG
-   :width: 6.5in

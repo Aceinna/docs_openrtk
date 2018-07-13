@@ -2,7 +2,9 @@
 
 
 Position State-Transition Model
-**********************************
+--------------------------------
+
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
 The position process model is based on the following first-order model:

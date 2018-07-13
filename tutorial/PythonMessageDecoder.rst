@@ -1,3 +1,4 @@
+************************************
 Python-Based Serial-Message Decoder
 ************************************
 
@@ -70,6 +71,11 @@ message, the following is added to the file:
             }
         ]
     }
+
+
+This information tells the decoder the order of the output data in the serial message, its type
+(float, double, int, etc.), as well as the units associated with the data.  It also defines how the
+data should be plotted, including axis-titles and colors.
 
 
 Note: a useful tool to check if the json-file is properly formatted is found at: https://jsonlint.com

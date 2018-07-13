@@ -1,52 +1,57 @@
+********
 Sensors
-==================
+********
 
 .. contents:: Contents
     :local:
 
 .. role::  raw-html(raw)
     :format: html
+    
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
+
 	
 Various sensors are used to obtain the information needed to estimate the position, velocity, and
-attitude of a system (Table 2).  Measurements from these sensors, taken over time, are combined
-using an Extended Kalman Filter (EKF) to arrive at an estimates that are more accurate than ones
-based on any single measurement.
+attitude of a system (`Table 2 <Sensors.html#id4>`__) .  Measurements from these sensors, taken
+over time, are combined using an Extended Kalman Filter (EKF) to arrive at an estimates that are
+more accurate than ones based on any single measurement.
 
+.. table:: **Table 2: Inertial Sensors and Measurement Type**
 
-+-----------------+-------------------+-------------------------------------------------------------+
-| **Measurement** | **Sensor**        |  **Description**                                            |
-+=================+===================+=============================================================+
-| Position        || GPS              || GPS provides position (Latitude/Longitude/Altitude) and    |
-|                 ||                  || supplemental information (like standard deviation) to      |
-|                 ||                  || the algorithm.  This is used to update the errors in the   |
-|                 ||                  || position (integrated velocity) estimate.                   |
-+-----------------+-------------------+-------------------------------------------------------------+
-| Velocity        || 1) Accelerometer || Accelerometers provide the high DR/low-noise signal        |
-|                 || 2) GPS           || that is integrated to get high DR velocity information.    |
-|                 ||                  || GPS provides velocity and supplemental information to      |
-|                 ||                  || the algorithm (velocity, heading, latency, etc), which is  |
-|                 ||                  || used to update errors due to integration of the            |
-|                 ||                  || accelerometer signal (in particular, to estimate the       |
-|                 ||                  || accelerometer bias).                                       |
-|                 ||                  ||                                                            |
-+-----------------+-------------------+-------------------------------------------------------------+
-| Roll/Pitch      || 1) Angular-Rate  || Angular-rate sensors provide the high DR/low-noise         |
-|                 ||    Sensor        || signal that is integrated to get high DR attitude          |
-|                 || 2) Accelerometer || information.  Accelerometers are used as a gravity         |
-|                 ||                  || reference to update errors due to integration of the rate- |
-|                 ||                  || sensor signal (in particular, to estimate the rate-sensor  |
-|                 ||                  || bias).                                                     |
-+-----------------+-------------------+-------------------------------------------------------------+
-| Heading         || 1) Angular-Rate  || Angular-rate sensors provide the high DR/low-noise         |
-|                 ||    Sensor        || signal that is integrated to get high DR heading           |
-|                 || 2) Magnetometer  || information.  Magnetometers are used as a north-           |
-|                 || 3) GPS           || reference to update errors due to integration of the rate- |
-|                 ||                  || sensor signal (in particular, to estimate the z-axis rate- |
-|                 ||                  || sensor bias).  GPS also provides heading information,      |
-|                 ||                  || which is used in lieu of magnetometer readings and can     |
-|                 ||                  || be more accurate (less prone to disturbances) than the     |
-|                 ||                  || magnetometer but available less often.                     |
-+-----------------+-------------------+-------------------------------------------------------------+
+    +-----------------+-------------------+-------------------------------------------------------------+
+    | **Measurement** | **Sensor**        |  **Description**                                            |
+    +=================+===================+=============================================================+
+    | Position        || GPS              || GPS provides position (Latitude/Longitude/Altitude) and    |
+    |                 ||                  || supplemental information (like standard deviation) to      |
+    |                 ||                  || the algorithm.  This is used to update the errors in the   |
+    |                 ||                  || position (integrated velocity) estimate.                   |
+    +-----------------+-------------------+-------------------------------------------------------------+
+    | Velocity        || 1) Accelerometer || Accelerometers provide the high DR/low-noise signal        |
+    |                 || 2) GPS           || that is integrated to get high DR velocity information.    |
+    |                 ||                  || GPS provides velocity and supplemental information to      |
+    |                 ||                  || the algorithm (velocity, heading, latency, etc), which is  |
+    |                 ||                  || used to update errors due to integration of the            |
+    |                 ||                  || accelerometer signal (in particular, to estimate the       |
+    |                 ||                  || accelerometer bias).                                       |
+    |                 ||                  ||                                                            |
+    +-----------------+-------------------+-------------------------------------------------------------+
+    | Roll/Pitch      || 1) Angular-Rate  || Angular-rate sensors provide the high DR/low-noise         |
+    |                 ||    Sensor        || signal that is integrated to get high DR attitude          |
+    |                 || 2) Accelerometer || information.  Accelerometers are used as a gravity         |
+    |                 ||                  || reference to update errors due to integration of the rate- |
+    |                 ||                  || sensor signal (in particular, to estimate the rate-sensor  |
+    |                 ||                  || bias).                                                     |
+    +-----------------+-------------------+-------------------------------------------------------------+
+    | Heading         || 1) Angular-Rate  || Angular-rate sensors provide the high DR/low-noise         |
+    |                 ||    Sensor        || signal that is integrated to get high DR heading           |
+    |                 || 2) Magnetometer  || information.  Magnetometers are used as a north-           |
+    |                 || 3) GPS           || reference to update errors due to integration of the rate- |
+    |                 ||                  || sensor signal (in particular, to estimate the z-axis rate- |
+    |                 ||                  || sensor bias).  GPS also provides heading information,      |
+    |                 ||                  || which is used in lieu of magnetometer readings and can     |
+    |                 ||                  || be more accurate (less prone to disturbances) than the     |
+    |                 ||                  || magnetometer but available less often.                     |
+    +-----------------+-------------------+-------------------------------------------------------------+
 
 
 Other sensors, such as odometers, barometers, cameras, etc., may be incorporated into the EKF

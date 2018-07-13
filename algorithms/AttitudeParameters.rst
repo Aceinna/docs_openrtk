@@ -1,11 +1,14 @@
+********************
 Attitude Parameters
-====================
+********************
 
 .. contents:: Contents
     :local:
 
 .. role::  raw-html(raw)
     :format: html
+
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 This paper makes use of three different attitude parameters to specify the orientation of a body
 (B) relative to another frame (such as the N-frame).
@@ -14,8 +17,9 @@ This paper makes use of three different attitude parameters to specify the orien
    #.  Quaternion Elements
    #.  Euler Angles
 
+
 Direction Cosine Matrices
---------------------------
+==========================
 
 The first of these, the direction cosine matrix\ [#rot_BinN]_, |R_BinN|\ , specifies the attitude
 of one frame relative to another by relaying how the basis-vectors of one frame relate to the
@@ -32,7 +36,7 @@ and the formulation used by Thomas Kane\ [#Kane_Ref]_  are relied upon extensive
 
 
 Quaternion Elements
---------------------
+====================
 
 The second parameter used to convey orientation information are quaternion elements\ [#quatElems]_
 (also called Euler parameters), |q_BinN|.  Quaternions are relatively easy to propagate in time and
@@ -57,7 +61,7 @@ and a vector component:
 
 
 Euler Angles
--------------
+=============
 
 The final parameter used to relay attitude information are Euler angles.  These are more intuitive
 than quaternions but, unlike quaternions, experience singularities at certain angles (based on the
@@ -66,7 +70,7 @@ a pitch of 90°.
 
 
 Mathematical Relationships between Attitude Parameters
--------------------------------------------------------
+=======================================================
 
 All three parameters contain the same information.  The equations that relate the various
 parameters follow\ [#Quat_Ref]_.  For a 321-rotation sequence, the expression relating the rotation
@@ -178,8 +182,7 @@ Note: due to the way the roll and pitch are separated from the heading, the Eule
 
 
 Example
---------
-
+========
 
 Using the direction cosine matrix formulation, the transformation to get from the body to inertial-
 frame (ECEF) is composed of multiple transformations (*Figure 1*):

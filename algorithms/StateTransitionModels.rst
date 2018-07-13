@@ -1,11 +1,9 @@
+************************
 State Transition Models
 ************************
 
 
-Introduction
-=============
-
-intro goes here
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
 System State-Transition Model Summary\ [#Algo_Ref]_
@@ -131,6 +129,8 @@ variance of either :math:`\sigma_{dd,\omega}^{2}` or :math:`\sigma_{dd,a}^{2}`\ 
 
 Individual State-Transition Models
 ===================================
+
+Individual state-transition models are derived in the following sections:
 
 .. toctree::
     :maxdepth: 3

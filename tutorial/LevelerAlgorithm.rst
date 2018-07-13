@@ -1,12 +1,13 @@
+**************************
 Static Leveler Algorithm
-=========================
+**************************
 
 .. contents:: Contents
     :local:
 
 
 Mathematical Formulation
-*************************
+==========================
 
 Measurements of roll and pitch angles (rotations of a body about angles around the x and y-axes)
 are possible by measuring the local gravity field.  As local gravity is constant the relationship
@@ -51,7 +52,7 @@ The unitized gravity measurement is found in two steps:
 
 
 Algorithm Development
-**********************
+==========================
 
 Algorithm development, based on these equations, is quite straightforward.
 

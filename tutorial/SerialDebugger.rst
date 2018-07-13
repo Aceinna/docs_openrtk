@@ -1,5 +1,6 @@
+********************
 Serial Debugging
-*****************
+********************
 
 .. contents:: Contents
     :local:
@@ -25,9 +26,14 @@ In the output message, time (generated from the algorithm counter) is provided a
 computed roll and pitch angles, converted from [radians] to [degrees], at a 2 [Hz] output rate.
 The results of these statements are found in the following figure:
 
-|DebugOutput|
+.. _fig-term-debug-out:
 
-**Figure 1: Leveler Algorithm Debug Output**
+.. figure:: ./media/Leveler_DebugCapture.PNG
+    :alt: TerminalDebugOutput
+    :width: 5.0in
+    :align: center
+
+    **Figure 1: Leveler Algorithm Debug Output**
 
 This statements provide confidence that the algorithm is generating the correct roll angle of
 approximately 15 [degrees] based upon the positioning of the test unit.
@@ -56,6 +62,7 @@ complete list:
     DebugPrintFloat();
     DebugPrintEndline();
 
+
 The arguments to DebugPrintFloat() are:
 
     1. Character string describing the message
@@ -70,6 +77,3 @@ The final step is to build and upload the firmware to the OpenIMU hardware using
 When complete, use a terminal program (such as TeraTerm in Windows) to connect to the appropriate
 COM port and see if the program is operating as expected.
 
-
-.. |DebugOutput| image:: ../media/tutorial/Leveler_DebugCapture.PNG
-   :width: 5.1in
