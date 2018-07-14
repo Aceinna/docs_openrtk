@@ -54,11 +54,11 @@ Open IMU test adapter used to firmly secure OpenIMU300ZA unit and Open IMU evalu
        
 2.4 ST-Link debugger
 ~~~~~~~~~~~~~~~~~~~~~~~~
-St-Link debugger is standard debugger provided by StMicroelectronics company. It used for in-system debugging of applications via SWD interface.
+St-Link debugger is standard debugger provided by STMicroelectronics company. It used for in-system debugging of applications via SWD interface.
   
   
 3. Open IMU evaluation board Headers and Connectors
-------------
+---------------------------------------------------
   
 3.1 Connector for plugging in OpenIMU300ZA unit (J2).   
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -215,7 +215,7 @@ from PC to IMU via virtual serial ports. Up to 3 exposed IMU serial interfaces c
 
 
 4. Open IMU evaluation board LED indicators
------------------------
+-------------------------------------------
 
 Evaluation board has few LED indicators for visual monitoring of data traffic on serial ports:
 
@@ -231,7 +231,7 @@ Evaluation board has few LED indicators for visual monitoring of data traffic on
 
 
 5. Open IMU evaluation power
------------------------
+----------------------------
 
 Power to Open IMU evaluation board provided by USB.
 To power system up - connect USB cable to connector J1 and turn "ON" switch SW1.

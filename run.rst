@@ -15,5 +15,5 @@ To set up OpenIMU evaluation kit for development you'll need to perform next ste
 
 Now you are ready to install OpenIMU's open source tool chain to develop, debug and test your application.
 
-.. image:: media/EvalKit.jpg 
+.. image:: media/EvalKit.png 
      
