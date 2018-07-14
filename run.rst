@@ -17,5 +17,5 @@ To set up OpenIMU evaluation kit for development you'll need to perform next ste
  .. image:: media/EvalKit.jpg  
 
  
- Now you ready to debug and test your application.
+ Now you are ready to debug and test your application.
       

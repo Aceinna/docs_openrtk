@@ -111,7 +111,7 @@ IMU Sensors
 
 .. note::
 
-    This product has been developed and are sold exclusively for commercial applications.  
+    This product has been developed and is sold exclusively for commercial applications.  
     Military usage is prohibited by the manufacturer.
 
 .. note::

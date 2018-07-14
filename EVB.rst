@@ -9,7 +9,7 @@ The OpenIMU300ZA evaluation kit is a robust easy-to-use development board and fi
 .. toctree::
     :maxdepth: 2
 
-    EVB/features
+    EVB/overview
     EVB/mechanical
     EVB/schematic
    

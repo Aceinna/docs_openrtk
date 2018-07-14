@@ -2,6 +2,9 @@ OpenIMU300ZA - EZ Embed
 =======================
 .. contents:: Contents
     :local:
+
+.. image:: media/OpenIMU300EZ.png
+    :height: 400
     
 OpenIMU300ZA *EZ Embed* module integrates highly-reliable MEMS inertial sensors (acceleration, angular rate/gyro, and magnetic field) in a miniature factory-calibrated package to provide consistent performance through the extreme operating environments.
 

@@ -1,5 +1,5 @@
-OpenIMU and ANS Manual
-======================
+OpenIMU Developer Manual
+========================
 .. image:: media/OpenIMU.png  
    :align: center
    :scale: 50%
