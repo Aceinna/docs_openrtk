@@ -1,21 +1,24 @@
+**************
 Kalman Filter
-==============
+**************
 
 .. contents:: Contents
     :local:
 
 .. role::  raw-html(raw)
     :format: html
+    
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 	
-The solution described in this document is based on a Kalman Filter and generates an estimate of
+The solution described in this document is based on a Kalman Filter that generates estimates of
 attitude, position, and velocity from noisy sensor readings.  In particular, an Extended Kalman
 Filter (EKF) is used due to the nonlinear nature of the process and measurements models.
 
 
 The Kalman filter operates on a predict/update cycle\ [#EKF_Ref]_.  The system state at the next
 time step is estimated from current states and system inputs.  For attitude calculations, this
-input is the angular rate-sensor signal while velocity and position calculations use the
+input is the angular rate-sensor signal; velocity and position calculations use the
 accelerometer as an input.  The update stage corrects the state estimates for errors inherent in
 the rate-sensor signal (such as sensor bias and drift) using measurements of the true attitude
 derived from the accelerometer, magnetometer, and GPS readings.  As these signals are typically
@@ -26,7 +29,11 @@ the estimate.
 
 For a discrete-time system the prediction and update equations are:
 
-Prediction (High DR):
+Prediction (High DR)
+=====================
+
+In this stage of the EKF, the attitude, velocity, and acceleration are propagated forward in time
+from sensor readings.
 
 .. math::
 
@@ -41,14 +48,21 @@ The first equation (:math:`\vec{x}_{k|k-1}`) is the State Prediction Model and t
 (:math:`P_{k|k-1}`) is the Covariance Estimate.
 
 
-Innovation (Measurement Error):
+Innovation (Measurement Error)
+===============================
+
+In this stage, the errors between the predicted states and the measurements are computed.
 
 .. math::
 
     \vec{\nu}_{k} = \vec{z}_{k} - \vec{h}_{k}
 
 
-Update (Low DR):
+Update (Low DR)
+================
+
+The final stage of the EKF generates updates (corrections) to the predictions based on the quality
+of the process models, process inputs, and measurements.
 
 .. math::
 
@@ -69,7 +83,7 @@ Update (Low DR):
     \end{aligned}
 
 
-In order, the above equation relate to the
+In order, the above equations relate to the
 
     1. Innovation Covariance
     2. Kalman Gain

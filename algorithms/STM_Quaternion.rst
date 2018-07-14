@@ -2,7 +2,10 @@
 
 
 Quaternion State-Transition Model
-**********************************
+----------------------------------
+
+
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
 All state propagation equations used in this paper are based on the following Taylor-series

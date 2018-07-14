@@ -2,7 +2,9 @@
 
 
 Rate and Acceleration Bias State-Transition Models
-***************************************************
+---------------------------------------------------
+
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
 The process models for the bias terms are based on the assumption that bias is made up of two

@@ -2,7 +2,9 @@
 
 
 Process Jacobian
-******************
+-----------------
+
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
 As the system is nonlinear, the vector :math:`\vec{f}` cannot be used to propagate the covariance

@@ -2,7 +2,9 @@
 
 
 Process Noise Covariance Matrix
-********************************
+--------------------------------
+
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
 The process covariance acts as a weighting matrix for the system process.  It relates the covariance

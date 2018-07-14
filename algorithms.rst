@@ -1,10 +1,12 @@
+###############
 EKF Algorithms
-==============
+###############
 
 .. contents:: Contents
     :local:
 
-OpenIMU ships with a number of ready to use, downloadable applications to help you get started.
+OpenIMU ships with a number of ready to use,
+`downloadable applications <apps.html#ready-to-use-applications>`__ to help you get started.
 
 This section develops the equations that form the basis of an Extended Kalman Filter (EKF) used to
 calculate position, velocity, and orientation of a body in space\ [#caveat]_.  In a VG, AHRS, or
@@ -33,7 +35,10 @@ another, as follows:
     algorithms/KalmanFilter
     algorithms/StateTransitionModels
     algorithms/ProcessModels
-    algorithms/MeasurementModels
+    algorithms/MeasurementVector
+    algorithms/MeasurementModel
+    algorithms/Innovation
+    algorithms/MagneticAlignment
     algorithms/TestArea
     algorithms/References
 
