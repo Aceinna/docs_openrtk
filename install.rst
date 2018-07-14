@@ -46,7 +46,7 @@ up Aceinna OpenIMU platform homepage. Click on "Custom IMU examples", chose desi
 
 The required example will be imported into working directory in folder:
 
-C:\\Users\\<username>\\Documents\platformio\\Projects\\ProjectName (Windows)
+C:\\Users\\<username>\\Documents\\platformio\\Projects\\ProjectName (Windows)
 
 Now you can edit, build and test the project. All your changes will remain in the above-mentioned directory and subdirectories.
 Next time when you return to development - open Aceinna "Home" page and click "Open Project", choose "Projects" and select
@@ -72,7 +72,7 @@ The source tree of imported project has next structure:
                        |                                                            |         |--src  
                        |--include (user include files)                              |         |--include   
                        |                                                             ........            
-                       |--lib (optional library directory) 				   
+                       |--lib (optional user library directory) 				   
                        | 				   
                        |--src (user source files) 				   
                        | 				   
