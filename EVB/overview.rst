@@ -14,7 +14,7 @@ OpenIMU300ZA and explains how to integrate the device in a custom design.
 The OpenIMU evaluation kit include OpenIMU300ZA, evaluation board with various interface
 connectors and test adapter for mounting OpenIMU300ZA unit.
  
-.. image:: ../media/EvalKit.jpg  
+.. image:: ../media/EvalKit.png  
  
 2. Components
 ------------
