@@ -8,11 +8,12 @@ The OpenIMU300ZA can be configured in a number of ways for communication with ex
 
 Typical configurations include:
 
-**3 UART Mode**
-* User UART
-* GPS/External Sensor UART
-* Debug UART
++-------------------------+-----------------------------------------+
+| **3 UART Mode**         | - User UART                             |
+|                         | - GPS/External Sensor UART              |
+|                         | - Debug UART                            |
++-------------------------+-----------------------------------------+
+| **UART + SPI Mode**     |  - User SPI Port                        |
+|                         |  - GPS/Debug UART                       |
++-------------------------+-----------------------------------------+
 
-**UART + SPI Mode**
-* User SPI port
-* GPS/Debug UART

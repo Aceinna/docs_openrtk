@@ -36,6 +36,9 @@ To install OpenIMU development platform:
 3. In the text box "Search extensions on Marketplace" type "Aceinna" and hit enter
 4. Install Aceinna Extension and Follow prompts.
 
+.. image:: media/AddExtension.png
+   :height: 200
+
 4. First steps
 -----------------------------------
 

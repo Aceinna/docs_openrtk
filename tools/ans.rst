@@ -1,6 +1,8 @@
 Aceinna Navigation Studio 
 =========================
 
+.. image:: ../media/ANSHome.png
+
 Aceinna Navigation Studio is a web-portal and UI for your OpenIMU.  To run it, first ensure the Python OpenIMU driver is installed, then 
 start the server.  The server should report discovery and Connection to the OpenIMU.
 
