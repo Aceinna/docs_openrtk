@@ -234,17 +234,23 @@ according to the following equation:
 
 where :math:`\vec{m}_{meas}^{B}` is the measured magnetic field vector in the body-frame,
 :math:`\vec{m}_{HI}^{B}` is the hard-iron disturbance, and :math:`R_{SI}` and :math:`S_{SI}` are the
-soft-iron disturbances.  Note: for this analysis the magnetometer bias is neglected; assumed to be
-negligible or lumped in with the hard-iron.
+soft-iron disturbances.
 
 
-Hard and soft-iron parameters are estimated by performing a magnetic-alignment maneuver.  Note that
-the application of these corrections do not adjust individual magnetometer channels to match the
-actual field strength.  Only the relative magnetic field is corrected, resulting in a unit-circle
-for the xy magnetic-field.  However, as shown later, this enables the heading to be calculated from
-the corrected signal.
+.. note::
+
+    For this analysis the magnetometer bias is neglected; assumed to be negligible or lumped in
+    with the hard-iron.
 
 
+Hard and soft-iron parameters are estimated by performing a magnetic-alignment maneuver.
+
+.. note::
+
+    The application of these corrections do not adjust individual magnetometer channels to match
+    the actual field strength.  Only the relative magnetic field is corrected, resulting in a
+    unit-circle for the xy magnetic-field.  However, as shown later, this enables the heading to be
+    calculated from the corrected signal.
 
 
 Heading calculation
@@ -320,20 +326,24 @@ From this, the heading is computed:
                                                               = { {-m_{corr,y}^{⊥}} \over {m_{corr,x}^{⊥}} }
 
 
-Note: the values for :math:`b_{x}^{⊥}` and :math:`b_{y}^{⊥}` are the corrected and ‘leveled’ values
-of the measured magnetic-field in the body-frame; roll and pitch estimates are used to level the
-signal via :math:`{^{⊥}{R}_{pred}^{B}}`.
+.. note::
+
+    The values for :math:`b_{x}^{⊥}` and :math:`b_{y}^{⊥}` are the corrected and ‘leveled’ values
+    of the measured magnetic-field in the body-frame; roll and pitch estimates are used to level
+    the signal via :math:`{^{⊥}{R}_{pred}^{B}}`.
 
 .. math::
 
     {\vec{m}_{corr}^{⊥}} = {^{⊥}{R}_{pred}^{B}} \cdot {\vec{m}_{corr}^{B}}
 
 
-Note: as this calculation only corrects the magnetic-field in the xy body-frame, the heading
-solution is best when the system is nearly level. he solution begins to degrade as the roll and
-pitch increase.  This can be accounted for by adjusting the measurement covariance matrix,
-:math:`R`, accordingly.  Additionally, the solution also begins to degrade as the iron in the system
-increases.
+.. note::
+
+    As this calculation only corrects the magnetic-field in the xy body-frame, the heading solution
+    is best when the system is nearly level. he solution begins to degrade as the roll and pitch
+    increase.  This can be accounted for by adjusting the measurement covariance matrix, :math:`R`,
+    accordingly.  Additionally, the solution also begins to degrade as the iron in the system
+    increases.
 
 
 GPS Heading
