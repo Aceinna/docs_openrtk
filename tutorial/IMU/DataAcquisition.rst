@@ -9,36 +9,39 @@ Data Acquisition
     :maxdepth: 1
 
 
-
 OpenIMU makes data-acquision simple by reducing the steps required to get high-quality, inertial
 sensor data.  Sensor drivers, filtering, and calibration are handled without the need for
-additional effort.
+additional user input.
 
-*TaskDataAcqusition* calls the routines that acquire sensor measurements, filter the data, and
-apply calibration.  Upon completion of these steps, the task calls the following:
+The main routine controlling sensor sampling and processing is *TaskDataAcqusition*.  This task
+calls the routines that acquire sensor measurements, filter the data, and apply calibration.  In
+particular, the task calls the following, which provides functions to acquire sensor data:
 
 ::
 
     inertialAndPositionDataProcessing(dacqRate);
 
 
-which provides functions to acquire sensor data.
+After completion of the sensor processing steps, it then calls the algorithm that operates on
+sensor readings to create processed output.  
 
 
 Filtering and Calibration of Sensor Data
 =========================================
 
 The OpenIMU platform samples accelerometer and rate-sensor data at 800 Hz.  This data is then
-filtered using an 800 Hz low-pass Butterworth filter with a 50 Hz cutoff frequency.  This step is
-done to mitigate aliasing issues related to down-sampling of the data.  After this, additional
-filtering (if desired) is performed followed by application of the calibration to the data.
+filtered using a digital 800 Hz low-pass Butterworth filter with a 50 Hz cutoff frequency.  This
+step is done to mitigate aliasing issues related to down-sampling of the data.  After this,
+additional filtering (if desired) can be performed.  Finally, the calibration is applied to the
+sensor data.
+
 
 **Filtering**:
 
-Several built-in filters are available to the user to provide additional filtering.  In particular,
-a selection of second-order Butterworth low-pass filters are provided.  Butterworth filters were
-chosen for their maximally flat passband and straight-forward frequency responses.  Available
-cutoff-frequencies are:
+Several built-in digital filters are available to the user to provide additional filtering.  In
+particular, a selection of second-order Butterworth low-pass filters are provided.  Butterworth
+filters were chosen for their maximally flat passband and straight-forward frequency responses.
+Available cutoff-frequencies are:
 
     * 50 Hz
     * 40 Hz
@@ -52,22 +55,22 @@ cutoff-frequencies are:
 
 In the firmware, these filter are implemented using fixed-point math (which operate on sensor
 counts, not floating-point values).  This was done done to take advantage of the speed associated
-with integer math operations.
+with integer-math operations.
 
 
 Built-in filters are selected in several different ways:
 
-    1. Cutoff frequencies can be set in the user-configuration structure, *UserConfigurationStruct*.
-       This is the approach taken in this example.
-    2. The configuration can be change (either temporarily or permanently) using the Aceinna
+    1. Cutoff frequencies can be set in the default user-configuration structure,
+       *UserConfigurationStruct*.  This is the approach taken in this example.
+    2. The configuration can be changed (either temporarily or permanently) using the Aceinna
        Navigation Studio interface.
-    3. Commands can be sent to the unit.  This enables the cutoff frequency to be changed during
-       operation, if desired.
+    3. Commands can be sent to the unit over the serial interface.  This enables the cutoff
+       frequency to be changed during operation, if desired.
 
 
 **Calibration**:
 
-Once filtered, the OpenIMU firmware then applies the calibration data to the sensor counts,
+Once filtered, the OpenIMU firmware then applies calibration data to the sensor counts,
 compensating for temperature-related bias effects, sensor scale-factors, and misalignment.
 
 
@@ -76,7 +79,7 @@ Acquiring Sensor Data
 
 Inside *inertialAndPositionDataProcessing()* several getter-functions are provided.  These functions
 obtain sensor data directly from the sensor data-buffers.  Function names, described in the following
-table, were chosen to make clear the task of each function.
+table, were chosen to make the task of each function clear.
 
 .. table:: **Table 1: Sensor Measurement Getter Functions**
 
@@ -118,14 +121,15 @@ table, were chosen to make clear the task of each function.
     and :math:`[{° / s}]` are also available for the designer who chooses to work in these units.
 
 
-These getters populate the array whose address is provided as an argument to the function.  In this
-example, the functions load the data directly into the data-structure elements *accel_g*,
-*rate_degPerSec*, *mag_G*, and *temp_C*.
+These getters work by populating the array whose address is provided as an argument to the
+function.  In this example, the functions load the data directly into the data-structure elements
+*gIMU.accel_g*, *gIMU.rate_degPerSec*, *gIMU.mag_G*, and *gIMU.temp_C*.
 
 .. note::
 
-    These elements (*accel_g*, *rate_degPerSec*, etc.) are all defined as doubles in the data
-    structure created in *UserMessaging.h*.
+    Structure elements (*accel_g*, *rate_degPerSec*, etc.) are all defined as doubles in the data
+    structure created in *UserMessaging.h*.  This is done to match the datatype required by the
+    getter functions, described above.
 
 
 ::

@@ -12,7 +12,7 @@ Generating Debug Messages
 **Creating the Message**:
 
 Debug messages, using the built-in debugging capability of the OpenIMU platform, are added to the
-IMU application to determine if the firmware is obtaining the correct sensor reading; the complete
+IMU application to verify that the firmware obtains the correct sensor reading; the complete
 implementation is found in *dataProcessingAndPresentation.c* in the IMU application code.  The
 relevant debugger calls are:
 
@@ -66,7 +66,7 @@ COM port to assess if the program is operating as expected.
 Debug messages are provided as serial messages over the third port of the OpenIMU platform. When
 connected to a PC, the device generates four COM ports.  In this case, the ports are 40, 41, 42,
 and 43. The first COM port is the serial messaging port (discussed in XXX), the second port can
-be used for serial inputs (such as GPS) to the platform, and the fourth is unconnected.
+be used for serial inputs to the platform (such as GPS), and the fourth is unconnected.
 
 
 The nominal serial baud-rate setting is 38.4 kbps. This can be set to other rates, such as 57.6
@@ -80,14 +80,14 @@ To test the OpenIMU output, perform the following:
 
     1. Place the unit on a level table top
     2. With the unit sitting flat, the z-axis acceleration will be close to -1.0 :math:`[g]`
-    3. Rotating the unit clockwise (about the positive z-axis) will generate a positive z-axis
+    3. Rotate the unit clockwise (about the positive z-axis) to generate a positive z-axis
        angular-rate
-    4. Orienting the unit so the y-axis is aligned to magnetic-north will result in an x-axis
+    4. Orient the unit so the y-axis is aligned with magnetic-north.  This results in an x-axis
        magnetic-filed reading close to zero :math:`[G]`.  Orienting the unit's x-axis in any other
        compass direction will result in a non-zero magnetic-field reading that increases until the
        axis is pointed along the north/south direction, at which it reaches its maximum value.
-    5. Temperature should reflect a values slightly higher than ambient temperature as the reading
-       measures the electronics temperature.
+    5. Temperature readings reflect values slightly higher than the ambient temperature, as the
+       readings reflect the temperature of the electronics.
 
 The results of these statements are found in the following figure:
 
@@ -102,4 +102,10 @@ The results of these statements are found in the following figure:
 
 This output provides confidence that the IMU is obtaining the correct sensor measurements.
 
+
+**Suggested Operation**
+
+During normal operations, when using the OpenIMU in your system, it is best to disable the debug
+output.  This will reduce the load on the platform and free up the processing capability for other
+tasks.
 

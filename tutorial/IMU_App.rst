@@ -7,11 +7,9 @@ Inertial Measurement Unit Application
 
 
 The Inertial Measurement Unit (IMU) application enables the OpenIMU hardware to provide
-inertial-sensor data from accelerometers, rate-sensors, and magnetometers.  While the exact
-combination of sensor data depends upon the ultimate goal of your project, at least a subset of
-this data is required to create applications that estimate the attitude or position of systems.
-This example forms the basis of future application development and helps you become acquainted with
-the following parts of the OpenIMU software platform:
+inertial-sensor data from accelerometers, rate-sensors, and magnetometers.  This example forms the
+basis of future application development and helps you become acquainted with the following parts of
+the OpenIMU software platform:
 
     * Acquiring sensor data
     * Filtering data (using built-in low-pass filters)
@@ -22,8 +20,13 @@ the following parts of the OpenIMU software platform:
     * Using the Aceinna Navigation Studio to capture data
 
 
-Application development is broken up into a series of sections
-that build upon one another, as follows:
+While the exact combination of sensor data you use will depend upon the ultimate goal of your
+project, at least a subset of this data is required to create an application that estimates the
+attitude or position of systems.
+
+
+Application development is broken up into a series of sections that build upon one another, as
+follows:
 
 .. toctree::
     :maxdepth: 1

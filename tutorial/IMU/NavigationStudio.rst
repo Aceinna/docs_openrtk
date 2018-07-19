@@ -5,9 +5,13 @@ Capturing, Displaying, and Saving Data
 .. contents:: Contents
     :local:
 
-With the algorithm and serial output-message created and running on the OpenIMU hardware, the
-message description added to *openimu.json*, and *python-openimu* installed on your system, you are
-ready to collect data.
+With the following complete:
+
+    1. Algorithm and serial output-message created and running on the OpenIMU hardware
+    2. The message description added to *openimu.json*
+    3. *python-openimu* installed on your system
+
+you are now ready to collect IMU data.
 
 
 OpenIMU Server
@@ -15,7 +19,7 @@ OpenIMU Server
 
 To capture data using the Aceinna Navigation Studio, the first step is to start the python-based
 server that will capture the serial data streaming over the COM port.  This can be done by
-sending the following command at a terminal prompt:
+sending the following command at a terminal prompt from the *python-openimu* folder:
 
 ::
 
@@ -72,8 +76,8 @@ of the unit:
 Connect to Aceinna Navigation Studio
 =====================================
 
-For a live display of data from the device, select the *Record* menu. An example capture of the
-accelerometer data follows:
+For a live display of data from the device, select the *Record* menu then click on the *Play*
+button. An example capture of the accelerometer data follows:
 
 .. _fig-ans-att-plot:
 

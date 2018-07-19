@@ -19,7 +19,7 @@ message, the following is added to the file:
         "description": "IMU Scaled-Sensor Output Message",
         "payload": [{
                 "type": "uint32",
-                "name": "timeITOW",
+                "name": "timeCntr",
                 "unit": "msec"
             },
             {
