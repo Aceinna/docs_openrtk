@@ -65,8 +65,10 @@ COM port to assess if the program is operating as expected.
 
 Debug messages are provided as serial messages over the third port of the OpenIMU platform. When
 connected to a PC, the device generates four COM ports.  In this case, the ports are 40, 41, 42,
-and 43. The first COM port is the serial messaging port (discussed in XXX), the second port can
-be used for serial inputs to the platform (such as GPS), and the fourth is unconnected.
+and 43. The first COM port is the serial messaging port (discussed in the
+`Platform Communications <../../EVB/overview.html#communication-with-imu-from-pc>`__ section), the
+second port can be used for serial inputs to the platform (such as GPS), and the fourth is
+unconnected.
 
 
 The nominal serial baud-rate setting is 38.4 kbps. This can be set to other rates, such as 57.6
