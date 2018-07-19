@@ -1,6 +1,10 @@
 OpenIMU Eval Board
 ==================
 
+.. image:: ../media/OpenIMU_EVB.png
+    :height: 200
+    :align: center
+
 The OpenIMU300EVB interfaces to the main connector of the OpenIMU300EZ.  The EVB and IMU module are mounted together to a precision fixture to assist in testing.  The OpenIMU300EVB uses an 
 FTDI 4-port Serial-to-USB converter to allow you to communicate with the OpenIMU300's serial ports and a laptop computer.  There are also 
 jumper connections to use to connect to the device's primary SPI port. Use the JTAG interface to directly download compiled code to the device

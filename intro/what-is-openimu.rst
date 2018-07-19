@@ -16,11 +16,11 @@ Hardware Configurations
 +-------+---------------+------------------------------------------+
 | Type  | Part Number   |Hardware Features                         |
 +-------+---------------+------------------------------------------+
-| *EZ*  | OpenIMU300EZ  |Eazy to Embed 3-5V UART/SPI Module        |
+| *EZ*  | OpenIMU300ZA  |Eazy to Embed 3-5V UART/SPI Module        |
 +-------+---------------+------------------------------------------+
-| *CAN* | OpenIMU300CAN |Rugged, Waterproof 5-32V CAN/RS232 Module |
+| *CAN* | OpenIMU300CA  |Rugged, Waterproof 5-32V CAN/RS232 Module |
 +-------+---------------+------------------------------------------+
-| *LC*  | OpenIMU300LC  |Low-Cost Surface-Mount Module             |
+| *LC*  | OpenIMU300LA  |Low-Cost Surface-Mount Component          |
 +-------+---------------+------------------------------------------+
 
 Open-Source Embedded Software

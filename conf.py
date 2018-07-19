@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
 
-project = u'Aceinna OpenIMU & ANS Manual'
+project = u'Aceinna OpenIMU Developer Manual'
 copyright = u'2018, Aceinna Inc'
 author = u'Aceinna Engineering'
 

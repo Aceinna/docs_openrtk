@@ -1,6 +1,8 @@
 Development Tools
 =================
-    
+
+.. image:: media/Ecosystem.png
+
 The OpenIMU development environment consists of the following main components:
 
 .. toctree::

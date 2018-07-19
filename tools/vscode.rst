@@ -1,6 +1,8 @@
 Visual Studio Code IDE
 ======================
 
+.. image:: ../media/ToolsHome.png
+
 At the heart of the OpenIMU IDE is a custom extension built for Visual Studio Code.  The installation of this extension is detailed in Quick Start.
 Aceinna's OpenIMU extension is a custom version of the popular open-source embedded development extension PlatformIO. PlatformIO provides many additional features
 including an extensive set of command line tools which are are not documented on this site. Please visit https://docs.platformio.org for more details.

@@ -1,4 +1,4 @@
-Features
+Overview
 ========
 
 .. contents:: Contents
@@ -14,13 +14,13 @@ OpenIMU300ZA and explains how to integrate the device in a custom design.
 The OpenIMU evaluation kit include OpenIMU300ZA, evaluation board with various interface
 connectors and test adapter for mounting OpenIMU300ZA unit.
  
-.. image:: ../media/EvalKit.jpg  
+.. image:: ../media/EvalKit.png  
  
 2. Components
 ------------
 
 
-a. OpenIMU Evaluation board, which includes:
+- OpenIMU Evaluation board, which includes:
 
 	- Virtual COM-port USB interface, providing connectivity to OpenIMU300ZA unit from PC
 
@@ -30,10 +30,10 @@ a. OpenIMU Evaluation board, which includes:
 
 	- Test terminals for connecting oscilloscope or logic analyzers to the dedicated OpenIMU300ZA signals.
 
-b. OpenIMU300ZA unit. Please note, that it installed on the bottom side of evaluation board. 
+- OpenIMU300ZA unit. Please note, that it installed on the bottom side of evaluation board. 
 
-c. Test adapter for convenient aligned mounting of OpenIMU evaluation board and OpenIMU300ZA unit 
-d. ST-Link debugger for in-system development of application code 
+- Test fixture adapter for convenient aligned mounting of OpenIMU evaluation board and OpenIMU300ZA unit 
+- ST-Link debugger for in-system development of application code 
      
 2.1 OpenIMU300ZA unit
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -54,11 +54,11 @@ Open IMU test adapter used to firmly secure OpenIMU300ZA unit and Open IMU evalu
        
 2.4 ST-Link debugger
 ~~~~~~~~~~~~~~~~~~~~~~~~
-St-Link debugger is standard debugger provided by StMicroelectronics company. It used for in-system debugging of applications via SWD interface.
+St-Link debugger is standard debugger provided by STMicroelectronics company. It used for in-system debugging of applications via SWD interface.
   
   
 3. Open IMU evaluation board Headers and Connectors
-------------
+---------------------------------------------------
   
 3.1 Connector for plugging in OpenIMU300ZA unit (J2).   
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -215,7 +215,7 @@ from PC to IMU via virtual serial ports. Up to 3 exposed IMU serial interfaces c
 
 
 4. Open IMU evaluation board LED indicators
------------------------
+-------------------------------------------
 
 Evaluation board has few LED indicators for visual monitoring of data traffic on serial ports:
 
@@ -231,7 +231,7 @@ Evaluation board has few LED indicators for visual monitoring of data traffic on
 
 
 5. Open IMU evaluation power
------------------------
+----------------------------
 
 Power to Open IMU evaluation board provided by USB.
 To power system up - connect USB cable to connector J1 and turn "ON" switch SW1.

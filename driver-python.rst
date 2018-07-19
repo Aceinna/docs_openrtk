@@ -4,9 +4,9 @@ Python Serial Driver
 .. contents:: Contents
     :local:
     
-OpenIMU is a precisely calibrated, open-source Inertial Measurement Unit Platform 
+Aceinna OpenIMU python driver, data logging, and web socket server
 
-* Multi-platform Build System
-* Development platform and package managers
+GitHub Link: `python-openimu <https://gitbub.com/Aceinna/python-openimu>`_
+
 
 
