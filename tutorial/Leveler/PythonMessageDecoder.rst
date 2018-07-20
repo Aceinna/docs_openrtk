@@ -78,6 +78,7 @@ This information tells the decoder the order of the output data in the serial me
 data should be plotted, including axis-titles and colors.
 
 
-Note: a useful tool to check if the json-file is properly formatted is found at: https://jsonlint.com
+.. note::
 
+    A useful tool to check if the json-file is properly formatted is found at: https://jsonlint.com
 

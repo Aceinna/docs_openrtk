@@ -7,7 +7,7 @@ Capturing, Displaying, and Saving Data
 
 With the following complete:
 
-    1. Algorithm and serial output-message created and running on the OpenIMU hardware
+    1. Serial output-message created and running on the OpenIMU hardware
     2. The message description added to *openimu.json*
     3. *python-openimu* installed on your system
 
@@ -73,8 +73,8 @@ of the unit:
     **Figure 5: Server-Connection Message at the Terminal Prompt**
 
 
-Connect to Aceinna Navigation Studio
-=====================================
+Displaying Data
+================
 
 For a live display of data from the device, select the *Record* menu then click on the *Play*
 button. An example capture of the accelerometer data follows:

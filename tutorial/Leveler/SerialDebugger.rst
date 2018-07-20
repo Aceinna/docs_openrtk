@@ -6,13 +6,15 @@ Serial Debugging
     :local:
 
 
-Steps to Generating Debug Messages
-===================================
+Generating Debug Messages
+==========================
 
-Debugging messages, using the built-in debugging capability of the OpenIMU platform, are added to
-the leveler algorithm to determine if the algorithm is generating the correct results. Just as for
-the algorithm, the complete implementation is found in UserAlgorithm.c. However, the relevant
-debugger calls are below:
+**Creating the Message**:
+
+Debug messages, using the built-in debugging capability of the OpenIMU platform, are added to the
+Static-Leveler application to verify that the algorithm generates the correct results; the complete
+implementation is found in *UserAlgorithm.c* in the Static-Leveler application code.  The relevant
+debugger calls are:
 
 ::
 
@@ -20,37 +22,21 @@ debugger calls are below:
     DebugPrintFloat(", Roll: ", gLeveler.measuredEulerAngles_BinN[ROLL] * RAD_TO_DEG, 5);
     DebugPrintFloat(", Pitch: ", gLeveler.measuredEulerAngles_BinN[PITCH] * RAD_TO_DEG, 5);
     DebugPrintEndline();
-    
-    
+
+
 In the output message, time (generated from the algorithm counter) is provided along with the
 computed roll and pitch angles, converted from [radians] to [degrees], at a 2 [Hz] output rate.
-The results of these statements are found in the following figure:
-
-.. _fig-term-debug-out:
-
-.. figure:: ./media/Leveler_DebugCapture.PNG
-    :alt: TerminalDebugOutput
-    :width: 5.0in
-    :align: center
-
-    **Figure 1: Leveler Algorithm Debug Output**
-
-This statements provide confidence that the algorithm is generating the correct roll angle of
-approximately 15 [degrees] based upon the positioning of the test unit.
 
 
-Debug messages are provided as serial messages over the third port of the OpenIMU platform. When
-connected to a PC, the device generates four COM ports.  In this case, the ports are 31, 32, 33,
-and 34. The first COM port is the serial messaging port (to be discussed shortly), the second can
-be used for serial inputs to the platform, and the fourth is unconnected. (REFER TO SECTION BLAH).
+Arguments to *DebugPrintFloat()* consist of:
+
+    1. A character-string describing the output message
+    2. The floating-point value to be output
+    3. The number of significant digits in the output message
 
 
-The nominal serial baud-rate setting is 38.4 kbps. This can be set to other rates, such as 57.6
-kbps or 115.2 kbps via *InitDebugSerialCommunication()*, found in main.c.
-
-
-In this example, only *DebugPrintFloat()* was used to output a debug message, other debug message
-functions are available. In particular, the following messages (provided in debug.c) form the
+In this example, only *DebugPrintFloat()* is used to output a debug message, other debug message
+functions are available. In particular, the following messages (provided in *debug.c*) form the
 complete list:
 
 ::
@@ -63,17 +49,42 @@ complete list:
     DebugPrintEndline();
 
 
-The arguments to DebugPrintFloat() are:
-
-    1. Character string describing the message
-    2. The float-point value to be output
-    3. The number of significant digits in the output message
-
-
 Compile and Test
 =================
 
-The final step is to build and upload the firmware to the OpenIMU hardware using the PIO frameword.
+The final step is to build and upload the firmware to the OpenIMU hardware using the PIO framework.
 When complete, use a terminal program (such as TeraTerm in Windows) to connect to the appropriate
-COM port and see if the program is operating as expected.
+COM port to assess if the program is operating as expected.
+
+
+**Debug Communication Settings**:
+
+Debug messages are provided as serial messages over the third port of the OpenIMU platform. When
+connected to a PC, the device generates four COM ports.  In this case, the ports are 40, 41, 42,
+and 43. The first COM port is the serial messaging port (discussed in the
+`Platform Communications <../../EVB/overview.html#communication-with-imu-from-pc>`__ section), the
+second port can be used for serial inputs to the platform (such as GPS), and the fourth is
+unconnected.
+
+
+The nominal serial baud-rate setting is 38.4 kbps.  This can be set to other rates, such as 57.6
+kbps, 115.2 kbps, or 230.4 kbps via the argument to *InitDebugSerialCommunication()*, found in
+*main.c*.  For the Static-Leveler application, this value was changed to 115.2 kbps.
+
+
+**System Testing using Debug Communications**:
+
+To test the OpenIMU output, the unit was rotated by approximately 15 [deg] about its roll-axis.
+Results from the serial-debug message (found in :ref:`Figure 1 <fig-term-debug-out>`) reflect this
+fact and provide confidence that the algorithm is generating the correct roll angle.
+
+
+.. _fig-term-debug-out:
+
+.. figure:: ./media/Leveler_DebugCapture.PNG
+    :alt: TerminalDebugOutput
+    :width: 5.0in
+    :align: center
+
+    **Figure 1: Static-Leveler Algorithm Debug Output**
 

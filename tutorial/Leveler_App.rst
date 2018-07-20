@@ -1,23 +1,20 @@
 ***************************
-Static Leveler Application
+Static-Leveler Application
 ***************************
 
 .. contents:: Contents
     :local:
 
 
-Overview
-=========
-
-The static-leveler app will enable the OpenIMU hardware to measure roll and pitch angles (the
+The static-leveler applicaton enables the OpenIMU hardware to provide roll and pitch estimates (the
 angles that the x and y-axes are rotated away from level) using only accelerometer measurements.
-This simple example will build on the IMU application and help you become acquainted with the 
-following parts of the OpenIMU software platform:
+This simple example builds on the
+`IMU application <IMU_App.html#inertial-measurement-unit-application>`__ and helps you become
+acquainted with the following parts of the OpenIMU software platform:
 
     * Acquiring sensor data
-    * Filtering data (to be added)
-    * Obtaining sensor data within algorithm function
-    * Using built-in math function
+    * Obtaining sensor data within the algorithm function
+    * Using built-in math functions
     * Creating an algorithm
     * Using the serial-debugger
     * Generating serial output messages
@@ -26,17 +23,18 @@ following parts of the OpenIMU software platform:
     * Using the Aceinna Navigation Studio to capture data
 
 
-Just as for the IMU application, the application development is broken up into a series of sections
-that build upon one another, as follows:
+Just as for the `IMU application <IMU_App.html#inertial-measurement-unit-application>`__,
+application development is broken up into a series of sections that build upon one another, as
+follows:
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
 
-    tutorial/DataAcquisition
-    tutorial/Requirements
-    tutorial/LevelerAlgorithm
-    tutorial/SerialDebugger
-    tutorial/SerialMessaging
-    tutorial/DefaultConfiguration
-    tutorial/PythonMessageDecoder
-    tutorial/NavigationStudio
+    Leveler/DataAcquisition
+    Leveler/Requirements
+    Leveler/LevelerAlgorithm
+    Leveler/SerialDebugger
+    Leveler/SerialMessaging
+    Leveler/DefaultConfiguration
+    Leveler/PythonMessageDecoder
+    Leveler/NavigationStudio

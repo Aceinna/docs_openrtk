@@ -12,8 +12,9 @@ Mathematical Formulation
 Measurements of roll and pitch angles (rotations of a body about angles around the x and y-axes)
 are possible by measuring the local gravity field.  As local gravity is constant the relationship
 between the attitude of a body and the gravity-field is deterministic (more detail is found in the
-EKF section).  The formulation for the attitude (Euler angles) corresponding to the accelerometer
-signal is:
+`Measurement Model <../../algorithms/MeasurementModel.html#roll-and-pitch-measurements>`__ section
+of `EKF Algorithms <../../algorithms.html#ekf-algorithms>`__).  The formulation for the attitude
+(Euler angles) corresponding to the accelerometer signal is:
 
 .. math::
 
@@ -56,9 +57,9 @@ Algorithm Development
 
 Algorithm development, based on these equations, is quite straightforward.
 
-    1. Acceleration measurements, stored in the variable *accels_B*, are converted to floating-
-       point and normalized using the function *VectorNormalize()*.  Results are stored in the
-       variable *aHat_B*.
+    1. Acceleration measurements, stored in the variable *accels_B*, are converted to
+       floating-point values and normalized using the function *VectorNormalize()*.  Results are
+       stored in the variable *aHat_B*.
        
     2. The normalized gravity vector is formulated from the acceleration measurement by negating
        the acceleration measurements.
@@ -66,9 +67,12 @@ Algorithm development, based on these equations, is quite straightforward.
     3. The components of the gravity unit-vector are used to compute the roll and pitch angles,
        which are stored in the structure *gLeveler*.
        
-The relevant code snippet is found below. Note: ‘_B’ denotes that the measurement is in the body-
-frame while ‘_BinN’ indicates that the computed attitude is of the body relative to the local
-inertial frame.
+The relevant code snippet is found below.
+
+.. note::
+
+    ‘_B’ denotes that the measurement is coordinatized in the body-frame while ‘_BinN’ indicates
+    that the computed attitude is of the body (B) relative to the local inertial-frame (N).
 
 ::
 
