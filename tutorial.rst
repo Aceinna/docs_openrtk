@@ -14,7 +14,7 @@ To get you acquainted with the OpenIMU environment, we will walk you through the
 few simple applications:
 
     1. An Inertial-Measurement Unit (IMU)
-    2. A static-leveler app
+    2. A Static-Leveler
     3. VG/AHRS (under development)
     4. INS (under development)
 

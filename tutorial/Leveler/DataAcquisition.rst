@@ -5,7 +5,7 @@ Data Acquisition
 .. contents:: Contents
     :local:
 
-OpenIMU makes data-acquision simple by reducing the steps required to get high-quality, inertial
+OpenIMU makes data-acquisition simple by reducing the steps required to get high-quality, inertial
 sensor data. Sensor drivers, filtering, and calibration are handled without the need for additional
 user input.
 
@@ -135,7 +135,4 @@ acceleration-array, as follows:
 ::
 
     g_B[Y_AXIS] = -accels_B[Y_AXIS];
-
-
-
 

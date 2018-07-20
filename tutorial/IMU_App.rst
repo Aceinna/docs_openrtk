@@ -17,7 +17,7 @@ the OpenIMU software platform:
     * Generating serial output messages
     * Setting the default OpenIMU configuration
     * Setting up and using the python-based message decoder
-    * Using the Aceinna Navigation Studio to capture data
+    * Using the `Aceinna Navigation Studio <https://developers.aceinna.com>`__ to capture data
 
 
 While the exact combination of sensor data you use will depend upon the ultimate goal of your
@@ -38,5 +38,9 @@ follows:
     IMU/DefaultConfiguration
     IMU/PythonMessageDecoder
     IMU/NavigationStudio
-    
-    
+
+
+A pre-built version of the `IMU Application <https://developers.aceinna.com/apps>`__ can be
+downloaded directly onto the OpenIMU hardware at the
+`Aceinna Navigation Studio <https://developers.aceinna.com>`__ website.
+

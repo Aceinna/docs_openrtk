@@ -17,9 +17,10 @@ you are now ready to collect IMU data.
 OpenIMU Server
 ===============
 
-To capture data using the Aceinna Navigation Studio, the first step is to start the python-based
-server that will capture the serial data streaming over the COM port.  This can be done by
-sending the following command at a terminal prompt from the *python-openimu* folder:
+To capture data using the `Aceinna Navigation Studio <https://developers.aceinna.com>`__, the first
+step is to start the python-based server that will capture the serial data streaming over the COM
+port.  This can be done by sending the following command at a terminal prompt from the
+*python-openimu* folder:
 
 ::
 
@@ -40,12 +41,12 @@ terminal returns a message similar to the following:
     **Figure 3: Server-Connection Message at the Terminal Prompt**
 
 
-Connect to Aceinna Navigation Studio
-=====================================
+Connect to `Aceinna Navigation Studio <https://developers.aceinna.com>`__
+==========================================================================
 
-To capture and display data on the Aceinna Navigation Studio, open a browser to
-https://developers.aceinna.com and log in.  From the menu on the left, select *Devices* and *Connect*.
-The following will appear if connected properly:
+To capture and display data on the `Aceinna Navigation Studio <https://developers.aceinna.com>`__,
+open a browser to https://developers.aceinna.com and log in.  From the menu on the left, select
+*Devices* and *Connect*.  The following will appear if connected properly:
 
 .. _fig-ans-connect:
 
@@ -100,6 +101,11 @@ message.  In particular the message consists of:
     * Rate-Sensor data (in :math:`[° / s]`)
     * Magnetometer data (in :math:`[G]`)
     * Board-Temperature data (in :math:`[°C]`)
+
+.. note:
+
+    To log data files you must login to `Aceinna Navigation Studio <https://developers.aceinna.com>`__,
+    otherwise the data cannot be saved.
 
 
 The following figure shows the contents of the captured data file, indicating that all selected

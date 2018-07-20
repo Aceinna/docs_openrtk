@@ -6,7 +6,7 @@ Static-Leveler Application
     :local:
 
 
-The static-leveler applicaton enables the OpenIMU hardware to provide roll and pitch estimates (the
+The static-leveler application enables the OpenIMU hardware to provide roll and pitch estimates (the
 angles that the x and y-axes are rotated away from level) using only accelerometer measurements.
 This simple example builds on the
 `IMU application <IMU_App.html#inertial-measurement-unit-application>`__ and helps you become
