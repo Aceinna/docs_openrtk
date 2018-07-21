@@ -11,7 +11,7 @@ With the following complete:
     2. Message description added to *openimu.json*
     3. *python-openimu* installed on your system
 
-you are now ready to collect IMU data.
+you are now ready to collect Static-Leveler data.
 
 
 OpenIMU Server
@@ -40,8 +40,8 @@ terminal returns a message similar to the following:
     **Figure 3: Server-Connection Message at the Terminal Prompt**
 
 
-Connect to Aceinna Navigation Studio
-=====================================
+Connect to `Aceinna Navigation Studio <https://developers.aceinna.com>`__
+==========================================================================
 
 To capture and display data on the Aceinna Navigation Studio, open a browser to
 https://developers.aceinna.com and log in.  From the menu on the left, select *Devices*, and *Connect*.
@@ -110,4 +110,13 @@ data are saved as intended.
     :align: center
 
     **Figure 7: Leveler Angle Data File**
+
+
+Downloading Application
+========================
+
+A pre-built version of the Static-Leveler application can be downloaded directly onto the OpenIMU
+hardware.  Follow the procedure described for the
+`IMU Application <../IMU/Bootloader.html#downloading-application-directly-onto-openimu-platform>`__,
+selecting the *Leveler Application* instead of the *IMU Application*.
 
