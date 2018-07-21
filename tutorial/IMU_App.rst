@@ -38,9 +38,10 @@ follows:
     IMU/DefaultConfiguration
     IMU/PythonMessageDecoder
     IMU/NavigationStudio
+    IMU/Bootloader
 
 
 A pre-built version of the `IMU Application <https://developers.aceinna.com/apps>`__ can be
 downloaded directly onto the OpenIMU hardware at the
-`Aceinna Navigation Studio <https://developers.aceinna.com>`__ website.
+`Aceinna Navigation Studio <https://developers.aceinna.com>`__ website.  
 

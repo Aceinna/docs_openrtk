@@ -88,10 +88,3 @@ fact and provide confidence that the algorithm is generating the correct roll an
 
     **Figure 1: Static-Leveler Algorithm Debug Output**
 
-
-**Suggested Operation**
-
-During normal operations, when using the OpenIMU in your system, it is best to disable the debug
-output.  This will reduce the load on the platform and free up the processing capability for other
-tasks.
-

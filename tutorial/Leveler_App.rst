@@ -20,7 +20,7 @@ acquainted with the following parts of the OpenIMU software platform:
     * Generating serial output messages
     * Setting the default OpenIMU configuration
     * Setting up and using the python-based message decoder
-    * Using the Aceinna Navigation Studio to capture data
+    * Using the `Aceinna Navigation Studio <https://developers.aceinna.com>`__ to capture data
 
 
 Just as for the `IMU application <IMU_App.html#inertial-measurement-unit-application>`__,
@@ -38,3 +38,9 @@ follows:
     Leveler/DefaultConfiguration
     Leveler/PythonMessageDecoder
     Leveler/NavigationStudio
+
+
+A pre-built version of the `Leveler Application <https://developers.aceinna.com/apps>`__ can be
+downloaded directly onto the OpenIMU hardware at the
+`Aceinna Navigation Studio <https://developers.aceinna.com>`__ website.
+
