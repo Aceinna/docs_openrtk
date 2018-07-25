@@ -5,22 +5,22 @@ Data Acquisition
 .. contents:: Contents
     :local:
 
-OpenIMU makes data-acquision simple by reducing the steps required to get high-quality, inertial
+OpenIMU makes data-acquision simple by reducing the steps required to obtain high-quality, inertial
 sensor data. Sensor drivers, filtering, and calibration are handled without the need for additional
 user input.
 
 
-The main routine controlling sensor sampling and processing is TaskDataAcqusition. This task calls
-the routines that acquire sensor measurements, filter the data, and apply calibration. In
-particular, the task calls the following, which provides functions to acquire sensor data:
+The main routine controlling sensor sampling and processing is *TaskDataAcqusition*. This task
+calls the routines that acquire sensor measurements, filter the data, and apply calibration. In
+particular, the task calls the following:
 
 ::
 
     inertialAndPositionDataProcessing(dacqRate);
 
 
-After completion of the sensor processing steps, it then calls the algorithm that operates on
-sensor readings to create processed output.  
+*inertialAndPositionDataProcessing()* provides routines that acquire sensor data, call the
+user-developed algorithm, and (if needed) write the results into an output stream.
 
 
 Filtering and Calibration of Sensor Data
@@ -29,8 +29,8 @@ Filtering and Calibration of Sensor Data
 The OpenIMU platform samples accelerometer and rate-sensor data at 800 Hz.  This data is then
 filtered using a digital 800 Hz low-pass Butterworth filter with a 50 Hz cutoff frequency.  This
 step is done to mitigate aliasing issues related to down-sampling of the data.  After this,
-additional filtering (if desired) can be performed.  Finally, the calibration is applied to the
-sensor data.
+additional filtering (if desired) can be performed.  Finally, calibration is applied to the sensor
+data.
 
 
 **Filtering**:
@@ -137,5 +137,9 @@ acceleration-array, as follows:
     g_B[Y_AXIS] = -accels_B[Y_AXIS];
 
 
+.. note::
+
+    Identifiers such as X_AXIS, Y_AXIS, ROLL, PITCH, etc. are defined in *Indices.h*.  These are
+    used in the firmware to make complex algorithms easier to understand.
 
 
