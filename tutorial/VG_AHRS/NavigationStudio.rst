@@ -11,7 +11,7 @@ With the following complete:
     2. Message description added to *openimu.json*
     3. *python-openimu* installed on your system
 
-you are now ready to collect IMU data.
+you are now ready to collect VG/AHRS data.
 
 
 OpenIMU Server
@@ -32,7 +32,7 @@ terminal returns a message similar to the following:
 
 .. _fig-server-connect:
 
-.. figure:: ./media/Leveler_ServerCapture_PreConnect.PNG
+.. figure:: ./media/VG_ServerCapture_PreConnect.PNG
     :alt: ServerConnection_Pre
     :width: 7.0in
     :align: center
@@ -65,7 +65,7 @@ of the unit:
 
 .. _fig-server-connect-post:
 
-.. figure:: ./media/Leveler_ServerCapture_PostConnect.PNG
+.. figure:: ./media/VG_ServerCapture_PostConnect.PNG
     :alt: ServerConnection_Post
     :width: 7.0in
     :align: center
@@ -80,7 +80,7 @@ For a live display of data from the device, select the ‘Record’ menu. An exa
 
 .. _fig-ans-att-plot:
 
-.. figure:: ./media/Leveler_AttitudePlot.PNG
+.. figure:: ./media/VG_AttitudePlot.PNG
     :alt: ANS_AttitudePlot
     :width: 7.0in
     :align: center
@@ -104,7 +104,7 @@ data are saved as intended.
 
 .. _fig-ans-att-plot:
 
-.. figure:: ./media/Leveler_OutputData.PNG
+.. figure:: ./media/VG_OutputData.PNG
     :alt: AnsAttitudePlot
     :width: 7.5in
     :align: center

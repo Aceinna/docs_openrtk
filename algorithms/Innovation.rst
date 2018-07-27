@@ -15,8 +15,8 @@ The innovation (measurement error) is formed from the sensor measurements and th
 As the measurements and the system states are often not the same, one or the other needs to be
 transformed into the mesurement.  In the case of this algorithm, the state consists of an attitude
 quaternion, NED-velocity, and NED-position.  The measurement come from accelerometer readings, GPS
-latitude/longitude/altitude measurements, and horizontal/vertical velocities along with ground-
-track.
+latitude/longitude/altitude measurements, and horizontal/vertical velocities along with
+ground-track.
 `Table 2 <Sensors.html#id4>`__)
 In this case either the states need to be converted to match the measurements or vice-versa.
 

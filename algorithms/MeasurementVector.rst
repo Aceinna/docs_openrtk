@@ -88,8 +88,8 @@ absence of gravity.
     \vec{a}_{meas} = \vec{a}_{grav} = -\vec{g}
 
 
-Static roll and pitch values are determined by noting that gravity is constant in the N-Frame (⊥-
-Frame):
+Static roll and pitch values are determined by noting that gravity is constant in the N-Frame
+(⊥-Frame):
 
 .. math::
 
@@ -329,8 +329,8 @@ GPS-based position is derived from the GPS lat/lon/alt message (BestPos, GGA, et
 NED-position using the WGS84 model.
 
 GPS-based velocity is obtained from the BestVel, etc message.  However, the NMEA message does not
-provide vertical velocity, derived from or accounted for in other ways.  In all cases the N and E-
-velocity is calculated from heading and ground speed.  The relationship is:
+provide vertical velocity, derived from or accounted for in other ways.  In all cases the N and
+E-velocity is calculated from heading and ground speed.  The relationship is:
 
 
 .. math::

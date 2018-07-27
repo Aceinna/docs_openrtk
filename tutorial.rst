@@ -1,6 +1,6 @@
-################################
-Building Your First Custom Apps
-################################
+#################################
+Building Your First Applications
+#################################
 
 .. contents:: Contents
     :local:
@@ -10,8 +10,8 @@ Building Your First Custom Apps
 Overview
 *********
 
-To get you acquainted with the OpenIMU environment, we will walk you through the development of a
-few simple applications:
+To get you acquainted with the OpenIMU environment, let's walk through the development of the
+following applications:
 
     1. An Inertial-Measurement Unit (IMU)
     2. A Static-Leveler
@@ -35,8 +35,8 @@ two-axis attitude (roll and pitch angles) of a body relative to the local-level 
 **VG/AHRS**
 
 VG and AHRS uses rate-sensors, accelerometers, and (in the case of an AHRS) magnetometers to
-compute the attitude and heading of a body in space.  The rate-sensors are used to propagate the
-attitude forward in time at high data-rates while the accelerometers and magnetometers act as
+compute the attitude and heading of a body in space.  Rate-sensors are used to propagate the
+attitude forward in time at high data-rates (DR) while accelerometers and magnetometers act as
 references, correcting for rate-sensor biases and attitude errors.
 
 

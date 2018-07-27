@@ -7,8 +7,8 @@ Vertical-Gyro / Attitude and Heading Reference System Application
 
 
 The Vertical-Gyro (VG) / Attitude and Heading Reference System (AHRS) application enables the
-OpenIMU hardware to fuse inertial-sensor information (accelerometers, rate-sensors, and - for the
-AHRS - magnetometers) to generate an attitude solution.  The solution makes use of the high
+OpenIMU hardware to fuse inertial-sensor information (accelerometers, rate-sensors, and — for the
+AHRS — magnetometers) to generate an attitude solution.  The solution makes use of the high
 data-rate (DR) rate-sensor output to propagate the attitude forward in time while using the
 accelerometers and magnetometers as references to correct for estimated rate-bias errors and
 attitude-errors at a lower DR.
@@ -36,8 +36,7 @@ development of the VG/AHRS application is broken up into a series of steps:
     * Using the Aceinna Navigation Studio to capture data
 
 
-Just as for the `IMU application <IMU_App.html#inertial-measurement-unit-application>`__,
-VG/AHRS application development is broken up into a series of sections that build upon one another,
+Application development is broken up into a series of sections that build upon one another,
 as follows:
 
 .. toctree::

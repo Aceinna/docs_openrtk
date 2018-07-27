@@ -72,9 +72,9 @@ Measurement Model
 ==================
 
 The measurement model, :math:`{\vec{h}_{k}}` relates the system states, :math:`{\vec{x}_k}`, to
-the `system measurements <MeasurementModels.html#measurement-models>`__.  The position and velocity elements of this vector come directly from the
-position and velocity states, while :math:`{^{N}}{\Theta}{_{pred}^{B}}` is computed from
-:math:`{^N}\vec{q}_{pred}^{B}`, as follows:
+the `system measurements <MeasurementModels.html#measurement-models>`__.  The position and velocity
+elements of this vector come directly from the position and velocity states, while
+:math:`{^{N}}{\Theta}{_{pred}^{B}}` is computed from :math:`{^N}\vec{q}_{pred}^{B}`, as follows:
 
 .. math::
 
@@ -131,8 +131,8 @@ absence of gravity.
     \vec{a}_{meas} = \vec{a}_{grav} = -\vec{g}
 
 
-Static roll and pitch values are determined by noting that gravity is constant in the N-Frame (⊥-
-Frame):
+Static roll and pitch values are determined by noting that gravity is constant in the N-Frame
+(⊥-Frame):
 
 .. math::
 
@@ -382,8 +382,8 @@ GPS-based position is derived from the GPS lat/lon/alt message (BestPos, GGA, et
 NED-position using the WGS84 model.
 
 GPS-based velocity is obtained from the BestVel, etc message.  However, the NMEA message does not
-provide vertical velocity, derived from or accounted for in other ways.  In all cases the N and E-
-velocity is calculated from heading and ground speed.  The relationship is:
+provide vertical velocity, derived from or accounted for in other ways.  In all cases the N and
+E-velocity is calculated from heading and ground speed.  The relationship is:
 
 
 .. math::

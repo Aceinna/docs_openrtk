@@ -23,6 +23,11 @@ message, the following is added to the file:
                 "unit": "msec"
             },
             {
+                "type": "double",
+                "name": "time",
+                "unit": "sec"
+            },
+            {
                 "type": "float",
                 "name": "roll",
                 "unit": "rad"
@@ -101,6 +106,16 @@ message, the following is added to the file:
                 "type": "uint8_t",
                 "name": "opMode",
                 "unit": "N/A"
+            },
+            {
+                "type": "uint8_t",
+                "name": "linAccSw",
+                "unit": "N/A"
+            },
+            {
+                "type": "uint8_t",
+                "name": "turnSw",
+                "unit": "N/A"
             }
         ],
             "graphs": [{
@@ -144,11 +159,11 @@ message, the following is added to the file:
                 "yMax": 5
             },
             {
-                "name": "EKF Operational Mode",
+                "name": "EKF Algorithm Flags",
                 "units": "N/A",
                 "xAxis": "Time (s)",
-                "yAxes": ["opMode"],
-                "colors": ["#FF0000"],
+                "yAxes": ["opMode", "linAccSw", "turnSw"],
+                "colors": ["#FF0000", "#00FF00", "#0000FF"],
                 "yMax": 5
             }
         ]

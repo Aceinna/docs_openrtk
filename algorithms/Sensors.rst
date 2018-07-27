@@ -55,8 +55,8 @@ more accurate than ones based on any single measurement.
 
 
 Other sensors, such as odometers, barometers, cameras, etc., may be incorporated into the EKF
-formulation to get improved results.  However, these additional sensors would require a
-reformulation of the algorithm presented here.
+formulation to get improved results.  However, incorporating data from any additional sensors would
+require a reformulation of the algorithm presented here.
 
 
 Inertial sensors measure the true motion and attitude of a system, corrupted by bias, noise, and

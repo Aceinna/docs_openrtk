@@ -43,20 +43,28 @@ sequence is below:
 
     void *RunUserNavAlgorithm(double *accels, double *rates, double *mags, gpsDataStruct_t *gps, int dacqRate)
     {
-        // Populate the EKF input data structure
-        _PopulateEKFInputStruct(accels, rates, mags, gps);
-    
+        // Populate the EKF input data structure.  Load the GPS data
+        //   structure to NULL.
+        EKF_SetInputStruct(accels, rates, mags, NULL);
+
         // Call the desired algorithm based on the EKF with different
         //   calling rates and different settings.
         _Algorithm(dacqRate, VG);
-    
+
         // Fill the output data structure with the EKF states and other 
         //   desired information
-        _PopulateEKFOutputStruct();
-    
-        // Unused
-        return &gEKFOutputData;
+        EKF_SetOutputStruct();
+
+        // The returned value from this function is unused by external functions.  The
+        //   NULL pointer is returned instead of a data structure.
+        return NULL;
     }
+
+
+.. note::
+
+    *UserAlgorihm.c* contains additional code than what is shown above.  It is not shown here to
+    highlight only the algorithm-related functions.
 
 
 Populating EKF Input Structure
@@ -76,9 +84,9 @@ follows:
         
         // Used to generate the system ICs
         // GPS stuff still needed
-    } EKFInputDataStruct;
+    } EKF_InputDataStruct;
 
-    extern EKFInputDataStruct gEKFInputData; // 
+    extern EKF_InputDataStruct gEKFInputData; // 
 
 
 The VG/AHRS algorithm operates only on inertial-sensor data to generate its estimates.  Sensor data
@@ -89,16 +97,17 @@ structure.
 
 ::
 
-    // Populate the EKF input data structure
-    _PopulateEKFInputStruct(accels, rates, mags, gps);
+    // Populate the EKF input data structure.  Load the GPS data
+    //   structure as NULL.
+    EKF_SetInputStruct(accels, rates, mags, NULL);
 
 
-Inside *_PopulateEKFInputStruct*, the data is placed into the appropriate structure fields:
+Inside *EKF_SetInputStruct*, the data is placed into the appropriate structure fields:
 
 ::
 
-    //
-    void _PopulateEKFInputStruct(double *accels, double *rates, double *mags, gpsDataStruct_t *gps)
+    //Populate the EKF input structure with sensor and GPS data (if used)
+    void EKF_SetInputStruct(double *accels, double *rates, double *mags, gpsDataStruct_t *gps)
     {
         // Accelerometer signal is in [g]
         gEKFInputData.accel_B[X_AXIS]    = accels[X_AXIS];
@@ -122,9 +131,9 @@ Inside *_PopulateEKFInputStruct*, the data is placed into the appropriate struct
     and :math:`[G]`.  Providing data in other units will result in an algorithm that does not
     operate properly.
 
-    Additionally, the suffix *_B* indicates the data is measured in the body-frame (B), the frame
-    in which the sensors are located.  As multiple frames are used in the EKF algorithm, this
-    notation is used to prevent confusion.
+    The suffix *_B* indicates the data is measured in the body-frame (B), the frame in which the
+    sensors are located.  As multiple frames are used in the EKF algorithm, this notation is used
+    to prevent confusion.
 
 
 Calling the EKF Algorithm
@@ -151,7 +160,7 @@ Specifically, the VG algorithm is selected via the following algorithm function 
     _Algorithm(dacqRate, VG);
 
 
-while the AHRS algorithm is by:
+while the AHRS algorithm is selected via the AHRS specifier:
 
 ::
 
@@ -196,8 +205,8 @@ below), *useMag* bit is set in the algorithm initialization section, based on *a
             } else if(algoType == AHRS) {
                 // Set the configuration variables for AHRS solution
                 //   (useMags = 1 and enable mags)
-                gAlgorithm.Behavior.bit.useMag = 1;
                 enableMagInAlgorithm(TRUE);
+                gAlgorithm.Behavior.bit.useMag = 1;
             } else if(algoType == INS) {
                 while(1);
             } else {
@@ -305,15 +314,15 @@ Populating EKF Output Structure
 -------------------------------- 
 
 Once the algorithm is executed, the EKF results are placed in the EKF output structure,
-*gEKFOutputData*.  This is done by the function *_PopulateEKFOutputStruct()*, called in 
-*RunUserNavAlgorithm*.
+*gEKFOutputData*, defined in *EKF_Algorithm.c*.  This is done by the function
+*EKF_SetOutputStruct()*, called in *RunUserNavAlgorithm*.
 
 
 The complete function follows:
 
 ::
 
-    void _PopulateEKFOutputStruct(void)
+    void EKF_SetOutputStruct(void)
     {
         // ------------------ States ------------------
 
@@ -351,14 +360,20 @@ The complete function follows:
         gEKFOutputData.eulerAngs_BinN[2] = gKalmanFilter.eulerAngles[2] * RAD_TO_DEG;
 
         // Angular-rate in [deg/s]
-        gEKFOutputData.corrAngRates_B[0] = ( gEKFInputData.angRate_B[0] - gKalmanFilter.rateBias_B[0] ) * RAD_TO_DEG;
-        gEKFOutputData.corrAngRates_B[1] = ( gEKFInputData.angRate_B[1] - gKalmanFilter.rateBias_B[1] ) * RAD_TO_DEG;
-        gEKFOutputData.corrAngRates_B[2] = ( gEKFInputData.angRate_B[2] - gKalmanFilter.rateBias_B[2] ) * RAD_TO_DEG;
-
+        gEKFOutputData.corrAngRates_B[X_AXIS] = ( gEKFInputData.angRate_B[X_AXIS] -
+                                                  gKalmanFilter.rateBias_B[X_AXIS] ) * RAD_TO_DEG;
+        gEKFOutputData.corrAngRates_B[Y_AXIS] = ( gEKFInputData.angRate_B[Y_AXIS] -
+                                                  gKalmanFilter.rateBias_B[Y_AXIS] ) * RAD_TO_DEG;
+        gEKFOutputData.corrAngRates_B[Z_AXIS] = ( gEKFInputData.angRate_B[Z_AXIS] -
+                                                  gKalmanFilter.rateBias_B[Z_AXIS] ) * RAD_TO_DEG;
+        
         // Acceleration in [m/s^2]
-        gEKFOutputData.corrAccel_B[0] = ( gEKFInputData.accel_B[0] - gKalmanFilter.accelBias_B[0] ) * ACCEL_DUE_TO_GRAV;
-        gEKFOutputData.corrAccel_B[1] = ( gEKFInputData.accel_B[1] - gKalmanFilter.accelBias_B[1] ) * ACCEL_DUE_TO_GRAV;
-        gEKFOutputData.corrAccel_B[2] = ( gEKFInputData.accel_B[2] - gKalmanFilter.accelBias_B[2] ) * ACCEL_DUE_TO_GRAV;
+        gEKFOutputData.corrAccel_B[X_AXIS] = ( gEKFInputData.accel_B[X_AXIS] -
+                                               gKalmanFilter.accelBias_B[X_AXIS] ) * ACCEL_DUE_TO_GRAV;
+        gEKFOutputData.corrAccel_B[Y_AXIS] = ( gEKFInputData.accel_B[Y_AXIS] -
+                                               gKalmanFilter.accelBias_B[Y_AXIS] ) * ACCEL_DUE_TO_GRAV;
+        gEKFOutputData.corrAccel_B[Z_AXIS] = ( gEKFInputData.accel_B[Z_AXIS] -
+                                               gKalmanFilter.accelBias_B[Z_AXIS] ) * ACCEL_DUE_TO_GRAV;
 
         // ------------------ Algorithm flags ------------------
         gEKFOutputData.opMode         = gAlgorithm.state;

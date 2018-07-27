@@ -34,10 +34,10 @@ The kinematical equation that describes the rate-of-change of the attitude quate
 
 
 where :math:`\Omega_{true,k-1}` is formed from the components of the angular rate vector,
-:math:`{\begin{pmatrix}{^{N}{\vec{\omega}_{true}}^{B}}\end{pmatrix}}^{B}` and specifies the angular-
-rate of the body relative to an inertially-fixed frame, measured in the body-frame.  As all angular-
-rate measurements made with MEMS sensors are relative to the inertial-frame, the notation is
-simplified to :math:`{\vec{\omega}_{true}}^{B}`.
+:math:`{\begin{pmatrix}{^{N}{\vec{\omega}_{true}}^{B}}\end{pmatrix}}^{B}` and specifies the
+angular-rate of the body relative to an inertially-fixed frame, measured in the body-frame.  As all
+angular-rate measurements made with MEMS sensors are relative to the inertial-frame, the notation
+is simplified to :math:`{\vec{\omega}_{true}}^{B}`.
 
 .. math::
 
