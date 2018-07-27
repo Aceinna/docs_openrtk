@@ -225,14 +225,14 @@ CA, the magnetic field estimates are provided in Table 4:
     **Table 4: Magnetic Field Components based on WMM**
 
 
-*Figure 4* illustrates the relationship between the Lat/Lon-frame, the NED-frame, and the ⊥-frame.
-Declination is specified with :math:`\delta` and heading is specified with :math:`\psi`.
+*Figure 4* illustrates the relationship between the Lines of constant Lat/Lon, the NED-frame, and
+the ⊥-frame.  Declination is specified with :math:`\delta` and heading is specified with
+:math:`\psi`.
 
 .. _fig-magfield-n-and-b-frames:
 
 .. figure:: ./media/MagField_N_and_B_Frames.PNG
     :alt: MagFieldNandBFrames
-    :width: 4.0in
     :align: center
     
     **Figure 4: Relationship of Magnetic-Field to N and B-Frames**

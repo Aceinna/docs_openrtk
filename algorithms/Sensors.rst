@@ -78,7 +78,7 @@ Items, such as misalignment, cross-coupling, etc. are ignored in this formulatio
 accounted for during system calibration.
 
 
-Additionally, sensor bias can be broken down further.  In this paper, bias is modelled as a
+Additionally, sensor bias can be broken down further.  In this paper, bias is modeled as a
 constant offset plus random drift:
 
 .. math::
@@ -87,10 +87,10 @@ constant offset plus random drift:
 
 
 The magnetic field vector, |bVec|, may be corrupted by hard and soft-iron sources present in the
-system in which the part is installed.  These effects (hard and soft-iron values) can be estimated
-by performing a “magnetic-alignment”\ [#magAlign]_ procedure once installed in the end-user’s
-system.  The equations relating the hard and soft-iron effects\ [#ironEffects]_ on the measured
-magnetic field is:
+system in which the part is installed.  Hard and soft-iron effects can be estimated by performing
+a “magnetic-alignment”\ [#magAlign]_ procedure once installed in the end-user’s system.  The
+equations relating the hard and soft-iron effects\ [#ironEffects]_ on the measured magnetic field
+is:
 
 .. math::
 
