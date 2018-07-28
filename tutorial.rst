@@ -13,10 +13,28 @@ Overview
 To get you acquainted with the OpenIMU environment, let's walk through the development of the
 following applications:
 
-    1. An Inertial-Measurement Unit (IMU)
-    2. A Static-Leveler
-    3. VG/AHRS
-    4. INS (under development)
+    1. Framwork application
+    2. An Inertial-Measurement Unit (IMU)
+    3. A Static-Leveler
+    4. VG/AHRS
+    5. INS (under development)
+
+
+**Framework**
+
+All the examples that follow are based on the Framework application that ships installed on the
+OpenIMU.  This framework serves as a guided, blank-slate.  Descriptions provide guidance on where
+to place sensor reads, algorithm code, and serial messaging output functions (among other items).
+
+For example, data acquisition functions (sensor-buffer getters) are placed in
+*inertialAndPositionDataProcessing()*.  The getters of interest can be used and the others removed.
+For instance, in the Leveler application, only the accelerometer data is of interest.  So no call
+is made for rate-sensor or magnetometer data and the getters associated with this data can be
+removed.
+
+To begin development of the IMU, Static-Leveler, or VG/AHRS application, rename the Framework
+application as something that is descriptive of your project and modify the code to suit your
+needs.  You can do this while walking through the following application examples.
 
 
 **IMU**
@@ -45,9 +63,9 @@ references, correcting for rate-sensor biases and attitude errors.
 Under development...
 
 
-****************
-Applications
-****************
+******************
+Application Links
+******************
 
 .. toctree::
     :maxdepth: 1
