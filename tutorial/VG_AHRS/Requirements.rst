@@ -4,6 +4,9 @@ App Requirements
 
 .. contents:: Contents
     :local:
+    
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
+
 
 Development of an application requires system level requirements that describe the purpose of the
 application.  These requirements provide a guide for product development.

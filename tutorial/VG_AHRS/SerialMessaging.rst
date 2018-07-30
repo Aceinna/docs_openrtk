@@ -4,6 +4,8 @@ Serial Messaging
 
 .. contents:: Contents
     :local:
+    
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
 Serial Message Definition

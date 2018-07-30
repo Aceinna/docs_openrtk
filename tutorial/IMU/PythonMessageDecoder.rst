@@ -4,6 +4,9 @@ Python-Based Serial-Message Decoder
 
 .. contents:: Contents
     :local:
+    
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
+
 
 Creating a python-based decoder
 ================================

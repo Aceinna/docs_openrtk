@@ -4,6 +4,8 @@ Inertial Navigation System Application
 
 .. contents:: Contents
     :local:
+    
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
 The Inertial Navigation System (INS) application causes the OpenIMU hardware to take

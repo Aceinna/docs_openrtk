@@ -4,6 +4,8 @@ Serial Messaging
 
 .. contents:: Contents
     :local:
+    
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
 Serial Message Definition
@@ -131,7 +133,7 @@ switch-statement found in *HandleUserOutputPacket()* using the output name added
         //           NumOfBytes = 52 bytes
         *payloadLen = USR_OUT_LEV1_PAYLOAD_LEN;
 
-        // Output time as reprented by gIMU.timerCntr (uint32_t
+        // Output time as represented by gIMU.timerCntr (uint32_t
         // incremented at each call of the algorithm)
         uint32_t *algoData_1 = (uint32_t*)(payload);
         *algoData_1++ = gIMU.timerCntr;

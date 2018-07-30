@@ -5,6 +5,8 @@ Building Your First Applications
 .. contents:: Contents
     :local:
 
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
+
 
 *********
 Overview
@@ -13,7 +15,7 @@ Overview
 To get you acquainted with the OpenIMU environment, let's walk through the development of the
 following applications:
 
-    1. Framwork application
+    1. Framework application
     2. An Inertial-Measurement Unit (IMU)
     3. A Static-Leveler
     4. VG/AHRS
@@ -23,18 +25,21 @@ following applications:
 **Framework**
 
 All the examples that follow are based on the Framework application that ships installed on the
-OpenIMU.  This framework serves as a guided, blank-slate.  Descriptions provide guidance on where
+OpenIMU.  This framework serves as a blank-slate upon which user-application can be built.  The
+descriptions that follow provide guidance getting started, specifically on where in the framework
 to place sensor reads, algorithm code, and serial messaging output functions (among other items).
 
-For example, data acquisition functions (sensor-buffer getters) are placed in
-*inertialAndPositionDataProcessing()*.  The getters of interest can be used and the others removed.
-For instance, in the Leveler application, only the accelerometer data is of interest.  So no call
-is made for rate-sensor or magnetometer data and the getters associated with this data can be
-removed.
+For example, in the framework application, all data acquisition functions (sensor-buffer getters)
+are placed in *inertialAndPositionDataProcessing()*.  Depending upon your application, getters of
+interest can be kept while unused getters can be removed.  For instance, in the Leveler
+application, only accelerometer data is of interest.  No call is made for rate-sensor or
+magnetometer data so the getters associated with this data can be removed.
 
-To begin development of the IMU, Static-Leveler, or VG/AHRS application, rename the Framework
-application as something that is descriptive of your project and modify the code to suit your
-needs.  You can do this while walking through the following application examples.
+To begin development of the IMU, Static-Leveler, or VG/AHRS application, down load the application
+code related to the application being described (IMU, etc).  Follow the description to get an
+understanding how all the parts fit together.  When you are ready to create your own application,
+save the Framework application as something descriptive of your project and modify the code to suit
+your needs.
 
 
 **IMU**

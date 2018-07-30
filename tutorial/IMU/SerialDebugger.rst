@@ -4,6 +4,8 @@ Serial Debugging
 
 .. contents:: Contents
     :local:
+    
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
 Generating Debug Messages

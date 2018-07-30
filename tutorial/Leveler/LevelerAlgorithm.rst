@@ -4,6 +4,8 @@ Static Leveler Algorithm
 
 .. contents:: Contents
     :local:
+    
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
 Mathematical Formulation

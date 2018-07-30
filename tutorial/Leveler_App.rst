@@ -4,6 +4,8 @@ Static-Leveler Application
 
 .. contents:: Contents
     :local:
+    
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
 The static-leveler application enables the OpenIMU hardware to provide roll and pitch estimates (the
@@ -42,5 +44,12 @@ follows:
 
 A pre-built version of the `Leveler Application <https://developers.aceinna.com/apps>`__ can be
 downloaded directly onto the OpenIMU hardware at the
-`Aceinna Navigation Studio <https://developers.aceinna.com>`__ website.
+`Aceinna Navigation Studio <https://developers.aceinna.com>`__ website.  The process mirrors the
+once described for the `IMU application <IMU_App.html#inertial-measurement-unit-application>`__:
+
+.. toctree::
+    :maxdepth: 1
+
+    IMU/Bootloader
+
 

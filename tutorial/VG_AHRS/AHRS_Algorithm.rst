@@ -1,9 +1,11 @@
 ***************************************************************
-Verital-Gyro / Attitude and Heading Reference System Algorithm
+Vertical-Gyro / Attitude and Heading Reference System Algorithm
 ***************************************************************
 
 .. contents:: Contents
     :local:
+    
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
 The mathematics behind the Vertical-Gyro / Attitude and Heading Reference System are based upon an
@@ -270,7 +272,7 @@ gAlgorithm.Behavior.  These are described in **Table 3**.
     |                      || is used to estimate heading.  When false, the heading error computed by    |
     |                      || the EKF is set to zero.  In this case, no updates to heading based states  |
     |                      || are done (the z-axis rate-bias is not estimated and the heading error is   |
-    |                      || not corrected.                                                             |
+    |                      || not corrected).                                                            |
     +----------------------+-----------------------------------------------------------------------------+
     |                      || This bit tells the algorithm to use GPS information if available.  For the |
     | *useGPS*             || VG/AHRS algorithm, this (at present) has no effect but should be set       |

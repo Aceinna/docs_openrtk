@@ -7,9 +7,11 @@ Data Acquisition
     
 .. toctree::
     :maxdepth: 1
+    
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
-OpenIMU makes data-acquision simple by reducing the steps required to get high-quality, inertial
+OpenIMU makes data-acquisition simple by reducing the steps required to get high-quality, inertial
 sensor data.  Sensor drivers, filtering, and calibration are handled without the need for
 additional user input.
 

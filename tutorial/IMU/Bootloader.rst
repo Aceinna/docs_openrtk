@@ -4,6 +4,9 @@ Downloading Application Directly Onto OpenIMU Platform
 
 .. contents:: Contents
     :local:
+    
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
+
 
 Each of the examples have its associated application pre-built as .bin files, which can be
 downloaded directly onto the OpenIMU hardware directly from

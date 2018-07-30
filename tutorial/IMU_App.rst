@@ -5,6 +5,8 @@ Inertial Measurement Unit Application
 .. contents:: Contents
     :local:
 
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
+
 
 The Inertial Measurement Unit (IMU) application enables the OpenIMU hardware to provide
 inertial-sensor data from accelerometers, rate-sensors, and magnetometers.  This example forms the
@@ -38,10 +40,15 @@ follows:
     IMU/DefaultConfiguration
     IMU/PythonMessageDecoder
     IMU/NavigationStudio
-    IMU/Bootloader
 
 
 A pre-built version of the `IMU Application <https://developers.aceinna.com/apps>`__ can be
 downloaded directly onto the OpenIMU hardware at the
-`Aceinna Navigation Studio <https://developers.aceinna.com>`__ website.  
+`Aceinna Navigation Studio <https://developers.aceinna.com>`__ website.  The process is described
+here:
+
+.. toctree::
+    :maxdepth: 1
+
+    IMU/Bootloader
 

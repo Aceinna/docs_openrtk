@@ -4,6 +4,8 @@ Vertical-Gyro / Attitude and Heading Reference System Application
 
 .. contents:: Contents
     :local:
+    
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
 The Vertical-Gyro (VG) / Attitude and Heading Reference System (AHRS) application enables the
@@ -50,4 +52,15 @@ as follows:
     VG_AHRS/DefaultConfiguration
     VG_AHRS/PythonMessageDecoder
     VG_AHRS/NavigationStudio
+
+
+A pre-built version of the `VG/AHRS Application <https://developers.aceinna.com/apps>`__ can be
+downloaded directly onto the OpenIMU hardware at the
+`Aceinna Navigation Studio <https://developers.aceinna.com>`__ website.  The process mirrors the
+once described for the `IMU application <IMU_App.html#inertial-measurement-unit-application>`__:
+
+.. toctree::
+    :maxdepth: 1
+
+    IMU/Bootloader
 

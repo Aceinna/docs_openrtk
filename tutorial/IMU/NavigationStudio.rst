@@ -4,6 +4,9 @@ Capturing, Displaying, and Saving Data
 
 .. contents:: Contents
     :local:
+    
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
+
 
 With the following complete:
 
@@ -24,7 +27,7 @@ port.  This can be done by sending the following command at a terminal prompt fr
 
 ::
 
-    python server.py
+    python commands.py
 
 
 This initiates a search for the OpenIMU device on the machine's COM ports. When detected, the

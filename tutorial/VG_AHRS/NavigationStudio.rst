@@ -4,6 +4,9 @@ Capturing, Displaying, and Saving Data
 
 .. contents:: Contents
     :local:
+    
+.. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
+
 
 With the following complete:
 
