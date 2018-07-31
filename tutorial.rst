@@ -25,18 +25,19 @@ following applications:
 **Framework**
 
 All the examples that follow are based on the Framework application that ships installed on the
-OpenIMU.  This framework serves as a blank-slate upon which user-application can be built.  The
-descriptions that follow provide guidance getting started, specifically on where in the framework
-to place sensor reads, algorithm code, and serial messaging output functions (among other items).
+OpenIMU.  This framework serves as a blank-slate upon which user-applications can be built.  The
+descriptions that follow provide guidance on getting started, specifically on where in the
+framework to place sensor reads, algorithm code, and serial messaging output functions (among other
+items).
 
-For example, in the framework application, all data acquisition functions (sensor-buffer getters)
+For example, in the Framework application, all data acquisition functions (sensor-buffer getters)
 are placed in *inertialAndPositionDataProcessing()*.  Depending upon your application, getters of
 interest can be kept while unused getters can be removed.  For instance, in the Leveler
 application, only accelerometer data is of interest.  No call is made for rate-sensor or
 magnetometer data so the getters associated with this data can be removed.
 
-To begin development of the IMU, Static-Leveler, or VG/AHRS application, down load the application
-code related to the application being described (IMU, etc).  Follow the description to get an
+To begin development of the IMU, Static-Leveler, or VG/AHRS application, download the application
+code related to the application being described (IMU, Leveler, etc).  Follow the description to get an
 understanding how all the parts fit together.  When you are ready to create your own application,
 save the Framework application as something descriptive of your project and modify the code to suit
 your needs.
