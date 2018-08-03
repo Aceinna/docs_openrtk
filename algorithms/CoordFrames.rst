@@ -45,7 +45,7 @@ N-Frame while the dashed blue lines indicate the projection of the B-Frame axes 
 
 .. _fig-coord-frames:
 
-.. figure:: ./media/CoordFrames.PNG
+.. figure:: ./media/CoordFrames.png
     :alt: CoordFrames
     :width: 5.0in
     :align: center
