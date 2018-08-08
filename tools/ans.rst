@@ -8,7 +8,7 @@ start the server form the command line interace as shown below.
 
 .. code:: python
 
-    openimu
+    $openimu
     Connected ....OpenIMU300ZA - 0.0.1      SN:1808629112
     >>server_start
 
