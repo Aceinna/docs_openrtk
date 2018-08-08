@@ -14,7 +14,7 @@ site features are being actively developed and will include additional analysis 
 
 Device configuration
 --------------------
-Device options (settings) are exposed on the device configuration page.  The baseline OpenIMU firmware provides a set of "standard settings" such as baudrate, output data rate, and more. Custom options are added by adding additional options to "UseConfiguration" in *both*
+Device options (settings) are exposed on the device configuration page.  The baseline OpenIMU firmware provides a set of "standard settings" such as baudrate, output data rate, and more. Custom options are added by adding additional options to "UserConfiguration" in *both*
 the OpenIMU embedded C code as well as the the openimu.json file which provides a summary of the descriptions and potential values for the UI.
 
 .. image:: ../media/ANSConnect.png  

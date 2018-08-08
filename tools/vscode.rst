@@ -10,6 +10,8 @@ including an extensive set of command line tools which are are not documented on
 The Aceinna Visual Studio extension adds an easy to find home button at the bottom of the Visual Studio tool bar.  This is shown below.  Click the home button
 any time to return to the launch screen for embedded OpenIMU development within Visual Studio Code. 
 
+.. image:: ../media/HomeButton.png
+
 The Aceinna Visual Studio extension also automatically installs additional supporting tools.  Importantly if your local system does not already have Python,
 the extension will install Python which enables a large number of features on the platform including a serial drivers and a small server which can connect your IMU to 
 the Aceinna Navigation Studio developer's site.

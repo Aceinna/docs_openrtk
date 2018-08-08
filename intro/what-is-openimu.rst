@@ -25,7 +25,7 @@ Hardware Configurations
 
 Open-Source Embedded Software
 ------------------------------
-OpenIMU hardware runs an open source stack written on top of FreeRTOS and standard ARM Coretex libraries.  The open-source stack includes EKF (Extended Kalman Filter) algorithms that can be used directly or customized
+OpenIMU hardware runs an open-source stack written on top of FreeRTOS and standard ARM Coretex libraries.  The open-source stack includes EKF (Extended Kalman Filter) algorithms that can be used directly or customized
 for application specific use.  The overall system loop is typically configured to run at 800Hz ensuring high quality aliasing-free measurements for processing.
 Also included in the OpenIMU embedded software platform are drivers for various GPS receivers, customizable SPI and UART messaging, and customizable
 settings that can be adjusted run-time and permanently.  A number of predefined settings are defined for baud rate, output date rate, sensor filter settings, and XYZ axis transformations. Core OpenIMU embedded software:
@@ -48,8 +48,7 @@ The driver leverages the PySerial library to connect to an OpenIMU of a serial c
 In addition, the open-source Python driver can acts as a websocket server connecting the OpenIMU hardware with our ANS developer platform for a GUI experience,
 cloud data storage and retrieval, and online as well as stored file charting/plotting tools.
 
-Note the OpenIMU Python driver is installed when the Aceinna VS Code extension is installed.  The Aceinna VS Code extension ensures a good python environment automatically.
-However, the OpenIMU python code can be installed independently by cloning the repository https://github.com/python-openimu or using pip.
+The Aceinna VS Code extension ensures a python environment automatically.  The OpenIMU python code can be installed independently by cloning the repository https://github.com/python-openimu or using pip as shown below.
 
 .. code-block:: bash 
 
