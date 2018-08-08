@@ -46,12 +46,35 @@ Here are a few samples function you can call with the driver.
     # the file most be moved to where the Python driver can find it
     imu.openimu_upgrade_fw('myapp.bin')
 
+You can also run the python code as a CLI interface to the unit.  The CLI is defined in commands.py.  If you have installed the python driver
+with pip install, then navigate to a directory that contains a valid openimu.json for your unit, and you can type:
+
+.. code:: python
+
+    openimu
+
+    Connected ....OpenIMU300ZA - 0.0.1      SN:1808629112
+    >>help
+    Usage: 
+    help : CLI help menu
+    exit : exit CLI
+    run : Operations defined by users
+    save : Save the configuration into EEPROM
+    connect : Find OpenIMU device
+    upgrade : Upgrade firmware
+    record : Record output data of OpenIMU on local machine
+    stop : stop recording outputs on local machine
+    server_start : start server thread and must use exit command to quit
+    get : Read the current configuration and output data
+    set : Write parameters to OpenIMU
+    >>
+
 
 .. note::
 
     As you develop code and customize your OpenIMU, you should also update *openimu.json* to keep it in sync with your changes.  This 
     way both the Python driver and developers website, ANS, will function properly and understand your units special
-    programmed characteritics.
+    programmed characteritics.  The openimu.json file updates the Python driver functions as well as the ANS website UI.
 
 
 

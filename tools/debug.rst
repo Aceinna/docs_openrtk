@@ -35,7 +35,7 @@ OpenIMU unit has built-in CLI which can be enabled by uncommenting next line in 
 
 .. image:: ../media/CLI.png   
 
-It allows to send custom ASCII commands to OpenImu unit via debug serial port using any serial terminal program. 
+It allows to send custom ASCII commands to OpenIMU unit via debug serial port using any serial terminal program. 
 CLI engine reside in CLI directory in libraries source tree.
 Please note that while unit connected to PC via USB port it is visible as four consecutive virtual serial ports. Third port in a row will be debug serial port.  
 
@@ -56,7 +56,7 @@ on top of the screen or commands from "Debug' menu. After clicking "Debug" icon 
 	
 	Visual Studio Code with installed Aceinna extension allows to download newly build application image into device memory via JTAG by clicking "Right Arrow" icon on the bottom of the screen.
 	This is the fastest method to download code and generally requires just a few seconds. However, using more advanced JTAG
-	debugging features require to have account with Platform IO's Enterprise addition.  More information is available here. https://platformio.org/pricing.
+	debugging features require a Platform IO's Enterprise addition account.  More information is available here. https://platformio.org/pricing.
 
 .. note::
 

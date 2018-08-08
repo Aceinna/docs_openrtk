@@ -4,11 +4,17 @@ Aceinna Navigation Studio
 .. image:: ../media/ANSHome.png
 
 Aceinna Navigation Studio is a web-portal and UI for your OpenIMU.  To run it, first ensure the Python OpenIMU driver is installed, then 
-start the server.  The server should report discovery and Connection to the OpenIMU.
+start the server form the command line interace as shown below.
+
+.. code:: python
+
+    openimu
+    Connected ....OpenIMU300ZA - 0.0.1      SN:1808629112
+    >>server_start
 
 Supported browsers are Chrome, Opera, and Edge.  Firefox also works but requires an extra step described here. https://stackoverflow.com/questions/11768221/firefox-websocket-security-issue 
 
-Once this step is complete open the following link https://developers.aceinna.com/connect
+Once server_start command has been entereted, open the following link https://developers.aceinna.com/connect
 
 The parameters that show up in this table are controlled by *openimu.json* and their corresponding code in *userConfiguration.c*.  Select the
 packet that you would like to display.

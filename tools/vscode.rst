@@ -13,8 +13,8 @@ any time to return to the launch screen for embedded OpenIMU development within 
 .. image:: ../media/HomeButton.png
 
 The Aceinna Visual Studio extension also automatically installs additional supporting tools.  Importantly if your local system does not already have Python,
-the extension will install Python which enables a large number of features on the platform including a serial drivers and a small server which can connect your IMU to 
-the Aceinna Navigation Studio developer's site.
+the extension will install Python which enables a large number of features on the platform including serial drivers and a small server which can connect your IMU to 
+the Aceinna Navigation Studio developer's site for charting, graphing, and configuration.
 
 The basic functions such as compile, clean, and upload code to device are also easily accessed from the tool bar at the bottom of 
 the VSCode extension.

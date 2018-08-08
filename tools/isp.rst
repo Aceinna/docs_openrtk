@@ -15,20 +15,20 @@ Bootloader Initialization
 
 A user can initiate bootloader at any time by sending ‘JI’ command 
 (see below command’s format) to application program. This command 
-forces the unit enter bootloader mode.  The unit will communicate 
+forces the unit to enter bootloader mode.  The unit will communicate 
 at 57.6Kbps baud rate regardless of the original baud rate the unit 
 is configured to. The Bootloader always communicates at 57.6Kbps 
 until the firmware upgrade is complete. 
 
 As an additional device recovery option immediately after powering 
-up, every IMU381ZA will enter a recovery window of 100ms prior to 
+up, every OpenIMU will enter a recovery window of 100ms prior to 
 application start.  During this 100mS window, the user can send 
 ‘JI’ command at 57.6Kbs to the Bootloader in order to force the 
 unit to remain in Bootloader mode.  
 
 Once the device enters Bootloader mode via the ‘JI’ command either 
 during recovery window or from normal operation, a user can send 
-a sequence ‘WA’ commands to write a complete application image 
+a sequence of ‘WA’ commands to write a complete application image 
 into the device’s FLASH.
 
 After loading the entire firmware image with successive ‘WA’ 
@@ -36,24 +36,14 @@ commands, a ‘JA’ command is sent to instruct the unit to exit
 Bootloader mode and begin application execution.  At this point 
 the device will return to its original baud rate.
 
-Optionally, the system can be reboot by toggling power or toggling 
+Optionally, the system can be rebooted by toggling the power or toggling 
 nRst (pull low and release) to restart the system.
 
 Firmware Update Commands
 ------------------------
 
-The commands detailed in Sections 10.2.1 and 10.2.2 is used for 
-upgrading a new firmware version.
-
-UART Interface
---------------
-
-Firmware upgrade is performed by a Write APP command through UART 
-port, through Windows GUI, NAV-View, or a python program.  See Appendix 
-A and F.
-
-The following commands allow users to install a pre-built binary into 
-flash memory and force system enters either bootloader or application mode.
+The commands detailed below are used for 
+upgrading a new firmware version via the UART at 57.6Kbps.
 
 Jump to Bootloader Command
 --------------------------
