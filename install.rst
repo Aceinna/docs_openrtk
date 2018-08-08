@@ -12,7 +12,7 @@ Tools Installation
  - MAC OS
 
 2. Installation of OpenIMU development environment
----------------------
+--------------------------------------------------
 For developing on OpenIMU platform next set of tools needs to installed:
 
 Visual Studio Code - can be downloaded from here: 
@@ -23,11 +23,12 @@ ST-LINK V2 driver (Windows only) - can be downloaded from here:
 
 http://www.st.com/en/development-tools/st-link-v2.html
 
-*ST-LINK drivers are automatically installed for MAC OS and Ubuntu.  They must be manually installed for Windows*
+*ST-LINK drivers are automatically installed for MAC OS.  They must be manually installed for Windows, using link above.
+For Ubuntu, please see step 5.
  
 
 3. Installation of OpenIMU development platform
------------------------------------
+-----------------------------------------------
 
 To install OpenIMU development platform:
 
@@ -79,7 +80,28 @@ The source tree of imported project has next structure:
                        | 				   
                        |--src (user source files) 				   
                        | 				   
+
+5.  ST-LINK Install for Ubuntu (Manual Version)  
+--------------------------------------------------------
+Go to https://github.com/texane/stlink and read instructions carefully.
+
+On local Ubuntu machine, you will clone the aforemention repository and make the project.  This requires
+the following packages to be installed:
+
+    * CMake > v2.8.7
+    * Gcc compiler
+    * Libusb v1.0
+
+.. code:: bash
+
+    # Run from source directory stlink/ 
+    $make release
+    $cd build/Release
+    $sudo make install
     
+    # Plug ST-LINK/V2 into USB, and check the device is present
+    $ls /dev/stlink-v2
+
     
  
 
