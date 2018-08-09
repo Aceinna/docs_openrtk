@@ -81,7 +81,19 @@ The source tree of imported project has next structure:
                        |--src (user source files) 				   
                        | 				   
 
-5.  ST-LINK Install for Ubuntu (Manual Version)  
+5.  Toolbar and Programming
+----------------------------
+Once you have imported an example project, a good first step is to compile and download this application using your ST-LINK.  
+At the bottom of the VS Code window is the shortcut toolbar shown below.  To load an application to the OpenIMU with JTAG,
+simply click the Install/Download button while the ST-LINK is connected to your EVB.
+
+.. image:: media/VSCodeToolBar.png  
+
+The OpenIMU development environment uses PlatformIO's powerful open-source builder and IDE.  This on-line manual focuses on 
+on OpenIMU specific information, and it does not attempt to fully discuss all of the IDE's powerful features in depth. For more information on PlatformIO builder and IDE features include command line interface, scripting and more please see the 
+`PlatformIO  <https://docs.platformio.org>`__
+
+6.  ST-LINK Install for Ubuntu (Manual Version)  
 --------------------------------------------------------
 Go to https://github.com/texane/stlink and read instructions carefully.
 
