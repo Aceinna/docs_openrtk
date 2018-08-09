@@ -81,8 +81,8 @@ The source tree of imported project has next structure:
                        |--src (user source files) 				   
                        | 				   
 
-5.  Toolbar and Programming
-----------------------------
+5.  Compile and JTAG Code Loading
+----------------------------------
 Once you have imported an example project, a good first step is to compile and download this application using your ST-LINK.  
 At the bottom of the VS Code window is the shortcut toolbar shown below.  To load an application to the OpenIMU with JTAG,
 simply click the Install/Download button while the ST-LINK is connected to your EVB.
