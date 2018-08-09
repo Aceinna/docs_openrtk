@@ -143,7 +143,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'OpenIMU.tex', u'OpenIMU Documentation',
-     u'Feng', 'manual'),
+     u'Aceinna Engineering', 'manual'),
 ]
 
 
