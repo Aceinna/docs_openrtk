@@ -3,16 +3,14 @@ OpenIMU Software Support
 
 .. contents:: Contents
     :local:
-    
-OpenIMU ships with a number of ready to use and download applications to help you get started
+
+This section reviews more detail on how OpenIMU platform code modules are structured and work together.     
 
 .. toctree::
     :maxdepth: 2
 
-    software/software
     software/flowchart
     software/RTOS
     software/sampling
-    software/algorithms
     software/messaging
     software/settings

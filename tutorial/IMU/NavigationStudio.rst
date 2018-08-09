@@ -43,6 +43,8 @@ terminal returns a message similar to the following:
 
     **Figure 3: Server-Connection Message at the Terminal Prompt**
 
+Once connected to the IMU type 'start_server' to start the server.  More instructions on the Python driver
+are found `here <../../tools/python.html>`__  
 
 Connect to `Aceinna Navigation Studio <https://developers.aceinna.com>`__
 ==========================================================================

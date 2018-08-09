@@ -36,24 +36,28 @@ connectors and test adapter for mounting OpenIMU300ZA unit.
 - ST-Link debugger for in-system development of application code 
      
 2.1 OpenIMU300ZA unit
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
+
        
 OpenIMU300ZA is 9 DOF (degrees of freedom) fully calibrated inertial unit. It is used as the base for development custom
 inertial navigation applications.
 
-2.2 Open IMU Evaluation board
-~~~~~~~~~~~~~~~~~~~~~~~~
+2.2 OpenIMU Evaluation board
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Open IMU Evaluation board designed to provide convenient way for communicating with OpenIMU300ZA unit from PC, to 
+
+OpenIMU Evaluation board designed to provide convenient way for communicating with OpenIMU300ZA unit from PC, to 
 expose serial and SPI interfaces to developer and to debug applications using ST-Link debugger vis SWD interface.
        
-2.3 Open IMU test adapter
-~~~~~~~~~~~~~~~~~~~~~~~~
+2.3 OpenIMU test adapter
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Open IMU test adapter used to firmly secure OpenIMU300ZA unit and Open IMU evaluation board in precisely aligned position. 
+
+OpenIMU test adapter used to firmly secure OpenIMU300ZA unit and Open IMU evaluation board in precisely aligned position. 
        
 2.4 ST-Link debugger
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
+
 St-Link debugger is standard debugger provided by STMicroelectronics company. It used for in-system debugging of applications via SWD interface.
   
   
@@ -61,8 +65,8 @@ St-Link debugger is standard debugger provided by STMicroelectronics company. It
 ---------------------------------------------------
   
 3.1 Connector for plugging in OpenIMU300ZA unit (J2).   
-~~~~~~~~~~~~~~~~~~~~~~~~
-  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 J2 is 20-pin connector and it used for plugging OpenIMU300ZA unit into Open IMU evaluation board.
    
 
@@ -123,10 +127,9 @@ The connector pin functions are described in table below.
 +-----------------+-------------------------+-----------------------+
 
 3.2 Extension Header (J4).   
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-
-Open IMU evaluation board has 12-pin extension header. It designed to expose IMU interface signals to
+OpenIMU evaluation board has 12-pin extension header. It designed to expose IMU interface signals to
 external system. The extension header pin functions described in table below 
 
 
@@ -169,14 +172,16 @@ external system. The extension header pin functions described in table below
 +-----------------+-------------------------+-----------------------+
 
 3.4 IMU interface type selector (P1).   
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 Interface type selector used to select between IMU SPI and UART interface.
 In UART mode pins 1-2, 3-4, 5-6 should be closed (jumpers should be in place).
 In SPI mode pins 1-2, 3-4, 5-6 should be opened (jumpers should be removed).
 
 3.5 PC to GPS UART connector (P2).   
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 If desired - IMU GPS UART can be routed to PC COM port (for example for modeling).
 It can be done ONLY when IMU interface configured to be in UART mode (see 3.4) 
@@ -184,7 +189,8 @@ In this case pins 1-2 and 3-4 on this connector should be closed.
 Otherwise remove jumpers not to interfere with possible external connections via J4.
  
 3.6 SWD (JTAG) connector (P3).   
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 
 20-pin connector P3 used for connecting ST-Link or J-Link debuggers to the unit for
 in-system debugging of applications via SWD interface. It has standard pin-out.
@@ -214,7 +220,7 @@ USB connector used for powering up the IMU and evaluation board. Also its used t
 from PC to IMU via virtual serial ports. Up to 3 exposed IMU serial interfaces can be routed to PC.  
 
 
-4. Open IMU evaluation board LED indicators
+4. OpenIMU evaluation board LED indicators
 -------------------------------------------
 
 Evaluation board has few LED indicators for visual monitoring of data traffic on serial ports:
@@ -233,14 +239,15 @@ Evaluation board has few LED indicators for visual monitoring of data traffic on
 5. Open IMU evaluation power
 ----------------------------
 
-Power to Open IMU evaluation board provided by USB.
+Power to OpenIMU evaluation board provided by USB.
 To power system up - connect USB cable to connector J1 and turn "ON" switch SW1.
  
 
 6. Communication with IMU from PC
------------------------
+----------------------------------------------
 
-Open IMU evaluation board has FTDI chip FT4232 installed. This chip provides 4 virtual serial ports.
+
+OpenIMU evaluation board has FTDI chip FT4232 installed. This chip provides 4 virtual serial ports.
 When evaluation board set up to force IMU interface in UART mode (see p.3.4) up to 3 serial ports on IMU can be communicated to from PC.
 When evaluation board connected to PC and power switch turned "ON" the board will appear among external devices as 4 consecutive serial ports.
 First serial port is napped to IMU's main UART channel (pins 3 and 4 on J2), which is dedicated for sending periodic messages from IMU and sending commands
