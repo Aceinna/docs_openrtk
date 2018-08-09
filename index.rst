@@ -17,34 +17,34 @@ Contents
 
 .. toctree::
     :caption: About OpenIMU
-    :maxdepth: 3
+    :maxdepth: 1
 
     intro
     tools
 
 .. toctree::
     :caption: Quick Start
-    :maxdepth: 3
+    :maxdepth: 1
 
     run
     install
 
 .. toctree::
     :caption: IMU Modules
-    :maxdepth: 3
+    :maxdepth: 1
 
     300ZA
 
 .. toctree::
     :caption: Evaluation Boards
-    :maxdepth: 3
+    :maxdepth: 1
 
     EVB
 
 
 .. toctree::
     :caption: Software Development
-    :maxdepth: 3
+    :maxdepth: 1
 
     tutorial
     software
@@ -54,7 +54,7 @@ Contents
 
 .. toctree::
     :caption: Miscellaneous
-    :maxdepth: 3
+    :maxdepth: 1
 
     simulation
     driver-python
