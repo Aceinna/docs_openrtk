@@ -37,7 +37,6 @@ follows:
     Leveler/LevelerAlgorithm
     Leveler/SerialDebugger
     Leveler/SerialMessaging
-    Leveler/DefaultConfiguration
     Leveler/PythonMessageDecoder
     Leveler/NavigationStudio
 

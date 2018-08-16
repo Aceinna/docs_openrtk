@@ -37,7 +37,6 @@ follows:
     IMU/Requirements
     IMU/SerialDebugger
     IMU/SerialMessaging
-    IMU/DefaultConfiguration
     IMU/PythonMessageDecoder
     IMU/NavigationStudio
 

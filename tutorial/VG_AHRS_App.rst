@@ -49,7 +49,6 @@ as follows:
     VG_AHRS/AHRS_Algorithm
     VG_AHRS/SerialDebugger
     VG_AHRS/SerialMessaging
-    VG_AHRS/DefaultConfiguration
     VG_AHRS/PythonMessageDecoder
     VG_AHRS/NavigationStudio
 

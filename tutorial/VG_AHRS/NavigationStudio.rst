@@ -1,4 +1,4 @@
-***************************************
+﻿***************************************
 Capturing, Displaying, and Saving Data
 ***************************************
 
@@ -52,7 +52,7 @@ The following will appear if connected properly:
 
 .. _fig-ans-connect-pre:
 
-.. figure:: ./media/Leveler_DevelopersPage.PNG
+.. figure:: ./media/VG_DevelopersPage.PNG
     :alt: ANS_Connection
     :width: 7.0in
     :align: center
@@ -88,7 +88,7 @@ For a live display of data from the device, select the ‘Record’ menu. An exa
     :width: 7.0in
     :align: center
 
-    **Figure 6: Plot of Leveler Angle Data**
+    **Figure 6: Plot of VG Angle Data**
 
 
 Logging Data
@@ -112,5 +112,5 @@ data are saved as intended.
     :width: 7.5in
     :align: center
 
-    **Figure 7: Leveler Angle Data File**
+    **Figure 7: VG Angle Data File**
 
