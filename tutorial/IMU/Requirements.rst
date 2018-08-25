@@ -18,9 +18,9 @@ the following were selected:
     
        a. A relative time measurement (both integer and decimal values)
        b. Acceleration readings in :math:`[g]`
-       c. Rate-sensor readings in :math:`[{° / s}]`
+       c. Rate-sensor readings in [°/s]
        d. Magnetic-field readings in :math:`[G]`
-       e. Sensor temperature readings in :math:`[°C]`
+       e. Sensor temperature readings in [°C]
 
     3. Provide the data at user-selectable output data-rates (ODR) up to 200 Hz
 

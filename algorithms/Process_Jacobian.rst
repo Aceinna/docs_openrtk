@@ -26,7 +26,7 @@ specific system state.  Performing this operation results in:
 
     F = I_{16} + { 
                    \begin{bmatrix} {
-                                     \begin{array}{cccc}
+                                     \begin{array}{ccccc}
                                                          {0_{3}} &
                                                          {I_{3}} &
                                                          {0_{3 \times 4}} &

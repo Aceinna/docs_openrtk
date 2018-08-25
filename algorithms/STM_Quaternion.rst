@@ -41,10 +41,13 @@ is simplified to :math:`{\vec{\omega}_{true}}^{B}`.
 
 .. math::
 
-    \vec{\omega}^{B} = { \begin{Bmatrix} { \omega_{x}^{B} \\
-                                           \omega_{y}^{B} \\
-                                           \omega_{z}^{B}
-                         } \end{Bmatrix}
+    \vec{\omega}^{B} = { \begin{Bmatrix} { 
+                                             \begin{array}{c}
+                                                      {\omega_{x}^{B}} \cr
+                                                      {\omega_{y}^{B}} \cr    
+                                                      {\omega_{z}^{B}}
+                                             \end{array} 
+                                         } \end{Bmatrix} 
                        }
 
 

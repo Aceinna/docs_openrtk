@@ -16,7 +16,7 @@ matching the requirements, defined earlier, is created.  It consists of:
 
     1. An integer counter, representing time in :math:`[ms]`
     2. A floating point representation of time, in :math:`[s]`
-    3. Roll and pitch angles, in :math:`[°]`
+    3. Roll and pitch angles, in [°]
     4. Acceleration readings, in :math:`[m/s^2]`
 
 
@@ -30,7 +30,7 @@ number of bytes the message will occupy.  The components of the message, variabl
 of bytes are listed in the following table:
 
 
-.. table:: **Table 2: User-Defined Serial Message Components**
+.. table:: **User-Defined Serial Message Components**
 
     +-----------------------+----------------------+----------------+------------+
     |                       | **Description**      |                |            |
@@ -233,12 +233,12 @@ being generated; whether the message is populated correctly requires the use of 
     :width: 5.1in
     :align: center
 
-    **Figure 2: Test of Serial Message Output**
+    **Test of Serial Message Output**
 
 
 .. note::
 
-    In the above figure the message preamble sometimes displays as "UU┌1".  This is solely a
+    In the above figure the message preamble sometimes displays as :math:`"UU \ulcorner 1"`.  This is solely a
     TeraTerm glitch.  Other serial terminal programs (such as CoolTerm) do not show such
     behavior.
 

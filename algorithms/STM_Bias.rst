@@ -35,7 +35,7 @@ where
 
 .. math::
 
-    \dot{\vec{\omega}}_{drift,k-1}^{B} = N \begin{pmatrix} { 0,\sigma_{dd,ω}^{2} } \end{pmatrix}
+    \dot{\vec{\omega}}_{drift,k-1}^{B} = N \begin{pmatrix} { 0,\sigma_{dd,\omega}^{2} } \end{pmatrix}
 
 
 Note: the subscript *dd* stands for "drift-dot".  Based on this model, the process variance for
@@ -43,14 +43,14 @@ Note: the subscript *dd* stands for "drift-dot".  Based on this model, the proce
 
 .. math::
 
-    \sigma_{d,\omega}^{2}(t) = \begin{bmatrix} { (\sigma_{dd,ω} \cdot \sqrt{dt}) \cdot \sqrt{t} } \end{bmatrix} ^{2}
+    \sigma_{d,\omega}^{2}(t) = \begin{bmatrix} { (\sigma_{dd,\omega} \cdot \sqrt{dt}) \cdot \sqrt{t} } \end{bmatrix} ^{2}
 
 
-Based on an empirical study, :math:`\sigma_{dd,ω}` is related to the BI and ARW as follows:
+Based on an empirical study, :math:`\sigma_{dd,\omega}` is related to the BI and ARW as follows:
 
 .. math::
 
-    \sigma_{dd,ω} = {{2 \cdot \pi} \over {ln(2)}} \cdot {{{BI}^{2}} \over {ARW}}
+    \sigma_{dd,\omega} = {{2 \cdot \pi} \over {ln(2)}} \cdot {{{BI}^{2}} \over {ARW}}
 
 
 To find the rate-bias process-noise covariance, set :math:`t = dt` in the process-variance model

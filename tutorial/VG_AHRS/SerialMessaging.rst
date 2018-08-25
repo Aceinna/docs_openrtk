@@ -16,10 +16,10 @@ matching the requirements, defined earlier, is created.  It consists of:
 
     1. An integer counter, representing time in :math:`[ms]`
     2. A floating point representation of time, in :math:`[s]`
-    3. Roll, pitch, and heading angles, in :math:`[°]`
+    3. Roll, pitch, and heading angles, in [°]
     4. Uncorrected acceleration readings, in :math:`[g]`
-    5. Uncorrected rate-sensor readings, in :math:`[° / s]`
-    6. Estimated rate-sensor bias, in :math:`[° / s]`
+    5. Uncorrected rate-sensor readings, in [°/s]
+    6. Estimated rate-sensor bias, in [°/s]
     7. Magnetometer readings, in :math:`[G]`
     8. Operational Mode indicator
     9. Linear-Acceleration Switch indicator
@@ -36,7 +36,7 @@ number of bytes the message will occupy.  The components of the message, variabl
 of bytes are listed in the following table:
 
 
-.. table:: **Table 2: User-Defined Serial Message Components**
+.. table:: **User-Defined Serial Message Components**
 
     +-----------------------+----------------------+----------------+------------+
     |                       | **Description**      |                |            |
@@ -309,7 +309,7 @@ generated; whether the message is populated correctly requires the use of additi
     :width: 6.5in
     :align: center
 
-    **Figure 2: Test of Serial Message Output**
+    **Test of Serial Message Output**
 
 
 .. note::

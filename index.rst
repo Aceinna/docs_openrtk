@@ -12,39 +12,61 @@ custom data structures and packets very simple.
 **Social:** `Twitter <https://twitter.com/MEMSsensortech>`_ |
 `Medium <https://medium.com/@mikehorton>`_ 
 
-Contents
---------
+.. raw:: latex
+
+   \part{About OpenIMU}
 
 .. toctree::
     :caption: About OpenIMU
     :maxdepth: 1
+    :hidden:
 
     intro
     tools
 
+.. raw:: latex
+
+   \part{Quick Start}
+
 .. toctree::
     :caption: Quick Start
     :maxdepth: 1
+    :hidden:
 
     run
     install
 
+.. raw:: latex
+
+   \part{IMU Modules}
+
 .. toctree::
     :caption: IMU Modules
     :maxdepth: 1
+    :hidden:
 
     300ZA
+
+.. raw:: latex
+
+   \part{Evaluation Boards}
 
 .. toctree::
     :caption: Evaluation Boards
     :maxdepth: 1
+    :hidden:
 
     EVB
+
+.. raw:: latex
+
+   \part{Software Development}
 
 
 .. toctree::
     :caption: Software Development
     :maxdepth: 1
+    :hidden:
 
     tutorial
     software
@@ -52,9 +74,14 @@ Contents
     algorithms
     mags
 
+.. raw:: latex
+
+   \part{Miscellaneous}
+
 .. toctree::
     :caption: Miscellaneous
     :maxdepth: 1
+    :hidden:
 
     simulation
     driver-python

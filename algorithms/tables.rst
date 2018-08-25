@@ -215,7 +215,7 @@ cC    edD  dD
    Beware killer rabbits!
 
 
-.. table:: **Table X: Names/Ages**
+.. table:: **Names/Ages**
 
     ==================   ============
     Name                 Age

@@ -26,16 +26,16 @@ For the Vertical-Gyro application, the following were selected:
        
 For the Attitude and Heading Reference System application, the following were selected:
 
-    1. Measure roll and pitch angles of an object with a static-accuracy better than 0.10 [deg]
-    2. Measure heading angle of an object with a static-accuracy better than 1.0 [deg]
+    1. Measure roll and pitch angles of an object with a static-accuracy better than 0.10 [°]
+    2. Measure heading angle of an object with a static-accuracy better than 1.0 [°]
     3. Compute the attitude at 200 Hz
     4. Provide an output message consisting of the following:
 
        a. A relative time measurement (integer and decimal)
        b. Attitude consisting of roll, pitch, and heading angles
        c. Acceleration readings in :math:`[{m / s^2}]`
-       d. Corrected rate-sensor readings in :math:`[{deg / s}]`.  Corrected readings have the
+       d. Corrected rate-sensor readings in [°/s].  Corrected readings have the
           estimated rate-sensor bias removed from the measurement.
-       e. Uncorrected rate-sensor readings in :math:`[{deg / s}]`
+       e. Uncorrected rate-sensor readings in [°/s]
        f. Magnetometer readings in :math:`[{G}]`
 

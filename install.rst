@@ -5,14 +5,14 @@ Tools Installation
     :local:
     
 
-1. Platforms
---------------
+Platforms
+---------
  - Windows 10 or 7 PC
  - Ubuntu version 14.0+
  - MAC OS
 
-2. Installation of OpenIMU development environment
---------------------------------------------------
+Installation of OpenIMU development environment
+-----------------------------------------------
 For developing on OpenIMU platform next set of tools needs to installed:
 
 Visual Studio Code - can be downloaded from here: 
@@ -27,8 +27,8 @@ http://www.st.com/en/development-tools/st-link-v2.html
 For Ubuntu, please see step 5.
  
 
-3. Installation of OpenIMU development platform
------------------------------------------------
+Installation of OpenIMU development platform
+--------------------------------------------
 
 To install OpenIMU development platform:
 
@@ -40,8 +40,8 @@ To install OpenIMU development platform:
 .. image:: media/AddExtension.png
    :height: 200
 
-4. First steps
------------------------------------
+First steps
+-----------
 
 After installation of "Aceinna" extension click on "Home" icon at the bottom of the screen. It will bring
 up Aceinna OpenIMU platform homepage. Click on "Custom IMU examples", chose desired example and click "Import".
@@ -81,8 +81,8 @@ The source tree of imported project has next structure:
                        |--src (user source files) 				   
                        | 				   
 
-5.  Compile and JTAG Code Loading
-----------------------------------
+Compile and JTAG Code Loading
+-----------------------------
 Once you have imported an example project, a good first step is to compile and download this application using your ST-LINK.  
 At the bottom of the VS Code window is the shortcut toolbar shown below.  To load an application to the OpenIMU with JTAG,
 simply click the Install/Download button while the ST-LINK is connected to your EVB.
@@ -93,8 +93,8 @@ The OpenIMU development environment uses PlatformIO's powerful open-source build
 on OpenIMU specific information, and it does not attempt to fully discuss all of the IDE's powerful features in depth. For more information on PlatformIO builder and IDE features include command line interface, scripting and more please see the 
 `PlatformIO  <https://docs.platformio.org>`__
 
-6.  ST-LINK Install for Ubuntu (Manual Version)  
---------------------------------------------------------
+ST-LINK Install for Ubuntu (Manual Version)  
+-------------------------------------------
 Go to https://github.com/texane/stlink and read instructions carefully.
 
 On local Ubuntu machine, you will clone the aforemention repository and make the project.  This requires

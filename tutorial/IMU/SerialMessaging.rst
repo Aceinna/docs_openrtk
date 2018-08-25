@@ -17,9 +17,9 @@ matching the requirements, defined earlier, is created.  It consists of:
     1. An integer counter, representing time in :math:`[ms]`
     2. A floating-point representation of time, in :math:`[s]`
     3. Accelerometer readings, in :math:`[g]`
-    4. Rate-Sensor readings, in :math:`[°/s]`
+    4. Rate-Sensor readings, in [°/s]
     5. Magnetometer readings, in :math:`[G]`
-    6. Board temperature, in :math:`[°C]`
+    6. Board temperature, in [°C]
 
 
 To generate this output, a serial-message was created in *UserMessaging.c* and *UserMessaging.h*.
@@ -32,7 +32,7 @@ number of bytes the message will occupy.  The components of the message, variabl
 of bytes are listed in the following table:
 
 
-.. table:: **Table 2: User-Defined Serial Message Components**
+.. table:: **User-Defined Serial Message Components**
 
     +-----------------------+----------------------+----------------+------------+
     |                       | **Description**      |                |            |
@@ -252,7 +252,7 @@ whether the message is populated correctly requires the use of additional tools.
     :width: 6.0in
     :align: center
 
-    **Figure 2: Test of Serial Message Output**
+    **Test of Serial Message Output**
 
 
 .. note::

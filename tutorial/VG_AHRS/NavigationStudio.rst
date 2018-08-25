@@ -40,7 +40,7 @@ terminal returns a message similar to the following:
     :width: 7.0in
     :align: center
 
-    **Figure 3: Server-Connection Message at the Terminal Prompt**
+    **Server-Connection Message at the Terminal Prompt**
 
 
 Connect to Aceinna Navigation Studio
@@ -57,7 +57,7 @@ The following will appear if connected properly:
     :width: 7.0in
     :align: center
 
-    **Figure 4: Connection to IMU Server**
+    **Connection to IMU Server**
 
 
 If desired, the packet output rate and other settings can be changed here.
@@ -73,7 +73,7 @@ of the unit:
     :width: 7.0in
     :align: center
 
-    **Figure 5: Server-Connection Message at the Terminal Prompt**
+    **Server-Connection Message at the Terminal Prompt**
 
 
 Displaying Data
@@ -88,7 +88,7 @@ For a live display of data from the device, select the ‘Record’ menu. An exa
     :width: 7.0in
     :align: center
 
-    **Figure 6: Plot of VG Angle Data**
+    **Plot of VG Angle Data**
 
 
 Logging Data
@@ -98,7 +98,7 @@ To log data select the *Log Control* switch.  The output file consists of data f
 message.  In particular the message consists of:
 
     * Time (in counts and seconds)
-    * Roll and pitch angles (in :math:`[°]`)
+    * Roll and pitch angles (in [°])
     * Accelerometer data (in :math:`m/s^2`)
 
 
@@ -112,5 +112,5 @@ data are saved as intended.
     :width: 7.5in
     :align: center
 
-    **Figure 7: VG Angle Data File**
+    **VG Angle Data File**
 

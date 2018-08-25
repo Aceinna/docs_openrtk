@@ -242,56 +242,54 @@ below), *useMag* bit is set in the algorithm initialization section, based on *a
 **Algorithm Behavior Bits**
 
 In addition to setting *useMag*, the initialization section sets other algorithm-behavior bits in
-gAlgorithm.Behavior.  These are described in **Table 3**.
+gAlgorithm.Behavior.  These are described in **Table**.
 
 
-.. table:: **Table 3: Algorithm Behavior Bits**
+.. table:: **Algorithm Behavior Bits**
+    :widths: 20 80
 
     +----------------------+-----------------------------------------------------------------------------+
     |                      |                                                                             |
     | **bit**              | **Description**                                                             |
     |                      |                                                                             |
     +======================+=============================================================================+
-    |                      || This bit controls the behavior of the propagation model in the Extended    |
-    | *freeIntegrate*      || Kalman Filter.  When set true, the EKF stops performing updates for a      |
-    |                      || certain time (nominally 60 seconds).  At the end of this period, the       |
-    |                      || update functionality of the EKF is restored and the errors that built up   |
-    |                      || over the free-integration period are removed.                              |
-    |                      ||                                                                            |
-    |                      || The default setting if false as this functionality cannot be commanded     |
-    |                      || until the solution has converged.                                          |
-    |                      ||                                                                            |
-    |                      || This functionality is normally used when the user requires a good attitude |
-    |                      || solution and knows short-term, extreme conditions are expected.            |
+    ||                     || This bit controls the behavior of the propagation model in the Extended    |
+    || *freeIntegrate*     || Kalman Filter.  When set true, the EKF stops performing updates for a      |
+    ||                     || certain time (nominally 60 seconds).  At the end of this period, the       |
+    ||                     || update functionality of the EKF is restored and the errors that built up   |
+    ||                     || over the free-integration period are removed.                              |
+    ||                     || The default setting if false as this functionality cannot be commanded     |
+    ||                     || until the solution has converged.                                          |
+    ||                     || This functionality is normally used when the user requires a good attitude |
+    ||                     || solution and knows short-term, extreme conditions are expected.            |
     +----------------------+-----------------------------------------------------------------------------+
-    |                      || This bit instructs the algorithm to use magnetometer data to estimate      |
-    | *useMag*             || a heading solution.  It does not enable the output of the magnetometer     |
-    |                      || signal, which is continually being generated.                              |
-    |                      ||                                                                            |
-    |                      || When set true, an AHRS solution is generated and the magnetometer signal   |
-    |                      || is used to estimate heading.  When false, the heading error computed by    |
-    |                      || the EKF is set to zero.  In this case, no updates to heading based states  |
-    |                      || are done (the z-axis rate-bias is not estimated and the heading error is   |
-    |                      || not corrected).                                                            |
+    ||                     || This bit instructs the algorithm to use magnetometer data to estimate      |
+    || *useMag*            || a heading solution.  It does not enable the output of the magnetometer     |
+    ||                     || signal, which is continually being generated.                              |
+    ||                     || When set true, an AHRS solution is generated and the magnetometer signal   |
+    ||                     || is used to estimate heading.  When false, the heading error computed by    |
+    ||                     || the EKF is set to zero.  In this case, no updates to heading based states  |
+    ||                     || are done (the z-axis rate-bias is not estimated and the heading error is   |
+    ||                     || not corrected).                                                            |
     +----------------------+-----------------------------------------------------------------------------+
-    |                      || This bit tells the algorithm to use GPS information if available.  For the |
-    | *useGPS*             || VG/AHRS algorithm, this (at present) has no effect but should be set       |
-    |                      || false to prevent possible operational problems.                            |
+    ||                     || This bit tells the algorithm to use GPS information if available.  For the |
+    || *useGPS*            || VG/AHRS algorithm, this (at present) has no effect but should be set       |
+    ||                     || false to prevent possible operational problems.                            |
     +----------------------+-----------------------------------------------------------------------------+
-    |                      || This bit is only used as part of the INS solution.  For the VG/AHRS        |
-    | *stationaryLockYaw*  || algorithm, this (at present) has no effect but should be set               |
-    |                      || false to prevent possible operational problems.                            |
+    ||                     || This bit is only used as part of the INS solution.  For the VG/AHRS        |
+    || *stationaryLockYaw* || algorithm, this (at present) has no effect but should be set               |
+    ||                     || false to prevent possible operational problems.                            |
     +----------------------+-----------------------------------------------------------------------------+
-    |                      || This bit instructs the algorithm to restart if any of the sensors exceed   |
-    | *restartOnOverRange* || its operational limits.  This is nominally used for demonstration purposes |
-    |                      || and should be set false to prevent the algorithm from restarting in during |
-    |                      || operation.                                                                 |
+    ||                     || This bit instructs the algorithm to restart if any of the sensors exceed   |
+    || *restartOnOverRange*|| its operational limits.  This is nominally used for demonstration purposes |
+    ||                     || and should be set false to prevent the algorithm from restarting in during |
+    ||                     || operation.                                                                 |
     +----------------------+-----------------------------------------------------------------------------+
-    |                      || The dynamic motion bit controls the transition from High-Gain mode (the    |
-    | *dynamicMotion*      || initialization period of the algorithm) to Low-Gain (operational) mode.    |
-    |                      || It should be set true to allow the transition to occur.  The bit can be    |
-    |                      || set false to restart the algorithm in high-gain mode, if required.  But it |
-    |                      || must be set high (by the user) to allow future transitions to occur.       |
+    ||                     || The dynamic motion bit controls the transition from High-Gain mode (the    |
+    || *dynamicMotion*     || initialization period of the algorithm) to Low-Gain (operational) mode.    |
+    ||                     || It should be set true to allow the transition to occur.  The bit can be    |
+    ||                     || set false to restart the algorithm in high-gain mode, if required.  But it |
+    ||                     || must be set high (by the user) to allow future transitions to occur.       |
     +----------------------+-----------------------------------------------------------------------------+
 
 

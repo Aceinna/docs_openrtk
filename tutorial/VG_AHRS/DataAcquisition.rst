@@ -81,7 +81,7 @@ Inside *inertialAndPositionDataProcessing()* several getter-functions are provid
 obtain sensor data directly from the sensor data-buffers.  Function names, described in the following
 table, were chosen to make the task of each function clear.
 
-.. table:: **Table 1: Sensor Measurement Getter Functions**
+.. table:: **Sensor Measurement Getter Functions**
 
     +-----------------------------+---------------------------+----------------------+
     |                             |                           |                      |
@@ -101,7 +101,7 @@ table, were chosen to make the task of each function clear.
     |                             |                           |                      |
     +-----------------------------+ Obtain rate-sensor data   +----------------------+
     |                             |                           |                      |
-    | *GetRateData_degPerSec()*   |                           | :math:`[{° / s}]`    |
+    | *GetRateData_degPerSec()*   |                           | [°/s]                |
     |                             |                           |                      |
     +-----------------------------+---------------------------+----------------------+
     |                             |                           |                      |
@@ -109,7 +109,7 @@ table, were chosen to make the task of each function clear.
     |                             |                           |                      |
     +-----------------------------+---------------------------+----------------------+
     |                             |                           |                      |
-    | *GetBoardTempData()*        | Obtain temperature data   | :math:`[°C]`         |
+    | *GetBoardTempData()*        | Obtain temperature data   | [°C]                 |
     |                             |                           |                      |
     +-----------------------------+---------------------------+----------------------+
 
@@ -118,7 +118,7 @@ table, were chosen to make the task of each function clear.
 
     Most inertial algorithm development will use :math:`[{m / s^2}]`, :math:`[{r / s}]`, and
     :math:`[G]`.  However getters that provide accelerometer and rate-sensor data in :math:`[g]`
-    and :math:`[{° / s}]` are also available for the designer who chooses to work in these units.
+    and [°/s] are also available for the designer who chooses to work in these units.
 
 These getters populate the IMU data structure arrays *gIMU.accel_g*, *gIMU.rate_radPerSec*, and
 *gIMU.mag_G*, defined in *UserMessaging.h*, with the associated sensor data.

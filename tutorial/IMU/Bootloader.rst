@@ -27,7 +27,7 @@ From the terminal window, issue the command to start the OpenIMU Python Server:
     :width: 6.0in
     :align: center
 
-    **Figure 8: Python Server Connection**
+    **Python Server Connection**
 
 
 
@@ -43,7 +43,7 @@ and *Apps* from the menu on the left-hand side of the window
     :width: 7.0in
     :align: center
 
-    **Figure 9: ANS Application Page**
+    **ANS Application Page**
 
 
 
@@ -59,7 +59,7 @@ box.  In this case, select the **IMU Application** *Download* link.
     :width: 5.0in
     :align: center
 
-    **Figure 10: ANS Application Page**
+    **ANS Application Page**
 
 
 Once the *Download* link has been clicked, a progress bar at the top of the application box will
@@ -72,7 +72,7 @@ indicate how much time is left to download the application:
     :width: 5.0in
     :align: center
 
-    **Figure 11: ANS Application Page**
+    **ANS Application Page**
 
 
 Additionally terminal messages in the window in which the Python server is running will indicate
@@ -86,7 +86,7 @@ point the unit is now running the downloaded application.
     :width: 5.0in
     :align: center
 
-    **Figure 12: ANS Application Page**
+    **ANS Application Page**
 
 
 The unit can now be connected to the Navigation Studio and data plotted or saved in an output file.

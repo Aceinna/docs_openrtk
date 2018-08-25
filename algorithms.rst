@@ -32,11 +32,9 @@ another, as follows:
     algorithms/KalmanFilter
     algorithms/StateTransitionModels
     algorithms/ProcessModels
-    algorithms/MeasurementVector
     algorithms/MeasurementModel
     algorithms/Innovation
     algorithms/MagneticAlignment
-    algorithms/TestArea
     algorithms/References
 
 

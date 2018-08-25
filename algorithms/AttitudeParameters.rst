@@ -1,3 +1,4 @@
+
 ********************
 Attitude Parameters
 ********************
@@ -97,7 +98,7 @@ transformation matrix of the body-frame in the NED-frame, |R_BinN| , to the quat
                     }
 
 
-|R_BinN| can also be expressed in terms of Euler-angles, :math:`{{^N}{\vec{\Theta}}{^B}} = { \begin{bmatrix} { {{^⊥}{\phi}{^B }} \hspace{5mm} {{^⊥}{\theta}{^B }} \hspace{5mm} {{^N}{\psi}{^⊥ }} } \end{bmatrix} }^{T}`\ :
+|R_BinN| can also be expressed in terms of Euler-angles, :math:`{{^N}{\vec{\Theta}}{^B}} = { \begin{bmatrix} { {{^\perp}{\phi}{^B }} \hspace{5mm} {{^\perp}{\theta}{^B }} \hspace{5mm} {{^N}{\psi}{^\perp}} } \end{bmatrix} }^{T}`\ :
 
 
 .. Comment --> Complete list of mathematical formatting commands found at http://www.onemathematicalcat.org/MathJaxDocumentation/TeXSyntax.htm#cr.
@@ -107,12 +108,12 @@ transformation matrix of the body-frame in the NED-frame, |R_BinN| , to the quat
     {{^N}{R}{^B}} = {
                       \begin{bmatrix} {
                                         \begin{array}{ccc} 
-                                                           { \cos{\begin{pmatrix} {{^⊥}{\theta}{^B}} \end{pmatrix}} } &
-                                                           { -\sin{\begin{pmatrix} {{^N}{\psi}{^⊥}} \end{pmatrix}} } &
+                                                           { \cos{\begin{pmatrix} {{^\perp}{\theta}{^B}} \end{pmatrix}} } &
+                                                           { -\sin{\begin{pmatrix} {{^N}{\psi}{^\perp}} \end{pmatrix}} } &
                                                            { 0 }
                                                            \cr
-                                                           { \sin{\begin{pmatrix} {{^N}{\psi}{^⊥}} \end{pmatrix}} } &
-                                                           { \cos{\begin{pmatrix} {{^N}{\psi}{^⊥}} \end{pmatrix}} } &
+                                                           { \sin{\begin{pmatrix} {{^N}{\psi}{^\perp}} \end{pmatrix}} } &
+                                                           { \cos{\begin{pmatrix} {{^N}{\psi}{^\perp}} \end{pmatrix}} } &
                                                            {0}
                                                            \cr
                                                            {0} &
@@ -125,17 +126,17 @@ transformation matrix of the body-frame in the NED-frame, |R_BinN| , to the quat
                     {
                       \begin{bmatrix} {
                                         \begin{array}{ccc} 
-                                                           { \cos{\begin{pmatrix} {{^⊥}{\theta}{^B}} \end{pmatrix}} } &
-                                                           { \sin{\begin{pmatrix} {{^⊥}{\theta}{^B}} \end{pmatrix}} \cdot \sin{\begin{pmatrix} {{^⊥}{\phi}{^B}} \end{pmatrix}} } &
-                                                           { \sin{\begin{pmatrix} {{^⊥}{\theta}{^B}} \end{pmatrix}} \cdot \cos{\begin{pmatrix} {{^⊥}{\phi}{^B}} \end{pmatrix}} }
+                                                           { \cos{\begin{pmatrix} {{^\perp}{\theta}{^B}} \end{pmatrix}} } &
+                                                           { \sin{\begin{pmatrix} {{^\perp}{\theta}{^B}} \end{pmatrix}} \cdot \sin{\begin{pmatrix} {{^\perp}{\phi}{^B}} \end{pmatrix}} } &
+                                                           { \sin{\begin{pmatrix} {{^\perp}{\theta}{^B}} \end{pmatrix}} \cdot \cos{\begin{pmatrix} {{^\perp}{\phi}{^B}} \end{pmatrix}} }
                                                            \cr
                                                            { 0 } &
-                                                           { \cos{\begin{pmatrix} {{^⊥}{\phi}{^B}} \end{pmatrix}} } &
-                                                           { -\sin{\begin{pmatrix} {{^⊥}{\phi}{^B}} \end{pmatrix}} }
+                                                           { \cos{\begin{pmatrix} {{^\perp}{\phi}{^B}} \end{pmatrix}} } &
+                                                           { -\sin{\begin{pmatrix} {{^\perp}{\phi}{^B}} \end{pmatrix}} }
                                                            \cr
-                                                           { -\sin{\begin{pmatrix} {{^⊥}{\theta}{^B}} \end{pmatrix}} } &
-                                                           { \cos{\begin{pmatrix} {{^⊥}{\theta}{^B}} \end{pmatrix}} \cdot \sin{\begin{pmatrix} {{^⊥}{\phi}{^B}} \end{pmatrix}} } &
-                                                           { \cos{\begin{pmatrix} {{^⊥}{\theta}{^B}} \end{pmatrix}} \cdot \cos{\begin{pmatrix} {{^⊥}{\phi}{^B}} \end{pmatrix}} }
+                                                           { -\sin{\begin{pmatrix} {{^\perp}{\theta}{^B}} \end{pmatrix}} } &
+                                                           { \cos{\begin{pmatrix} {{^\perp}{\theta}{^B}} \end{pmatrix}} \cdot \sin{\begin{pmatrix} {{^\perp}{\phi}{^B}} \end{pmatrix}} } &
+                                                           { \cos{\begin{pmatrix} {{^\perp}{\theta}{^B}} \end{pmatrix}} \cdot \cos{\begin{pmatrix} {{^\perp}{\phi}{^B}} \end{pmatrix}} }
                                         \end{array}
                       } \end{bmatrix}
                     }
@@ -148,7 +149,7 @@ from the sensor readings):
 
 .. math::
 
-	{{^N}{R}{^B}} = {{^N}{R}{^⊥}} \cdot {{^⊥}{R}{^B}}
+	{{^N}{R}{^B}} = {{^N}{R}{^\perp}} \cdot {{^\perp}{R}{^B}}
 
 
 Finally, Euler angles, |Theta_BinN|, can be expressed in terms of quaternion-elements, |q_BinN|:
@@ -156,28 +157,24 @@ Finally, Euler angles, |Theta_BinN|, can be expressed in terms of quaternion-ele
 
 .. math::
 
-    \begin{aligned}
-    {
-    {^⊥}{\phi}{^B}   = {atan2}{ \begin{pmatrix} {
+    {^\perp}{\phi}{^B}   &= {atan2}{ \begin{pmatrix} {
                                                    2 \cdot { \begin{pmatrix} {q_2 \cdot q_3 + q_0 \cdot q_1} \end{pmatrix} }, \hspace{2mm} {{q_0}^2 - {q_1}^2 - {q_2}^2 + {q_3}^2}
                                  } \end{pmatrix}
-                               }\\
-                      {\hspace{5mm}}\\
-    {^⊥}{\theta}{^B} = -{asin}{ \begin{pmatrix} {
+                               } \\
+                      {\hspace{5mm}} \\
+    {^\perp}{\theta}{^B} &= -{asin}{ \begin{pmatrix} {
                                                    2 \cdot { \begin{pmatrix} {q_1 \cdot q_3 - q_0 \cdot q_2} \end{pmatrix} }
                                  } \end{pmatrix}
-                               }\\
-                      {\hspace{5mm}}\\
-    {^N}{\psi}{^⊥}   = {atan2}{ \begin{pmatrix} {
+                               } \\
+                      {\hspace{5mm}} \\ 
+    {^N}{\psi}{^\perp}   &= {atan2}{ \begin{pmatrix} {
                                                    2 \cdot { \begin{pmatrix} {q_1 \cdot q_2 + q_0 \cdot q_3} \end{pmatrix} }, \hspace{2mm} {{q_0}^2 + {q_1}^2 - {q_2}^2 - {q_3}^2}
                                  } \end{pmatrix}
-                               }
-    }
-    \end{aligned}
+                               } 
 
 
 Note: due to the way the roll and pitch are separated from the heading, the Euler angles,
-|phi_Bin⊥|, |theta_Bin⊥|, and |psi_⊥inN| are the same if written as |phi_BinN|, |theta_BinN|, and
+phi_Bin :math:`\perp`, theta_Bin :math:`\perp`, and psi :math:`_\perp` inN are the same if written as |phi_BinN|, |theta_BinN|, and
 |psi_BinN|.
 
 
@@ -185,11 +182,11 @@ Example
 ========
 
 Using the direction cosine matrix formulation, the transformation to get from the body to inertial-
-frame (ECEF) is composed of multiple transformations (*Figure 1*):
+frame (ECEF) is composed of multiple transformations (*Figure*):
 
    #.  Transformation from the (light-blue) body-frame to the (dark blue) local perpendicular-frame
-       (⊥), |R_Bin⊥|
-   #.  Transformation from the (dark blue) ⊥-frame to the (red) local NED-frame, |R_⊥inN|
+       :math:`(\perp), R_Bin \perp`
+   #.  Transformation from the (dark blue) :math:`\perp`-frame to the (red) local NED-frame, R :math:`_\perp` inN
    #.  Transformation from the (red) NED-frame to the ECEF-frame, |R_NinE| (ECEF-Frame not shown;
        black line are latitude and longitude lines).  |R_NinE| is based on the WGS84 model.
 
@@ -200,7 +197,7 @@ calculation:
 
 .. math::
 
-    {^E}{R}{^B} = {^E}{R}{^N} \cdot {^N}{R}{^⊥} \cdot {^⊥}{R}{^B}
+    {^E}{R}{^B} = {^E}{R}{^N} \cdot {^N}{R}{^\perp} \cdot {^\perp}{R}{^B}
 
 
 Some additional information about these frames:
@@ -218,12 +215,12 @@ Some additional information about these frames:
 .. |Perp| replace:: :raw-html:`&perp;`
 .. |Perp2| replace:: :raw-html:`&perp;`
 .. |H2O| replace:: H\ :sub:`&perp;`\ O
-.. |xSubPerp| replace:: x\ :sub:`⊥`
-.. |ySubPerp| replace:: y\ :sub:`⊥`
-.. |zSubPerp| replace:: z\ :sub:`⊥`
-.. |xSubB| replace:: x\ :sub:`⊥`
-.. |ySubB| replace:: y\ :sub:`⊥`
-.. |zSubB| replace:: z\ :sub:`⊥`
+.. |xSubPerp| replace:: x\ :sub:`\perp`
+.. |ySubPerp| replace:: y\ :sub:`\perp`
+.. |zSubPerp| replace:: z\ :sub:`\perp`
+.. |xSubB| replace:: x\ :sub:`\perp`
+.. |ySubB| replace:: y\ :sub:`\perp`
+.. |zSubB| replace:: z\ :sub:`\perp`
 
 
 
@@ -237,16 +234,16 @@ Some additional information about these frames:
 
 .. |Theta_BinN| replace:: :math:`{^N}{\vec{\Theta}}{^B}`
 
-.. |phi_Bin⊥| replace:: :math:`{^⊥}{\phi}{^B}`
-.. |theta_Bin⊥| replace:: :math:`{^⊥}{\theta}{^B}`
-.. |psi_⊥inN| replace:: :math:`{^N}{\psi}{^⊥}`
+.. |phi_Bin\perp| replace:: :math:`{^\perp}{\phi}{^B}`
+.. |theta_Bin\perp| replace:: :math:`{^\perp}{\theta}{^B}`
+.. |psi_\perpinN| replace:: :math:`{^N}{\psi}{^\perp}`
 
 .. |phi_BinN| replace:: :math:`{^N}{\phi}{^B}`
 .. |theta_BinN| replace:: :math:`{^N}{\theta}{^B}`
 .. |psi_BinN| replace:: :math:`{^N}{\psi}{^B}`
 
-.. |R_Bin⊥| replace:: :math:`{^⊥}{R}{^B}`
-.. |R_⊥inN| replace:: :math:`{^N}{R}{^⊥}`
+.. |R_Bin\perp| replace:: :math:`{^\perp}{R}{^B}`
+.. |R_\perpinN| replace:: :math:`{^N}{R}{^\perp}`
 .. |R_NinE|  replace:: :math:`{^E}{R}{^N}`
 
 .. [#rot_BinN] Pronounced “R B-in-N” and refers to the orientation of the B-Frame in the N-Frame.

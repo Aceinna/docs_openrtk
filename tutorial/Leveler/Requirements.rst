@@ -18,6 +18,6 @@ application, the following were selected:
     4. Provide an output message consisting of the following:
 
        a. A relative time measurement (integer and decimal)
-       b. Attitude consisting of roll and pitch angles in :math:`[°]`
+       b. Attitude consisting of roll and pitch angles in [°]
        c. Acceleration readings in :math:`[{m / s^2}]`
 

@@ -51,20 +51,20 @@ Example
 ---------
 
 Magnetic-field information was collected as the system underwent a 360 degree rotation about the z-
-axis (*Figure 2*).  This was performed twice, once in a disturbance-free environment (no iron added
+axis (*Figure*).  This was performed twice, once in a disturbance-free environment (no iron added
 to the system) and once with additional iron added to the system. The data in each case was
 processed and a best-fit ellipse FN computed (dashed lines).  In the disturbance-free case, the data
 and the fit were close to circular.  In the case with additional iron, however, the circle was
 clearly distorted and shifted away from the origin.
 
 
-**Figure 2: Magnetic-Field Measurement in an Environment with and without Iron-Based Disturbances**
+**Magnetic-Field Measurement in an Environment with and without Iron-Based Disturbances**
 
 
 For the measurements taken in the presence of additional iron, the estimation procedure produced the
 following best-fit ellipse parameters:
 
-**Table 3: Best-Fit Ellipse Parameters**
+**Best-Fit Ellipse Parameters**
 
 +--------------------------+---------------+----------+
 | **Ellipse Parameter**    | **Value**     | **Unit** |
@@ -92,17 +92,20 @@ rotation of the magnetic-field due to soft-iron effects:
 
 .. math::
 
-    R_{SI} = \begin{bmatrix} { { cos{ \begin{pmatrix} { \eta } \end{pmatrix} } \\
-                                 sin{ \begin{pmatrix} { \eta } \end{pmatrix} } \\
+    R_{SI} = \begin{bmatrix} { { \begin{split} cos{ \begin{pmatrix} { \eta } \end{pmatrix} } 
+                                 sin{ \begin{pmatrix} { \eta } \end{pmatrix} } 
                                  1
+                                 \end{split}
                                } \hspace{5mm}
-                               { -sin{ \begin{pmatrix} { \eta } \end{pmatrix} } \\
-                                 cos{ \begin{pmatrix} { \eta } \end{pmatrix} } \\
+                               { \begin{split} -sin{ \begin{pmatrix} { \eta } \end{pmatrix} } 
+                                 cos{ \begin{pmatrix} { \eta } \end{pmatrix} } 
                                  1
+                                 \end{split}
                                } \hspace{5mm}
-                               { 0 \\
-                                 0 \\
+                               { \begin{split} 0 
+                                 0 
                                  1
+                                 \end{split}
                                }
              } \end{bmatrix}
 
@@ -112,17 +115,20 @@ scale-factor matrix) corrects for the stretching caused by the soft-iron:
 
 .. math::
 
-    S_{SI} = \begin{bmatrix} { { {1/a} \\
-                                 0 \\
+    S_{SI} = \begin{bmatrix} { { \begin{split} {1/a} 
+                                 0 
                                  0
+                                 \end{split}
                                } \hspace{5mm}
-                               { 0 \\
-                                 {1/b} \\
+                               { \begin{split} 0 
+                                 {1/b} 
                                  0
+                                 \end{split}
                                } \hspace{5mm}
-                               { 0 \\
-                                 0 \\
+                               { \begin{split} 0 
+                                 0 
                                  1
+                                 \end{split}
                                }
              } \end{bmatrix}
 
@@ -134,17 +140,20 @@ the best-fit ellipse parameters, are:
 
 .. math::
 
-    R_{SI} = \begin{bmatrix} { { {0.66266} \\
-                                 {-0.74892} \\
+    R_{SI} = \begin{bmatrix} { { \begin{split} {0.66266} 
+                                 {-0.74892} 
                                  0
+                                 \end{split}
                                } \hspace{5mm}
-                               { {0.74892} \\
-                                 {0.66266} \\
+                               { \begin{split} {0.74892} 
+                                 {0.66266} 
                                  0
+                                 \end{split}
                                } \hspace{5mm}
-                               { 0 \\
-                                 0 \\
+                               { \begin{split} 0 
+                                 0 
                                  1
+                                 \end{split}
                                }
              } \end{bmatrix}
 
@@ -152,25 +161,28 @@ and
 
 .. math::
 
-    S_{SI} = \begin{bmatrix} { { {4.45226} \\
-                                 0 \\
+    S_{SI} = \begin{bmatrix} { { \begin{split} {4.45226} 
+                                 0 
                                  0
+                                 \end{split}
                                } \hspace{5mm}
-                               { 0 \\
-                                 {5.04689} \\
+                               { \begin{split} 0 
+                                 {5.04689} 
                                  0
+                                 \end{split}
                                } \hspace{5mm}
-                               { 0 \\
-                                 0 \\
+                               { \begin{split} 0 
+                                 0 
                                  1
+                                 \end{split}
                                }
              } \end{bmatrix}
 
 
 Applying these correction factors to the raw magnetic-field measurements results in the unit-circle
-shown in *Figure 3*.
+shown in *Figure*.
 
-**Figure 3: Corrected Magnetic Field Readings**
+**Corrected Magnetic Field Readings**
 
 Note: the nodes located at 45 degree increments around the circle are points where additional data
 was collected to test the heading calculation (described in the next section).
@@ -179,10 +191,10 @@ was collected to test the heading calculation (described in the next section).
 Results
 ---------
 
-*Table 5* lists the heading computed from test data using the above equations relating heading to
+*Table* lists the heading computed from test data using the above equations relating heading to
 corrected magnetic-field.
 
-**Table 5: Heading Results from Magnetically Clean and Distorted Readings**
+**Heading Results from Magnetically Clean and Distorted Readings**
 
 .. tabularcolumns:: |c|c|c|c|c|
 
@@ -232,8 +244,8 @@ corrected magnetic-field.
 
 Note: the raw results reported a systematic error of approximately 2.0 degrees on all heading
 values.  This was due to a misalignment of the test-fixture relative to true-north.  The values
-presented in *Table 5* reflect this 2.0 degree correction.  The systematic error is visible in
-*Figure 2* and *Figure 3* with data-clusters that do not fall on the x and y-axes.
+presented in *Table* reflect this 2.0 degree correction.  The systematic error is visible in
+Figures with data-clusters that do not fall on the x and y-axes.
 
 
 

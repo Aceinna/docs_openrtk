@@ -17,11 +17,11 @@ particular model is selected based on many factors, one being the limitations of
 measurements.  This formulation was selected due to the incomplete knowledge of the magnetic
 environment of the system  and uses the available sensor information as follows:
 
-    1) Accelerometers “level” the system (used to compute :math:`{^{⊥}}{\phi}{_{meas}^{B}}` and
-       :math:`{^{⊥}}{\theta}{_{meas}^{B}}`) FN
+    1) Accelerometers “level” the system (used to compute :math:`{^{\perp}}{\phi}{_{meas}^{B}}` and
+       :math:`{^{\perp}}{\theta}{_{meas}^{B}}`) FN
 
-    2) Magnetometers and/or GPS heading information align the ⊥-frame with true or magnetic north
-       (:math:`{^{N}}{\psi}{^{⊥}}`)
+    2) Magnetometers and/or GPS heading information align the \perp-frame with true or magnetic north
+       (:math:`{^{N}}{\psi}{^{\perp}}`)
 
     3) GPS position and velocity measurements update the position and velocity estimates
        (:math:`\vec{r}^{N}` and :math:`\vec{v}^{N}`)
@@ -89,29 +89,29 @@ absence of gravity.
 
 
 Static roll and pitch values are determined by noting that gravity is constant in the N-Frame
-(⊥-Frame):
+(\perp-Frame):
 
 .. math::
 
-    \vec{g}^{N} = \vec{g}^{⊥} = \begin{Bmatrix} { 0 \\
+    \vec{g}^{N} = \vec{g}^{\perp} = \begin{Bmatrix} { 0 \\
                                                   0 \\
                                                   1
                                  } \end{Bmatrix}
 
 
-and can be transformed into the body frame through :math:`{^{B}{R}^{⊥}}`:
+and can be transformed into the body frame through :math:`{^{B}{R}^{\perp}}`:
 
 .. math::
 
-    \vec{g}^{B} = {^{B}{R}^{⊥}} \cdot \vec{g}^{⊥}
-                = { \begin{pmatrix} { {^{⊥}{R}^{B}} } \end{pmatrix} }^{T} \cdot \vec{g}^{⊥}
-                = { \begin{pmatrix} { {^{⊥}{R}^{B}} } \end{pmatrix} }^{T} \cdot \begin{Bmatrix} { 0 \\
+    \vec{g}^{B} = {^{B}{R}^{\perp}} \cdot \vec{g}^{\perp}
+                = { \begin{pmatrix} { {^{\perp}{R}^{B}} } \end{pmatrix} }^{T} \cdot \vec{g}^{\perp}
+                = { \begin{pmatrix} { {^{\perp}{R}^{B}} } \end{pmatrix} }^{T} \cdot \begin{Bmatrix} { 0 \\
                                                                                                   0 \\
                                                                                                   1
                                                                                 } \end{Bmatrix}
 
 
-Using the definition of :math:`{^{⊥}{R}^{B}}` (discussed in
+Using the definition of :math:`{^{\perp}{R}^{B}}` (discussed in
 `Attitude Parameters <AttitudeParameters.html#mathematical-relationships-between-attitude-parameters>`__)
 and expanding the equation, the accelerometer measurements can be related to roll and pitch angles:
  
@@ -125,11 +125,11 @@ and expanding the equation, the accelerometer measurements can be related to rol
 
     \begin{Bmatrix} {
                       \begin{array}{c}
-                                       {-sin \begin{pmatrix} { {^{⊥}{\theta}^{B}} } \end{pmatrix}}
+                                       {-sin \begin{pmatrix} { {^{\perp}{\theta}^{B}} } \end{pmatrix}}
                                        \cr
-                                       {cos \begin{pmatrix} { {^{⊥}{\theta}^{B}} } \end{pmatrix} \cdot sin \begin{pmatrix} { {^{⊥}{\phi}^{B}} } \end{pmatrix}}
+                                       {cos \begin{pmatrix} { {^{\perp}{\theta}^{B}} } \end{pmatrix} \cdot sin \begin{pmatrix} { {^{\perp}{\phi}^{B}} } \end{pmatrix}}
                                        \cr
-                                       {cos \begin{pmatrix} { {^{⊥}{\theta}^{B}} } \end{pmatrix} \cdot cos \begin{pmatrix} { {^{⊥}{\phi}^{B}} } \end{pmatrix}}
+                                       {cos \begin{pmatrix} { {^{\perp}{\theta}^{B}} } \end{pmatrix} \cdot cos \begin{pmatrix} { {^{\perp}{\phi}^{B}} } \end{pmatrix}}
                       \end{array}
     } \end{Bmatrix} = {
                         \begin{Bmatrix} {
@@ -146,11 +146,11 @@ From this result, the angles corresponding to the accelerometer signal are found
 
 .. math::
 
-    {^{⊥}}{\phi}{_{meas}^{B}} =atan2(-a_{my}^{B},-a_{mz}^{B} )
+    {^{\perp}}{\phi}{_{meas}^{B}} =atan2(-a_{my}^{B},-a_{mz}^{B} )
 
 .. math::
 
-    {^{⊥}}{\theta}{_{meas}^{B}}  =-asin(-\hat{a}_{mx}^{B} )
+    {^{\perp}}{\theta}{_{meas}^{B}}  =-asin(-\hat{a}_{mx}^{B} )
 
 where, :math:`\hat{a}_{mx}^{B}` is the x-axis acceleration value normalized by the total
 acceleration magnitude:
@@ -226,7 +226,7 @@ CA, the magnetic field estimates are provided in Table 4:
 
 
 *Figure 4* illustrates the relationship between the Lines of constant Lat/Lon, the NED-frame, and
-the ⊥-frame.  Declination is specified with :math:`\delta` and heading is specified with
+the \perp-frame.  Declination is specified with :math:`\delta` and heading is specified with
 :math:`\psi`.
 
 .. _fig-magfield-n-and-b-frames:
@@ -249,7 +249,7 @@ The relationship between heading and magnetic field is based on the components o
 
 .. math::
 
-    \vec{b}^{⊥} = {^{⊥}{R}^{N}} \cdot \vec{b}^{N} = {^{⊥}{R}^{N}} \cdot \begin{pmatrix} { b_{xy} \\
+    \vec{b}^{\perp} = {^{\perp}{R}^{N}} \cdot \vec{b}^{N} = {^{\perp}{R}^{N}} \cdot \begin{pmatrix} { b_{xy} \\
                                                                                            0 \\
                                                                                            b_{z}
                                                                          } \end{pmatrix}
@@ -259,12 +259,12 @@ Expanding the expression results in the following:
 
 .. math::
 
-    \begin{Bmatrix} { b_{x}^{⊥} \\
-                      b_{y}^{⊥} \\
-                      b_{z}^{⊥}
-    } \end{Bmatrix} = \begin{Bmatrix} {  b_{xy} \cdot cos{ \begin{pmatrix} { {^{N}{\psi}^{⊥}} } \end{pmatrix} } \\
-                                        -b_{xy} \cdot sin{ \begin{pmatrix} { {^{N}{\psi}^{⊥}} } \end{pmatrix} } \\
-                                         b_{z}^{⊥}
+    \begin{Bmatrix} { b_{x}^{\perp} \\
+                      b_{y}^{\perp} \\
+                      b_{z}^{\perp}
+    } \end{Bmatrix} = \begin{Bmatrix} {  b_{xy} \cdot cos{ \begin{pmatrix} { {^{N}{\psi}^{\perp}} } \end{pmatrix} } \\
+                                        -b_{xy} \cdot sin{ \begin{pmatrix} { {^{N}{\psi}^{\perp}} } \end{pmatrix} } \\
+                                         b_{z}^{\perp}
                       } \end{Bmatrix}
 
 
@@ -272,18 +272,18 @@ From this, the heading is computed:
 
 .. math::
 
-    tan{ \begin{pmatrix} { {^{N}{\psi}^{⊥}} } \end{pmatrix} } = { {b_{xy} \cdot \sin{ \begin{pmatrix} { {^{N}{\psi}^{⊥}} } \end{pmatrix} }} \over {b_{xy} \cdot \cos{ \begin{pmatrix} { {^{N}{\psi}^{⊥}} } \end{pmatrix} }} }
-                                                              = { {-b_{y}^{⊥}} \over {b_{x}^{⊥}} }
-                                                              = { {-m_{corr,y}^{⊥}} \over {m_{corr,x}^{⊥}} }
+    tan{ \begin{pmatrix} { {^{N}{\psi}^{\perp}} } \end{pmatrix} } = { {b_{xy} \cdot \sin{ \begin{pmatrix} { {^{N}{\psi}^{\perp}} } \end{pmatrix} }} \over {b_{xy} \cdot \cos{ \begin{pmatrix} { {^{N}{\psi}^{\perp}} } \end{pmatrix} }} }
+                                                              = { {-b_{y}^{\perp}} \over {b_{x}^{\perp}} }
+                                                              = { {-m_{corr,y}^{\perp}} \over {m_{corr,x}^{\perp}} }
 
 
-Note: the values for :math:`b_{x}^{⊥}` and :math:`b_{y}^{⊥}` are the corrected and ‘leveled’ values
+Note: the values for :math:`b_{x}^{\perp}` and :math:`b_{y}^{\perp}` are the corrected and ‘leveled’ values
 of the measured magnetic-field in the body-frame; roll and pitch estimates are used to level the
-signal via :math:`{^{⊥}{R}_{pred}^{B}}`.
+signal via :math:`{^{\perp}{R}_{pred}^{B}}`.
 
 .. math::
 
-    {\vec{m}_{corr}^{⊥}} = {^{⊥}{R}_{pred}^{B}} \cdot {\vec{m}_{corr}^{B}}
+    {\vec{m}_{corr}^{\perp}} = {^{\perp}{R}_{pred}^{B}} \cdot {\vec{m}_{corr}^{B}}
 
 
 Note: as this calculation only corrects the magnetic-field in the xy body-frame, the heading
@@ -335,8 +335,8 @@ E-velocity is calculated from heading and ground speed.  The relationship is:
 
 .. math::
 
-    v_{N} = v_{XY} * \cos{ \begin{pmatrix} { {^{N}{\psi}^{⊥}} } \end{pmatrix} }
+    v_{N} = v_{XY} * \cos{ \begin{pmatrix} { {^{N}{\psi}^{\perp}} } \end{pmatrix} }
 
-    v_{E} = v_{XY} * \sin{ \begin{pmatrix} { {^{N}{\psi}^{⊥}} } \end{pmatrix} }
+    v_{E} = v_{XY} * \sin{ \begin{pmatrix} { {^{N}{\psi}^{\perp}} } \end{pmatrix} }
 
 

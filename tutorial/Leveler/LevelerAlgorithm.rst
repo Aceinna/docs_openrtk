@@ -20,18 +20,18 @@ of `EKF Algorithms <../../algorithms.html#ekf-algorithms>`__).  The formulation 
 
 .. math::
 
-    {^{⊥}}{\phi}{_{meas}^{B}} =atan2(\hat{g}_{my}^{B},\hat{g}_{mz}^{B} )
+    {^{\perp}}{\phi}{_{meas}^{B}} =atan2(\hat{g}_{my}^{B},\hat{g}_{mz}^{B} )
 
 .. math::
 
-    {^{⊥}}{\theta}{_{meas}^{B}}  =-asin(\hat{g}_{mx}^{B} )
+    {^{\perp}}{\theta}{_{meas}^{B}}  =-asin(\hat{g}_{mx}^{B} )
 
 where, :math:`\hat{g}^{B}` is the normalized gravity-field vector.
 
 
 Individual terms appearing in the equations are:
 
-    * Roll and pitch angle (rotation angles about the x and y-axes): :math:`{^{⊥}}{\phi}{_{meas}^{B}}` and :math:`{^{⊥}}{\theta}{_{meas}^{B}}`
+    * Roll and pitch angle (rotation angles about the x and y-axes): :math:`{^{\perp}}{\phi}{_{meas}^{B}}` and :math:`{^{\perp}}{\theta}{_{meas}^{B}}`
 
     * Unitized x, y, and z-axis gravity measurements: :math:`\hat{g}_{mx}^{B}`, :math:`\hat{g}_{my}^{B}`, and :math:`\hat{g}_{mz}^{B}`
 

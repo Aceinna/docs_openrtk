@@ -77,7 +77,7 @@ kbps, 115.2 kbps, or 230.4 kbps via the argument to *InitDebugSerialCommunicatio
 **System Testing using Debug Communications**:
 
 To test the OpenIMU output, the unit was rotated by approximately 15 [deg] about its roll-axis.
-Results from the serial-debug message (found in :ref:`Figure 1 <fig-term-debug-out>`) reflect this
+Results from the serial-debug message (found in :ref:`Figure <fig-term-debug-out>`) reflect this
 fact and provide confidence that the algorithm is generating the correct roll angle.
 
 
@@ -88,7 +88,7 @@ fact and provide confidence that the algorithm is generating the correct roll an
     :width: 5.0in
     :align: center
 
-    **Figure 1: Static-Leveler Algorithm Debug Output**
+    **Static-Leveler Algorithm Debug Output**
 
 
 **Suggested Operation**

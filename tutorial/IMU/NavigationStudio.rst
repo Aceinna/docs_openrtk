@@ -41,7 +41,7 @@ terminal returns a message similar to the following:
     :width: 7.0in
     :align: center
 
-    **Figure 3: Server-Connection Message at the Terminal Prompt**
+    **Server-Connection Message at the Terminal Prompt**
 
 Once connected to the IMU type 'start_server' to start the server.  More instructions on the Python driver
 are found `here <../../tools/python.html>`__  
@@ -60,7 +60,7 @@ open a browser to https://developers.aceinna.com and log in.  From the menu on t
     :width: 7.0in
     :align: center
 
-    **Figure 4: Connection to IMU Server**
+    **Connection to IMU Server**
 
 
 If desired, the packet output rate and other settings can be changed here.
@@ -76,7 +76,7 @@ of the unit:
     :width: 7.0in
     :align: center
 
-    **Figure 5: Server-Connection Message at the Terminal Prompt**
+    **Server-Connection Message at the Terminal Prompt**
 
 
 Displaying Data
@@ -92,7 +92,7 @@ button. An example capture of the accelerometer data follows:
     :width: 7.0in
     :align: center
 
-    **Figure 6: Plot of IMU Accelerometer Data**
+    **Plot of IMU Accelerometer Data**
 
 
 Logging Data
@@ -103,9 +103,9 @@ message.  In particular the message consists of:
 
     * Time (in counts and seconds)
     * Accelerometer data (in :math:`[g]`)
-    * Rate-Sensor data (in :math:`[° / s]`)
+    * Rate-Sensor data (in [°/s])
     * Magnetometer data (in :math:`[G]`)
-    * Board-Temperature data (in :math:`[°C]`)
+    * Board-Temperature data (in [°C])
 
 .. note:
 
@@ -123,5 +123,5 @@ data are saved as intended.
     :width: 7.5in
     :align: center
 
-    **Figure 7: IMU Angle Data File**
+    **IMU Angle Data File**
 

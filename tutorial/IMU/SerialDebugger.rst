@@ -29,8 +29,8 @@ relevant debugger calls are:
 
 
 In the output message, z-axis acceleration and rate-sensor measurements, provided in :math:`[g]`
-and :math:`[°/s]`, are obtained along with x-axis magnetic-field readings (in :math:`[G]`) and
-board-temperature (in :math:`[°C]`).  This subset of sensor information is selected to test the
+and [°/s], are obtained along with x-axis magnetic-field readings (in :math:`[G]`) and
+board-temperature (in [°C]).  This subset of sensor information is selected to test the
 output of all sensors, while keeping the size of the debug message small.
 
 
@@ -102,7 +102,7 @@ The results of these statements are found in the following figure:
     :width: 6.0in
     :align: center
 
-    **Figure 1: IMU Debug Output**
+    **IMU Debug Output**
 
 This output provides confidence that the IMU is obtaining the correct sensor measurements.
 

@@ -12,11 +12,12 @@ Sensors
 
 	
 Various sensors are used to obtain the information needed to estimate the position, velocity, and
-attitude of a system (`Table 2 <Sensors.html#id4>`__) .  Measurements from these sensors, taken
+attitude of a system (`Table <Sensors.html#id4>`__) .  Measurements from these sensors, taken
 over time, are combined using an Extended Kalman Filter (EKF) to arrive at an estimates that are
 more accurate than ones based on any single measurement.
 
-.. table:: **Table 2: Inertial Sensors and Measurement Type**
+.. table:: **Inertial Sensors and Measurement Type**
+    :widths: 15 25 60
 
     +-----------------+-------------------+-------------------------------------------------------------+
     | **Measurement** | **Sensor**        |  **Description**                                            |
@@ -114,7 +115,7 @@ characteristics are:
     
     * distributed according to a normal distribution with variance :math:`\sigma^2`
     
-    * constant over time (:math:`\sigma^2≠f(t)`)
+    * constant over time (:math:`\sigma^2 \ne f(t)`)
     
     * uncorrelated with other signals (:math:`E{ \begin{bmatrix} { {\begin{pmatrix} {\sigma_{\omega,x} - E[\sigma_{\omega,x}]} \end{pmatrix}} \cdot {\begin{pmatrix} {\sigma_{\omega,y} - E[\sigma_{\omega,y}]} \end{pmatrix}} } \end{bmatrix} } = 0`\ )
 
