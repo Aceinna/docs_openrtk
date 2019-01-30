@@ -43,8 +43,8 @@ IMU Sensors
 +-----------------------+-----------------------+
 
 **Notes:**
-:sup:`1` Allen Variance Curve, Constant Temperature, 
-:sup:`2` 1-Sigma Error, 
+:sup:`1` Allen Variance Curve, Constant Temperature,
+:sup:`2` 1-Sigma Error,
 :sup:`3` RMS Error over Temperature
 
 .. envvar:: ACCELERATION
@@ -58,7 +58,7 @@ IMU Sensors
 | (g)                   |                       |
 +-----------------------+-----------------------+
 | Bias Instability      | < 20                  |
-| (:raw-html:`&micro;`\ |                       | 
+| (:raw-html:`&micro;`\ |                       |
 | g)                    |                       |
 | :sup:`1,2`            |                       |
 +-----------------------+-----------------------+
@@ -84,8 +84,8 @@ IMU Sensors
 +-----------------------+-----------------------+
 
 **Notes:**
-:sup:`1` Allen Variance Curve, Constant Temperature, 
-:sup:`2` 1-Sigma Error, 
+:sup:`1` Allen Variance Curve, Constant Temperature,
+:sup:`2` 1-Sigma Error,
 :sup:`3` RMS Error over Temperature
 
 .. envvar:: MAGNETIC FIELD
@@ -95,10 +95,10 @@ IMU Sensors
 |                       |                       |
 |                       |                       |
 +-----------------------+-----------------------+
-| Range: X,Y,Z          | > 4                   |
+| Range: X,Y,Z          | +/- 8                 |
 | (Gauss)               |                       |
 +-----------------------+-----------------------+
-| Resolution (mG)       | < 5                   |
+| Resolution (mG)       | < 0.3                 |
 +-----------------------+-----------------------+
 | Noise Density         | < 0.25                |
 | (mG/\                 |                       |
@@ -111,7 +111,7 @@ IMU Sensors
 
 .. note::
 
-    This product has been developed and is sold exclusively for commercial applications.  
+    This product has been developed and is sold exclusively for commercial applications.
     Military usage is prohibited by the manufacturer.
 
 .. note::
