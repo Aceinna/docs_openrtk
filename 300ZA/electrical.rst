@@ -34,6 +34,7 @@ Other Specifications
 | Digital Interface     | SPI or UART           |
 +-----------------------+-----------------------+
 | Output Date Rate      | up to 200Hz (SPI)     |
+|                       +-----------------------+
 |                       | up to 100Hz (UART)    |
 +-----------------------+-----------------------+
 | Input Clock Sync      | 1KHz pulse            |
