@@ -20,8 +20,8 @@ ground-track.
 `<Sensors.html#id4>`__)
 In this case either the states need to be converted to match the measurements or vice-versa.
 
-    
-    
+
+
 descriptions
 
 
@@ -43,13 +43,13 @@ This result is used in the update stage of the EKF to generate the state error,
 
 stateenvironment of the system  and uses the available sensor information as follows:
 
-    1) Accelerometers “level” the system (used to compute :math:`{^{\perp}}{\phi}{_{meas}^{B}}` and
+    #. Accelerometers “level” the system (used to compute :math:`{^{\perp}}{\phi}{_{meas}^{B}}` and
        :math:`{^{\perp}}{\theta}{_{meas}^{B}}`) FN
 
-    2) Magnetometers and/or GPS heading information align the \perp-frame with true or magnetic north
+    #. Magnetometers and/or GPS heading information align the \perp-frame with true or magnetic north
        (:math:`{^{N}}{\psi}{^{\perp}}`)
 
-    3) GPS position and velocity measurements update the position and velocity estimates
+    #. GPS position and velocity measurements update the position and velocity estimates
        (:math:`\vec{r}^{N}` and :math:`\vec{v}^{N}`)
 
 

@@ -46,6 +46,3 @@ By making the assumption that all axes have the same noise characteristics
 .. math::
 
     \Sigma_{r} = ({\sigma_{a} \cdot dt}^{2} )^{2} \cdot I_3
-
-
-See Appendix Q for further information.

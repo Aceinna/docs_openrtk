@@ -25,21 +25,21 @@ as:
                    }
 
 
-A Kalman Filter essentially multiplies Gaussians to form state estimates.  :math:`Q` is a measure of
-the width of the Gaussian distribution for each state.  The wider the distribution, the more
-uncertainty exists in the process model.  This leads to a state-update that affects the state more
-than if the model had a tighter distribution, which results in an update having less influence on
-the particular state.
+A Kalman Filter can be viewed the combination of Gaussians distributions to form state estimates.
+:math:`Q` provides a measure of the width of the Gaussian distribution related to each noise state.
+The wider the distribution, the more uncertainty exists in the process model.  This leads to a
+state-update that affects the state more than if the model had a tighter distribution, which results
+in an update having less influence on the particular state.
 
 
-Based on the state process-noise vectors, :math:`\vec{w}_{k}` (found above), the Process Noise
-Covariance Matrix is:
+Based on the state process-noise vectors, :math:`\vec{w}_{k}` (found in previous sections), the
+Process Noise Covariance Matrix is:
 
 .. math::
 
     Q_{k} = {
                    \begin{bmatrix} {
-                                     \begin{array}{ccccc} 
+                                     \begin{array}{ccccc}
                                                           {\Sigma_{r}} &
                                                           {0_{3}} &
                                                           {0_{3 \times 4}} &
@@ -72,20 +72,20 @@ Covariance Matrix is:
                                      \end{array}
                      } \end{bmatrix}
                    }
-                   
 
-The individual process covariance (derived in previous sections) are repeated here:
+
+The individual process covariance are repeated here:
 
 .. math::
 
     \Sigma_{r} = {\begin{pmatrix} { \sigma_{a} \cdot {dt}^{2} } \end{pmatrix}}^{2} \cdot I_3
 
-    
+
 .. math::
 
     \Sigma_{v} = {\begin{pmatrix} { \sigma_{a} \cdot dt } \end{pmatrix}}^{2} \cdot I_3
 
-    
+
 .. math::
 
     \Sigma_{q} = { { \begin{pmatrix} {
@@ -95,7 +95,7 @@ The individual process covariance (derived in previous sections) are repeated he
                  \cdot
                  {
                    \begin{bmatrix} {
-                                     \begin{array}{cccc} 
+                                     \begin{array}{cccc}
                                                            {1 - q_0^2} &
                                                            {-{q_0 \cdot q_1}} &
                                                            {-{q_0 \cdot q_2}} &
@@ -124,7 +124,7 @@ The individual process covariance (derived in previous sections) are repeated he
 
     \Sigma_{\omega b} = {\begin{pmatrix} { \sigma_{dd,\omega} \cdot dt } \end{pmatrix}}^{2} \cdot I_3
 
-    
+
 .. math::
 
     \Sigma_{ab} = {\begin{pmatrix} { \sigma_{dd,a} \cdot dt } \end{pmatrix}}^{2} \cdot I_3

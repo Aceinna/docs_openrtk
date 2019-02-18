@@ -9,13 +9,13 @@ State Transition Models
 System State-Transition Model Summary\ [#Algo_Ref]_
 ====================================================
 
-The state transition models form the core of the EKF prediction stage by performing the following
+The state-transition models form the core of the EKF prediction stage by performing the following
 roles:
 
     1) They form the equations that propagate the system states from one time-step to the next
        (using high-quality sensor as the input)
 
-    2) They define the process noise vectors relating each state to sensor noise
+    2) They define the process-noise vectors relating each state to sensor noise
 
     3) They enable computation of the process covariance matrix, Q, and process Jacobian, F.  Both
        are used to propagate the system covariance, P, from one time-step to the next.
@@ -27,7 +27,7 @@ The complete system state equation consists of 16 total states\ [#LLA_Conv]_
 .. math::
     \vec{x} = {
                 \begin{Bmatrix} {
-                                  \begin{array}{c} 
+                                  \begin{array}{c}
                                                    {\vec{r}^{N}} \\
                                                    {\vec{v}^{N}} \\
                                                    {{^N}\vec{q}{^B}} \\
@@ -38,7 +38,7 @@ The complete system state equation consists of 16 total states\ [#LLA_Conv]_
               }
             = {
                 \begin{Bmatrix} {
-                                  \begin{array}{c} 
+                                  \begin{array}{c}
                                                    {\text{NED Position (3)}} \\
                                                    {\text{NED Velocity (3)}} \\
                                                    {\text{Body Attitude (4)}} \\
@@ -50,7 +50,7 @@ The complete system state equation consists of 16 total states\ [#LLA_Conv]_
 
 
 with the state-transition model, :math:`\vec{f}`, made up of five individual models (developed
-below):
+in upcoming sections):
 
 .. math::
 
@@ -72,7 +72,7 @@ The expanded state-transition vector, :math:`\vec{f}`, is:
                                 \vec{x}_{k-1}, \hspace{2mm}
                                 \vec{u}_{k-1}
               } \end{pmatrix} } = { \begin{Bmatrix} {
-                                                      \begin{array}{c} 
+                                                      \begin{array}{c}
                                                                        {\vec{r}_{k-1}^{N} + \vec{v}_{k-1}^{N} \cdot dt} \\
                                                                        {\vec{v}_{k-1}^{N} + \begin{bmatrix} {
                                                                                                              {{{^N}{R}_{k-1}^{B}} \cdot \begin{pmatrix} {
@@ -81,7 +81,7 @@ The expanded state-transition vector, :math:`\vec{f}`, is:
                                                                                                              }
                                                                                             } \end{bmatrix}  \cdot dt
                                                                        } \\
-                                                                       { \begin{bmatrix} { 
+                                                                       { \begin{bmatrix} {
                                                                                            I_4 + {{dt} \over {2}} \cdot \begin{pmatrix} { \Omega_{meas,k-1} - \Omega_{bias,k-1}
                                                                                                    } \end{pmatrix}
                                                                          } \end{bmatrix} \cdot {^N}\vec{q}_{k-1}^{B}
@@ -98,7 +98,7 @@ and the process-noise vector, :math:`\vec{w}_{k-1}`, is:
 .. math::
 
     \vec{w}_{k-1} = { \begin{Bmatrix} {
-                                        \begin{array}{c} 
+                                        \begin{array}{c}
                                                          {-{^{N}{R}_{k-1}^{B}} \cdot \vec{a}_{noise}^{B} \cdot {dt}^{2}} \\
                                                          {-{^{N}{R}_{k-1}^{B}} \cdot \vec{a}_{noise}^{B} \cdot {dt}} \\
                                                          {-{{dt} \over {2}} \cdot \Xi_{k-1} \cdot {\vec{w}_{noise}^{B}}} \\
@@ -115,8 +115,8 @@ and the process-noise vector, :math:`\vec{w}_{k-1}`, is:
                     }
 
 
-The sensor noise vectors, :math:`\vec{N}`, corresponding the angular-rate and accelerometer bias
-states, are 3x1 vectors with each element described by a zero-mean Gaussian distribution with a
+The sensor noise vectors, :math:`\vec{N}`, corresponding to the angular-rate and accelerometer bias
+states, are each 3x1 vectors with elements described by a zero-mean Gaussian distribution with a
 variance of either :math:`\sigma_{dd,\omega}^{2}` or :math:`\sigma_{dd,a}^{2}`\ .
 
 

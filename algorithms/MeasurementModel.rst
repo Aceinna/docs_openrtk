@@ -12,18 +12,18 @@ Measurement Model
 Overview
 =========
 
-It is possible to choose among various measurement models for a given EKF implementation.  The
+It is possible to choose among various measurement models for a given EKF implementation.  A
 particular model is selected based on many factors, one being the limitations of the available
-measurements.  This formulation was selected due to the incomplete knowledge of the magnetic
-environment of the system  and uses the available sensor information as follows:
+measurements.  This formulation being described was selected due to the incomplete knowledge of the
+magnetic environment of the system  and uses the available sensor information as follows:
 
-    1) Accelerometers “level” the system (used to compute :math:`{^{\perp}}{\phi}{_{meas}^{B}}` and
+    #. Accelerometers “level” the system (used to compute :math:`{^{\perp}}{\phi}{_{meas}^{B}}` and
        :math:`{^{\perp}}{\theta}{_{meas}^{B}}`) FN
 
-    2) Magnetometers and/or GPS heading information align the \perp-frame with true or magnetic north
-       (:math:`{^{N}}{\psi}{^{\perp}}`)
+    #. Magnetometers and/or GPS heading information align the :math:`\perp`\-frame with true or
+       magnetic north (:math:`{^{N}}{\psi}{^{\perp}}`)
 
-    3) GPS position and velocity measurements update the position and velocity estimates
+    #. GPS position and velocity measurements update the position and velocity estimates
        (:math:`\vec{r}^{N}` and :math:`\vec{v}^{N}`)
 
 
@@ -62,10 +62,7 @@ with the corresponding measurement model, :math:`\vec{h}_{k}`:
 
 
 Both :math:`{^{N}}{\vec{\Theta}}{_{meas}^{B}}` and :math:`{^{N}}{\vec{\Theta}}{_{pred}^{B}}` are
-3x1 column vectors containing the roll, pitch, and heading values. FN
-
-
-
+3x1 column vectors containing the roll, pitch, and heading values.
 
 
 Measurement Model
@@ -85,36 +82,14 @@ elements of this vector come directly from the position and velocity states, whi
     {^{N}{\psi}_{pred}^{\perp}} &= atan2 \begin{bmatrix} {2 \cdot \begin{pmatrix} {q_{1} \cdot q_{2}+q_{0} \cdot q_{3}} \end{pmatrix},{q_{0}}^{2}+{q_{1}}^{2}-{q_{2}}^{2}-{q_{3}}^{2} } \end{bmatrix}
 
 
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 Measurement Vector (:math:`\vec{z}_{k}`)
 =========================================
 
 The measurement vector, :math:`\vec{z}_{k}` is comprised of position, velocity, and attitude
-information as defined above.  It is formed from sensor measurements:.  However, only the GPS
-velocity is available directly from measurements; other information must be derived from sensor
-readings using the relationship described below.
+information as defined above.  It is formed from sensor measurements.  However, only the GPS
+velocity is directly available from measurements; other information must be derived from sensor
+readings using the relationships described below.
 
 
 Roll and Pitch Measurements
@@ -123,8 +98,8 @@ Roll and Pitch Measurements
 Roll and pitch values are computed from the accelerometer signal.  Under static conditions,
 measurements made by the accelerometer consists solely of gravity and sensor noise.  Along the axis
 pointed in the direction of gravity, the sensor measures -1 [g].  This is due to the proof-mass
-being pulled in the direction of gravity, which is equivalent to a deceleration of 1 [g] in the
-absence of gravity.
+being pulled in the direction of gravity, which, in the absence of gravity, is equivalent to a
+deceleration of 1 [g].
 
 .. math::
 
@@ -136,10 +111,12 @@ Static roll and pitch values are determined by noting that gravity is constant i
 
 .. math::
 
-    \vec{g}^{N} = \vec{g}^{\perp} = \begin{Bmatrix} \begin{split} { 0 
-                                                  0 
-                                                  1
-                                 } \end{split} \end{Bmatrix}
+    \vec{g}^{N} = \vec{g}^{\perp} = \begin{Bmatrix} \begin{array}{c}
+                                                                     0 \\
+                                                                     0 \\
+                                                                     1
+                                                    \end{array}
+                                    \end{Bmatrix}
 
 
 and can be transformed into the body frame through :math:`{^{B}{R}^{\perp}}`:
@@ -148,22 +125,24 @@ and can be transformed into the body frame through :math:`{^{B}{R}^{\perp}}`:
 
     \vec{g}^{B} = {^{B}{R}^{\perp}} \cdot \vec{g}^{\perp}
                 = { \begin{pmatrix} { {^{\perp}{R}^{B}} } \end{pmatrix} }^{T} \cdot \vec{g}^{\perp}
-                = { \begin{pmatrix} { {^{\perp}{R}^{B}} } \end{pmatrix} }^{T} \cdot \begin{Bmatrix} \begin{split} { 0 
-                                                                                                  0 
-                                                                                                  1
-                                                                                } \end{split} \end{Bmatrix}
+                = { \begin{pmatrix} { {^{\perp}{R}^{B}} } \end{pmatrix} }^{T} \cdot \begin{Bmatrix} \begin{array}{c}
+                                                                                                                      0 \\
+                                                                                                                      0 \\
+                                                                                                                      1
+                                                                                                    \end{array}
+                                                                                    \end{Bmatrix}
 
 
 Using the definition of :math:`{^{\perp}{R}^{B}}` (discussed in
 `Attitude Parameters <AttitudeParameters.html#mathematical-relationships-between-attitude-parameters>`__)
 and expanding the equation, the accelerometer measurements can be related to roll and pitch angles:
- 
+
 
 .. math::
 
     \vec{g}^{B} = -\vec{a}_{meas}^{B}
 
-    
+
 .. math::
 
     \begin{Bmatrix} {
@@ -211,12 +190,12 @@ out).
 Heading Measurements
 ----------------------
 
-Heading measurements are determined from the following:
+Heading measurements are determined from one (or both) of the following:
 
-    1) Magnetometers
-    2) GPS Velocity
+    #. Magnetometers
+    #. GPS Velocity
 
-    
+
 Magnetometer-Based Heading
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -283,7 +262,7 @@ the \perp-frame.  Declination is specified with :math:`\delta` and heading is sp
 .. figure:: ./media/MagField_N_and_B_Frames.PNG
     :alt: MagFieldNandBFrames
     :align: center
-    
+
     **Relationship of Magnetic-Field to N and B-Frames**
 
 
@@ -298,23 +277,28 @@ The relationship between heading and magnetic field is based on the components o
 
 .. math::
 
-    \vec{b}^{\perp} = {^{\perp}{R}^{N}} \cdot \vec{b}^{N} = {^{\perp}{R}^{N}} \cdot \begin{pmatrix} \begin{split} { b_{xy} 
-                                                                                           0 
-                                                                                           b_{z}
-                                                                         } \end{split} \end{pmatrix}
-
+    \vec{b}^{\perp} = {^{\perp}{R}^{N}} \cdot \vec{b}^{N} = {^{\perp}{R}^{N}} \cdot \begin{Bmatrix} \begin{array}{c}
+                                                                                                                    b_{xy} \\
+                                                                                                                    0 \\
+                                                                                                                    b_{z}
+                                                                                                    \end{array}
+                                                                                    \end{Bmatrix}
 
 Expanding the expression results in the following:
 
 .. math::
 
-    \begin{Bmatrix} \begin{split} { b_{x}^{\perp} 
-                      b_{y}^{\perp} 
-                      b_{z}^{\perp} 
-    } \end{split} \end{Bmatrix} = \begin{Bmatrix} \begin{split} {  b_{xy} \cdot cos{ \begin{pmatrix} { {^{N}{\psi}^{\perp}} } \end{pmatrix} } 
-                                        -b_{xy} \cdot sin{ \begin{pmatrix} { {^{N}{\psi}^{\perp}} } \end{pmatrix} } 
-                                         b_{z}^{\perp}
-                      } \end{split} \end{Bmatrix}
+    \begin{Bmatrix} \begin{array}{c}
+                                     b_{x}^{\perp} \\
+                                     b_{y}^{\perp} \\
+                                     b_{z}^{\perp}
+                    \end{array}
+    \end{Bmatrix} = \begin{Bmatrix} \begin{array}{c}
+                                                      b_{xy} \cdot cos{ \begin{pmatrix} { {^{N}{\psi}^{\perp}} } \end{pmatrix} } \\
+                                                     -b_{xy} \cdot sin{ \begin{pmatrix} { {^{N}{\psi}^{\perp}} } \end{pmatrix} } \\
+                                                      b_{z}^{\perp}
+                                    \end{array}
+                    \end{Bmatrix}
 
 
 From this, the heading is computed:
@@ -375,6 +359,20 @@ of the PS  readings  and angles derived from accelerometer readings (equations p
 Measurement Covariance section):
 
 
+Choosing the Heading Measurement Source
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Deciding upon the source of the heading information is ultimately up to the user.  In the
+Aceinna algorithm, the source switches from GPS to magnetometer based on the operating condition.
+Specifically, during periods of motion, GPS measurements are used as the are considered more
+accurate as they are not influenced by the magnetic environment.  However, when at rest the GPS
+heading provides no heading information.  In this case, the magnetometer provides heading
+information.
+
+This implementation requires the algorithm to switch not only the source of the data but also the
+related measurement covariance values.
+
+
 GPS Position and Velocity
 --------------------------
 
@@ -391,5 +389,3 @@ E-velocity is calculated from heading and ground speed.  The relationship is:
     v_{N} = v_{XY} * \cos{ \begin{pmatrix} { {^{N}{\psi}^{\perp}} } \end{pmatrix} }
 
     v_{E} = v_{XY} * \sin{ \begin{pmatrix} { {^{N}{\psi}^{\perp}} } \end{pmatrix} }
-
-

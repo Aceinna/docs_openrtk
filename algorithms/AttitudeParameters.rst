@@ -22,10 +22,11 @@ This paper makes use of three different attitude parameters to specify the orien
 Direction Cosine Matrices
 ==========================
 
-The first of these, the direction cosine matrix\ [#rot_BinN]_, |R_BinN|\ , specifies the attitude
-of one frame relative to another by relaying how the basis-vectors of one frame relate to the
-basis-vectors of another.  These matrices have the property that they can, in a straightforward
-manner, transform vectors from one frame into another, such as from the Body to the NED-frame:
+The first of these, the direction cosine matrix\ [#rot_BinN]_, |R_BinN|\ , specifies the
+relationship of one frame relative to another by relaying how the basis-vectors of one frame relate
+to the basis-vectors of another.  These matrices have the property that they can, in a
+straightforward manner, transform vectors from one frame into another, such as from the Body to the
+NED-frame:
 
 .. math::
 
@@ -66,8 +67,8 @@ Euler Angles
 
 The final parameter used to relay attitude information are Euler angles.  These are more intuitive
 than quaternions but, unlike quaternions, experience singularities at certain angles (based on the
-selected rotation sequence).  For a 321-rotation sequence\ [#Rot_Seq_Usage]_, the singularity is at
-a pitch of 90°.
+selected rotation sequence).  For a 321-rotation sequence\ [#Rot_Seq_Usage]_, the singularity occurs
+at a pitch of 90°.
 
 
 Mathematical Relationships between Attitude Parameters
@@ -81,7 +82,7 @@ transformation matrix of the body-frame in the NED-frame, |R_BinN| , to the quat
 .. math::
     {{^N}{R}{^B}} = {
                       \begin{bmatrix} {
-                                        \begin{array}{ccc} 
+                                        \begin{array}{ccc}
                                                            {{q_0}^2 + {q_1}^2 - {q_2}^2 - {q_3}^2} &
                                                            {2 \cdot { \begin{pmatrix} {q_1 \cdot q_2 - q_0 \cdot q_3} \end{pmatrix} }} &
                                                            {2 \cdot { \begin{pmatrix} {q_1 \cdot q_3 + q_0 \cdot q_2} \end{pmatrix} }}
@@ -107,7 +108,7 @@ transformation matrix of the body-frame in the NED-frame, |R_BinN| , to the quat
 
     {{^N}{R}{^B}} = {
                       \begin{bmatrix} {
-                                        \begin{array}{ccc} 
+                                        \begin{array}{ccc}
                                                            { \cos{\begin{pmatrix} {{^\perp}{\theta}{^B}} \end{pmatrix}} } &
                                                            { -\sin{\begin{pmatrix} {{^N}{\psi}{^\perp}} \end{pmatrix}} } &
                                                            { 0 }
@@ -125,7 +126,7 @@ transformation matrix of the body-frame in the NED-frame, |R_BinN| , to the quat
                     \cdot
                     {
                       \begin{bmatrix} {
-                                        \begin{array}{ccc} 
+                                        \begin{array}{ccc}
                                                            { \cos{\begin{pmatrix} {{^\perp}{\theta}{^B}} \end{pmatrix}} } &
                                                            { \sin{\begin{pmatrix} {{^\perp}{\theta}{^B}} \end{pmatrix}} \cdot \sin{\begin{pmatrix} {{^\perp}{\phi}{^B}} \end{pmatrix}} } &
                                                            { \sin{\begin{pmatrix} {{^\perp}{\theta}{^B}} \end{pmatrix}} \cdot \cos{\begin{pmatrix} {{^\perp}{\phi}{^B}} \end{pmatrix}} }
@@ -144,7 +145,7 @@ transformation matrix of the body-frame in the NED-frame, |R_BinN| , to the quat
 
 In this case, |R_BinN| is broken up into two sequential transformations, which separate the roll
 and pitch calculations from the heading (this method is used later to form attitude measurements
-from the sensor readings):
+from the accelerometer and magnetometer readings):
 
 
 .. math::
@@ -166,38 +167,41 @@ Finally, Euler angles, |Theta_BinN|, can be expressed in terms of quaternion-ele
                                                    2 \cdot { \begin{pmatrix} {q_1 \cdot q_3 - q_0 \cdot q_2} \end{pmatrix} }
                                  } \end{pmatrix}
                                } \\
-                      {\hspace{5mm}} \\ 
+                      {\hspace{5mm}} \\
     {^N}{\psi}{^\perp}   &= {atan2}{ \begin{pmatrix} {
                                                    2 \cdot { \begin{pmatrix} {q_1 \cdot q_2 + q_0 \cdot q_3} \end{pmatrix} }, \hspace{2mm} {{q_0}^2 + {q_1}^2 - {q_2}^2 - {q_3}^2}
                                  } \end{pmatrix}
-                               } 
+                               }
 
 
-Note: due to the way the roll and pitch are separated from the heading, the Euler angles,
-phi_Bin :math:`\perp`, theta_Bin :math:`\perp`, and psi :math:`_\perp` inN are the same if written as |phi_BinN|, |theta_BinN|, and
-|psi_BinN|.
+.. note::
+
+    Due to the way the roll and pitch are separated from the heading, the Euler angles,
+    |phi_BinP|, |theta_BinP|, and |psi_PinN| are the same if written as |phi_BinN|, |theta_BinN|,
+    and |psi_BinN|.
 
 
 Example
 ========
 
-Using the direction cosine matrix formulation, the transformation to get from the body to inertial-
-frame (ECEF) is composed of multiple transformations (*Figure*):
+Using the direction cosine matrix formulation, the transformation to get from the body to
+inertial-frame (ECEF) in *Figure 1* is composed of multiple transformations:
 
-   #.  Transformation from the (light-blue) body-frame to the (dark blue) local perpendicular-frame
-       :math:`(\perp), R_Bin \perp`
-   #.  Transformation from the (dark blue) :math:`\perp`-frame to the (red) local NED-frame, R :math:`_\perp` inN
-   #.  Transformation from the (red) NED-frame to the ECEF-frame, |R_NinE| (ECEF-Frame not shown;
+.. math:: {^E}{R}{^B} = {^E}{R}{^N} \cdot {^N}{R}{^\perp} \cdot {^\perp}{R}{^B}
+
+Each transformation describes how one coordinate frame is related to the next in the sequence of
+rotations.
+
+   #.  |R_BinP|: Transformation from the (light-blue) body-frame to the (dark blue) local
+       perpendicular-frame :math:`(\perp)`
+   #.  |R_PinN|: Transformation from the (dark blue) :math:`\perp`-frame to the (red) local
+       NED-frame
+   #.  |R_NinE|: Transformation from the (red) NED-frame to the ECEF-frame (ECEF-Frame not shown;
        black line are latitude and longitude lines).  |R_NinE| is based on the WGS84 model.
-
 
 This notation not only makes the formulation easier by simplifying the full complexity of the
 transformation but it helps avoid confusion by explicitly specifying the frame used in each
-calculation:
-
-.. math::
-
-    {^E}{R}{^B} = {^E}{R}{^N} \cdot {^N}{R}{^\perp} \cdot {^\perp}{R}{^B}
+calculation.
 
 
 Some additional information about these frames:
@@ -234,16 +238,16 @@ Some additional information about these frames:
 
 .. |Theta_BinN| replace:: :math:`{^N}{\vec{\Theta}}{^B}`
 
-.. |phi_Bin\perp| replace:: :math:`{^\perp}{\phi}{^B}`
-.. |theta_Bin\perp| replace:: :math:`{^\perp}{\theta}{^B}`
-.. |psi_\perpinN| replace:: :math:`{^N}{\psi}{^\perp}`
+.. |phi_BinP| replace:: :math:`{^\perp}{\phi}{^B}`
+.. |theta_BinP| replace:: :math:`{^\perp}{\theta}{^B}`
+.. |psi_PinN| replace:: :math:`{^N}{\psi}{^\perp}`
 
 .. |phi_BinN| replace:: :math:`{^N}{\phi}{^B}`
 .. |theta_BinN| replace:: :math:`{^N}{\theta}{^B}`
 .. |psi_BinN| replace:: :math:`{^N}{\psi}{^B}`
 
-.. |R_Bin\perp| replace:: :math:`{^\perp}{R}{^B}`
-.. |R_\perpinN| replace:: :math:`{^N}{R}{^\perp}`
+.. |R_BinP| replace:: :math:`{^\perp}{R}{^B}`
+.. |R_PinN| replace:: :math:`{^N}{R}{^\perp}`
 .. |R_NinE|  replace:: :math:`{^E}{R}{^N}`
 
 .. [#rot_BinN] Pronounced “R B-in-N” and refers to the orientation of the B-Frame in the N-Frame.
@@ -256,7 +260,7 @@ Some additional information about these frames:
               local z-axis (3), followed by a rotation about the local y-axis (2), and finally by a
               rotation about the local x-axis (1).  The resulting matrix, |R_LinN| = |RSub321|, is
               composed of column vectors formed from the xyz-axes of the local-frame coordinatized
-              in the inertial-frame: 
+              in the inertial-frame:
               |R_LinN| = :math:`\begin{bmatrix} {{{\hat{x}_{L}}{^N}} \hspace{5mm} {{\hat{y}_{L}}{^N}} \hspace{5mm} {{\hat{z}_{L}}{^N}}} \end{bmatrix}`\ .
 
 
