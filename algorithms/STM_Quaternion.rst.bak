@@ -140,8 +140,7 @@ and :math:`\vec{w}_{q,k-1}` is the quaternion process-noise vector:
 
     In this expression, the components of :math:`\Omega_{noise}` are the noise components of
     the angular-rate signal, :math:`\sigma_{\omega}^{2}`.  This can be expressed in terms of the
-    sensor’s Angular Random Walk (ARW).
-
+    sensor’s ARW.
 
 
 Recasting :math:`\vec{w}_{q,k-1}`, so the rate-sensor noise (:math:`\omega_{noise}^{B}`) forms

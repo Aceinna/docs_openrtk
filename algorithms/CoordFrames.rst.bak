@@ -30,7 +30,7 @@ which a variable is measured.
     +=============+=================+===================================================================================+
     | ECEF-Frame  | E               || Frame aligned with Earth's axis (z-axis parallel to axis-of-                     |
     |             |                 || rotation, x-axis exits at the equator through the prime-                         |
-    |             |                 || meridian); rotates with the Earth (**not shown in Figure 1**)                    |
+    |             |                 || meridian); rotates with the Earth                                                |
     +-------------+-----------------+-----------------------------------------------------------------------------------+
     | NED-Frame   | N               || Frame aligned with the local tangent-frame (z-axis parallel to                   |
     |             |                 || the gravity vector) with the x-axis aligned with true or                         |
