@@ -18,10 +18,6 @@ quaternion, NED-velocity, and NED-position.  The measurement come from accelerom
 latitude/longitude/altitude measurements, and horizontal/vertical velocities along with
 ground-track.  In this case either the states need to be converted to match the measurements or vice-versa.
 
-.. `<Sensors.html#id4>`__)
-
-
-
 
 
 Innovation (Measurement Error):
@@ -40,7 +36,7 @@ This result is used in the update stage of the EKF to generate the state error,
 
 
 
-.. stateenvironment of the system  and uses the available sensor information as follows:
+.. state environment of the system  and uses the available sensor information as follows:
 
 The available sensor information is used as follows:
 

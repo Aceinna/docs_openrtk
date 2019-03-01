@@ -50,7 +50,7 @@ by:
     \sigma_{d,\omega}^{2}(t) = \begin{bmatrix} { (\sigma_{dd,\omega} \cdot \sqrt{dt}) \cdot \sqrt{t} } \end{bmatrix} ^{2}
 
 
-An empirical study related :math:`\sigma_{dd,\omega}` to the BI and Angle Random Walk (ARW) values as follows:
+An empirical study related :math:`\sigma_{dd,\omega}` to the BI and ARW values as follows:
 
 .. math::
 

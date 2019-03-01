@@ -34,21 +34,20 @@ which a variable is measured.
     +-------------+-----------------+-----------------------------------------------------------------------------------+
     | NED-Frame   | N               || Frame aligned with the local tangent-frame (z-axis parallel to                   |
     |             |                 || the gravity vector) with the x-axis aligned with true or                         |
-    |             |                 || magnetic north.  (**Red lines in Figure 1**)                                     |
+    |             |                 || magnetic north.  Red lines in *Figure 1*.                                        |
     +-------------+-----------------+-----------------------------------------------------------------------------------+
     | Perp-Frame  | :math:`\perp`   || Frame aligned with the local tangent-frame (|zSubPerp|\ -axis                    |
-    |             |                 || parallel to the gravity vector).  (**Purple lines in Figure 1**)                 |
+    |             |                 || parallel to the gravity vector).  Dark blue lines in *Figure 1*                  |
     +-------------+-----------------+-----------------------------------------------------------------------------------+
     | Body-Frame  | B               || Frame aligned with the body-frame.  |xSubB|\ -axis lies in the                   |
-    |             |                 || plane formed by the |xSubPerp| and |zSubPerp|\ -axes. (**Light**                 |
-    |             |                 || **Blue lines in Figure 1**)                                                      |
+    |             |                 || plane formed by the |xSubPerp| and |zSubPerp|\ -axes. Light                      |
+    |             |                 || blues lines in *Figure 1*                                                        |
     +-------------+-----------------+-----------------------------------------------------------------------------------+
-
 
 *Figure 1* shows the relative orientation of three of the four frames listed in *Table 1* (ECEF not
 shown) for a hypothetical body on the surface of the Earth with a roll of 20°, a pitch of 10°, and
-a heading of 30°.  The red lines illustrate the components of the :math:`\perp`-frame axes in
-the N-Frame while the light blue lines indicate the projection of the B-Frame axes onto the N-frame.
+a heading of 30°.  The dashed red lines illustrate the components of the :math:`\perp`-frame axes in
+the N-Frame while the dashed blue lines indicate the projection of the B-Frame axes onto the N-frame.
 
 .. _fig-coord-frames:
 

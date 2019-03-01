@@ -33,6 +33,7 @@ For a discrete-time system the prediction and update equations are:
 Prediction (High Dynamic Range (DR) Process)
 ============================================
 
+
 In this stage of the EKF, the attitude, velocity, and acceleration are propagated forward in time
 from sensor readings.
 

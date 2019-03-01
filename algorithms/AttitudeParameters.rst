@@ -192,29 +192,16 @@ inertial-frame (ECEF) in *Figure 1* is composed of multiple transformations:
 Each transformation describes how one coordinate frame is related to the next in the sequence of
 rotations.
 
-   #.  Transformation from the (light-blue) body-frame to the (purple) local perpendicular-frame
-       :math:`(\perp), R_Bin \perp`
-   #.  Transformation from the (purple) :math:`\perp`-frame to the (red) local NED-frame, R :math:`_\perp` inN
-   #.  Transformation from the (red) NED-frame to the ECEF-frame, |R_NinE| (ECEF-Frame not shown;
+   #.  |R_BinP|: Transformation from the (light-blue) body-frame to the (dark blue) local
+       perpendicular-frame :math:`(\perp)`
+   #.  |R_PinN|: Transformation from the (dark blue) :math:`\perp`-frame to the (red) local
+       NED-frame
+   #.  |R_NinE|: Transformation from the (red) NED-frame to the ECEF-frame (ECEF-Frame not shown;
        black line are latitude and longitude lines).  |R_NinE| is based on the WGS84 model.
-
-
 
 This notation not only makes the formulation easier by simplifying the full complexity of the
 transformation but it helps avoid confusion by explicitly specifying the frame used in each
 calculation.
-
-
-
-.. _fig-coord-frames:
-
-.. figure:: ./media/CoordFrames.png
-    :alt: CoordFrames
-    :width: 5.0in
-    :align: center
-
-    **Figure 1: Coordinate Frames used in Derivation (N, \perp, and B-Frames)**
-
 
 
 Some additional information about these frames:
