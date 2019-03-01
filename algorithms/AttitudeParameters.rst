@@ -181,8 +181,8 @@ Finally, Euler angles, |Theta_BinN|, can be expressed in terms of quaternion-ele
     and |psi_BinN|.
 
 
-Example
-========
+Attitude Parameters Example
+===========================
 
 Using the direction cosine matrix formulation, the transformation to get from the body to
 inertial-frame (ECEF) in *Figure 1* is composed of multiple transformations:

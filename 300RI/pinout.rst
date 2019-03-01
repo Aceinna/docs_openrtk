@@ -1,5 +1,5 @@
-Connector Pinout
-================
+OpenIMUJ300RI Connector Pinout
+==============================
 
 .. contents:: Contents
     :local:
