@@ -14,3 +14,5 @@ solution.
 
 This application is under development.  Please check back soon.
 
+.. note:: The OpenIMU300xI (RI & AI) units do not support GPS or other external sensor input, so those units can't support the INS application
+

@@ -17,3 +17,11 @@ To install ready-made apps to your IMU, please make sure you have installed the 
 To build a custom app, please follow the tutorial: 
 `Building Your First Custom App <tutorial.html#building-your-first-custom-app>`__
 
+
+.. toctree::
+    :maxdepth: 2
+
+    apps/imu
+    apps/leveler
+    apps/ahrs
+    apps/ins

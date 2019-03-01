@@ -120,7 +120,7 @@ The command allows system directly to enter application mode.
 SPI Interface
 -------------
 
-TBD
+To Be Provided
 
 .. contents:: Contents
     :local:

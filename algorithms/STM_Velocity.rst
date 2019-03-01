@@ -13,7 +13,7 @@ The velocity propagation equation is based on the following first-order model:
 
     \vec{v}_{k} = \vec{v}_{k-1} + \dot{\vec{v}}_{k-1} \cdot dt
 
-:math:`\dot{\vec{v}}_{k-1}` is an estimate of system motion (linear-acceleration corrected for
+:math:`\dot{\vec{v}}_{k-1}` is an estimate of system acceleration (linear-acceleration corrected for
 gravity) and is formed from the accelerometer signal with estimated accelerometer-bias and gravity
 removed.
 
@@ -23,7 +23,7 @@ removed.
 
 
 Substituting this expression (along with the noise term) into the velocity propagation equation, and
-explicitly stating the frames in which the signals are available, leads to:
+explicitly stating the frames in which the readings are made, leads to:
 
 .. math::
 
@@ -64,7 +64,7 @@ The velocity process noise vector is used to compute the elements of the process
 
 By making the assumption that all axes have the same noise characteristics
 (:math:`{\sigma_{a}}^{2}`) and manipulating the expression, the result can be simplified to the
-following (Appendix Q):
+following:
 
 .. math::
 

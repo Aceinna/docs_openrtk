@@ -2,7 +2,8 @@
 AHRS/VG Dynamic Attitude APP
 ============================
 
-The AHRS/VG supports all of the features and operating modes of the
+The Attitude and Heading Reference System (AHRS) and Vertical Gyro (VG) application 
+supports all of the features and operating modes of the
 IMU APP, and it links in additional internal software, running on the
 processor, for the computation of dynamic roll, pitch. 
 In addition to the Roll,Pitch and IMU data, the dynamic heading measurement is optionally stabilized 

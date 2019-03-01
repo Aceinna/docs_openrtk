@@ -23,8 +23,8 @@ For the rate-sensor, the bias model is
     \vec{\omega}_{bias}^{B} = \vec{\omega}_{offset}^{B} + \vec{\omega}_{drift}^{B}
 
 
-The drift model follows a random-walk process FN, i.e. the drift value wanders according to a
-Gaussian distribution.
+The drift model follows a random-walk process\ [#RW_Assump]_, i.e. the drift value wanders according
+to a Gaussian distribution.
 
 .. math::
 
@@ -38,15 +38,19 @@ where
     \dot{\vec{\omega}}_{drift,k-1}^{B} = N \begin{pmatrix} { 0,\sigma_{dd,\omega}^{2} } \end{pmatrix}
 
 
-Note: the subscript *dd* stands for "drift-dot".  Based on this model, the process variance for
-:math:`\vec{\omega}_{drift}^{B}` at time, t, is given by:
+.. note::
+
+    The subscript *dd* stands for "drift-dot".
+
+Based on this model, the process variance for :math:`\vec{\omega}_{drift}^{B}` at time, t, is given
+by:
 
 .. math::
 
     \sigma_{d,\omega}^{2}(t) = \begin{bmatrix} { (\sigma_{dd,\omega} \cdot \sqrt{dt}) \cdot \sqrt{t} } \end{bmatrix} ^{2}
 
 
-Based on an empirical study, :math:`\sigma_{dd,\omega}` is related to the BI and ARW as follows:
+An empirical study related :math:`\sigma_{dd,\omega}` to the BI and Angle Random Walk (ARW) values as follows:
 
 .. math::
 
@@ -66,3 +70,7 @@ The accelerometer drift model mirrors this formulation and results in:
 .. math::
 
     \Sigma_{ab} = \sigma_{d,a}^{2} (dt) \cdot I_3 = {\begin{pmatrix} { \sigma_{dd,a} \cdot dt } \end{pmatrix}}^{2} \cdot I_3
+
+
+.. [#RW_Assump] This is not a perfect assumption as the output of the model is unbounded while the
+                actual process is not.

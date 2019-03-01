@@ -7,16 +7,16 @@ Sensors
 
 .. role::  raw-html(raw)
     :format: html
-    
+
 .. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
-	
-Various sensors are used to obtain the information needed to estimate the position, velocity, and
-attitude of a system (`Table <Sensors.html#id4>`__) .  Measurements from these sensors, taken
-over time, are combined using an Extended Kalman Filter (EKF) to arrive at an estimates that are
-more accurate than ones based on any single measurement.
 
-.. table:: **Inertial Sensors and Measurement Type**
+Various sensors are used to obtain the information needed to estimate the position, velocity, and
+attitude of a system (`Table 2 <Sensors.html#id4>`__) .  Measurements from these sensors, taken
+over time, are combined using an Extended Kalman Filter (EKF) to arrive at an estimates that are
+more accurate or more timely than ones based on any single measurement.
+
+.. table:: **Table 2: Inertial Sensors and Measurement Type**
     :widths: 15 25 60
 
     +-----------------+-------------------+-------------------------------------------------------------+
@@ -112,17 +112,20 @@ are assumed to be white, Gaussian, stationary, and independent.  This implies th
 characteristics are:
 
     * zero-mean (:math:`\mu = 0`)
-    
+
     * distributed according to a normal distribution with variance :math:`\sigma^2`
-    
+
     * constant over time (:math:`\sigma^2 \ne f(t)`)
-    
+
     * uncorrelated with other signals (:math:`E{ \begin{bmatrix} { {\begin{pmatrix} {\sigma_{\omega,x} - E[\sigma_{\omega,x}]} \end{pmatrix}} \cdot {\begin{pmatrix} {\sigma_{\omega,y} - E[\sigma_{\omega,y}]} \end{pmatrix}} } \end{bmatrix} } = 0`\ )
 
 
-The formulation of the covariance matrices relies heavily on these assumption.  Note: the process
-noise vectors, :math:`\vec{w}`, result from sensor noise transmission through the individual state-
-transition models, described in the sections to come.
+The formulation of the covariance matrices relies heavily on these assumption.
+
+.. note::
+
+    The process-noise vectors, :math:`\vec{w}`, result from sensor noise transmission through the
+    individual state-transition models, described in the sections to come.
 
 
 .. |bVec| replace:: :math:`\vec{b}`
@@ -145,8 +148,3 @@ transition models, described in the sections to come.
 .. [#ironEffects] In general you want the magnetic sensor to be in as magnetically clean a location
                   as possible.  Even by correcting for hard and soft-iron using this relationship,
                   large hard and soft-iron errors lead to progressively worse solutions.
-
-    
-    
-    
-    

@@ -4,10 +4,10 @@ Settings Modules
 .. contents:: Contents
     :local:
 
-1. USER Configuration.
+USER Configuration.
 ------------------------------
 
-1.1  Configuration parameters in EEPROM 
+Configuration parameters in EEPROM 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 OpenIMU software framework provides possibility for user to store arbitrary configuration parameters
@@ -78,14 +78,14 @@ parameters structure located in file UserConfiguration.h. New arbitrary paramete
 
     } UserConfigurationStruct;
 
-1.2  Default configuration
+Default configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Default system parameters reside in the **gDefaultUserConfig** structure in file **UserConfiguration.c**.
 They are becoming active each time new application image is loaded to the unit or upon reception of the "rD" command. 
 
 
-1.3  Mapping different values into 64-bit parameter
+Mapping different values into 64-bit parameter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Below provided recommended mapping of the values of different types into 64-bit parameter.
@@ -131,12 +131,12 @@ Byte (character) indexes match offset in the 64-bit parameter
        |  0  | 1  | 2  |  3  |  4 |  5 |  6 | 7  | 
        +-----+----+----+-----+----+----+----+----+
  
-1.4  Adding new parameter
+Adding new parameter
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 One can arbitrary add new configuration parameters. The steps are:
 
-1. Add required parameter into the **UserConfigurationStruct** in the file **UserConfiguration.h** after system parameters “border” (see above).
+1. Add required parameter into the **UserConfigurationStruct** in the file **UserConfiguration.h** after system parameters ï¿½borderï¿½ (see above).
 
 2. Add new configuration parameter enumerator into UserConfigParamOffset in the file UserConfiguration.h after USER_LAST_SYSTEM_PARAM. 
 
@@ -144,27 +144,27 @@ One can arbitrary add new configuration parameters. The steps are:
 
 4. Add validation of new parameter into function UpdateUserParameter (if desired) or explicitly use parameter at your discretion
 
-1.4 Changing configuration parameters.
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Changing configuration parameters.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configuration parameters can be changed any time by sending specific commands (messages) to the unit (("uP" "uA" "uC"). 
 Upon reception of corresponding message parameters are validated (if desired), placed into gUserConfiguration structure
 and applied to the unit (if desired). See section Messaging Modules for details. Updated parameters will last untill unit
 reset or power cycle.
   
-1.5  Retrieving configuration parameters.
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Retrieving configuration parameters.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Configuration parameters can be read from unit any time by sending commands "gC" "gP" or "gA" (see messaging-modules).
 
-1.6  Saving configuration parameters
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+Saving configuration parameters
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If desired, updated parameters can be saved into EEPROM and will be permanently active untill changed. It can be achieved by sending "sC"
 command to the unit. Upon reception of this command gUserConfiguration structure saved into EEPROM.
 
-1.7  Restoring default configuration
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Restoring default configuration
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 If desired, default configuration can be restored and saved into EEPROM. It can be achieved by sending command "rD" to the unit.
 

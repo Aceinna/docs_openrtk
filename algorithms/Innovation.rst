@@ -16,13 +16,12 @@ As the measurements and the system states are often not the same, one or the oth
 transformed into the mesurement.  In the case of this algorithm, the state consists of an attitude
 quaternion, NED-velocity, and NED-position.  The measurement come from accelerometer readings, GPS
 latitude/longitude/altitude measurements, and horizontal/vertical velocities along with
-ground-track.
-`<Sensors.html#id4>`__)
-In this case either the states need to be converted to match the measurements or vice-versa.
+ground-track.  In this case either the states need to be converted to match the measurements or vice-versa.
 
-    
-    
-descriptions
+.. `<Sensors.html#id4>`__)
+
+
+
 
 
 Innovation (Measurement Error):
@@ -41,16 +40,19 @@ This result is used in the update stage of the EKF to generate the state error,
 
 
 
-stateenvironment of the system  and uses the available sensor information as follows:
+.. stateenvironment of the system  and uses the available sensor information as follows:
 
-    1) Accelerometers “level” the system (used to compute :math:`{^{\perp}}{\phi}{_{meas}^{B}}` and
+The available sensor information is used as follows:
+
+
+    #. Accelerometers “level” the system (used to compute :math:`{^{\perp}}{\phi}{_{meas}^{B}}` and
        :math:`{^{\perp}}{\theta}{_{meas}^{B}}`) FN
 
-    2) Magnetometers and/or GPS heading information align the \perp-frame with true or magnetic north
+    #. Magnetometers and/or GPS heading information align the \perp-frame with true or magnetic north
        (:math:`{^{N}}{\psi}{^{\perp}}`)
 
-    3) GPS position and velocity measurements update the position and velocity estimates
+    #. GPS position and velocity measurements update the position and velocity estimates
        (:math:`\vec{r}^{N}` and :math:`\vec{v}^{N}`)
 
 
-Based upon these steps, the measureme
+.. Based upon these steps, the measureme

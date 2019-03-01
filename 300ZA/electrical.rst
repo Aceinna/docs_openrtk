@@ -11,11 +11,11 @@ Other Specifications
 |                       |                       |
 |                       |                       |
 +-----------------------+-----------------------+
-| Operating Temperature |                       |
-| (|deg|C)              |                       |
+| Operating Temperature | -40 to 105            |
+| (°C)                  |                       |
 +-----------------------+-----------------------+
-| Non-Operating         |                       |
-| Temperature (|deg|C)  |                       |
+| Non-Operating         | -65 to 150            |
+| Temperature (°C)      |                       |
 +-----------------------+-----------------------+
 | Enclosure             |                       |
 +-----------------------+-----------------------+

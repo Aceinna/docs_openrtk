@@ -21,7 +21,7 @@ to control the coordinate system.  These configurable elements are known as **Co
 |image8| 
 
 .. |image8| image:: ../media/image6.png
-   :width: 2.53in
+   :width: 4.0in
 
 .. contents:: Contents
     :local:

@@ -23,6 +23,8 @@ according to the expression:
 
     \vec{q}_{k} \approx \vec{q}_{k-1} + \dot{\vec{q}}_{k-1} \cdot dt
 
+where *dt* is the integration time-step (sampling interval) and :math:`\vec{q}_{k-1}` is the
+current estimate of system attitude.
 
 The kinematical equation that describes the rate-of-change of the attitude quaternion,
 :math:`\dot{\vec{q}}_{k-1}`, is a function of **true angular velocity**,
@@ -41,13 +43,13 @@ is simplified to :math:`{\vec{\omega}_{true}}^{B}`.
 
 .. math::
 
-    \vec{\omega}^{B} = { \begin{Bmatrix} { 
+    \vec{\omega}^{B} = { \begin{Bmatrix} {
                                              \begin{array}{c}
                                                       {\omega_{x}^{B}} \cr
-                                                      {\omega_{y}^{B}} \cr    
+                                                      {\omega_{y}^{B}} \cr
                                                       {\omega_{z}^{B}}
-                                             \end{array} 
-                                         } \end{Bmatrix} 
+                                             \end{array}
+                                         } \end{Bmatrix}
                        }
 
 
@@ -56,7 +58,7 @@ The quaternion propagation matrix, :math:`\Omega_{k-1}`, at time-step k-1 is:
 .. math::
 
     \Omega_{k-1} = { \begin{bmatrix} {
-                                       \begin{array}{cccc} 
+                                       \begin{array}{cccc}
                                                            {0} &
                                                            {-\omega_{x,k-1}^{B}} &
                                                            {-\omega_{y,k-1}^{B}} &
@@ -93,10 +95,6 @@ From the above expressions, the full state-transition model for system-attitude 
                                       I_4 + {{dt} \over {2}} \cdot \Omega_{true,k-1}
                     } \end{bmatrix}
                   } \cdot {\vec{q}}_{k-1}
-
-
-where *dt* is the integration time-step (sampling interval) and :math:`\vec{q}_{k-1}` is the
-current estimate of system attitude.
 
 
 To find the noise term in the state-transition model, :math:`\vec{w}_{q,k-1}`, expand the
@@ -138,14 +136,16 @@ and :math:`\vec{w}_{q,k-1}` is the quaternion process-noise vector:
     \vec{w}_{q,k-1} = -{{dt} \over {2}} \cdot \Omega_{noise,k-1} \cdot \vec{q}_{k-1}
 
 
-Note: In this expression, the components of :math:`\Omega_{noise}` are the noise components of
-:math:`\vec{\omega}^{B}` (:math:`\sigma_{\omega}^{2}`) which can be expressed in terms of the
-sensor’s ARW.
+.. note::
+
+    In this expression, the components of :math:`\Omega_{noise}` are the noise components of
+    the angular-rate signal, :math:`\sigma_{\omega}^{2}`.  This can be expressed in terms of the
+    sensor’s Angular Random Walk (ARW).
 
 
 Recasting :math:`\vec{w}_{q,k-1}`, so the rate-sensor noise (:math:`\omega_{noise}^{B}`) forms
-the input vector (Appendix Q), results in the final expression for the quaternion process-noise
-resulting from rate-sensor noise:
+the input vector, results in the final expression for the quaternion process-noise resulting from
+rate-sensor noise:
 
 .. math::
 
@@ -157,15 +157,14 @@ with the variable :math:`\Xi_{k-1}` relating the change in process noise to syst
 .. math::
 
     \Xi_{k-1} \equiv \begin{bmatrix} {
-                                       \begin{array}{c} 
+                                       \begin{array}{c}
                                                         {-\vec{q}_{v}^{T}} \\
                                                         {q_0 \cdot I_3 + \begin{bmatrix} {\vec{q}_{v} \times} \end{bmatrix}}
                                        \end{array}
                      } \end{bmatrix}
 
 
-and :math:`\begin{bmatrix} {\vec{q}_{v} \times} \end{bmatrix}` is the cross-product matrix described
-in Appendix A.
+and :math:`\begin{bmatrix} {\vec{q}_{v} \times} \end{bmatrix}` is the cross-product matrix.
 
 
 The quaternion process noise vector is used to form the elements of the process covariance
@@ -192,7 +191,7 @@ covariance to:
 
 In addition to the assumption that the noise terms are white and independent, all axes are assumed
 to have the same noise characteristics (:math:`\sigma_{\omega}`).  Resulting in the final expression
-for :math:`\Sigma_{q}` (Appendix Q):
+for :math:`\Sigma_{q}`:
 
 .. math::
 
@@ -203,7 +202,7 @@ for :math:`\Sigma_{q}` (Appendix Q):
                  \cdot
                  {
                    \begin{bmatrix} {
-                                     \begin{array}{cccc} 
+                                     \begin{array}{cccc}
                                                            {1 - q_0^2} &
                                                            {-{q_0 \cdot q_1}} &
                                                            {-{q_0 \cdot q_2}} &
@@ -226,4 +225,3 @@ for :math:`\Sigma_{q}` (Appendix Q):
                                      \end{array}
                      } \end{bmatrix}
                    }
-

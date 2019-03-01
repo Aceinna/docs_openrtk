@@ -8,9 +8,9 @@ Process Jacobian
 
 
 As the system is nonlinear, the vector :math:`\vec{f}` cannot be used to propagate the covariance
-matrix, :math:`P`.  Instead the Process Jacobian, :math:`F`, (a linearized version of the state-
-transition vector) is computed at each time step (based on the current system states) to propagate
-:math:`P` forward in time:
+matrix, :math:`P`.  Instead the Process Jacobian, :math:`F`, (a linearized version of the
+state-transition vector) is computed at each time step (based on the current system states) to
+propagate :math:`P` forward in time:
 
 
 .. math::
@@ -24,7 +24,7 @@ specific system state.  Performing this operation results in:
 
 .. math::
 
-    F = I_{16} + { 
+    F = I_{16} + {
                    \begin{bmatrix} {
                                      \begin{array}{ccccc}
                                                          {0_{3}} &
@@ -61,14 +61,13 @@ specific system state.  Performing this operation results in:
                  } \cdot {dt}
 
 
-The one new term in the matrix, :math:`{\partial{v}\partial{q}}` is derived in the Appendix B and
-listed below.
+The one new term in the matrix, :math:`{\partial{v}\partial{q}}` is defined as:
 
 .. math::
 
     {\partial{v}\partial{q}} \equiv {
                                       2 \cdot \overline{Q}_{F} \cdot { \begin{bmatrix} {
-                                                                                         \begin{array}{cc} 
+                                                                                         \begin{array}{cc}
                                                                                                              {0} &
                                                                                                              {\begin{pmatrix} { {\vec{a}^{B}} } \end{pmatrix} ^{T}}
                                                                                                              \cr
@@ -86,7 +85,7 @@ where :math:`\overline{Q}_{F}` is:
 
     \overline{Q}_{F} &= {
                           \begin{bmatrix} {
-                                            \begin{array}{cccc} 
+                                            \begin{array}{cccc}
                                                                 {q_{1}} &
                                                                 {q_{0}} &
                                                                 {-q_{3}} &
