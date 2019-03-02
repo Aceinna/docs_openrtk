@@ -1,3 +1,4 @@
 *.doctree
 _build/
 *.html
+.vscode
