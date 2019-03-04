@@ -30,6 +30,8 @@ another, as follows:
     algorithms/StateTransitionModels
     algorithms/ProcessModels
     algorithms/MeasurementModel
+    algorithms/MeasurementTable
+    algorithms/MeasurementVector
     algorithms/Innovation
     algorithms/MagneticAlignment
     algorithms/References
