@@ -1,4 +1,4 @@
-Advanced: OpenIMU300RI Debug with JTAG
+Advanced: OpenIMU300ZA Debug with JTAG
 ======================================
 
 .. contents:: Contents
