@@ -1,16 +1,16 @@
 OpenIMU Developer Manual
 ========================
-.. image:: media/OpenIMU.png  
+.. image:: media/OpenIMU.png
    :align: center
    :scale: 50%
 
 OpenIMU is a precisely calibrated open source Inertial Measurement Unit platform.  Users
-are able to quickly develop and deploy custom navigation/localization algorithms and custom sensor integrations on top of the OpenIMU platform.  OpenIMU also 
+are able to quickly develop and deploy custom navigation/localization algorithms and custom sensor integrations on top of the OpenIMU platform.  OpenIMU also
 has pre-built drivers in Python as well as a developer website - Aceinna Navigation Studio (ANS).  These tools make logging and plotting data, including
 custom data structures and packets very simple.
 
 **Social:** `Twitter <https://twitter.com/MEMSsensortech>`_ |
-`Medium <https://medium.com/@mikehorton>`_ 
+`Medium <https://medium.com/@mikehorton>`_
 
 .. raw:: latex
 
@@ -34,6 +34,7 @@ custom data structures and packets very simple.
     :hidden:
 
     run
+    run-OpenIMU300RI
     install
 
 .. raw:: latex
@@ -46,6 +47,7 @@ custom data structures and packets very simple.
     :hidden:
 
     300ZA
+    300RI
 
 .. raw:: latex
 
@@ -57,6 +59,7 @@ custom data structures and packets very simple.
     :hidden:
 
     EVB
+    EVB-OpenIMU300RI
 
 .. raw:: latex
 
@@ -86,4 +89,3 @@ custom data structures and packets very simple.
     simulation
     driver-python
     driver-c
-    
