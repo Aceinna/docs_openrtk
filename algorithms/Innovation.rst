@@ -8,8 +8,8 @@ Innovation / Measurement Error
 .. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
-Overview
-=========
+Innovation Overview
+===================
 
 The innovation (measurement error) is formed from the sensor measurements and the predicted states.
 As the measurements and the system states are often not the same, one or the other needs to be
