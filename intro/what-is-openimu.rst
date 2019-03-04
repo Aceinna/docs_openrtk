@@ -13,19 +13,19 @@ The OpenIMU hardware comes in different form-factors including:
 Hardware Configurations
 ------------------------
 
-+-------+--------------+------------------------------------------------------+
-| Type  | Part Number  | Hardware Features                                    |
-+-------+--------------+------------------------------------------------------+
-| *EZ*  | OpenIMU300ZA | Easy to Embed 3-5V UART/SPI Automotive Module        |
-+-------+--------------+------------------------------------------------------+
-| *EZ*  | OpenIMU300ZI | Easy to Embed 3-5V UART/SPI Industrial Module        |   
-+-------+--------------+------------------------------------------------------+
-| *CAN* | OpenIMU300RA | Rugged, Waterproof 5-32V CAN/RS232 Automotive Module |
-+-------+--------------+------------------------------------------------------+
-| *CAN* | OpenIMU300RI | Rugged, Waterproof 5-32V CAN/RS232 Industrial Module |
-+-------+--------------+------------------------------------------------------+
-| *LC*  | OpenIMU300LA | Low-Cost Surface-Mount Component                     |
-+-------+--------------+------------------------------------------------------+
++-------+--------------+---------------------------------------------------------------+
+| Type  | Part Number  | Hardware Features                                             |
++-------+--------------+---------------------------------------------------------------+
+| *EZ*  | OpenIMU300ZA | Easy to Embed 3-5V UART/SPI Automotive Module                 |
++-------+--------------+---------------------------------------------------------------+
+| *EZ*  | OpenIMU300ZI | (Future) Easy to Embed 3-5V UART/SPI Industrial Module        |   
++-------+--------------+---------------------------------------------------------------+
+| *CAN* | OpenIMU300RA | (Future) Rugged, Waterproof 5-32V CAN/RS232 Automotive Module |
++-------+--------------+---------------------------------------------------------------+
+| *CAN* | OpenIMU300RI | Rugged, Waterproof 5-32V CAN/RS232 Industrial Module          |
++-------+--------------+---------------------------------------------------------------+
+| *LC*  | OpenIMU300LA | Low-Cost Surface-Mount Component                              |
++-------+--------------+---------------------------------------------------------------+
 
 Open-Source Embedded Software
 ------------------------------
