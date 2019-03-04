@@ -7,6 +7,9 @@ Building Your First Applications
 
 .. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
+.. toctree::
+    :maxdepth: 2
+
 
 *********
 Overview
@@ -19,8 +22,9 @@ following applications:
     2. An Inertial-Measurement Unit (IMU)
     3. A Static-Leveler
     4. VG/AHRS
-    5. INS (under development)
+    5. INS (under development) 
 
+.. note:: The OpenIMU300xI (RI, AI) units do not provide any inputs for GPS or other external sensors, so the INS application is not applicable to those units. 
 
 **Framework**
 
@@ -58,7 +62,8 @@ two-axis attitude (roll and pitch angles) of a body relative to the local-level 
 
 **VG/AHRS**
 
-VG and AHRS uses rate-sensors, accelerometers, and (in the case of an AHRS) magnetometers to
+The Vertical Gyro (VG) and Attitude and Heading Reference System (AHRS) application 
+uses rate-sensors, accelerometers, and (in the case of an AHRS) magnetometers to
 compute the attitude and heading of a body in space.  Rate-sensors are used to propagate the
 attitude forward in time at high data-rates (DR) while accelerometers and magnetometers act as
 references, correcting for rate-sensor biases and attitude errors.
@@ -66,7 +71,7 @@ references, correcting for rate-sensor biases and attitude errors.
 
 **INS**
 
-Under development...
+The Inertial Navigation System application description is under development...
 
 
 ******************
@@ -74,7 +79,7 @@ Application Links
 ******************
 
 .. toctree::
-    :maxdepth: 1
+    :maxdepth: 2
 
     tutorial/IMU_App
     tutorial/Leveler_App
