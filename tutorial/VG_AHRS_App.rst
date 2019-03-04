@@ -44,14 +44,13 @@ as follows:
 .. toctree::
     :maxdepth: 1
 
-    VG_AHRS/DataAcquisition
-    VG_AHRS/Requirements
-    VG_AHRS/AHRS_Algorithm
-    VG_AHRS/SerialDebugger
-    VG_AHRS/SerialMessaging
-    VG_AHRS/PythonMessageDecoder
-    VG_AHRS/NavigationStudio
-
+    vg_ahrs/DataAcquisition
+    vg_ahrs/Requirements
+    vg_ahrs/AHRS_Algorithm
+    vg_ahrs/SerialDebugger
+    vg_ahrs/SerialMessaging
+    vg_ahrs/PythonMessageDecoder
+    
 
 A pre-built version of the `VG/AHRS Application <https://developers.aceinna.com/apps>`__ can be
 downloaded directly onto the OpenIMU hardware at the

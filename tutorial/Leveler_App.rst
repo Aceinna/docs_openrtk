@@ -32,13 +32,16 @@ follows:
 .. toctree::
     :maxdepth: 1
 
-    Leveler/DataAcquisition
-    Leveler/Requirements
-    Leveler/LevelerAlgorithm
-    Leveler/SerialDebugger
-    Leveler/SerialMessaging
-    Leveler/PythonMessageDecoder
-    Leveler/NavigationStudio
+    leveler/DataAcquisition
+    leveler/Requirements
+    leveler/LevelerAlgorithm
+    leveler/SerialDebugger
+    leveler/SerialMessaging
+    leveler/PythonMessageDecoder
+    
+
+    
+
 
 
 A pre-built version of the `Leveler Application <https://developers.aceinna.com/apps>`__ can be
