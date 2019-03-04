@@ -1,8 +1,10 @@
-OpenIMU Evaluation Kit Setup 
-============================
+OpenIMU300ZA Evaluation Kit Setup 
+=================================
 
 .. contents:: Contents
     :local:
+
+
 
 To set up OpenIMU evaluation kit for development you'll need to perform next steps:
 
@@ -15,5 +17,24 @@ To set up OpenIMU evaluation kit for development you'll need to perform next ste
 
 Now you are ready to install OpenIMU's open source tool chain to develop, debug and test your application.
 
-.. image:: media/EvalKit.png 
-     
+
+.. toctree::
+    :maxdepth: 2
+
+    run/connect
+    run/jtag-download
+    run/debug
+    run/graphing
+
+
+
+.. figure:: media/OpenIMU_EVB.png
+    :width: 3.0in
+    :height: 3.0in
+    :align: left
+
+    **OpenIMU300ZA Evaluation Kit**
+
+
+
+
