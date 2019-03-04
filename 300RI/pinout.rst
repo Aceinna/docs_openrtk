@@ -40,4 +40,6 @@ The connector pin definitions are defined in the table below.
     accepts an unregulated 5 to 32 VDC input. It is reverse polarity and ESD protected internally
 
 
+.. note:: 
 
+    The OpenIMU300Rx units do not support external sensor interfaces, such as GPS
