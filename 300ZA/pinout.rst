@@ -1,5 +1,5 @@
-Connector Pinout
-================
+Connector Pinout - Including GPS Sensor Interface
+=================================================
 
 .. contents:: Contents
     :local:
@@ -10,7 +10,7 @@ The OpenIMU300ZA main connector is a SAMTEC FTM-110-02-F-DV-P defined below. The
 
                    OpenIMU300ZA Interface Connector
 
-The connector pin definitions are defined in the table below.
+The connector pin definitions are defined in the table below.  The GPS-related signals are noted.
 
 **Table Interface Connector Pin Definition**
 
