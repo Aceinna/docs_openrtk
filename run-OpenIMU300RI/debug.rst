@@ -1,6 +1,6 @@
 
-Advanced: Debug with JTAG
-=========================
+Advanced: OpenIMU300RI Debug with JTAG
+======================================
 
 .. contents:: Contents
     :local:

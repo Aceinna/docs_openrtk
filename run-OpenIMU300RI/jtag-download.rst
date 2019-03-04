@@ -1,6 +1,6 @@
 
-Download APP with JTAG
-======================
+Download OpenIMU300RI APP with JTAG
+===================================
 
 .. contents:: Contents
     :local:

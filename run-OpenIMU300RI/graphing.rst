@@ -1,6 +1,5 @@
-
-Graphing & Logging IMU Data
-===========================
+OpenIMU300RI Graphing & Logging IMU Data
+========================================
 
 .. contents:: Contents
     :local:
