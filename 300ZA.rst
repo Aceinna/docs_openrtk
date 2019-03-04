@@ -1,5 +1,5 @@
-OpenIMU300ZA - EZ Embed
-=======================
+OpenIMU300ZA - *EZ Embed* Automotive Module
+===========================================
 .. contents:: Contents
     :local:
 
@@ -31,10 +31,9 @@ sensors.
 * High Reliability > 50,000hr MTBF
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 1
 
     300ZA/imu-sensors
-    300ZA/gps-and-external-sensors
     300ZA/electrical
     300ZA/mechanical
     300ZA/spi-uart
