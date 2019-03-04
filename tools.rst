@@ -9,6 +9,7 @@ The OpenIMU development environment consists of the following main components:
     :maxdepth: 1
 
     tools/evb
+    tools/evb_300RI
     tools/vscode
     tools/debug
     tools/isp
