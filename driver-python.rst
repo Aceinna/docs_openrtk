@@ -6,7 +6,7 @@ Python Serial Driver
     
 Aceinna OpenIMU python driver, data logging, and web socket server
 
-GitHub Link: `python-openimu <https://gitbub.com/Aceinna/python-openimu>`_
+GitHub Link: `python-openimu <https://github.com/Aceinna/python-openimu>`_
 
-
+Use the browser's back button to return
 
