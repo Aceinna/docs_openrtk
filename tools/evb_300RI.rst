@@ -1,9 +1,16 @@
-OpenIMU300RI Eval Board
-=======================
+OpenIMU300RI Eval Kit
+=====================
+
+.. contents:: Contents
+    :local:
 
 .. image:: ../media/OpenIMU300RI_DevKit.png
-    :height: 200
-    :align: left
+    :height: 300
+
+
+
+OpenIMU300RI Eval Kit Board
+---------------------------
 
 The OpenIMU300RI Eval Kit interfaces to the main connector of the OpenIMU300RI and to the JTAG header.  
 The Jtag header and the OpenIMU300RI module are mounted together to a precision fixture to assist in testing.  The OpenIMU300RI serial port and CAN interface 
@@ -21,7 +28,4 @@ to control the coordinate system.  These configurable elements are known as **Co
 
 .. image:: ../media/OpenIMU300RI_CoordinateFrame.png
    :width: 4.0in
-
-.. contents:: Contents
-    :local:
 
