@@ -49,7 +49,7 @@ exceeds the turnSwitch threshold yaw rate,
 the AHRS/VG APP lowers the feedback gains from the accelerometers to allow
 the attitude estimate to coast through the dynamic situation with
 primary reliance on angular rate sensors. This situation is indicated by
-the softwareStatusturnSwitch status flag. Using the turn switch
+the softwareStatus - turnSwitch status flag. Using the turn switch
 maintains better attitude accuracy during short-term dynamic situations,
 but care must be taken to ensure that the duty cycle of the turn switch
 generally stays below 10% during the vehicle mission. A high turn switch
