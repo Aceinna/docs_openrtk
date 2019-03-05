@@ -50,10 +50,10 @@ custom data structures and packets very simple.
 
 .. raw:: latex
 
-   \part{Evaluation Boards}
+   \part{Evaluation Kits}
 
 .. toctree::
-    :caption: Evaluation Boards
+    :caption: Evaluation Kits
     :maxdepth: 1
     :hidden:
 
