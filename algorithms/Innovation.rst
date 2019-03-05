@@ -13,7 +13,7 @@ Innovation Overview
 
 The innovation (measurement error) is formed from the sensor measurements and the predicted states.
 As the measurements and the system states are often not the same, one or the other needs to be
-transformed into the mesurement.  In the case of this algorithm, the state consists of an attitude
+transformed into the measurement.  In the case of this algorithm, the state consists of an attitude
 quaternion, NED-velocity, and NED-position.  The measurement come from accelerometer readings, GPS
 latitude/longitude/altitude measurements, and horizontal/vertical velocities along with
 ground-track.  In this case either the states need to be converted to match the measurements or vice-versa.
@@ -51,4 +51,4 @@ The available sensor information is used as follows:
        (:math:`\vec{r}^{N}` and :math:`\vec{v}^{N}`)
 
 
-.. Based upon these steps, the measureme
+.. Based upon these steps, the measurements are ...
