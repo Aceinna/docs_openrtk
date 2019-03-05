@@ -23,7 +23,7 @@ connectors and test adapter for mounting OpenIMU300RI unit.
     An external DC power supply is required.  The power supply must provide 250mA at 12V.
  
 
-.. figure:: ../300RI/_images/OpenIMY300RI-EvalConfiguration.png
+.. figure:: ../media/OpenIMU300RI-EvalKit.png
     :height: 600
 
     **OpenIMU300RI Evaluation Kit setup**
