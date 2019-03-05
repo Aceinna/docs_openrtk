@@ -27,7 +27,7 @@ Refer to the images below:
 
 
 +---------------------------------------------------------+-------------------------------------------------------------------------------+
-| .. figure:: ../media/OpenIMU300RI-ConnectorCloseup.png  | .. figure:: ../media/OpenIMU300RI-EvalConfiguration.png                       |
+| .. figure:: ../media/OpenIMU300RI-ConnectorCloseup.png  | .. figure:: ../media/OpenIMU300RI-EvalKit.png                                 |
 |                                                         |                                                                               |
 +---------------------------------------------------------+-------------------------------------------------------------------------------+
 |    **OpenIMU300RI Connector**                           |    **OpenIMU300RI JTAG Debugger Connections**                                 |
