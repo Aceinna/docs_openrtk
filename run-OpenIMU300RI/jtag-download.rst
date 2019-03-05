@@ -1,5 +1,4 @@
-
-Download OpenIMU300RI APP with JTAG
+Download OpenIMU300RI App with JTAG
 ===================================
 
 .. contents:: Contents
