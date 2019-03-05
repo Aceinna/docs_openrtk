@@ -39,7 +39,3 @@ The connector pin definitions are defined in the table below.
     Power is applied to the OpenIMU300RI on pin 6. Pin 3 is ground.  The OpenIMU300RI 
     accepts an unregulated 5 to 32 VDC input. It is reverse polarity and ESD protected internally
 
-
-.. note:: 
-
-    The OpenIMU300Rx units do not support external sensor interfaces, such as GPS
