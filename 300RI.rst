@@ -5,22 +5,19 @@ OpenIMU300RI - Robust Industrial CAN Module
 
 
 
-The following image shows the OpenIMU300RI unit in a Development Kit configuration, 
-with a breakout header for connecting the STMicro ST-LINK V2 debugger.
+The following image shows the OpenIMU300RI unit.  
 
 .. image:: ./300RI/_images/OpenIMU300RI-module.png
     :height: 400
 
-The OpenIMU300RI *EZ Embed* CAN module integrates highly-reliable MEMS inertial
-sensors (acceleration, angular rate/gyro, and
-magnetic field) in a miniature factory-calibrated package to provide
-consistent performance through the extreme
+The OpenIMU300RI Robust Industrial CAN module integrates highly-reliable MEMS inertial
+sensors (acceleration, angular rate/gyro, and magnetic field) in a miniature 
+factory-calibrated package to provide consistent performance through the extreme
 operating environments.
 
 OpenIMU300RI has excellent acceleration and gyro performance that matches
-systems ten times more expensive.
-It is easy to syncronize and interface with external GPS, as well as other
-sensors.
+systems ten times more expensive.  It is easy to synchronize and interface 
+with external GPS, as well as other sensors.
 
 
 *	Precision 3-axis MEMS Accelerometer
@@ -36,8 +33,7 @@ sensors.
 *	Wide Supply Voltage Range, 5 V – 32 V
 *	IP67 Ampseal Connector
 *	High Reliability, MTBF > 50k hours
-
-
+*   In-System Firmware Upgrade
 
 
 .. toctree::
