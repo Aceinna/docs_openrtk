@@ -143,7 +143,6 @@ and :math:`\vec{w}_{q,k-1}` is the quaternion process-noise vector:
     sensor’s Angular Random Walk (ARW).
 
 
-
 Recasting :math:`\vec{w}_{q,k-1}`, so the rate-sensor noise (:math:`\omega_{noise}^{B}`) forms
 the input vector, results in the final expression for the quaternion process-noise resulting from
 rate-sensor noise:

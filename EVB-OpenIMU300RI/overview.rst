@@ -17,9 +17,19 @@ Supported by the Aceinna Navigation Studio the kit provides easy access to the f
 OpenIMU300RI and explains how to integrate the device in a custom design.
 The OpenIMU evaluation kit include OpenIMU300RI, evaluation board with various interface
 connectors and test adapter for mounting OpenIMU300RI unit.
+<<<<<<< HEAD
  
 
 .. figure:: ../300RI/_images/OpenIMY300RI-EvalConfiguration.png
+=======
+
+.. note::
+
+    An external DC power supply is required.  The power supply must provide 250mA at 12V.
+ 
+
+.. figure:: ../media/OpenIMU300RI-EvalKit.png
+>>>>>>> dng
     :height: 600
 
     **OpenIMU300RI Evaluation Kit setup**
@@ -75,8 +85,13 @@ OpenIMU300RI Evaluation Kit components
 
     * OpenIMU evaluation kit power
 
+<<<<<<< HEAD
         Power to OpenIMU evaluation board provided via the power leads to an expernal DC power supply set to 12V
         Power the kit up by turning on the power supply
+=======
+        * Set the external DC power supply set to 12V.
+        * Power the kit up by turning on the power supply.
+>>>>>>> dng
 
 
 

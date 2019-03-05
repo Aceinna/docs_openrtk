@@ -1,4 +1,4 @@
-OpenIMU300RI Graphing & Logging IMU Data
+OpenIMU300ZA Graphing & Logging IMU Data
 ========================================
 
 .. contents:: Contents

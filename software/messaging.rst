@@ -35,7 +35,7 @@ Each complete communication packet must be transmitted to the OpenIMU300xx
 inertial system within a 4 second period.
 
 2. Number Formats
---------------
+-----------------
 
 Number Format Conventions include:
 
@@ -98,7 +98,7 @@ Table below defines number formats:
 +-------------+-------------+-------------+-------------+-------------+
 
 3. Packet Structure
--------------
+-------------------
 Below provided description of OpenIMU framework messages. Messages described
 the way they occur in serial line. Open IMU framework takes care of wrapping up user 
 payload and calculating CRC.       
@@ -148,7 +148,7 @@ include the CRC.
 The payload is of variable length based on the packet type.
 
 3.6 16-bit CRC-CCITT
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~
 
 Packets end with a 16-bit CRC-CCITT calculated on the entire packet
 excluding the 0x5555 header and the CRC field itself. A discussion of
@@ -169,7 +169,7 @@ See Appendix A for sample code that implements the 16-bit CRC algorithm.
 
 
 3.6 NAK Packet
-~~~~~~~~~~~~~
+~~~~~~~~~~~~~~
 
 NAK packet sent in response to the unknown or corrupted input message.
 NAK packet has next format:
@@ -182,7 +182,7 @@ NAK packet has next format:
  
 
 4. Messaging Overview
-------------------
+---------------------
 
 Table below summarizes the messages initially introduced in OpenIMU300xx framework.
 New messages can be easily added (please check chapter "Procedure for adding new message")  
@@ -275,10 +275,10 @@ different payload.
 
 
 5. OpenIMU Interactive Messages
-------------
+-------------------------------
 
 5.1 User Ping Command
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------+-------------+--------+-------------+
 | Ping (‘pG’ = 0x7047) |             |        |             |
@@ -305,7 +305,7 @@ and unit serial number.
 
 
 5.2 Update Config Command
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------+-------------+--------+----------------+-------------+
 | (‘uC’ = 0x7543)      |             |        |                |             |
@@ -369,7 +369,7 @@ Error code can be: (0) – “Success”, (-3) – “Invalid Payload Size”, (
 
 
 5.3 Update Parameter Command
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------+-------------+--------+----------------+-------------+
 | (‘uP’ = 0x7550)      |             |        |                |             |
@@ -420,7 +420,7 @@ Error code can be: (0) – “Success”, (-3) – “Invalid Payload Size”, (
 
 
 5.4 Update All Command
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------+-------------+--------+------------------------+-------------+
 | (‘uA’ = 0x7541)      |             |        |                        |             |
@@ -473,7 +473,7 @@ Error code can be: (0) – “Success”, (-3) – “Invalid Payload Size”, (
 
 
 5.5 Save Config Command
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 +-----------------------------+-------------+--------+-------------+
 | Save Config (‘sc’ = 0x7343) |             |        |             |
@@ -684,7 +684,7 @@ Error code can be: (0) – “Success”, (-3) – “Invalid Payload Size”, (
 
 
 5.8 Get Parameter Command
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------+-------------+--------+----------------+-------------+
 | (‘gP’ = 0x6750)      |             |        |                |             |
@@ -754,7 +754,7 @@ Error code can be: (0) – “Success”, (-3) – “Invalid Payload Size”, (
 
 
 5.9 Get User Version Command
-~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 +----------------------+-------------+--------+-------------+
 | (‘gV’ = 0x6756)      |             |        |             |
@@ -778,7 +778,7 @@ defined in the UserMessaging.c file.
 
 
 6. OpenIMU Output messages
-------------
+---------------------------------
 
 Below provided examples of OpenIMU output messages implemented in OpenImu framework.
 Users can easily add new messages or discard these examples at their discretion.
@@ -812,7 +812,7 @@ Counter is simple message counter which will increase by 1 with in every consecu
 
 
 6.2 User Sensors Data Message
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 User Sensors Data  message has next format:
 
@@ -868,7 +868,7 @@ User Sensors Data Message payload has next format:
 
 
 6.3 User Arbitrary Data Message
-~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 User Arbitrary Data  message has next format:
 
@@ -904,12 +904,12 @@ User Arbitrary Data Message payload has next format:
 
 
 7 Steps to create your own interactive or output packet in embedded OpenIMU software framework
--------------------
+------------------------------------------------------------------------------------------------------------------
  
 User packet processing engine located in the file UserMessaging.c.
 
 7.1 To create new interactive packet: 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Add new input packet type into the enumerator structure **UserInPacketType** in the file **UserMessaging.h** before USR_IN_MAX
 

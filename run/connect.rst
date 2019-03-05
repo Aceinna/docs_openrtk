@@ -1,4 +1,4 @@
-Connect OpenIMU300RI
+Connect OpenIMU300ZA
 ====================
 
 .. contents:: Contents

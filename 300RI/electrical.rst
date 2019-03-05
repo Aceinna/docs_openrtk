@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 Other Specifications
 =========================
+=======
+Preliminary Specifications
+==========================
+>>>>>>> dng
 
 .. contents:: Contents
     :local:
 
+<<<<<<< HEAD
 .. envvar:: ENVIRONMENT
 
 +-----------------------+-----------------------+
@@ -57,3 +63,11 @@ Other Specifications
 +-----------------------+-----------------------+
 
 .. include:: <isonum.txt>
+=======
+
+.. include:: <isonum.txt>
+
+.. image:: ../media/OpenIMU300RI-Specifications.png
+    :height: 950
+    :width: 1063
+>>>>>>> dng

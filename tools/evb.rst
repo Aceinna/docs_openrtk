@@ -1,5 +1,5 @@
-OpenIMU Eval Board
-==================
+OpenIMU300ZA Eval Board
+=======================
 
 .. image:: ../media/OpenIMU_EVB.png
     :height: 200
@@ -11,8 +11,8 @@ jumper connections to use to connect to the device's primary SPI port. Use the J
 quickly.
 
 
-OpenIMU  Default Coordinate System
------------------------------------------
+OpenIMU300ZA Default Coordinate System
+--------------------------------------
 
 The OpenIMU  default coordinate systems is shown below.  In the reference IMU apps, a configuration setting is provided
 to control the coordinate system.  These configurable elements are known as **Configuration Parameters**.

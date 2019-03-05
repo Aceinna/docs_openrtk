@@ -25,7 +25,7 @@ as:
                    }
 
 
-A Kalman Filter can be viewed the combination of Gaussians distributions to form state estimates.
+A Kalman Filter can be viewed the combination of Gaussian distributions to form state estimates.
 :math:`Q` provides a measure of the width of the Gaussian distribution related to each noise state.
 The wider the distribution, the more uncertainty exists in the process model.  This leads to a
 state-update that affects the state more than if the model had a tighter distribution, which results

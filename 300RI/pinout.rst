@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 OpenIMUJ300RI Connector Pinout
+=======
+OpenIMU300RI Connector Pinout
+>>>>>>> dng
 ==============================
 
 .. contents:: Contents
@@ -39,5 +43,8 @@ The connector pin definitions are defined in the table below.
     Power is applied to the OpenIMU300RI on pin 6. Pin 3 is ground.  The OpenIMU300RI 
     accepts an unregulated 5 to 32 VDC input. It is reverse polarity and ESD protected internally
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dng

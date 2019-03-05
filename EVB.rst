@@ -4,7 +4,7 @@ OpenIMU300ZA Eval Kit
 .. contents:: Contents
     :local:
     
-The OpenIMU300ZA evaluation kit consists of a robust and easy-to-use eval board, a text fixture, the OpenIMU300ZA IMU module, and an ST-LINK J-TAG pod.
+The OpenIMU300ZA evaluation kit consists of a robust and easy-to-use eval board, a test fixture, the OpenIMU300ZA IMU module, and an ST-LINK J-TAG pod.
 
 .. image:: media/OpenIMUKit.png
     :height: 300

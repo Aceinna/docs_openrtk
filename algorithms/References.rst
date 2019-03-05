@@ -56,7 +56,7 @@ Mathematical References
 
 	Measurement Models
 
-		Jrg F Wagnera, Thomas Wieneke. "Integrating satellite and inertial navigationâ€”conventional and new fusion approaches". Control Engineering Practice, Volume 11, Issue 5, May 2003.
+		Jrg F Wagnera, Thomas Wieneke. "Integrating satellite and inertial navigation - conventional and new fusion approaches". Control Engineering Practice, Volume 11, Issue 5, May 2003.
 		(https://www.sciencedirect.com/science/article/abs/pii/S0967066102000436)
 
 		Agus Budiyono. "Principles of GNSS, Inertial, and Multi-sensor Integrated Navigation Systems". (2012) "Principles of GNSS, Inertial, and Multisensor Integrated Navigation Systems", Industrial Robot: An International Journal, Vol. 39 Iss: 3

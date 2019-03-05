@@ -4,6 +4,7 @@ OpenIMU300RI Evaluation Kit Setup
 .. contents:: Contents
     :local:
 
+<<<<<<< HEAD
 To set up OpenIMU300RI evaluation kit for development you'll need to perform next steps:
 
  1. Unpack OpenIMU evaluation kit.
@@ -17,6 +18,8 @@ To set up OpenIMU300RI evaluation kit for development you'll need to perform nex
 
 Now you are ready to install OpenIMU's open source tool chain to develop, debug and test your application.
 
+=======
+>>>>>>> dng
 .. toctree::
     :maxdepth: 2
 
@@ -26,11 +29,19 @@ Now you are ready to install OpenIMU's open source tool chain to develop, debug 
     run-OpenIMU300RI/graphing
 
 
+<<<<<<< HEAD
 
 .. figure:: media/OpenIMY300RI-EvalConfiguration.png
     :width: 3.0in
     :height: 3.0in
     :align: left
+=======
+.. note:: 
+    The RS232/CAN/Power cable shown in the image is similar to the cable that will be supplied with the kit.  It is for information only.
+
+.. figure:: media/OpenIMU300RI-EvalKit.png
+    :height: 684
+>>>>>>> dng
 
     **OpenIMU300RI Evaluation Kit**
 

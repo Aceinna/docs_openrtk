@@ -39,11 +39,11 @@ parameters structure located in file UserConfiguration.h. New arbitrary paramete
                                                 /// 115200
                                                 /// 230400
                                                 /// 460800
-        uint8_t            userPacketType[8];   /// User packet to be continiously sent by unit
+        uint8_t            userPacketType[8];   /// User packet to be continuously sent by unit
                                                 /// Packet types defined in structure UserOutPacketType
                                                 /// in file UserMessaging.h
                                                 
-        int64_t            userPacketRate;      /// Packet rate for continiously output packet, Hz.
+        int64_t            userPacketRate;      /// Packet rate for continuously output packet, Hz.
                                                 /// Valid settings are: 0 ,2, 5, 10, 20, 25, 50, 100, 200 
 
         int64_t            lpfAccelFilterFreq;  /// built-in lpf filter cutoff frequency selection for accelerometers   
@@ -136,7 +136,7 @@ Adding new parameter
 
 One can arbitrary add new configuration parameters. The steps are:
 
-1. Add required parameter into the **UserConfigurationStruct** in the file **UserConfiguration.h** after system parameters �border� (see above).
+1. Add required parameter into the **UserConfigurationStruct** in the file **UserConfiguration.h** after system parameters "border" (see above).
 
 2. Add new configuration parameter enumerator into UserConfigParamOffset in the file UserConfiguration.h after USER_LAST_SYSTEM_PARAM. 
 
@@ -149,7 +149,7 @@ Changing configuration parameters.
 
 Configuration parameters can be changed any time by sending specific commands (messages) to the unit (("uP" "uA" "uC"). 
 Upon reception of corresponding message parameters are validated (if desired), placed into gUserConfiguration structure
-and applied to the unit (if desired). See section Messaging Modules for details. Updated parameters will last untill unit
+and applied to the unit (if desired). See section Messaging Modules for details. Updated parameters will last until unit
 reset or power cycle.
   
 Retrieving configuration parameters.
@@ -160,7 +160,7 @@ Configuration parameters can be read from unit any time by sending commands "gC"
 Saving configuration parameters
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If desired, updated parameters can be saved into EEPROM and will be permanently active untill changed. It can be achieved by sending "sC"
+If desired, updated parameters can be saved into EEPROM and will be permanently active until changed. It can be achieved by sending "sC"
 command to the unit. Upon reception of this command gUserConfiguration structure saved into EEPROM.
 
 Restoring default configuration

@@ -34,7 +34,6 @@ more accurate or more timely than ones based on any single measurement.
     |                 ||                  || used to update errors due to integration of the            |
     |                 ||                  || accelerometer signal (in particular, to estimate the       |
     |                 ||                  || accelerometer bias).                                       |
-    |                 ||                  ||                                                            |
     +-----------------+-------------------+-------------------------------------------------------------+
     | Roll/Pitch      || 1) Angular-Rate  || Angular-rate sensors provide the high DR/low-noise         |
     |                 ||    Sensor        || signal that is integrated to get high DR attitude          |
