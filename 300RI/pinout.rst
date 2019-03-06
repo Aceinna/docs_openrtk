@@ -15,6 +15,7 @@ or equivalent.
     OpenIMU300RI Connector
 
 
+
 The pinout for that connector is shown in the following diagram.  
 Pin 1 is in the upper right corner of the diagram.
 

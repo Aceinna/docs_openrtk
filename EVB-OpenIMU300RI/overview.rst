@@ -1,5 +1,5 @@
-Overview
-========
+OpenIMU300RI Overview
+========================
 
 .. contents:: Contents
     :local:
@@ -8,8 +8,10 @@ Overview
     :maxdepth: 3
 
 
-Introduction
---------------
+
+
+OpenIMU300RI Introduction
+----------------------------
 
 The OpenIMU evaluation kit is a hardware platform to evaluate the OpenIMU300RI
 inertial navigation system and develop various applications based on provided platform.

@@ -12,5 +12,8 @@ The Inertial Navigation System (INS) application causes the OpenIMU hardware to 
 inertial-sensor data from accelerometers, rate-sensors, magnetometers, and GPS to form a fused
 solution.
 
+
+**To Be Provided**
+
 This application is under development.  Please check back soon.
 

@@ -6,6 +6,5 @@ OpenIMU300RI Graphing & Logging IMU Data
 
 
 
-
 **To Be Provided**
     

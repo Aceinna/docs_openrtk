@@ -5,6 +5,7 @@ Connect OpenIMU300RI
     :local:
 
 
+
 .. note::
     * An external DC power supply will be needed.  The power supply must be able to produce 4.9V to 32V at 400mW
     * An RS232-to-USB adapter will be needed to connect the unit to the PC for RS232 communication.

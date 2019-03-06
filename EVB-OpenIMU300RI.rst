@@ -16,6 +16,7 @@ The OpenIMU300RI evaluation kit includes:
     :height: 200
 
 
+
 .. image:: media/STLink.png
     :height: 200
 
