@@ -9,5 +9,4 @@ Preliminary Specifications
 .. include:: <isonum.txt>
 
 .. image:: ../media/OpenIMU300RI-Specifications.png
-    :height: 950
-    :width: 1063
+    :height: 600
