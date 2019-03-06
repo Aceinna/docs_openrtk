@@ -4,6 +4,8 @@ Algorithms References
 .. contents:: Contents
     :local:
 
+.. note::
+	Use the browser's back button to return to this site.
 
 General Kalman Filter References
 --------------------------------
