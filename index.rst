@@ -46,12 +46,7 @@ custom data structures and packets very simple.
     :maxdepth: 1
     :hidden:
 
-<<<<<<< HEAD
-    300ZA
-    300RI
-=======
     OpenIMU_Modules    
->>>>>>> dng
 
 .. raw:: latex
 

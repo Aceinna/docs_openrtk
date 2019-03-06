@@ -4,16 +4,6 @@ OpenIMU300RI Eval Kit
 .. contents:: Contents
     :local:
     
-<<<<<<< HEAD
-The OpenIMU300RI evaluation kit consists of a robust and easy-to-use test fixture, the OpenIMU300RI IMU module, an ST-LINK J-TAG debugger, and a connector and cable kit.
-
-.. image:: media/OpenIMY300RI-EvalConfiguration.png
-    :height: 300
-
-
-.. image:: media/STLink.png
-    :height: 300
-=======
 The OpenIMU300RI evaluation kit includes:
 
 *   A robust and easy-to-use test fixture.
@@ -28,7 +18,6 @@ The OpenIMU300RI evaluation kit includes:
 
 .. image:: media/STLink.png
     :height: 200
->>>>>>> dng
 
 .. toctree::
     :maxdepth: 1
