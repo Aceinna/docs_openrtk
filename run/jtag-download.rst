@@ -1,4 +1,4 @@
-Download OpenIMU300ZA APP with JTAG
+Download OpenIMU300ZA App with JTAG
 ===================================
 
 .. contents:: Contents
