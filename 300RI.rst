@@ -7,7 +7,7 @@ OpenIMU300RI - Robust Industrial CAN Module
 
 The following image shows the OpenIMU300RI unit.  
 
-.. image:: ./300RI/_images/OpenIMU300RI-module.png
+.. image:: media/OpenIMU300RI-module.png
     :height: 400
 
 The OpenIMU300RI Robust Industrial CAN module integrates highly-reliable MEMS inertial
