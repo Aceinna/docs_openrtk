@@ -5,8 +5,7 @@ Preliminary Specifications
     :local:
 
 
-
 .. include:: <isonum.txt>
 
 .. image:: ../media/OpenIMU300RI-Specifications.png
-    :height: 600
+    :height: 425

@@ -1,10 +1,10 @@
 
-IMU APP
+IMU App
 =======
 
-The APP name, IMU, stands for Inertial Measurement Unit,
+The App name, IMU, stands for Inertial Measurement Unit,
 and the name is indicative of the basic inertial measurement unit
-functionality provided by this APP. The IMU APP signal
+functionality provided by this APP. The IMU App signal
 processing chain consists of high-speed sampling of the 9-DOF sensor cluster
 (accelerometers, rate sensors, and magnetometers), programmable
 low-pass filters, and the execution of built-in calibration models. 

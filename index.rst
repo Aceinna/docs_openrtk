@@ -24,7 +24,6 @@ custom data structures and packets very simple.
     intro
     tools
 
-
 .. raw:: latex
 
    \part{Quick Start}

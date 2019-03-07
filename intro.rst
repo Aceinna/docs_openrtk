@@ -12,9 +12,9 @@ a GUI for controlling, plotting and managing data files logged by your Custom IM
 
 The OpenIMU and ANS platform and tool-chain enables is supported on all three Major OS platforms for convenient development:
 
-* Windows
+* Windows 7 or 10
 * MAC OS
-* Ubuntu 
+* Ubuntu 14.0 or later
 
 .. note::
 

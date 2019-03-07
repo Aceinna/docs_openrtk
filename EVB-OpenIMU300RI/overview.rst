@@ -1,5 +1,5 @@
-OpenIMU300RI Overview
-========================
+OpenIMU300RI Evaluation Kit Overview
+====================================
 
 .. contents:: Contents
     :local:
@@ -8,53 +8,56 @@ OpenIMU300RI Overview
     :maxdepth: 3
 
 
+OpenIMU300RI Evaluation Kit Introduction
+----------------------------------------
 
-
-OpenIMU300RI Introduction
-----------------------------
-
-The OpenIMU evaluation kit is a hardware platform to evaluate the OpenIMU300RI
-inertial navigation system and develop various applications based on provided platform.
-Supported by the Aceinna Navigation Studio the kit provides easy access to the features 
+The OpenIMU evaluation kit is a hardware platform used to evaluate the 
+OpenIMU300RI inertial navigation system and develop various applications 
+based on this platform.  It is supported by the Aceinna Navigation Studio, 
+which provides easy access to the features of the  
 OpenIMU300RI and explains how to integrate the device in a custom design.
-The OpenIMU evaluation kit include OpenIMU300RI, evaluation board with various interface
-connectors and test adapter for mounting OpenIMU300RI unit.
+The Components section below provides the contents of the kit.
 
 .. note::
 
-    An external DC power supply is required.  The power supply must provide 250mA at 12V.
+    An external DC power supply is required.  The power supply must provide 400mA at 4.9VDC to 32VDC.
  
 
-.. figure:: ../media/OpenIMU300RI-EvalKit.png
-    :height: 600
-
-    **OpenIMU300RI Evaluation Kit setup**
-
-
-
++-------------------------------------------------+------------------------------------------------+
+| .. figure:: ../media/OpenIMU300RI_DevKit.png    | .. figure:: ../media/OpenIMU300RI-EvalKit.png  |
+|    :height: 300                                 |    :height: 500                                |
++-------------------------------------------------+------------------------------------------------+
+||   **OpenIMU300RI Evaluation Kit Fixture with** || **OpenIMU300RI Evaluation Kit**               |
+||   **OpenIMU300RI unit and JTAG Header Board**  |                                                |
++-------------------------------------------------+------------------------------------------------+
 
 OpenIMU300RI Evaluation Kit components
 ----------------------------------------
     
-    * OpenIMU300RI unit
+    **OpenIMU300RI unit**
             
         OpenIMU300RI is 9 DOF (degrees of freedom) fully calibrated inertial unit. It is used as the base for development custom
-        inertial navigation applications.  The OpenIMU300RI unit provided with the Eval Kit provides a connection to a header for the STG-Link debugger.  This connection is not available for production units
+        inertial navigation applications.  
 
 
-    * OpenIMU Evaluation baseboard
+    **OpenIMU300RI Evaluation Kit fixture and JTAG header board**
 
-        The OpenIMU300RI base board board provides a header for the ST Link debugger, which is connected to the
-        unit through a drilled hole in the back.
+        The OpenIMU300RI unit and the JTAG header board are connected to a text fixture.
+        The OpenIMU300RI Evaluation JTAG header board provides the means to connect the kit to an ST Link debugger.
+        The JTAG header board is connected to the unit with a calbe that goes through a drilled hole in the back of the unit.
 
             
-    * ST-Link debugger
+    **OpenIMU300RI Breakout Cable**
+
+        A breakout cable is included that provides a connector to the OPENIUM300RI unit and to two 9-pin D-sub connectors; one for RS23s communication and the other for CAN Bus communication.
+    
+    **ST-Link debugger**
 
         The ST-Link debugger is a standard JTAG SWD debugger provided by STMicroelectronics company. 
         It used for in-system debugging of applications via SWD interface.
 
         
-    * SWD (JTAG) connector
+    **SWD (JTAG) connector**
 
         20-pin connector P3 used for connecting ST-Link or J-Link debuggers to the unit for
         in-system debugging of applications via SWD interface. It has standard pin-out.
@@ -79,23 +82,24 @@ OpenIMU300RI Evaluation Kit components
         +-------------------+-------------------------+
         
 
-    * OpenIMU evaluation kit power
+    **OpenIMU evaluation kit power**
 
-        * Set the external DC power supply set to 12V.
-        * Power the kit up by turning on the power supply.
+        Set the external DC power supply set to 12V.
+        Power the kit up by turning on the power supply.
 
 
+    **Communication with IMU from PC**
 
-    * Communication with IMU from PC
+        The unit communicates to the PC through the UART RS232 9-pin D-sub connector, which would be connected to a PC via
+        the PC's RS232  9-pin D-Sub or via a RS232-to-USB adapter.
+        
 
-        The unit communicates to the PC through the CAN bus and/or the UART.  
-        The UART must be connected to an RS232 dongle.  The CAN bus signals must be connected to a CAN bus adapter.
 
 
 
 
 OpenIMU Evaluation Kit Important Notice
----------------------------------------
+-------------------------------------------
 
 ::
 

@@ -8,7 +8,7 @@ Overview
 -------------
 
 The OpenIMU evaluation kit is a hardware platform to evaluate the OpenIMU300ZA
-inertial navigation system and develop various applications based on provided platform.
+inertial navigation system and develop various applications based on this platform.
 Supported by the Aceinna Navigation Studio the kit provides easy access to the features 
 OpenIMU300ZA and explains how to integrate the device in a custom design.
 The OpenIMU evaluation kit include OpenIMU300ZA, evaluation board with various interface

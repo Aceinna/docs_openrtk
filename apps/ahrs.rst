@@ -2,6 +2,10 @@
 AHRS/VG Dynamic Attitude APP
 ============================
 
+.. figure:: media/FullSoftwareBlockDiagram
+
+    **Software Block Diagram**
+
 The Attitude and Heading Reference System (AHRS) and Vertical Gyro (VG) application 
 supports all of the features and operating modes of the
 IMU APP, and it links in additional internal software, running on the

@@ -16,7 +16,6 @@ The OpenIMU300RI evaluation kit includes:
     :height: 200
 
 
-
 .. image:: media/STLink.png
     :height: 200
 
@@ -25,6 +24,7 @@ The OpenIMU300RI evaluation kit includes:
 
     EVB-OpenIMU300RI/overview
     EVB-OpenIMU300RI/mechanical
+    EVB-OpenIMU300RI/cable-mechanical
 
 .. note:: 
     The OpenIMU300RI Evaluation Kit does not include a 

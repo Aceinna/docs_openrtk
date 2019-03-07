@@ -13,7 +13,6 @@ OpenIMU300RI Evaluation Kit Setup
     run-OpenIMU300RI/graphing
 
 
-
 .. note:: 
     The RS232/CAN/Power cable shown in the image is similar to the cable that will be supplied with the kit.  It is for information only.
 

@@ -15,10 +15,3 @@ The following diagram shows the mechanical drawings for the OpenIMU300RI. The me
     OpenIMU300RI Mechanical Diagram
 
 
-.. figure::  _images/OpenIMU300RIMechanicalEndView.png
-    :width: 3.33in
-    :height: 2.57in
-    :align: left
-    
-    OpenIMU300RI Mechanical End View Diagram
-

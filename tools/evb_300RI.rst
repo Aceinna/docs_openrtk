@@ -1,22 +1,27 @@
 OpenIMU300RI Eval Kit
 =====================
 
-.. contents:: Contents
-    :local:
+.. note::
 
-.. image:: ../media/OpenIMU300RI_DevKit.png
-    :height: 300
+    The Power/CAN/RS232 cable shown is not the cable that will be provided in the kit.  It is similar and is provided temporarily until an image of the actual cable is available.
+
+OpenIMU300RI Eval Kit Fixture and Board
+---------------------------------------
+
+
+.. image:: ../media/OpenIMU300RI-EvalKit.png
+    :height: 500
 
 
 
-OpenIMU300RI Eval Kit Board
----------------------------
+The OpenIMU300RI module and the JTAG header board are  
+mounted together on a precision fixture to assist in 
+testing.  The OpenIMU300RI Eval Kit provides interfaces to the main 
+connector of the OpenIMU300RI and to the JTAG header board.  
+The JTAG header, the OpenIMU300RI 9-pin D-sub 
+connector, and the CAN 9-pin D-sub connector provide the 
+means to connect the OpenIMU300RI Eval Kit to a PC.
 
-The OpenIMU300RI Eval Kit interfaces to the main connector of the OpenIMU300RI and to the JTAG header.  
-The JTAG header and the OpenIMU300RI module are mounted together to a precision fixture to assist in testing.  The OpenIMU300RI serial port and CAN interface 
-are connected to a Windows computer using the from a laptop computer.  There are also 
-jumper connections to use to connect to the device's primary SPI port. Use the JTAG interface to directly download compiled code to the device
-quickly.
 
 
 OpenIMU300RI Default Coordinate System

@@ -5,11 +5,11 @@ Tools Installation
     :local:
     
 
-Platforms
----------
- - Windows 10 or 7 PC
- - Ubuntu version 14.0+
- - MAC OS
+Platforms - Computers with the following Operating Systems
+----------------------------------------------------------
+ - Windows 10 or 7 
+ - Ubuntu version 14.0 or later
+ - MAC OS 
 
 Installation of OpenIMU development environment
 -----------------------------------------------
@@ -50,7 +50,7 @@ up Aceinna OpenIMU platform homepage. Click on "Custom IMU examples", chose desi
 
 The required example will be imported into working directory in folder:
 
-C:\\Users\\<username>\\Documents\\platformio\\Projects\\ProjectName (Windows)
+C:\\Users\\<username>\\Documents\\platformio\\Projects\\ProjectName
 
 Now you can edit, build and test the project. All your changes will remain in the above-mentioned directory and subdirectories.
 Next time when you return to development - open Aceinna "Home" page and click "Open Project", choose "Projects" and select
