@@ -2,3 +2,4 @@
 _build/
 *.html
 .vscode
+.DS_Store
