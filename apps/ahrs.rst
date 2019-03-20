@@ -1,5 +1,5 @@
 
-AHRS/VG Dynamic Attitude APP
+AHRS/VG Dynamic Attitude App
 ============================
 
 

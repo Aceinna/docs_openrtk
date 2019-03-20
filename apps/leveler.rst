@@ -1,4 +1,4 @@
-Leveler APP
+Leveler App
 ===========
 
 

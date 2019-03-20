@@ -10,48 +10,33 @@ Static-Leveler Application
 
 The static-leveler application enables the OpenIMU hardware to provide roll and pitch estimates (the
 angles that the x and y-axes are rotated away from level) using only accelerometer measurements.
-This simple example builds on the
-`IMU application <IMU_App.html#inertial-measurement-unit-application>`__ and helps you become
-acquainted with the following parts of the OpenIMU software platform:
+This simple example is based on the *IMU Example Application*
 
-    * Acquiring sensor data
-    * Obtaining sensor data within the algorithm function
-    * Using built-in math functions
-    * Creating an algorithm
-    * Using the serial-debugger
-    * Generating serial output messages
-    * Setting the default OpenIMU configuration
-    * Setting up and using the python-based message decoder
-    * Using the `Aceinna Navigation Studio <https://developers.aceinna.com>`__ to capture data
+The Static Leveler application performs the following functions:
 
+    * Set the default OpenIMU configuration for the Leveler application
+    * Acquire Sensor Data - acceleration, angular-rate, local magnetic-field, 
+      and sensor temperature data
+    * Execute the Leveler application algorithms and other relevant math 
+      functions to create output data:
 
-Just as for the `IMU application <IMU_App.html#inertial-measurement-unit-application>`__,
-application development is broken up into a series of sections that build upon one another, as
-follows:
+        * Compute the acceleration unit-vector.
+        * Normalize using the magnetometer readings.
+        * Form the gravity vector in the body-frame.
+        * Form the roll and pitch Euler angles from the gravity unit vector.
+      
 
-.. toctree::
-    :maxdepth: 1
-
-    leveler/DataAcquisition
-    leveler/Requirements
-    leveler/LevelerAlgorithm
-    leveler/SerialDebugger
-    leveler/SerialMessaging
-    leveler/PythonMessageDecoder
+    * If not already done, set up the python-based message decoder
+    * Use the Aceinna Navigation Studio to capture data
+    * Generate a serial output message [#fn1]_ consisting of the following:
     
-
-    
-
-
-
-A pre-built version of the `Leveler Application <https://developers.aceinna.com/apps>`__ can be
-downloaded directly onto the OpenIMU hardware at the
-`Aceinna Navigation Studio <https://developers.aceinna.com>`__ website.  The process mirrors the
-once described for the `IMU application <IMU_App.html#inertial-measurement-unit-application>`__:
-
-.. toctree::
-    :maxdepth: 1
-
-    IMU/Bootloader
+        * A relative time measurement (both integer and decimal values)
+        * Acceleration readings in :math:`[g]`
+        * Rate-sensor readings in [°/s]
+        * Magnetic-field readings in :math:`[G]`
+        * Sensor temperature readings in [°C]
 
 
+.. rubric:: Footnotes
+
+.. [#fn1] The output message is the same as for the IMU application, but tailored by the Leveler algorithm

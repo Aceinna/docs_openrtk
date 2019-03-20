@@ -1,5 +1,5 @@
 
-GPS/INS APP 
+GPS/INS App
 ===========
 
 The INS APP supports all of the features and operating modes of the

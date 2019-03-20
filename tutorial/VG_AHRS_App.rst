@@ -15,17 +15,15 @@ data-rate (DR) rate-sensor output to propagate the attitude forward in time whil
 accelerometers and magnetometers as references to correct for estimated rate-bias errors and
 attitude-errors at a lower DR.
 
-
 The mathematics behind the algorithm are quite a bit more complicated than the math associated with
-the `Static-Leveler <Leveler/LevelerAlgorithm.html#static-leveler-algorithm>`__.  The full
-description is not discussed here.  However, the complete formulation is provided in the
-`EKF Algorithms <../algorithms.html#ekf-algorithms>`__ section.  Just as for the
-`IMU <IMU_App.html#inertial-measurement-unit-application>`__ and
-`Static-Leveler <Leveler_App.html#static-leveler-application>`__ applications, the
+the Static-Leveler application.  The full description is not discussed here, as .  However, the 
+complete formulation is provided in the "Ready-to-use Applications" section.  Just as for the IMU and 
+Static-Leveler applications, the
 development of the VG/AHRS application is broken up into a series of steps:
 
+    * Setting the default OpenIMU configuration
     * Acquiring sensor data
-    * Creating an algorithm
+    * Executing the VG/AHRS algorithm
     
           * Obtaining sensor data within the algorithm function
           * Executing the algorithm
@@ -33,32 +31,6 @@ development of the VG/AHRS application is broken up into a series of steps:
           
     * Using the serial-debugger
     * Generating serial output messages
-    * Setting the default OpenIMU configuration
     * Setting up and using the python-based message decoder
     * Using the Aceinna Navigation Studio to capture data
-
-
-Application development is broken up into a series of sections that build upon one another,
-as follows:
-
-.. toctree::
-    :maxdepth: 1
-
-    vg_ahrs/DataAcquisition
-    vg_ahrs/Requirements
-    vg_ahrs/AHRS_Algorithm
-    vg_ahrs/SerialDebugger
-    vg_ahrs/SerialMessaging
-    vg_ahrs/PythonMessageDecoder
-    
-
-A pre-built version of the `VG/AHRS Application <https://developers.aceinna.com/apps>`__ can be
-downloaded directly onto the OpenIMU hardware at the
-`Aceinna Navigation Studio <https://developers.aceinna.com>`__ website.  The process mirrors the
-once described for the `IMU application <IMU_App.html#inertial-measurement-unit-application>`__:
-
-.. toctree::
-    :maxdepth: 1
-
-    IMU/Bootloader
 

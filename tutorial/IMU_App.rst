@@ -1,6 +1,6 @@
-***************************************
-Inertial Measurement Unit Application
-***************************************
+*****************************************************
+GPS / Inertial Measurement Unit (GPS/INS) Application
+*****************************************************
 
 .. contents:: Contents
     :local:
@@ -10,44 +10,24 @@ Inertial Measurement Unit Application
 
 The Inertial Measurement Unit (IMU) application enables the OpenIMU hardware to provide
 inertial-sensor data from accelerometers, rate-sensors, and magnetometers.  This example forms the
-basis of future application development and helps you become acquainted with the following parts of
-the OpenIMU software platform:
+basis of future application development for systems that use GPS data for Inertial Navigation.
 
-    * Acquiring sensor data
-    * Filtering data (using built-in low-pass filters)
-    * Debugging with the serial-debugger
-    * Generating serial output messages
-    * Setting the default OpenIMU configuration
-    * Setting up and using the python-based message decoder
-    * Using the `Aceinna Navigation Studio <https://developers.aceinna.com>`__ to capture data
+The exact combination of sensor data you use will depend upon the ultimate goal of your
+project.  However, at least a subset of this data is required to create an application 
+that estimates position and heading.
 
+The IMU application performs the following functions:
 
-While the exact combination of sensor data you use will depend upon the ultimate goal of your
-project, at least a subset of this data is required to create an application that estimates the
-attitude or position of systems.
-
-
-Application development is broken up into a series of sections that build upon one another, as
-follows:
-
-.. toctree::
-    :maxdepth: 1
-
-    IMU/DataAcquisition
-    IMU/Requirements
-    IMU/SerialDebugger
-    IMU/SerialMessaging
-    IMU/PythonMessageDecoder
-    IMU/NavigationStudio
-
-
-A pre-built version of the `IMU Application <https://developers.aceinna.com/apps>`__ can be
-downloaded directly onto the OpenIMU hardware at the
-`Aceinna Navigation Studio <https://developers.aceinna.com>`__ website.  The process is described
-here:
-
-.. toctree::
-    :maxdepth: 1
-
-    IMU/Bootloader
+    * Set the default OpenIMU configuration for the IMU application
+    * Acquire Sensor Data - acceleration, angular-rate, local magnetic-field, GPS data, and sensor
+	  temperature data
+    * If not already done, set up the python-based message decoder
+    * Use the Aceinna Navigation Studio to capture data
+    * Generate a serial output message consisting of the following:
+    
+        * A relative time measurement (both integer and decimal values)
+        * Acceleration readings in :math:`[g]`
+        * Rate-sensor readings in [°/s]
+        * Magnetic-field readings in :math:`[G]`
+        * Sensor temperature readings in [°C]
 

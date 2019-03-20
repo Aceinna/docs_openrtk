@@ -12,10 +12,3 @@ is primarily for Magnetic Alignment also referred to as Compass Calibration, or 
 
 In the future, this section may include other algorithms that make use of the magnetometer including event detection and
 pedestrian dead reckoning.
-
-
-
-.. toctree::
-    :maxdepth: 2
-
-    mags/hardiron
