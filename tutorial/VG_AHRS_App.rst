@@ -4,7 +4,7 @@ Vertical-Gyro / Attitude and Heading Reference System Application
 
 .. contents:: Contents
     :local:
-    
+
 .. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
@@ -16,21 +16,13 @@ accelerometers and magnetometers as references to correct for estimated rate-bia
 attitude-errors at a lower DR.
 
 The mathematics behind the algorithm are quite a bit more complicated than the math associated with
-the Static-Leveler application.  The full description is not discussed here, as .  However, the 
-complete formulation is provided in the "Ready-to-use Applications" section.  Just as for the IMU and 
-Static-Leveler applications, the
-development of the VG/AHRS application is broken up into a series of steps:
+the Static-Leveler application.  The full description is not discussed here, as .  However, the
+complete formulation is provided in the "Ready-to-use Applications" section.
 
-    * Setting the default OpenIMU configuration
-    * Acquiring sensor data
-    * Executing the VG/AHRS algorithm
-    
-          * Obtaining sensor data within the algorithm function
-          * Executing the algorithm
-          * Populating the output data structure within the algorithm function
-          
-    * Using the serial-debugger
-    * Generating serial output messages
-    * Setting up and using the python-based message decoder
-    * Using the Aceinna Navigation Studio to capture data
+The VG/AHRS example application performs the following functions:
 
+    * Sets the default OpenIMU configuration
+    * Acquires sensor data  - acceleration, angular-rate, local magnetic-field, and sensor temperature data
+    * Executes the VG/AHRS algorithm
+    * Populates the output data structure 
+    * Generates and sends the following output message to the UART - the output message description is To Be Provided

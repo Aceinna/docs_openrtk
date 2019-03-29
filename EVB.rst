@@ -12,8 +12,17 @@ The OpenIMU300ZA evaluation kit consists of a robust and easy-to-use eval board,
 .. image:: media/STLink.png
     :height: 200
 
+
+The following pages cover:
+
+*   Detailed Overview
+*   Eval Board Mechanical Drawing
+*   Eval Board Schematic
+
+
 .. toctree::
     :maxdepth: 2
+    :hidden:
 
     EVB/overview
     EVB/mechanical

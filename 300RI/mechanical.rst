@@ -1,5 +1,5 @@
-Mechanical Drawing
-==================
+OpenIMU300RI Mechanical Diagram
+===============================
 
 .. contents:: Contents
     :local:
@@ -11,7 +11,5 @@ The following diagram shows the mechanical drawings for the OpenIMU300RI. The me
     :width: 4.51in
     :height: 6.61in
     :align: left
-    
-    OpenIMU300RI Mechanical Diagram
 
-
+    **OpenIMU300RI Mechanical Diagram**

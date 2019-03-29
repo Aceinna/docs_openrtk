@@ -8,5 +8,5 @@ Aceinna OpenIMU python driver, data logging, and web socket server
 
 GitHub Link: `python-openimu <https://github.com/Aceinna/python-openimu>`_
 
-Use the browser's back button to return
+.. note:: Use the browser's back button to return to the OpenIMU documentation
 

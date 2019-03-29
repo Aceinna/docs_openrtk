@@ -19,10 +19,6 @@ latitude/longitude/altitude measurements, and horizontal/vertical velocities alo
 ground-track.  In this case either the states need to be converted to match the measurements or vice-versa.
 
 
-
-Innovation (Measurement Error):
-=================================
-
 Once the measurements vectors are formed, the innovation (measurement error), :math:`\vec{\nu}_{k}`,
 is computed:
 
@@ -51,4 +47,6 @@ The available sensor information is used as follows:
        (:math:`\vec{r}^{N}` and :math:`\vec{v}^{N}`)
 
 
-.. Based upon these steps, the measurements are ...
+.. Based upon these steps, the measurements are ... 
+..
+Measurement Details To Be Provided

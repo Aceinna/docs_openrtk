@@ -1,12 +1,9 @@
-Mechanical Drawing
-==================
+Module Mechanical Drawing
+=========================
 
 Dimensions are in mm
 
-|mechanical|
+.. figure:: ../media/mechanical.png
+    :align: center
 
-.. |mechanical| image:: ../media/mechanical.png   
-
-.. contents:: Contents
-    :local:
-
+    **OpenIMU300ZA Module Mechanical Drawing**

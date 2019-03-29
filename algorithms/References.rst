@@ -92,9 +92,9 @@ Mathematical References
 
 	Other References
  
-		**To Be Provided** 
+		Other References - Keith Mitiguy Kane - To Be Provided 
 
-			Keith Mitiguy Kane
+			
 
 
 

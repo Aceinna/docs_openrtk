@@ -3,99 +3,117 @@ J1939 CAN Interface Basic Information
 
 .. contents:: Contents
     :local:
-    
-Basic details of the J1939 CAN Interface are explained first because 
-description of the J1939 CAN example application depends heavily on prior knowledge of  
-these basic details:
 
-J1939 CAN Message Characteristics
----------------------------------
+Basic details of the J1939 CAN Interface as implemented in the example application are explained first to
+facilitate understanding of the J1939 CAN example application
 
-*   All multiple byte fields are sent LSB first, then more significant byte(s) of the 
-    field in low to high byte order.
-.. 
-*   All messages, with the exception of the Request Message, have a standard 29 bit header, defined in the CAN 2.0B 
-    protocol.  This 29-bit header is also known as the *ECU Identifier":
-..
+
+.. note::
+    **Byte Order - All multiple byte fields are sent LSB first, then more significant byte(s) of the
+    field in lesser to higher byte significance**.
+
+**CAN Bus Address Arbitration**
+
+        Every ECU on a CAN network has to have a unique ECU address.  The example application
+        provides a CAN network address arbitration scheme.  Refer to the explanation of the "*Address Claiming* State
+        of the *CAN Communication Task* in a later page.
+
+**Baud Rate**
+
+    The J1939 network default baud rate of J1939 is 250Kbps. The OpenIMU300RI supports 125Kbps, 500Kbps, 500kbps, and 1Mbps.
+
+**Messages, Data Packets, and CAN Parameter Groups**
+
+    CAN documentation uses the term "Parameter Group", which is synonymous with the term "message" in this documentation.  The requested data messages sent on a periodic basis are referred to as "data packets".
+
+**Message Header - ECU Identifier**
+
+    All CAN messages, with the exception of the Request Parameter Group, have a 29 bit header, which is also referred to as the *ECU Identifier*.
+    The Request Parameter Group (RQST) is described below.
 
     .. table:: **Header - ECU Identifier Layout**
         :align: left
 
-        +-----------+--------------------------+-------------+
-        | **Byte**  | **Contents**             | **Acronym** |
-        +-----------+--------------------------+-------------+
-        || Preamble || bits 0:2 - Priority     || Prio       |
-        || Bits     || bit  3   - Reserved Bit || R          |
-        |           || bit  4   - Data Page    || DP         |
-        +-----------+--------------------------+------+------+
-        | 0         | PDU Format               | PF   |      |
-        +-----------+--------------------------+------+ PGN  |
-        | 1         | PDU Specific             | PS   |      |
-        +-----------+--------------------------+------+------+
-        | 2         | Source Address           | SA          |
-        +-----------+--------------------------+-------------+
-..
+        +-----------+--------------------------------+-------------+
+        | **Byte**  | **Contents**                   | **Acronym** |
+        +-----------+--------------------------------+-------------+
+        || Preamble || bits 0:2 - Priority           || Prio       |
+        || Bits     || bit  3   - Extended Data Page || EDP        |
+        |           || bit  4   - Data Page          || DP         |
+        +-----------+--------------------------------+-------------+
+        | 0         | PDU Format                     | PF          |
+        +-----------+--------------------------------+-------------+
+        | 1         | PDU Specific                   | PS          |
+        +-----------+--------------------------------+-------------+
+        | 2         | Source Address                 | SA          |
+        +-----------+--------------------------------+-------------+
 
-    *   *Header - ECU Identifier* field descriptions
+**Parameter Group Number (PGN)**
 
-        *   Preamble Bits
+    The Parameter Group Number is an 18 bit number composed as follows:
 
-            *   Priority bits - 0 to 7, 0 is highest
-            *   Reserved bit - set to 0 on transmit
-            *   Data Page bit - J1939 currently uses 0 to indicate that the 29 bit identifier is used.
-            *   The Priority, Reserved Bit (transmitted as 0), and the DP bit are transmitted first as 5 bits.  The example application
-                stores the Priority and ignores the R Bit and the DP bit.
+    *   2 bits - EDP & DP bits
+    *   8 bits - PF
+    *   8 bits - PS
 
-        *   Bytes 0 and 1
+**Type of Parameter Groups**
 
-            *   PDU Format (PF) & PDU Specific (PS) (AKA PGN)
+    *   *Global Parameter Groups*.  Global PGNs identify parameter groups that are globally broadcast.  The PF, PS, DP and EDP are
+        set to identify a Parameter Group rather than a specific address.   Global Parameter Groups have a PF that is 240 or greater and a PS
+        that identifies a Group Extension.
+    *   *Specific Parameter Groups*.  For Specific Parameter Groups, the PF value is the address of a specific CAN node and the PS is 0.
 
-                *   PF between 0 and 239 - PS field contains specific destination Address
-                *   PF between 240 and 255 - The message is a broadcast message.  The PS field 
-                    contains a Group Extension, expands the number of possible broadcast 
-                    Parameter Groups that can be represented by the identifier.
+**Special Parameter Groups**
 
-        *   Byte 2
+    *Request Parameter Group*
 
-            *   Source Address.  The address of the sender of the message.
+        The request parameter group, aka RQST (PGN 0x00EA0016) can be sent to all or a specific CA to request a specified parameter group.
 
-CAN Bus Address Arbitration
------------------------------
+        The RQST contains the PGN of the request parameter group. If the receiver of a specific request cannot respond,
+        it must send a negative acknowledgment.
 
-        Every ECU on a CAN network has to have a unique ECU address.  The example application
-        provides a CAN network address arbitration scheme.  
+        The RQST has a data length code of 3 bytes and is the only parameter group with a data length code less than 8 bytes.
 
-Baud Rate
------------
+    *Acknowledgement (ACK) Parameter Group*
 
-        The J1939 network default baud rate of J1939 is 250Kbps. The OpenIMU300RI also supports a lower speed and a higher speed 
-        (125Kbps and 500Kbps). 
+        The ACK Parameter Group (PGN 0x00E800) is used to send a positive or negative acknowledgement to a request.
 
-ECU Name
-----------
+    *Address claiming parameter group*
 
-        The "*Name*" is a 64 bit (8 bytes) long label which gives every ECU a unique identity. 
-        The main purpose of the Name is to describe the ECU for other ECUs.  It is 8 bytes long 
-        and is composed of 10 fields with the layout and structure shown in the following tables.  
+        The address claiming parameter group (PGN 0x00EE0016) is used to arbitrate CAN addresses.
+
+    *Commanded address parameter group*
+
+        The commanded address parameter group (PGN 0x00FED816) can be used to change the address of a CAN node.
+
+    *Transport protocol parameter group*
+
+        The transport protocol parameter groups (PGN 0x0EC0016 and 0x00EB0016) are used to packetize and transfer
+        parameter groups with more than 8 data bytes.
+
+
+**ECU Name**
+
+        The "*Name*" is a 64 bit (8 bytes) long label which gives every ECU a unique identity.
+        The main purpose of the Name is to describe the ECU for other ECUs.  It is 8 bytes long
+        and is composed of 10 fields with the layout and structure shown in the following tables.
         In the table, the acronyms "LO" and "HO" mean "Low Order" and "High Order".
 
         .. table:: **Name Layout**
             :align: left
 
             +---------------------+-------------------------------------+
-            || **Byte number in** || **Contents**                       |
+            || **Byte number in** |  **Contents**                       |
             || **CAN Message**    |                                     |
             +---------------------+-------------------------------------+
-            | 0                   |  LSB of Identity Number             |
+            | 0                   |  LSB of Identity Number (IDN)       |
             +---------------------+-------------------------------------+
-            | 1                   || 2 middle bytes of                  |
-            |                     || Identity Number (IDN)              |
-            |                     || Lower order byte first             |
+            | 1                   |  IDN - middle byte                  |
             +---------------------+-------------------------------------+
             | 2                   || Bits 0:4 - HO Nibble of IDN        |
             |                     || Bits 5:7 - LO Nibble Mfgr Code     |
             +---------------------+-------------------------------------+
-            | 3                   || MSB Mfgr Code                      |
+            | 3                   |  MSB Mfgr Code                      |
             +---------------------+-------------------------------------+
             | 4                   || Bits 0:2 - ECU Instance            |
             |                     || Bits 3:7 - Function Instance       |
@@ -136,7 +154,3 @@ ECU Name
             +-------------------------+--------------+
             | Arbitrary address bit   |  1           |
             +-------------------------+--------------+
-
-
-.. note:: Use the "CAN J1939 Example Application" Link on the left to follow the flow for the J1939 CAN Application.
-

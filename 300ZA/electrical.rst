@@ -1,5 +1,5 @@
 Environmental, Electrical,  and Physical Specifications
-======================================================
+=======================================================
 
 .. contents:: Contents
     :local:

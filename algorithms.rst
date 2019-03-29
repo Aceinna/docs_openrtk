@@ -20,8 +20,21 @@ conditions.  Finally, a series of examples illustrate existing VG, AHRS, and INS
 The algorithm development description is broken up into a series of sections that build upon one
 another, as follows:
 
+*   Coordinate Frames
+*   Attitude Parameters
+*   Sensors
+*   Extended Kalman Filter
+*   Process Models
+*   Measurement Model
+*   Measurement Vector
+*   Innovation (Measurement Error)
+*   Magnetic Alignment
+*   References
+
+
 .. toctree::
     :maxdepth: 3
+    :hidden:
 
     algorithms/CoordFrames
     algorithms/AttitudeParameters

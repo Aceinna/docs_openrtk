@@ -3,7 +3,7 @@ Tutorial APP
 
 A simple static tilt sensor demo is provided here to show how to add your own algorithm and output algorithm results.
 
-OpenIMU provides a user-friendly interface to add your own algorithms. To do that, you need to get sensor data, run the algorithm and output algorithm results. All interfaces related to these operations are handled in src/dataProcessingAndPresentation.c. And all user codes implementing the algorithms and results packaging are located in src/user/ directory.
+OpenIMU provides a user-friendly interface to add your own algorithms. To do that, the user need to get sensor data, run the algorithm and output algorithm results. All interfaces related to these operations are handled in src/dataProcessingAndPresentation.c. And all user codes implementing the algorithms and results packaging are located in src/user/ directory.
 
 Get algorithm input
 -------------------
@@ -47,7 +47,7 @@ This procedure is implemented in src/user/userAlgorithm.c as follows:
  void *RunUserNavAlgorithm(double *accels, double *rates, double *mags,
                            gpsDataStruct_t *gps, int dacqRate)
  {
-    
+
     //---------------------------get accel data---------------------
     float a[3]; // accel of this step
     a[0] = accels[0];
@@ -64,12 +64,12 @@ This procedure is implemented in src/user/userAlgorithm.c as follows:
     a[2] /= accel_norm;
     results[0] = asin(a[0]) * R2D;
     results[1] = atan2(-a[1], -a[2]) * R2D;
-    
+
     //--------------------------return results-----------------------
     return &results;
  }
 
-It just gets the accelerometer measurement, normalizes it, calculates pitch and roll angles, and returns the results. I keep all the input parameters here. Indeed, I need only **accels**. You could remove unused parameters in your algorithm.
+It just gets the accelerometer measurement, normalizes it, calculates pitch and roll angles, and returns the results. I keep all the input parameters here. Indeed, I need only **accels**. The user could remove unused parameters in your algorithm.
 
 **results** is a global variable declared as
 ::
@@ -97,9 +97,9 @@ Now, a simple user-fined algorithm is done. The framework will automatically cal
 
 Output results via debug UART
 -----------------------------
-This section shows how to use the debug UART (default baud rate is 38400) on the EVB to output algorithm results. You could also output other information you are interested in.
+This section shows how to use the debug UART (default baud rate is 38400) on the EVB to output algorithm results. The user could also output other information the user are interested in.
 
-To use the debug UART, you need include **debug.h**. For example, I want to output algorithm results after the algorithm is called in **dataProcessingAndPresentation.c**.
+To use the debug UART, the user needs to include **debug.h**. For example, I want to output algorithm results after the algorithm is called in **dataProcessingAndPresentation.c**.
 
 - include the header file in **dataProcessingAndPresentation.c**.
 
@@ -107,7 +107,7 @@ To use the debug UART, you need include **debug.h**. For example, I want to outp
 
  #include "debug.h"
 
-- output algorithm results. The results are converted to plain text and then transmitted via the debug UART. You can also choose your own way to encode the results.
+- output algorithm results. The results are converted to plain text and then transmitted via the debug UART. The user can also choose to encode the results per user requirements.
 
 ::
 
@@ -128,14 +128,14 @@ To use the debug UART, you need include **debug.h**. For example, I want to outp
         DebugPrintString(buffer);
     }
 
-Compile the project, upload the firmware, and you can get result via debug UART.
+Compile the project, upload the firmware, and the user can get result via debug UART.
 
 Implementing user-defined packets via UART
 ------------------------------------------
-The debug UART is mainly intended for debug usage. You may want to output algorithm results via the interface UART (default baud rate is 57600) on the EVB. OpenIMU provides an easy-to-use framework for you to define your own packets. User-defined packets are declared and implemented in **UserMessaging.h** and **UserMessaging.c**.
+The debug UART is mainly intended for debug usage. The user may want to output algorithm results via the interface UART (default baud rate is 57600) on the EVB. OpenIMU provides an easy-to-use framework for the user to define your own packets. User-defined packets are declared and implemented in **UserMessaging.h** and **UserMessaging.c**.
 
 
-- Add your packet code in **UserMessaging.h**. 
+- Add your packet code in **UserMessaging.h**.
 
 I added a **USR_OUT_TLT** packet as an example.
 
@@ -145,13 +145,13 @@ I added a **USR_OUT_TLT** packet as an example.
  typedef enum {
     USR_OUT_NONE  = 0,  // 0
     USR_OUT_TEST,       // 1
-    USR_OUT_DATA1 ,     // 2            
+    USR_OUT_DATA1 ,     // 2
     USR_OUT_TLT,        // 3
- // place output packet definitions here    
+ // place output packet definitions here
     USR_OUT_MAX
  }UserOutPacketType;
 
-- Add encoding procedure in **UserMessaging.c**. 
+- Add encoding procedure in **UserMessaging.c**.
 
 User defined packets are encoded by this procedure:
 
@@ -199,7 +199,7 @@ After I added my encoding codes, this procedure is as follows.
         // place additional user packet preparing calls here
         // case USR_OUT_XXXX:
         //      *payloadLen = YYYY; // total user payload length, including user packet type
-        //      payload[0]  = ZZZZ; // user packet type 
+        //      payload[0]  = ZZZZ; // user packet type
         //      prepare dada here
         //      break;
         case USR_OUT_TLT:
@@ -218,11 +218,11 @@ After I added my encoding codes, this procedure is as follows.
                 }
             }
             break;
-        
+
         default:
-             *payloadLen = 0;  
+             *payloadLen = 0;
              ret         = FALSE;
-             break;      /// unknown user packet, willl send error in response
+             break;      /// unknown user packet, will send error in response
         }
 
         return ret;
@@ -230,11 +230,11 @@ After I added my encoding codes, this procedure is as follows.
 
 This procedure will be called at the defined rate by the framework.
 
-The framework default outputs calibrated IMU sensor data. To output your own packets, you should tell the framework the packet code of your packet, and then feed the algorithm results to the encoding procedure we just implemented above.
+The framework default outputs calibrated IMU sensor data. To output your own packets, the user should tell the framework the packet code of your packet, and then feed the algorithm results to the encoding procedure we just implemented above.
 
 - Register the user-defined packet in the framework.
 
-This can be done by calling **setOutputPacketCode** when initializing user-defined algorithm in **dataProcessingAndPresentation.c**. To use **setOutputPacketCode**, you need
+This can be done by calling **setOutputPacketCode** when initializing user-defined algorithm in **dataProcessingAndPresentation.c**. To use **setOutputPacketCode**, the user need
 
 ::
 
@@ -262,13 +262,13 @@ In **dataProcessingAndPresentation.c**, after calling the user-defined algorithm
 
  WriteResultsIntoOutputStream(results) ;   // default implementation located in file file UserMessaging.c
 
-to feed **results** to **UserMessaging.c**. **WriteResultsIntoOutputStream** is implemente like this:
+to feed **results** to **UserMessaging.c**. **WriteResultsIntoOutputStream** is implemented like this:
 
 ::
 
  void WriteResultsIntoOutputStream(void *results)
  {
-    //  implement specific data processing/saving here 
+    //  implement specific data processing/saving here
     tlt = (float*)results;
  }
 
@@ -278,6 +278,4 @@ where **tlt** is a global variable declared as
 
  static float *tlt;  // pointer to algorithm results
 
-Now, compile the project, upload the firmware, and you can get results via the interface UART.
-
-
+Now, compile the project, upload the firmware, and the user can get results via the interface UART.

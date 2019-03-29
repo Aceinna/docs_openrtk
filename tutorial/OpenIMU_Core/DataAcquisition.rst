@@ -15,7 +15,7 @@ OpenIMU makes data-acquisition simple by reducing the steps required to get high
 sensor data.  Sensor drivers, filtering, and calibration are handled without the need for
 additional user input.
 
-The main routine controlling sensor sampling and processing is *TaskDataAcqusition*.  This task
+The main routine controlling sensor sampling and processing is *TaskDataAcquisition*.  This task
 calls the routines that acquire sensor measurements, filter the data, and apply calibration.  In
 particular, the task calls the following, which provides functions to acquire sensor data:
 

@@ -33,9 +33,9 @@ custom data structures and packets very simple.
     :maxdepth: 1
     :hidden:
 
+    install
     run
     run-OpenIMU300RI
-    install
 
 .. raw:: latex
 
@@ -46,7 +46,7 @@ custom data structures and packets very simple.
     :maxdepth: 1
     :hidden:
 
-    OpenIMU_Modules    
+    OpenIMU_Modules
 
 .. raw:: latex
 
@@ -57,8 +57,7 @@ custom data structures and packets very simple.
     :maxdepth: 1
     :hidden:
 
-    EVB
-    EVB-OpenIMU300RI
+    EvaluationKits
 
 .. raw:: latex
 

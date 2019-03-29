@@ -1,5 +1,5 @@
-IMU Sensors
-===========
+Internal Sensors
+================
 
 .. contents:: Contents
     :local:

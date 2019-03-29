@@ -1,51 +1,62 @@
-CAN J1939 Get Command Messages
+CAN J1939 Get Request Messages
 *******************************
 
 .. contents:: Contents
     :local:
-    
-
-Get Commands 
---------------------------
-
-Get commands are used by other ECUs in the network 
-to retrieve information from the OpenIMU300RI.  All Get commands are formed as a 
-Request message as specified in SAI J1939-21.  Request Messages are the only 3 byte CAN messages.  
-They are used to request PGNs which have a transmission rate of "On Request".  
-The format and content of the Request message is **To Be Provided**.  
-The following Get Commands are implemented in the example application.  The user can modify the 
-existing commands and responses and add commands and responses as needed.
-
 
 .. toctree::
     :maxdepth: 1
-    
-.. table::  *Get Commands*
+
+Get Requests
+------------
+
+Get requests are used by other ECUs in the network
+to retrieve information from the OpenIMU300RI.  All Get requests are formed as a
+Request message as specified earlier.
+They are used to request PGNs which have a transmission rate of "On Request".
+The format and content of the Request message is To Be Provided.
+The following Get Requests are implemented in the example application.  The user can modify the
+existing requests and responses and add requests and responses as needed.
+
+
+.. table::  *Get Requests*
     :align: left
 
-    +------------------------+---------+--------------+
-    | **Command**            | **PGN** || **Payload** |
-    |                        |         || **Length**  |
-    |                        |         || (bytes)     |
-    +------------------------+---------+--------------+
-    | *Get Firmware Version* | 65242   | 5            | 
-    +------------------------+---------+--------------+
-    | *Get ECU ID*           | 64965   | 8            | 
-    +------------------------+---------+--------------+
-    | *Get Hardware BIT*     | 65362   | 2            | 
-    +------------------------+---------+--------------+
-    | *Get Software BIT*     | 65363   | 2            | 
-    +------------------------+---------+--------------+
-    | *Get Status*           | 65364   | 2            | 
-    +------------------------+---------+--------------+
+    +-------------------------------+-------------+-------------+--------------+
+    | **Request**                   || *PGN*      || **PS**     || **Payload** |
+    |                               || (hex)      || (dec)      | **Length**   |
+    |                               || (See note) || (See note) | (bytes)      |
+    +-------------------------------+-------------+-------------+--------------+
+    | *Software Version*            | FEDA        | 218         | 5            |
+    +-------------------------------+-------------+-------------+--------------+
+    | *ECU ID*                      | FDC5        | 197         | 8            |
+    +-------------------------------+-------------+-------------+--------------+
+    | *Hardware BIT*                | FF52        | 82          | 2            |
+    +-------------------------------+-------------+-------------+--------------+
+    | *Software BIT*                | FF53        | 83          | 2            |
+    +-------------------------------+-------------+-------------+--------------+
+    | *Status*                      | FF54        | 84          | 2            |
+    +-------------------------------+-------------+-------------+--------------+
+    | *Packet Rate*                 | FF55        | 85          | 2            |
+    +-------------------------------+-------------+-------------+--------------+
+    | *Packet Type*                 | FF56        | 86          | 2            |
+    +-------------------------------+-------------+-------------+--------------+
+    | *Digital Cutoff Frequency*    | FF57        | 87          | 3            |
+    +-------------------------------+-------------+-------------+--------------+
+    | *Orientation*                 | FF58        | 88          | 3            |
+    +-------------------------------+-------------+-------------+--------------+
 
+.. note::
 
-Responses to Get Commands
+    Provided PS values for all but the *Get Software Version* and *Get ECU ID* can be changed by the "Set Bank0 PS Value"
+    or "Set Bank1 PS Values" message  The give values are the pre-defined values.
+
+Responses to Get Requests
 --------------------------
-The following table describe the payloads for responses to Get Commands
+The following table describe the payloads for responses to Get Requests
 
 
-.. table::    *Firmware Version Response Payload*
+.. table::    *Software Version Response Payload*
     :align: left
 
     +-----------+-----------------------+
@@ -68,10 +79,10 @@ The following table describe the payloads for responses to Get Commands
     +----------+---------------------------------+-------------+
     | **Byte** | **Contents**                    | **Acronym** |
     +----------+---------------------------------+-------------+
-    | 0        || bit  0   - Data Page           || DP         |
-    |          || bit  1   - Reserved Bit 1      || R1         |
-    |          || bits 2:4 - Priority            || Prio       |
-    |          || bits 5:7 - Reserved Bits 2     || R2         |
+    | 0        || bits 0:2 - Priority            || Prio       |
+    |          || bit  3   - Extended Data Page  || EDP        |
+    |          || bit  4   - Data Page           || DP         |
+    |          || bits 5:7 - Reserved Bits       || R          |
     +----------+---------------------------------+-------------+
     | 1        | PDU Format                      | PF          |
     +----------+---------------------------------+-------------+
@@ -159,7 +170,3 @@ The following table describe the payloads for responses to Get Commands
     +---------+-------------------------------+-----------------------------------------------------------------+
     | 15      | Reserved                      | Reserved                                                        |
     +---------+-------------------------------+-----------------------------------------------------------------+
-
-
-.. note:: Use the "CAN J1939 Example Application" Link on the left to follow the flow for the J1939 CAN Application.
-

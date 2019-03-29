@@ -4,8 +4,8 @@ CAN and UART
 .. contents:: Contents
     :local:
 
-The OpenIMU300RI has two external ports; one UART port and one CAN bus port.  
-Based on these available external ports, the OpenIMU300RI can be configured 
+The OpenIMU300RI has two external ports; one UART port and one CAN bus port.
+Based on these available external ports, the OpenIMU300RI can be configured
 in several modes for communication with the external world.
 
 The usage modes are:
@@ -21,16 +21,7 @@ The usage modes are:
 |                     | - Single UART for all messages,           |
 |                     |   debug output, and firmware update       |
 +---------------------+-------------------------------------------+
-| **CAN Mode**        | - Typically used for production for       |
-|                     |   systems that don't use GPS              |
+| **CAN Mode**        | - Typically used for production           |
 |                     | - Uses CAN Port for messages and          |
 |                     |   firmware update                         |
 +---------------------+-------------------------------------------+
-| **CAN + GPS Mode**  | - Typically used for production           |
-|                     |   for systems that use GPS                |
-|                     | - Uses CAN Port for messages and          |
-|                     |   firmware update                         |
-|                     | - Uses RS232 Port for GPS messages        |
-+---------------------+-------------------------------------------+
-
-

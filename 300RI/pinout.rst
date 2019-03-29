@@ -5,7 +5,7 @@ OpenIMU300RI Connector Pinout
     :local:
 
 
-The OpenIMU300RI mating connector is the TE Connectivity 776531-1 (Ampseal-16 Housing "AS 16, 6P PLUG ASSY, RD, KEY 1" ) 
+The OpenIMU300RI mating connector is the TE Connectivity 776531-1 (Ampseal-16 Housing "AS 16, 6P PLUG ASSY, RD, KEY 1" )
 or equivalent.
 
 
@@ -15,7 +15,7 @@ or equivalent.
     OpenIMU300RI Connector
 
 
-The pinout for that connector is shown in the following diagram.  
+The pinout for that connector is shown in the following diagram.
 Pin 1 is in the upper right corner of the diagram.
 
 
@@ -36,6 +36,5 @@ The connector pin definitions are defined in the table below.
 
 .. note::
 
-    Power is applied to the OpenIMU300RI on pin 6. Pin 3 is ground.  The OpenIMU300RI 
-    accepts an unregulated 5 to 32 VDC input. It is reverse polarity and ESD protected internally
-
+    Power is applied to the OpenIMU300RI on pin 6. Pin 3 is ground.  The OpenIMU300RI
+    accepts an unregulated 4.9 to 32 VDC input. It is reverse polarity and ESD protected internally

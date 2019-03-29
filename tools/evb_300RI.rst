@@ -1,17 +1,16 @@
-OpenIMU300RI Eval Kit
-=====================
+OpenIMU300RI Eval Kit Fixture and Board
+=======================================
 
 .. note::
 
     The Power/CAN/RS232 cable shown is not the cable that will be provided in the kit.  It is similar and is provided temporarily until an image of the actual cable is available.
 
-OpenIMU300RI Eval Kit Fixture and Board
----------------------------------------
 
 
-.. image:: ../media/OpenIMU300RI-EvalKit.png
+.. figure:: ../media/OpenIMU300RI-EvalKit.png
     :height: 500
 
+    **OpenIMU300RI Eval Kit Fixture and Board**
 
 
 The OpenIMU300RI module and the JTAG header board are  
@@ -24,8 +23,8 @@ means to connect the OpenIMU300RI Eval Kit to a PC.
 
 
 
-OpenIMU300RI Default Coordinate System
----------------------------------------
+**OpenIMU300RI Default Coordinate System**
+
 
 The OpenIMU  default coordinate systems is shown below.  In the reference IMU apps, a configuration setting is provided
 to control the coordinate system.  These configurable elements are known as **Configuration Parameters**.

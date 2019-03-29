@@ -4,8 +4,6 @@ C-Code Serial Driver
 .. contents:: Contents
     :local:
     
-A C-code Driver
-
-**To Be Provided**
+C-code Serial Driver - Details To Be Provided
 
 

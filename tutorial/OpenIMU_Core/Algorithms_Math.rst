@@ -9,5 +9,5 @@ Default Algorithm and Math Functions
     :maxdepth: 1
     
     
-**To Be Provided**
+To Be Provided
 

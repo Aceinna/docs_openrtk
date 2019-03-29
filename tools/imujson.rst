@@ -78,7 +78,7 @@ a new message the key point is to properly describe the payload in the order tha
               },
               {
                 "name" : "sC",
-                "description" : "Save Conifguration Parameters to Flash",
+                "description" : "Save Configuration Parameters to Flash",
                 "inputPayload" : {},
                 "responsePayload" : {}
               },

@@ -27,10 +27,11 @@ applications are as follows:
     * Data Capture Functions Supporting the Aceinna Navigation Studio
 
 
-Details of those elements are describe in the following pages:
+Details of those elements are described in the following pages.
  
 .. toctree::
     :maxdepth: 1
+    :hidden:
 
     OpenIMU_Core/BSP_RTOS
     OpenIMU_Core/UART
