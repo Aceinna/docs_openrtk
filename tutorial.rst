@@ -39,8 +39,8 @@ Tutorial - What The User Needs to Know to Build The First Application
 
     **IMU Application**
 
-    An IMU refers to a device that returns calibrated, inertial-sensor data.  This application forms
-    the backbone of all other example applications as each requires inertial measurements to
+    The term Inertial Measurement Unit (IMU) refers to a device that returns calibrated inertial-sensor data.
+    This application forms the backbone of all other example applications as each requires inertial measurements to
     generate other results.
 
 
@@ -49,14 +49,15 @@ Tutorial - What The User Needs to Know to Build The First Application
     The Static-Leveler application uses accelerometer readings to measure the local gravity-field
     and compute the two-axis attitude (roll and pitch angles) of a body relative to the local-level
     frame.  A Leveler application could be used to provide stabilization for cameras and other
-    systems that require accelerometer stable angular state.
+    systems that require linear and rotational stability.
 
 
-    **VG/AHRS Application**
+    **VG&AHRS Applications**
 
-    The VG/AHRS application uses rate-sensors, accelerometers, and (in the case of an AHRS)
+    The Vertical Gyro (VG) application and the Attitude and Heading Reference System (AHRS) application
+    use rate-sensors, accelerometers, and (for the AHRS application)
     magnetometers to compute the attitude and heading of a body in space.  Rate-sensors are
-    used to propagate the attitude forward in time at high data-rates (DR) while
+    used to propagate the attitude forward in time at high output data-rates (ODR) while
     accelerometers and magnetometers act as references, correcting for rate-sensor biases and
     attitude errors.
 
@@ -64,9 +65,9 @@ Tutorial - What The User Needs to Know to Build The First Application
     **INS Application**
 
     The Inertial Navigation System (INS) application supports all of the features and operating
-    modes of the VG/AHRS APP.  In addition it includes the additional capability of interfacing
+    modes of the VG&AHRS applications.  In addition it includes the additional capability of interfacing
     with an external GPS receiver and associated software running on the processor for
-    computation of navigation information as well as orientation information.
+    computation of navigation position information as well as orientation information.
 
 **Robust CAN Example Applications**
 

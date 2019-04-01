@@ -16,7 +16,7 @@ The usage modes are:
 |                     |   debug output, and firmware update       |
 +---------------------+-------------------------------------------+
 | **CAN + UART Mode** | - Typically used during late development  |
-|                     | - User CAN Port for messages and          |
+|                     | - Uses CAN Port for messages and          |
 |                     |   firmware update                         |
 |                     | - Single UART for all messages,           |
 |                     |   debug output, and firmware update       |

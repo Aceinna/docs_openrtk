@@ -29,32 +29,32 @@ The following pages provide the steps needed to set up and use the OpenIMU300RI 
     *   An RS232-to-USB adapter will be needed to connect the unit to the PC for RS232 communication.
     *   The CAN interface is available to connect with other CAN network nodes.
     *   If CAN bus communication monitoring by a PC is desired, a CAN interface adapter
-        will be needed to connect the the PC to the CAN network for CAN bus communication.
+        will be needed to connect the the PC to the CAN network for CAN network communication.
 
 The following directions for connecting the unit to a PC and to the CAN network refer to the images below:
 
-*   **Connecting Main connector (CAN/UART/Power)**.  Align the keys on the unit and the cable connector.
+*   **Connect main connector (CAN/UART/Power)**.  Align the keys on the unit and the cable connector.
     Push the 6-pin cable connector into the unit connector.
-*   **Double Locking the connector**: The connector is now locked to the unit.  However, an extra lock
-    can be engaged by pushing the red latch under the black latch.  This prevents the disengagement button from being depressed.
-*   **Unlocking the connector**
+*   **Double Lock the connector**: The connector is now locked to the unit.  However, an extra lock
+    can be engaged, if desired, by pushing the red latch under the black latch.  This prevents the disengagement button from being depressed.
+*   **Unlock the main connector**
 
     *   If engaged, pull the red latch away from the connector toward the cable.
     *   Push down on the black disengagement button in the middle of the connector.
     *   Pull the cable connector away from the unit.
 
-*   **RS232 connection**.  Connect the RS232 9-pin D-sub connector to a PC's RS232 9-pin D-sub connector or through an RS232-to-USB adapter.
+*   **Connect RS232**.  Connect the RS232 9-pin D-sub connector to a PC's RS232 9-pin D-sub connector or through an RS232-to-USB adapter.
 
-*   **CAN connection**.  The CAN bus connector is used to connect units to the CAN bus.
+*   **Connect CAN**.  The CAN network 9-pin D-sub connector is used to connect the OpenIMU300RI unit to the CAN network.
 
-*   **JTAG debugger connection**.
+*   **Connect JTAG debugger**.
 
     *   Connect the keyed connector on the ribbon cable to the keyed connector on the eval board.
     *   Connect the keyed connector on the the other end of the ribbon cable to the JTAG debugger.
     *   Connect the USB cable to the JTAG debugger and the host computer.
 
-*   **Power/Ground connection**.  With the power supply turned off, connect the power and ground leads to the external power supply.
-*   **Power**.  **There is no on/off switch on the unit or the eval board attached to the unit**.  Turn the power supply on or off to supply power or remove power.
+*   **Connect Power/Ground**.  With the power supply turned off, connect the power and ground leads to the external power supply.
+*   **Apply/Remove Power**.  **There is no on/off switch on the unit or the eval board attached to the unit**.  Turn the power supply on or off to apply power or remove power.
 
 
 +------------------------------------------------------+---------------------------------------------+
