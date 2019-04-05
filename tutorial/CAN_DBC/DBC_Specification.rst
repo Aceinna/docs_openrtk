@@ -108,9 +108,7 @@ VAL_TABLE\_
 Attributes
 ==========
 
-In this sections are standard attributes used by
-`CANpy <https://github.com/stefanhoelzl/CANpy>`__ defined. The
-attributes can be overwritten within a DBC file. ## Message Attributes
+This section describes the standard DBC attributes.
 
 GenMsgSendType
 --------------
