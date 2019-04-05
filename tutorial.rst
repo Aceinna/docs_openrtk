@@ -73,8 +73,8 @@ Tutorial - What The User Needs to Know to Build The First Application
 
     There are two CAN example applications, one for each CAN message protocol specifications used:
 
-    *   *J1939 Messaging Specification*.  The original CAN bus messaging scheme
-        was standardized by the SAE as Document J1939.
+    *   *SAE J1939 Messaging Standard*.  The SAE J1939 standards document set provides the requirements
+        for the CAN messaging implementation implemented in this example application
 
     *   *DBC Messaging Specification*.  The Database Communication (DBC) CAN message format is a
         proprietary format developed and released by the company Vector Informatik GmbH.  It is an
@@ -96,4 +96,4 @@ Tutorial - What The User Needs to Know to Build The First Application
     tutorial/VG_AHRS_App
     tutorial/INS_App
     tutorial/CAN/CAN_J1939_Application
-    tutorial/CAN/CAN_DBC_Application
+    tutorial/CAN_DBC/CAN_DBC_Application

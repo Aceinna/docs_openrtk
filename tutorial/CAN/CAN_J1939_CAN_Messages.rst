@@ -7,15 +7,17 @@ The CAN J1939 Example Application provides the following message categories:
 
     **Requests**
 
-        All requests are broadcast. All other nodes on the network will decode the payload and  ignore the request if it is meant for another ECU.
+        Some requests are broadcast.  In such cases, all other nodes on the network will decode the
+        payload and ignore the request if it is meant for another ECU.
 
         *Set Requests*.  Set requests are used for other Electronic Control Units (ECUs) to configure the OpenIMU300RI on the network.
 
-        *Get Requests*. Get requests are provided to allow other ECUs to request information from the OpenIMU300RI.  If the intended node for the request is the OpenIMU300RI, it will build and send a response packet to the requesting node.
+        *Get Requests*. Get requests are provided to allow other ECUs to request information from the OpenIMU300RI.  If the request is for the OpenIMU300RI, it will build and send a response packet to the requesting node.
 
     **Data Packets**
 
-        Data packets are broadcast with a frequency that can be set by other ECUs using *Set Requests*.
+        Data packets are broadcast with a frequency that is internally controlled, but can be set by other ECUs
+        using *Set Requests*.
 
 
 .. toctree::

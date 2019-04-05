@@ -1,4 +1,4 @@
-CAN J1939 Set Request Messages
+CAN DBC Set Request Messages
 *******************************
 
 .. contents:: Contents
@@ -18,29 +18,29 @@ Request message as specified earlier. The user can modify the provided requests 
 
     +---------------------------+--------+--------------+--------------+-----------------------------------------+
     | **Request**               | **PF** | **PS** (dec) || **Payload** |  **Purpose**                            |
-    |                           |  (hex) |              || **Length**  |                                         |
+    |                           |  (dec) |              || **Length**  |                                         |
     |                           |        |              || (bytes)     |                                         |
     +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    | *Save Configuration*      |  FF    | 81           |  3           || Save all configuration                 |
+    | *Save Configuration*      |  255   | 81           |  3           || Save all configuration                 |
     |                           |        |              |              || data to non-volatile memory            |
     +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    | *Reset Algorithm*         |  FF    | 80           |  3           |  Reset algorithm to initial conditions  |
+    | *Reset Algorithm*         |  255   | 80           |  3           |  Reset algorithm to initial conditions  |
     +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    | *Set Packet Rate Divider* |  FF    | 85           |  2           || Set rate dividers to increase/decrease |
+    | *Set Packet Rate Divider* |  255   | 85           |  2           || Set rate dividers to increase/decrease |
     |                           |        |              |              || rate packets are set                   |
     +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    | *Set Data Packet Type(s)* |  FF    | 86           |  2           || Select 1, 2, or 3 packet types to send |
+    | *Set Data Packet Type(s)* |  255   | 86           |  2           || Select 1, 2, or 3 packet types to send |
     |                           |        |              |              || periodically                           |
     +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    || *Set Digital Filters*    |  FF    | 87           |  3           || Set cutoff frequency for rate and      |
+    || *Set Digital Filters*    |  255   | 87           |  3           || Set cutoff frequency for rate and      |
     || *Cutoff Frequencies*     |        |              |              || accelerometers                         |
     +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    | *Set Orientation*         |  FF    | 88           |  3           |  Set orientation of X, Y, and Z axes    |
+    | *Set Orientation*         |  255   | 88           |  3           |  Set orientation of X, Y, and Z axes    |
     +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    || *Set Bank of PS*         |  FF    | 240          |  8           || Sets PS number for the Reset Algorithm |
+    || *Set Bank of PS*         |  255   | 240          |  8           || Sets PS number for the Reset Algorithm |
     || *Numbers for Bank0*      |        |              |              || Set request                            |
     +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    || *Set Bank of PS*         |  FF    | 241          |  8           | Sets PS numbers for the other           |
+    || *Set Bank of PS*         |  255   | 241          |  8           | Sets PS numbers for the other           |
     || *Numbers for Bank1*      |        |              |              | Set requests                            |
     +---------------------------+--------+--------------+--------------+-----------------------------------------+
 
@@ -48,7 +48,6 @@ Request message as specified earlier. The user can modify the provided requests 
 
     Provided PS values for all but the "Set Bank of PS Numbers for Bank0/Bank1" Set Commands can be changed by
     the "Set Bank of PS Numbers for Bank0/Bank1" message  The given values are the pre-defined values.
-
 
 
 *Save Configuration*
@@ -91,7 +90,7 @@ Request message as specified earlier. The user can modify the provided requests 
 
 *Set Packet Rate Divider*
 
-    The following table provides the values of the packet rate divider response payload
+    The following table provides the values of the packet rate divider payload byte.
 
     .. table::  Set *Packet Rate Divider Request/Response Payload Fields*
         :align: left
@@ -103,7 +102,7 @@ Request message as specified earlier. The user can modify the provided requests 
         |        || Address      |                                  |
         +--------+---------------+----------------------------------+
         | 1      |               || **Byte Value** -                |
-        |        |               | **Packet Broadcast Rate (Hz)**   |
+        |        |               || **Packet Broadcast Rate (Hz)**  |
         |        |               || 0  - Quiet Mode - no broadcast  |
         |        |  Packet       || 1  - 100 (default)              |
         |        |  Divider      || 2  - 50                         |
@@ -117,7 +116,7 @@ Request message as specified earlier. The user can modify the provided requests 
 
 *Set Data Packet Type(s)*
 
-    The following table provides the *Set Data Packet Type(s)* payload.  The 3 bits in the "data packet types"
+    The following table provides the payload byte field.  The 3 bits in the "data packet types"
     are bits in a bitmask that can be combined to use any 1 type, any 2 types, or all 3 types
 
     .. table::  *Set Data Packet Type(s) Field*
@@ -138,7 +137,10 @@ Request message as specified earlier. The user can modify the provided requests 
 
 *Set Digital Filter Cutoff Frequencies*
 
-    The following table shows provides descriptions of the response payload
+
+    The following table shows provides descriptions of the command payload
+    of the payload bytes.
+
 
     .. table::  *Digital Filter Cutoff Frequencies Request Payload*
         :align: left
@@ -172,6 +174,7 @@ Request message as specified earlier. The user can modify the provided requests 
         | 1:2      | Orientation Setting || see table below  |
         |          |                     || LSB first        |
         +----------+---------------------+-------------------+
+
 
     The following table provides the values and meanings of the payload field bytes:
 
@@ -210,10 +213,10 @@ Request message as specified earlier. The user can modify the provided requests 
 
 *Set Bank of PS Numbers*
 
-    The following tables provide descriptions of the response payload
+    The following tables provide descriptions of the command payload
     for Bank0 and Bank1
 
-    .. table:: *Set Bank of PS Numbers for Bank0 Payload*
+    .. table::  *Set Bank of PS Numbers for Bank0 Request Payload Fields*
         :align: left
 
         +----------+-------------------------------+
@@ -226,7 +229,7 @@ Request message as specified earlier. The user can modify the provided requests 
         | 2-15     | Reserved                      |
         +----------+-------------------------------+
 
-    .. table::  *Set Bank of PS Numbers for Bank1 Payload*
+    .. table::  *Set Bank of PS Numbers for Bank1 Request Payload Fields*
         :align: left
 
         +----------+------------------------------------------------+

@@ -1,4 +1,4 @@
-CAN J1939 Data Packet Messages
+CAN DBC Data Packet Messages
 *******************************
 
 .. contents:: Contents
@@ -12,15 +12,17 @@ The following Data Packet messages are implemented in the example application.
 The user can modify the provided messages or add messages as needed.
 
 The OpenIMU300RI output 3 types of data packets: slope sensor information - type 2 (SSI2),
-angular rate sensor data, and accelerometer sensor data.  The data packets are sent at a rate
-that can be set by other ECUs.
+angular rate sensor data, and accelerometer sensor data.
+
+The data packets are sent at a rate
+that is internally configured, but can be set by other ECUs.
 
 .. table:: *Data Packet Messages*
     :align: left
 
     +-------------------+--------+--------+--------------------+--------------------------------+
     | **Data Packet**   | **PF** | **PS** || **Data Length**   |  **Purpose**                   |
-    |                   | (dec)  | (dec)  || (bytes)           |                                |
+    |                   | (hex)  | (dec)  || (bytes)           |                                |
     +-------------------+--------+--------+--------------------+--------------------------------+
     || Slope Sensor     | 240    | 41     | 8                  || Provide high accuracy         |
     || Information      |        |        |                    || pitch & roll rates            |

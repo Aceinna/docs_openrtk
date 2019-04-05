@@ -1,4 +1,4 @@
-CAN J1939 Get Request Messages
+CAN DBC Get Request Messages
 *******************************
 
 .. contents:: Contents
@@ -10,14 +10,12 @@ CAN J1939 Get Request Messages
 Get Requests
 ------------
 
-Get requests are used by other ECUs in the network
-to retrieve information from the OpenIMU300RI.  All Get requests are formed as a
-Request message as specified earlier.
-They are used to request PGNs which have a transmission rate of "On Request".
-The format and content of the Request message is To Be Provided.
-The user can modify the
-existing requests and responses and add requests and responses as needed.
-The following Get Requests are implemented in the example application.
+Get requests are used by other ECUs in the network to retrieve information from the OpenIMU300RI.
+All Get requests are formed as a Request message as specified earlier.  They are used to request
+PGNs which have a transmission rate of "On Request".  The format and content of the Request
+message is specified in J1939-21 Section 5.4.2.  The user can modify the existing requests and
+responses and add requests and responses as needed.  The following Get Requests are implemented
+in the example application.
 
 
 .. table::  *Get Requests*
@@ -47,29 +45,12 @@ The following Get Requests are implemented in the example application.
         "Set Bank of PS Numbers for Bank0/Bank1" commands.  The given values are the pre-defined values.
     *   Responses have the same PF+PS values as the request
 
+
 Responses to Get Requests
 --------------------------
 The following table describe the payloads for responses to Get Requests
 
-
-.. table::    *Software Version Response*
-    :align: left
-
-    +-----------+-----------------------+
-    | **Byte**  | **Description**       |
-    +-----------+-----------------------+
-    | 0         | Major Version Number  |
-    +-----------+-----------------------+
-    | 1         | Minor Version Number  |
-    +-----------+-----------------------+
-    | 2         | Patch Number          |
-    +-----------+-----------------------+
-    | 3         | Stage Number          |
-    +-----------+-----------------------+
-    | 4         | Build Number          |
-    +-----------+-----------------------+
-
-.. table::    *ECU ID Response*
+.. table::    *ECU Response Message ID Payload*
     :align: left
 
     +----------+---------------------------------+-------------+
@@ -87,7 +68,26 @@ The following table describe the payloads for responses to Get Requests
     | 3        | Source Address                  | SA          |
     +----------+---------------------------------+-------------+
 
-.. table::  *Packet Rate Response*
+
+
+.. table::    *Software Version Response Payload*
+    :align: left
+
+    +-----------+-----------------------+
+    | **Byte**  | **Description**       |
+    +-----------+-----------------------+
+    | 0         | Major Version Number  |
+    +-----------+-----------------------+
+    | 1         | Minor Version Number  |
+    +-----------+-----------------------+
+    | 2         | Patch Number          |
+    +-----------+-----------------------+
+    | 3         | Stage Number          |
+    +-----------+-----------------------+
+    | 4         | Build Number          |
+    +-----------+-----------------------+
+
+.. table::  *Packet Rate Response Payload*
 
     +-----------+-----------------------+
     | **Byte**  | **Description**       |
@@ -97,7 +97,7 @@ The following table describe the payloads for responses to Get Requests
     | 1         | Output Data Rate      |
     +-----------+-----------------------+
 
-.. table::  *Packet Type Response*
+.. table::  *Packet Type Response Payload*
 
     +-----------+-----------------------+
     | **Byte**  | **Description**       |
@@ -108,7 +108,7 @@ The following table describe the payloads for responses to Get Requests
     +-----------+-----------------------+
 
 
-.. table:: *Digital Cutoff Frequency Response*
+.. table:: *Digital Cutoff Frequency Response Payload*
 
     +-----------+-----------------------+
     | **Byte**  | **Description**       |
@@ -120,7 +120,7 @@ The following table describe the payloads for responses to Get Requests
     | 2         | Angular Rate Cutoff   |
     +-----------+-----------------------+
 
-.. table:: *Orientation Response*
+.. table:: *Orientation Response Payload*
 
     +-----------+----------------------------------+
     | **Byte**  | **Description**                  |

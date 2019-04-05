@@ -1,39 +1,17 @@
-RTOS
-====
+FreeRTOS
+=========
 
 .. contents:: Contents
     :local:
 
-The applications for all OpenIMU units use the FreeRTOS Real-Time Operating System (https://www.freertos.org).
+The applications for all OpenIMU units use the FreeRTOS Real-Time Operating System (`FreeRTOS Site <https://www.freertos.org>`_).
 FreeRTOS is very widely used, as it is feature-rich, has a small footprint, and can be used in commercial application without
 having to expose intellectual property.
 
-FreeRTOS is licensed under the MIT Open Source License (https://www.freertos.org/a00114.html).
+FreeRTOS is licensed under the MIT Open Source License (`FreeRTOS Licence Page <https://www.freertos.org/a00114.html>`_).
 
-The critical feature of FreeRTOS:
+The FreeRTOS site provides a wealth of informative online documents and PDF books that can be downloaded.
 
-*   Scheduling Options
+The FreeRTOS source code is supplied, but the user is advised to not change anything in the code.
 
-	*   Pre-emptive 
-	*   Co-operative 
-	*   Round robin with time slicing
-..
-*   Fast task notifications	
-..
-*   Configurable & scalable with a	6K to 12K ROM footprint	
-..
-*   Mutexes & semaphores
-
-	*   Mutexes with priority inheritance
-	*   Recursive mutexes
-	*   Binary and counting semaphores
-..
-*   Chip and compiler agnostic	
-..
-*   Very efficient software timers
-..
-*   Can be configured to never completely disable interrupts	
-..
-*   Easy to use API
-..
-*   Easy to use message passing
+The many FreeRTOS header files are located in the "*FreeRTOS library/include*' directory.  The user is urged to search in that directory when any FreeRTOS related API function prototype, data type, '#define' literal constant, or any other FreeRTOS related item
