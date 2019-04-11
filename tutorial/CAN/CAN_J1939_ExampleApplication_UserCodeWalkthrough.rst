@@ -214,10 +214,14 @@ This page provides a walkthrough of the J1939 example application code directori
     *   *WriteResultsIntoOutputStream*.  This function is currently empty, so the user is free to output
         data as needed to the UART.  The *Test Packet* and *Output Data Packet* packet data is available.
 
-*FreeRTOS library*.  The source files and header files for the FreeRTOS library are provided and are also freely available from the FreeRTOS site.  The locations for the directories for these files has not been finalized, but the base folder will be named "*FreeRTOS library*".  There will be 'src' and 'include' subdirectories.  The content of those files will not be addressed here.
+*FreeRTOS library*.
 
-*OpenIMU-misc-library*.  The "miscellaneous" library contains the example algorithm functions, example math functions, UART function, and support functions.  The files and functions in this library are accessible to the user the user can update or add to theses files as needed.
+*   The base folder for the FreeRTOS library is "*.piolibdeps/FreeRTOS library*".
+*   The source files and header files for the FreeRTOS library are freely available and are included in the FreeRTOS base folder.
+*   In particular, the header file "*cmsis_os.h*" in the "*.piolibdeps/FreeRTS library/include*" directory provides the FreeRTOS API wrapper function prototypes.
 
-*OpenIMU300-platform-library*.  The header files that contain the API function prototypes for the Platform Library will be included when those files are packed into user visible directories.  Users should not modify these files.  The content of those files will not be addressed here.
+*OpenIMU-misc-library*.  The "miscellaneous" library contains the example algorithm functions, example math functions, UART functions, and support functions.  The files and functions in this library are accessible to the user the user can update or add to theses files as needed.
 
-*STI32F405 MCU Library*.  This library provides the low-level STI32F405 MCU functions.  The content of those files will not be addressed here.  Users should not modify these files.
+*OpenIMU300-platform-library*.  *OpenIMU300-platform-library*.  The Platform library contains Board and Core functions that provide the low-level API platform that abstracts access to MCU functions.
+
+*STI32F405 MCU Library*.  This library provides the low-level STI32F405 MCU functions.

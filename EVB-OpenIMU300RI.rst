@@ -82,12 +82,12 @@ The Components section below provides the contents of the kit.
 	**Eval Kit JTAG Header Board Mechanical Drawing**
 
 
-JTAG Header Board Mechanical Drawing PDF File :download:`download <media/OpenIMU300RI-EvalKit-JTAG-Header-Mechanical-Drawing-8040-3306-01.pdf>`
+JTAG Header Board Mechanical Drawing PDF File :download:`download link <media/OpenIMU300RI-EvalKit-JTAG-Header-Mechanical-Drawing-8040-3306-01.pdf>`
 
 **OpenIMU300RI Evaluation Kit Cable Mechanical Drawing**
 
 .
-OpenIMU300RI Evaluation Kit Cable Mechanical Drawing PDF file :download:`download <media/CABLEOPENIMU300RI.pdf>`
+OpenIMU300RI Evaluation Kit Cable Mechanical Drawing PDF file :download:`download link <media/CABLEOPENIMU300RI.pdf>`
 
 
 .. figure:: media/OpenIMU300RI_EvalKitCable.png

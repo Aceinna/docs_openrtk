@@ -8,7 +8,7 @@ CAN DBC Example Application CAN Messages
 
 Users can keep the implemented messages as is, modify them, or add new messages.
 
-The CAN DBC Example Application does not currently support reception of DBC messages.  It only sends data
+The CAN DBC Example Application does not currently support reception of Get or Set messages.  It only sends data
 packets at a rate that is controlled internally.
 
 .. note::
