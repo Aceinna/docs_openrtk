@@ -997,23 +997,24 @@ OpenIMU UART Messaging Framework
 
     ::
 
-    case USR_OUT_DATA1:
-        {   int n = 0;
+		case USR_OUT_DATA1:
+        {
+            int n = 0;
             double accels[3];
             double mags[3];
             double rates[3];
-            data1_payload_t *pld = (data1_payload_t *)payload;
+            data1_payload_t *pld = (data1_payload_t *)payload;  
 
-            pld->timer  = getDacqTime();
-            GetAccelsData(accels);
+			pld->timer  = platformGetDacqTime();
+            GetAccelData_mPerSecSq(accels);
             for (int i = 0; i < 3; i++, n++){
                 pld->sensorsData[n] = (float)accels[i];
             }
-            GetRatesData(rates);
+            GetRateData_degPerSec(rates);
             for (int i = 0; i < 3; i++, n++){
                 pld->sensorsData[n] = (float)rates[i];
             }
-            GetMagsData(mags);
+            GetMagData_G(mags);
             for (int i = 0; i < 3; i++, n++){
                 pld->sensorsData[n] = (float)mags[i];
             }
@@ -1036,9 +1037,9 @@ OpenIMU UART Messaging Framework
         const UserConfigurationStruct gDefaultUserConfig = {
         .dataCRC             =  0,
         .dataSize            =  sizeof(UserConfigurationStruct),
-        .userUartBaudRate    =  57600,
-        .userPacketType      =  "zT",
-        .userPacketRate      =  0,
+        .userUartBaudRate    =  115200,
+        .userPacketType      =  "z1",
+        .userPacketRate      =  50,
         .lpfAccelFilterFreq  =  50,
         .lpfRateFilterFreq   =  50,
         .orientation         =  "+X+Y+Z"
