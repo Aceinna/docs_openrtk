@@ -9,7 +9,8 @@ This section reviews more detail on how OpenIMU platform code modules are struct
 *   Software Dataflow Diagram
 *   RTOS
 *   Sampling and Filtering
-*   Messaging
+*   UART Messaging
+*   SPI Messaging
 *   Settings
 *   Tutorial App
 
@@ -20,6 +21,7 @@ This section reviews more detail on how OpenIMU platform code modules are struct
     software/dataflow
     software/RTOS
     software/sampling
-    software/messaging
+    software/UARTmessaging
+    software/SPImessaging
     software/settings
     software/tutorial

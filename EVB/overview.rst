@@ -59,10 +59,13 @@ Overview
     J2 is 20-pin connector and it used for connecting the OpenIMU300ZA unit into Open IMU evaluation board.  The pin functions are described in the table on the "OpenIMU Modules » OpenIMU300ZA - EZ Embed Automotive Module » Connector Pinout - Including GPS Sensor Interface" page
     accessible from the Contents bar on the left.
 
+.. _connector-label:
+
     **3.2 Extension Header (J4)**
 
-    OpenIMU evaluation board has 12-pin extension header. It designed to expose IMU interface signals to
+    OpenIMU evaluation board has 20-pin extension header. It designed to expose IMU interface signals to
     external system. The extension header pin functions described in table below
+
 
 
     +-----------------+-------------------------+-----------------------+
