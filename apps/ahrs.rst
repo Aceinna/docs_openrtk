@@ -19,7 +19,7 @@ IMU data as well as the dynamic roll, pitch, and heading. As shown in diagram
 after the Sensor Calibration Block, the IMU data is
 passed to the Integration to Orientation block. The Integration to
 Orientation block integrates body frame sensed angular rate to
-orientation at a fixed 200 times per second within all of the DMUx81ZA
+orientation at a fixed 200 times per second within all of the OpenIMU
 Series products. For improved accuracy and to avoid singularities when
 dealing with the cosine rotation matrix, a quaternion formulation is
 used in the algorithm to provide attitude propagation.

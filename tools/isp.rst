@@ -115,6 +115,3 @@ using OpenIMU's standard serial interface:
 
         The command allows system directly to enter application mode.
 
-**SPI Interface**
-
-    SPI Interface Details - To Be Provided

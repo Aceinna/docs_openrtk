@@ -13,7 +13,7 @@ navigation information (Latitude, Longitude, and Altitude),
 inertially-aided 3-axis velocity information, as well as heading, roll,
 and pitch measurements, in addition to digital IMU data.
 
-At a fixed N rate, the INSx81ZA continuously maintains the digital
+At a fixed N rate, the OpenIMU continuously maintains the digital
 IMU data; the dynamic roll, pitch, and heading data; as well as the
 navigation data. As shown in the software block the calibrated IMU data is passed
 into an “Integration to Orientation” block. The “Integration to
