@@ -57,7 +57,10 @@ custom data structures and packets very simple.
     :maxdepth: 1
     :hidden:
 
-    EvaluationKits
+    EVB
+    EVB-OpenIMU300RI
+
+..    EvaluationKits
 
 .. raw:: latex
 

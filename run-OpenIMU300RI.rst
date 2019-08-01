@@ -4,61 +4,68 @@ OpenIMU300RI Evaluation Kit Setup
 .. contents:: Contents
     :local:
 
-The following pages provide the steps needed to set up and use the OpenIMU300RI Evaluation Kit:
-
-*   Connect the OpenIMU300RI Components
-*   The following activities are addressed in the "Development Tools »
-    Debugging using the PlatformIO Debugger and the JTAG Debug Adapter" section
-
-    *   Download App with JTAG
-    *   Debug with PlatformIO Debugger and JTAG Debug Adapter
-    *   Graphing & Logging IMU Data using the Acienna Navigation Studio
-
-.. note::
-    The RS232/CAN/Power cable shown in the image is similar to the cable that will be supplied with the kit.  It is for information only.
-
 .. figure:: media/OpenIMU300RI-EvalKit.png
     :height: 684
 
     **OpenIMU300RI Evaluation Kit**
 
-**Connect the OpenIMU300RI Evaluation Kit Components**
+
+To set up OpenIMU300RI evaluation kit you'll need to perform next steps:
+ 1. Install PC tools.
+ 2. Unpack OpenIMU300RI evaluation kit.
+ 3. Connect provided cable to OpenIMU300RI evaluation unit (see notes below).
+ 4. Connect cable connector marked "RS232" to the PC serial port or to UCB-to-Serial adapter.
+ 5. Connect cable connector marked "CAN" to the CAN bus or to the CAN traffic monitoring unit (like Vestor or Komodo or other).
+ 6. Connect ST-Link debugger to the PC via USB cable. Make sure that ST-Link device appeared in "Device Manager". 
+ 7. Connect 20-pin connector on OpenIMU300ZA evaluation unit to ST-Link debugger using provided 20-pin flat cable.
+ 8. Connect RED (+) and BLACK (GND) wires to external power supply (5 - 32V, 0.1A)  
+ 9. Turn ON power supply.
+
+Now you are ready to debug and test your application.
+
+*   The following activities are addressed in the "Development Tools" section:
+
+    *   Download App with JTAG
+    *   Debugging with PlatformIO Debugger and JTAG Debug Adapter
+    *   Graphing & Logging IMU Data using the Acienna Navigation Studio
 
 .. note::
-    *   An external DC power supply will be needed.  The power supply must be able to produce 4.9V to 32V at 400mW
-    *   An RS232-to-USB adapter will be needed to connect the unit to the PC for RS232 communication.
-    *   The CAN interface is available to connect with other CAN network nodes.
-    *   If CAN bus communication monitoring by a PC is desired, a CAN interface adapter
-        will be needed to connect the the PC to the CAN network for CAN network communication.
+    The RS232/CAN/Power cable shown in the image is similar to the cable that will be supplied with the kit.  It is for information only.
 
-The following directions for connecting the unit to a PC and to the CAN network refer to the images below:
+.. note::
+    The following directions are applicable for connecting cable to OpenIMU300RI evaluation unit:
+	
+    *   Align the keys on the unit and the cable connector.
+    *   Push the 6-pin cable connector into the unit connector until lock clicks.
+    *   If an extra lock required - push the red latch under the black latch.  This prevents the disengagement button from being depressed.
 
-*   **Connect main connector (CAN/UART/Power)**.  Align the keys on the unit and the cable connector.
-    Push the 6-pin cable connector into the unit connector.
-*   **Double Lock the connector**: The connector is now locked to the unit.  However, an extra lock
-    can be engaged, if desired, by pushing the red latch under the black latch.  This prevents the disengagement button from being depressed.
-*   **Unlock the main connector**
-
+.. note::
+    The following directions are applicable for disconnecting cable from OpenIMU300RI evaluation unit:
+	
     *   If engaged, pull the red latch away from the connector toward the cable.
     *   Push down on the black disengagement button in the middle of the connector.
     *   Pull the cable connector away from the unit.
 
-*   **Connect RS232**.  Connect the RS232 9-pin D-sub connector to a PC's RS232 9-pin D-sub connector or through an RS232-to-USB adapter.
+Next table provide connectors pin assignments in provided cable
 
-*   **Connect CAN**.  The CAN network 9-pin D-sub connector is used to connect the OpenIMU300RI unit to the CAN network.
+    +-------------+------------+------------+-----------+-----------+
+    | Signal Name || Unit      || RS232     || CAN      || Power    |
+    |             || Connector || Connector || Connector|| Wires    |
+    +-------------+------------+------------+-----------+-----------+
+    | GND         |    3       |   5        |           |  Black    |
+    +-------------+------------+------------+-----------+-----------+
+    | VIN         |    6       |            |           |  Red      |
+    +-------------+------------+------------+-----------+-----------+
+    | RS232 TX    |    5       |   2        |           |           |
+    +-------------+------------+------------+-----------+-----------+
+    | RS232 RX    |    4       |   3        |           |           |
+    +-------------+------------+------------+-----------+-----------+
+    | CAN H       |    1       |            | 7         |           |
+    +-------------+------------+------------+-----------+-----------+
+    | CAN L       |    2       |            | 2         |           |
+    +-------------+------------+------------+-----------+-----------+
+ 	
+	
+.. figure:: media/OpenIMU300RI-ConnectorCloseup.png 
 
-*   **Connect JTAG debugger**.
-
-    *   Connect the keyed connector on the ribbon cable to the keyed connector on the eval board.
-    *   Connect the keyed connector on the the other end of the ribbon cable to the JTAG debugger.
-    *   Connect the USB cable to the JTAG debugger and the host computer.
-
-*   **Connect Power/Ground**.  With the power supply turned off, connect the power and ground leads to the external power supply.
-*   **Apply/Remove Power**.  **There is no on/off switch on the unit or the eval board attached to the unit**.  Turn the power supply on or off to apply power or remove power.
-
-
-+------------------------------------------------------+---------------------------------------------+
-| .. figure:: media/OpenIMU300RI-ConnectorCloseup.png  | .. figure:: media/OpenIMU300RI-EvalKit.png  |
-+------------------------------------------------------+---------------------------------------------+
-| **OpenIMU300RI Connector**                           | **OpenIMU300RI JTAG Debugger Connections**  |
-+------------------------------------------------------+---------------------------------------------+
+**OpenIMU300RI Connector**                          

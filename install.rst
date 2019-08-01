@@ -1,4 +1,4 @@
-Tools Installation
+PC Tools Installation
 ==================
 
 .. contents:: Contents
@@ -19,7 +19,7 @@ Visual Studio Code - can be downloaded from here:  https://code.visualstudio.com
 **ST-LINK Debugger Driver**
 
 *   *MacOS* - ST-LINK drivers are automatically installed for MAC OS.
-*   *Windows* - ST-LINK V2 driver must be manually installed for Windows.  The Windows driver is downloaded from the following page link:
+*   *Windows* - ST-LINK drivers should be also installed automatically. But in case if it was not - ST-LINK V2 driver can be manually installed for Windows.  The Windows driver is downloaded from the following page link:
     http://www.st.com/en/development-tools/st-link-v2.html
 *   *Ubuntu* - please see step 5.
 
@@ -50,29 +50,40 @@ To install OpenIMU development platform:
     Next time when you return to development - open Aceinna "Home" page and click "Open Project", choose "Projects" and select
     required project from the list.
 
-    The source tree of imported project has the following structure:
+    The source tree of imported project tree has the following structure:
 
     ::
 
         project directory -|
                            |
-                           |---build directory (.pioenvs)
+                           |                                   
+                           |--- .pio --|
+                           |           |-- build --|   
+                           |           |           |-- board-|   
+                           |           |                     |-- binary image (firmware.bin)  
+                           |           |                     |-- elf image (firmware.elf)  
+                           |           |                     .  
+                           |           |                     .  
+                           |           |                     .  
+                           |           |
+                           |           |- libdeps -|   
+                           |           |           |-- board-|  Library dependencies
+                           |                                 |      
+                           |                                 |--library1 src tree
+                           |                                 |   
+                           |                                 |--library2 src tree
+                           |                                 |   
+                           |                                 |--library3 src tree
+                           |                                 |   
+                           |                                 .  
+                           |                                 .  
+                           |                                            
+                           |                                            
+                           |--include (optional user include files)              
+                           |                                            
+                           |--lib (optional user library directory tree)
                            |
-                           |                                                               libraries
-                           |---platform library directory (.piolibdeps)-|                     |
-                           |                                            |--library name-|     V
-                           |                                                            |---lib1--|
-                           |                                                            |         |--src
-                           |                                                            |         |--include
-                           |                                                            |
-                           |                                                            |
-                           |                                                            |---lib2--|
-                           |                                                            |         |--src
-                           |--include (user include files)                              |         |--include
-                           |                                                             ........
-                           |--lib (optional user library directory)
-                           |
-                           |--src (user source files)
+                           |--src (user source files tree)
                            |
 
 

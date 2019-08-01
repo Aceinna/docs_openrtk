@@ -5,13 +5,13 @@ OpenIMU Modules
 
 There OpenIMU modules that are currently available are the:
 
-*   OpenIMU300ZA
-*   OpenIMU300RI
+.. toctree::
+    :maxdepth: 1
+
+    300ZA
+    300RI
 
 .. toctree::
     :maxdepth: 1
     :hidden:
-
-    300ZA
-    300RI
     
