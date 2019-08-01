@@ -7,7 +7,7 @@ OpenIMU300RI Eval Kit
 The OpenIMU300RI evaluation kit includes:
 
 *   A robust and easy-to-use test fixture.
-*   An OpenIMU300RI IMU module attached to the test fixture.
+*   An OpenIMU300RI IMU module attached to the test fixture with JTAG (SWD) 20-pin connector.
 *   An ST-LINK J-TAG debugger, a debugger cable, and a USB cable.
 *   A multiple-connector cable for RS232/CAN/Power connection.
 
@@ -31,16 +31,16 @@ The Components section below provides the contents of the kit.
 
     An external DC power supply is required.  The power supply must be able to provide 400mA at 4.9VDC to 32VDC.
 
-    The cable shown in the Evaluation Kit figure is not representative of the cable that will be provided with the Evaluation Kit
+    The cable shown in the Evaluation Kit figure may look different than the cable that will be provided with the Evaluation Kit
 
 
-+-------------------------------------------------+------------------------------------------------+
-| .. figure:: media/OpenIMU300RI_DevKit.png       | .. figure:: media/OpenIMU300RI-EvalKit.png     |
-|    :height: 300                                 |    :height: 500                                |
-+-------------------------------------------------+------------------------------------------------+
-||   **OpenIMU300RI Evaluation Kit Fixture with** || **OpenIMU300RI Evaluation Kit**               |
-||   **OpenIMU300RI unit and JTAG Header Board**  |                                                |
-+-------------------------------------------------+------------------------------------------------+
++------------------------------------------------------+------------------------------------------------+
+| .. figure:: media/OpenIMU300RI_DevKit.png            | .. figure:: media/OpenIMU300RI-EvalKit.png     |
+|    :height: 300                                      |    :height: 500                                |
++------------------------------------------------------+------------------------------------------------+
+||   **OpenIMU300RI Evaluation Unit**                  || **OpenIMU300RI Evaluation Kit**               |
+||   **installed on test fixture with JTAG connector** ||                                               |
++------------------------------------------------------+------------------------------------------------+
 
 **OpenIMU300RI Evaluation Kit components**
 
@@ -52,86 +52,36 @@ The Components section below provides the contents of the kit.
 
     **OpenIMU300RI Evaluation Kit fixture and JTAG header board**
 
-        The OpenIMU300RI unit and the JTAG header board are connected to a text fixture.
-        The OpenIMU300RI Evaluation JTAG header board provides the means to connect the kit to an ST Link debugger.
-        The JTAG header board is connected to the unit with a cable that goes through a drilled hole in the back of the unit.
+        The OpenIMU300RI unit with JTAG header board are mounted on the text fixture.
+        The JTAG header provides means to debug/upload applications on evaluation unit.
 
     **ST-Link debugger**
 
         The ST-Link debugger is a standard JTAG SWD debugger provided by STMicroelectronics company.
-        It is used for in-system debugging of applications via SWD interface.
+        It is used for in-system debugging/uploading of applications via SWD interface.
 
     **OpenIMU300RI Breakout Cable**
 
-        A breakout cable is included that provides a connector to the OpenIMU300RI unit and to two 9-pin D-sub connectors; one for RS23s communication and the other for CAN Bus communication.
+        An included cable provides means of connecting unit to PC via RS232 interface, connecting unit to the CAN bus and powering up unit.
 
+	    Next table provides connectors pin assignments in supplied cable
 
-.. note::
-    The OpenIMU300RI Evaluation Kit does not include a
-    baseboard, so there is no schematic supplied.  The only
-    external interfaces are through the JTAG connector and the unit's
-    UART/CAN connector.
-
-. note::
-    The drawing below is a preliminary drawing and is provided for information only.  The final drawing may be different.
-
-
-.. figure:: media/OpenIMU300RI-EvalBoardMechanicalDrawing.png
-	:height: 400
-
-	**Eval Kit JTAG Header Board Mechanical Drawing**
-
-
-JTAG Header Board Mechanical Drawing PDF File :download:`download link <media/OpenIMU300RI-EvalKit-JTAG-Header-Mechanical-Drawing-8040-3306-01.pdf>`
-
-**OpenIMU300RI Evaluation Kit Cable Mechanical Drawing**
-
-.
-OpenIMU300RI Evaluation Kit Cable Mechanical Drawing PDF file :download:`download link <media/CABLEOPENIMU300RI.pdf>`
-
-
-.. figure:: media/OpenIMU300RI_EvalKitCable.png
-	:align: center
-
-	**OpenIMU300RI Evaluation Kit Cable Mechanical Drawing**
-
-..
-    **SWD (JTAG) connector**
-
-        20-pin connector P3 used for connecting ST-Link or J-Link debuggers to the unit for
-        in-system debugging of applications via SWD interface. It has standard pin-out.
-
-
-        +-------------------+-------------------------+
-        | **Pin**           |   Main Function         |
-        |                   |                         |
-        +-------------------+-------------------------+
-        | 1                 | Vref                    |
-        +-------------------+-------------------------+
-        |2, 4, 6, 8, 10 , 12| GND                     |
-        |14, 16, 18, 20     |                         |
-        +-------------------+-------------------------+
-        | 7                 | SWDIO                   |
-        +-------------------+-------------------------+
-        | 9                 | SWCLK                   |
-        +-------------------+-------------------------+
-        | 15                | nRST                    |
-        +-------------------+-------------------------+
-        | 19                | 3.3V from debugger      |
-        +-------------------+-------------------------+
-
-
-    **OpenIMU evaluation kit power**
-
-        Set the external DC power supply set to 12V.
-        Power the kit up by turning on the power supply.
-
-
-    **Communication with IMU from PC**
-
-        The unit communicates to the PC through the UART RS232 9-pin D-sub connector, which would be connected to a PC via
-        the PC's RS232  9-pin D-Sub or via a RS232-to-USB adapter.
-
+    +-------------+------------+------------+-----------+-----------+
+    | Signal Name || Unit      || RS232     || CAN      || Power    |
+    |             || Connector || Connector || Connector|| Wires    |
+    +-------------+------------+------------+-----------+-----------+
+    | GND         |    3       |   5        |           |  Black    |
+    +-------------+------------+------------+-----------+-----------+
+    | VIN         |    6       |            |           |  Red      |
+    +-------------+------------+------------+-----------+-----------+
+    | RS232 TX    |    5       |   2        |           |           |
+    +-------------+------------+------------+-----------+-----------+
+    | RS232 RX    |    4       |   3        |           |           |
+    +-------------+------------+------------+-----------+-----------+
+    | CAN H       |    1       |            | 7         |           |
+    +-------------+------------+------------+-----------+-----------+
+    | CAN L       |    2       |            | 2         |           |
+    +-------------+------------+------------+-----------+-----------+
 
 **OpenIMU Evaluation Kit Important Notice**
 
