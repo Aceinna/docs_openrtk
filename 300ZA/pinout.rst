@@ -12,37 +12,35 @@ The OpenIMU300ZA main connector is a SAMTEC FTM-110-02-F-DV-P defined below. The
 
 J2 is 20-pin connector and it used for connecting the OpenIMU300ZA unit into Open IMU evaluation board.  The connector pin definitions are defined in the table below.  The GPS-related signals are noted.
 
-**Table Interface Connector Pin Definition**
+**Interface Connector Pin Definitions**
 
 
     +-----------------+-------------------------+-----------------------+
     | **Pin**         |   Main Function         | Alternative Function  |
     |                 |                         |                       |
     +-----------------+-------------------------+-----------------------+
-    || 1              || Output. Inertial-Sensor|| Can be used as GPIO  |
-    ||                |  Sampling Indicator     | (IO3)                 |
-    ||                || (sampling upon         |                       |
-    ||                |  falling edge)          |                       |
+    | 1               |  GPIO                   | Output by default     |
     +-----------------+-------------------------+-----------------------+
-    | 2               || Synchronization Input - 1PPS Input             |
+    | 2               || Synchronization Input  | GPS 1PPS Input        |
     +-----------------+-------------------------+-----------------------+
     | 3               || User UART TX  (Output) || SPI Clock (SCLK)     |
-    |                 |                         || (Output)             |
+    |                 || (Serial Channel 0 )    || Input                |
     +-----------------+-------------------------+-----------------------+
-    | 4               | User UART RX  (Input)   | SPI Data Output       |
-    |                 |                         | (MISO)                |
+    | 4               || User UART RX  (Input)  || SPI Data  (MISO)     |
+    |                 || (Serial Channel 0)     || Output               |
     +-----------------+-------------------------+-----------------------+
-    | 5               | GPS UART TX (Output)    | SPI Data Input (MOSI))|
+    | 5               || UART1 TX (Output)      || SPI Data  (MOSI)     |
+    |                 || (Serial Channel 1)     || Input                |
     +-----------------+-------------------------+-----------------------+
-    | 6               | GPS UART RX  (Input)    | SPI Chip Select (SS)  |
+    | 6               || UART1 RX  (Input)      || SPI Chip Select (SS) |
+    |                 || (Serial Channel 1)     || Input                |
     +-----------------+-------------------------+-----------------------+
-    | 7               || Data Ready (SPI        || SPI/UART Interface   |
-    |                 || Communication Data)    || Selector             |
+    | 7               || SPI/UART Interface     || Data Ready (SPI)     |
+    |                 || Selector               || Active edge falling  |
     +-----------------+-------------------------+-----------------------+
     | 8               |             External Reset (NRST))              |
     +-----------------+-------------------------+-----------------------+
-    | 9               | GPIO Output             || Can be used as GPI0  |
-    |                 |                         || (IO2)                |
+    | 9               | GPIO                    || Output by default    |
     +-----------------+-------------------------+-----------------------+
     | 10              | Power VIN (3-5 VDC)     | Power VIN (3-5 VDC)   |
     +-----------------+-------------------------+-----------------------+
@@ -58,11 +56,13 @@ J2 is 20-pin connector and it used for connecting the OpenIMU300ZA unit into Ope
     +-----------------+-------------------------+-----------------------+
     | 16              | SWDIO (SWD debug interface)                     |
     +-----------------+-------------------------+-----------------------+
-    | 17              | External GPS UART TX    |Debug interface UART TX|
+    | 17              ||  UART2 TX              || Debug interface      |
+    |                 || (Serial Channel 2)     || GPS                  |
     +-----------------+-------------------------+-----------------------+
     | 18              | SWCLK (SWD debug interface)                     |
     +-----------------+-------------------------+-----------------------+
-    | 19              | External GPS UART RX    |Debug Interface UART RX|
+    | 19              ||  UART2 RX              || Debug Interface      |
+    |                 || (Serial Channel 2)     || GPS                  |
     +-----------------+-------------------------+-----------------------+
     | 20              | Reference voltage for SWD debug interface       |
     +-----------------+-------------------------+-----------------------+
@@ -78,6 +78,22 @@ are redundant power ground input pairs.
     Do not reverse the power leads or damage may occur. Do not add greater
     than 5.5 volts on the power pins or damage may occur. This system has no
     reverse voltage or over-voltage protection.
+	
+.. note::
+	Serial channel functions can be arbitrary assigned in the FW.
+	Default assignments are:
+	
+	|  Serial channel 0 -> USER  UART (dedicated for user messages).
+	|  Serial channel 1 -> GPS   UART (dedicated for connecting external GPS).
+	|  Serial channel 2 -> DEBUG UART (dedicated for debug messages and CLI interface).
+	
+	In some application examples (INS, VG_AHRS) in file main.c performed reassignment of serial channels to different functions. 
+
+.. note::
+	Pin 7 needs to be grounded (LOW) upon unit startup to force unit into UART interface mode.
+	To force unit into SPI mode this pin needs to be either unconnected or connected to the input
+	or external device (can be externally pulled UP via 10K resistor).
+	
 
 .. |Connector.png| image:: ../media/image2.png
    :width: 2.24in
