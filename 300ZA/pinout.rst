@@ -19,7 +19,7 @@ J2 is 20-pin connector and it used for connecting the OpenIMU300ZA unit into Ope
     | **Pin**         |   Main Function         | Alternative Function  |
     |                 |                         |                       |
     +-----------------+-------------------------+-----------------------+
-    | 1               |  GPIO                   | Output by default     |
+    | 1               |  GPIO  ( IO3 )          | Output by default     |
     +-----------------+-------------------------+-----------------------+
     | 2               || Synchronization Input  | GPS 1PPS Input        |
     +-----------------+-------------------------+-----------------------+
@@ -40,7 +40,7 @@ J2 is 20-pin connector and it used for connecting the OpenIMU300ZA unit into Ope
     +-----------------+-------------------------+-----------------------+
     | 8               |             External Reset (NRST))              |
     +-----------------+-------------------------+-----------------------+
-    | 9               | GPIO                    || Output by default    |
+    | 9               | GPIO ( IO2 )            || Output by default    |
     +-----------------+-------------------------+-----------------------+
     | 10              | Power VIN (3-5 VDC)     | Power VIN (3-5 VDC)   |
     +-----------------+-------------------------+-----------------------+
