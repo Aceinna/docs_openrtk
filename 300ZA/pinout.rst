@@ -80,7 +80,7 @@ are redundant power ground input pairs.
     reverse voltage or over-voltage protection.
 	
 .. note::
-	Serial channel functions can be arbitrary assigned in the FW.
+	**Serial channel functions can be arbitrary assigned in the FW.**
 	Default assignments are:
 	
 	|  Serial channel 0 -> USER  UART (dedicated for user messages).
@@ -92,7 +92,9 @@ are redundant power ground input pairs.
 .. note::
 	Pin 7 needs to be grounded (LOW) upon unit startup to force unit into UART interface mode.
 	To force unit into SPI mode this pin needs to be either unconnected or connected to the input
-	or external device (can be externally pulled UP via 10K resistor).
+	or external device (can be externally pulled UP via 10K resistor). 
+	
+	**In SPI mode only serial channel 2 available and can be used for communication with GPS or as DEBUG channel.**
 	
 
 .. |Connector.png| image:: ../media/image2.png
