@@ -61,9 +61,9 @@ Overview
 
 .. _connector-label:
 
-    **3.2 Extension Header (J4)**
+    **3.2 Extension Header (P4)**
 
-    OpenIMU evaluation board has 20-pin extension header. It designed to expose IMU interface signals to
+    OpenIMU evaluation board has 12-pin extension header. It designed to expose IMU interface signals to
     external system. The extension header pin functions described in table below
 
 
@@ -76,56 +76,82 @@ Overview
     +-----------------+-------------------------+-----------------------+
     | 2               | Power GND               | Power GND             |
     +-----------------+-------------------------+-----------------------+
-    | 3               | GPS UART RX  (Input)    | SPI Chip Select (SS)  |
+    | 3               || Serial Channel 1 RX    || SPI Chip Select (SS) |
+    |                 || (Input)                || (Input)              |
     +-----------------+-------------------------+-----------------------+
-    | 4               || Data Ready (SPI        || SPI/UART Interface   |
-    |                 || Communication Data)    || Selector             |
+    | 4               || IMU Data Ready         || GPIO                 |
+    |                 || (SPI interface Mode)   || (UART interface mode)|
     +-----------------+-------------------------+-----------------------+
-    | 5               || User UART TX  (Output) | SPI Clock (SCLK)      |
-    |                 |                         |     (Output)          |
+    | 5               || User UART TX           || SPI Clock (SCK)      |
+    |                 || (Serial Channel 0)     ||     (Output)         |
+    |                 || (Output)               ||                      |
     +-----------------+-------------------------+-----------------------+
-    | 6               || Synchronization Input  |                       |
-    |                 || 1PPS Input             |                       |
-    |                 || (External GPS)         |                       |
+    | 6               || Synchronization Input  | 1PPS Input from  GPS  |
     +-----------------+-------------------------+-----------------------+
-    | 7               | GPS UART TX (Output)    | SPI Data Input (MOSI))|
+    | 7               || Serial Channel 1 TX    || SPI Data (MOSI))     |
+    |                 || (Output)               || (Input)              |
     +-----------------+-------------------------+-----------------------+
     | 8               |             External Reset (NRST))              |
     +-----------------+-------------------------+-----------------------+
-    | 9               | User UART RX  (Input)   | SPI Data Output       |
-    |                 |                         | (MISO)                |
+    | 9               || User UART RX           || SPI Data (MISO)      |
+    |                 || (Serial Channel 0      || (Output)             |
+    |                 || (Input)                ||                      |
     +-----------------+-------------------------+-----------------------+
     | 10              | GPIO Output (IO2)       | GPIO Input            |
     |                 |                         |                       |
     +-----------------+-------------------------+-----------------------+
     | 11              | Power VIN  5 VDC        | Power VIN 5 VDC       |
     +-----------------+-------------------------+-----------------------+
-    | 12              || Output. Inertial-Sensor||Can be used as GPIO   |
-    |                 || Sampling Indicato      ||(IO3)                 |
-    |                 || (sampling upon         |                       |
-    |                 || falling edge)          |                       |
+    | 12              | GPIO Output (IO3)       | GPIO Input            |
     +-----------------+-------------------------+-----------------------+
 
-    **3.4 IMU interface type selector (P1).**
+    **3.4 IMU interface type selection header (P1).**
 
+	**Pins 1-2** define IMU **Interface Mode**:
+	
+	|  If there is no connection between pins 1 and 2 (jumper is OFF) - **SPI** mode. 
+	|  if there is connection between pins 1 and 2 (jumper is ON) - **UART** mode (default). 
+	
+	**In SPI mode:**
+	
+	|  **Jumpers between pins 3-4 and 5-6 need to be taken OFF** to prevent interference 
+	   between SPI bus signals (SS and MISO) and serial interface signals 
+	   from FTDI chip. 
+	|  IMU SPI interface signals (MISO, MOSI, SS, SCK, DRDY)
+	   routed to header P4.
 
+.. note::
+	On **SPI** interface IMU acts as a **SLAVE** device.  
+..    
 
-    Interface type selector used to select between IMU SPI and UART interface.
-    In UART mode pins 1-2, 3-4, 5-6 should be closed (jumpers should be in place).
-    In SPI mode pins 1-2, 3-4, 5-6 should be opened (jumpers should be removed).
+.. note::
+    Not all provided application examples support SPI interface mode.
+    Please refer to specific example for details.	
+..
 
-    **3.5 PC to GPS UART connector (P2).**
+	**In UART mode:**
+	
+	|  Jumper between pins **3-4** should be **"ON"** (default) if IMU **Serial Channel 0** ( USER main channel ) needs to be routed to PC via USB connection (on first in the row enumerated USB virtual COM port. See p.6).
+   	
+	|  Jumper between pins **3-4** should be **OFF** if IMU **Serial Channel 0** needs to be accessed from P2 connector.
+	
+	|  Jumper between pins **5-6** should be **ON** (default) if IMU **Serial Channel 1** needs to be routed to PC via USB connection (on second in the row enumerated USB virtual COM port. See p.6).
+  	
+	|  Jumper between pins **5-6** should be **OFF** if IMU **Serial channel 1** needs to be accessed from P2 connector.
+	   For example if Serial Channel 1 used for connection with some external device (GPS or other)
 
+    **3.5 IMU Serial Channel 2 mode selection header (P2).**
 
-
-    If desired - IMU GPS UART can be routed to PC COM port (for example for modeling).
-    It can be done ONLY when IMU interface configured to be in UART mode (see 3.4)
-    In this case pins 1-2 and 3-4 on this connector should be closed.
-    Otherwise remove jumpers not to interfere with possible external connections via J4.
+	|  Jumpers between pins **1-2 and 3-4** should be **ON** if IMU **Serial Channel 2** needs to be routed to PC via USB 
+	   connection, for example in case of using IMU Serial Channel 2 for streaming out debug information to PC 
+	   or as CLI interface (on third in the row enumerated USB virtual COM port. See p.6).
+	   
+	|  Jumpers between pins **1-2 and 3-4** should be **OFF** if IMU **Serial Channel 2** needs to be routed to some external 
+	   device (for example GPS). In this case **pin 2 is RX** (to IMU) and **pin 4 is TX** (from IMU). 
 
     **3.6 SWD (JTAG) connector (P3).**
 
-    20-pin connector P3 used for connecting ST-Link or J-Link debuggers to the unit for
+    20-pin connector P3 used for connecting ST-Link or J-Link debuggers to the IMU for
     in-system debugging of applications via SWD interface. It has standard pin-out.
 
     +-------------------+-------------------------+
@@ -167,20 +193,23 @@ Overview
     **LED5** indicator reflects activity on GPIO2 (lit if high)
 
 
-**5. Open IMU evaluation power**
+**5. Open IMU evaluation board power**
 
     Power to OpenIMU evaluation board provided by USB.
     To power system up - connect USB cable to connector J1 and turn "ON" switch SW1.
 
 **6. Communication with IMU from PC**
 
-    The OpenIMU evaluation board has an FTDI chip FT4232 installed. This chip provides 4 virtual serial ports.
-    When evaluation board set up to force IMU interface in UART mode (see p.3.4) up to 3 serial ports on IMU can be communicated to from PC.
-    When evaluation board connected to PC and power switch turned "ON" the board will appear among external devices as 4 consecutive serial ports.
-    First serial port is napped to IMU's main UART channel (pins 3 and 4 on J2), which is dedicated for sending periodic messages from IMU and sending commands
-    to IMU. Second serial port mapped to IMU's GPS UART channel (pins 5 and 6), which is dedicated to be used as GPS serial port and also can be used for modeling - sending
-    GPS data from PC.
-    Third serial port mapped to IMU's debug serial port, which can be used for sending diagnostics messages from IMU and/or as CLI interface to IMU.
+    |  The OpenIMU evaluation board has an FTDI chip FT4232 installed. This chip provides 4 virtual serial ports.
+       When evaluation board set up to force IMU interface in UART mode (see p.3.4) up to 3 serial ports on IMU can communicate with PC.
+       When evaluation board connected to PC and power switch turned "ON" in Device Manager board will appear as **4 new consecutive virtual COM ports**.
+	
+	|  First in a row virtual port is routed to IMU's main UART channel (Serial channel 0) (pins 3 and 4 on J2), and usually dedicated for sending commands 
+	   to IMU and capturing responses and periodic messages from IMU. It usually used by python driver to establish communication between IMU and Aceinna Navigation Studio. 
+	
+	|  Second in a row virtual port routed to IMU's Serial Channel 1 (pins 5 and 6 on J2) and potentially can be used for modeling or cloud data processing - sending GPS messages from PC to IMU and back. 
+	
+	|  Third in a row virtual port routed to IMU's Serial channel 2 (pins 17 and 19 on J2) and usually used as a debug/CLI serial channel .
 
 
 **7. OpenIMU Evaluation Kit Important Notice**
