@@ -1,7 +1,9 @@
 Overview
 ========
+
 .. contents:: Contents
     :local:
+	
 OpenIMU is a precisely calibrated, open-source Inertial Measurement Unit platform for the development of navigation and localization algorithms.
 A free Visual Studio Code (VSCode) extension is installed which contains all the software and tools necessary to create and deploy custom
 embedded sensor apps using OpenIMU.  Visual Studio Code is the recommended IDE and the extension configures VS Code to include easy access to compilation, code download, JTAG debug, IMU data logging

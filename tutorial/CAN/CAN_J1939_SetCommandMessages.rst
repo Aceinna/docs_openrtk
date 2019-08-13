@@ -10,40 +10,40 @@ CAN J1939 Set Request Messages
 **Set Commands**
 
 
-The following Set requests have been implemented in the Example Application.  All Set requests are formed as a
+The following Set requests have been implemented in the Example J1939 based Applications.  All Set requests are formed as a
 Request message as specified earlier. The user can modify the provided requests and/or implement unique requests.
 
 .. table::  *Set Commands*
     :align: left
 
-    +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    | **Request**               | **PF** | **PS** (dec) || **Payload** |  **Purpose**                            |
-    |                           |  (hex) |              || **Length**  |                                         |
-    |                           |        |              || (bytes)     |                                         |
-    +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    | *Save Configuration*      |  FF    | 81           |  3           || Save all configuration                 |
-    |                           |        |              |              || data to non-volatile memory            |
-    +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    | *Reset Algorithm*         |  FF    | 80           |  3           |  Reset algorithm to initial conditions  |
-    +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    | *Set Packet Rate Divider* |  FF    | 85           |  2           || Set rate dividers to increase/decrease |
-    |                           |        |              |              || rate packets are set                   |
-    +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    | *Set Data Packet Type(s)* |  FF    | 86           |  2           || Select 1, 2, or 3 packet types to send |
-    |                           |        |              |              || periodically                           |
-    +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    || *Set Digital Filters*    |  FF    | 87           |  3           || Set cutoff frequency for rate and      |
-    || *Cutoff Frequencies*     |        |              |              || accelerometers                         |
-    +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    | *Set Orientation*         |  FF    | 88           |  3           |  Set orientation of X, Y, and Z axes    |
-    +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    || *Set Bank of PS*         |  FF    | 240          |  8           || Sets PS number for the Reset Algorithm |
-    || *Numbers for Bank0*      |        |              |              || Set request                            |
-    +---------------------------+--------+--------------+--------------+-----------------------------------------+
-    || *Set Bank of PS*         |  FF    | 241          |  8           | Sets PS numbers for the other           |
-    || *Numbers for Bank1*      |        |              |              | Set requests                            |
-    +---------------------------+--------+--------------+--------------+-----------------------------------------+
-
+    +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
+    | **Request**               || **PF** || **PS**|| **PGN**     || **Payload** |  **Purpose**                            |
+    |                           || (dec)  || (dec) ||             || **Length**  |                                         |
+    |                           ||        ||       ||             || (bytes)     |                                         |
+    +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
+    | *Save Configuration*      |  255    | 81     |  65361       |  3           || Save all configuration                 |
+    |                           |         |        |              |              || data to non-volatile memory            |
+    +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
+    | *Reset Algorithm*         |  255    | 80     |  65360       |  3           |  Reset algorithm to initial conditions  |
+    +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
+    | *Set Packet Rate Divider* |  255    | 85     |  65365       |  2           || Set rate dividers to increase/decrease |
+    |                           |         |        |              |              || rate packets are set                   |
+    +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
+    | *Set Data Packet Type(s)* |  255    | 86     |  65366       |  2           || Select 1, 2, or 3 packet types to send |
+    |                           |         |        |              |              || periodically                           |
+    +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
+    || *Set Digital Filters*    |  255    | 87     |  65367       |  3           || Set cutoff frequency for rate and      |
+    || *Cutoff Frequencies*     |         |        |              |              || accelerometers                         |
+    +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
+    | *Set Orientation*         |  255    | 88     |  65368       |  3           |  Set orientation of X, Y, and Z axes    |
+    +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
+    || *Set Bank of PS*         |  255    | 240    |  65520       |  8           || Sets PS number for the Reset Algorithm |
+    || *Numbers for Bank0*      |         |        |              |              || Set request                            |
+    +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
+    || *Set Bank of PS*         |  255    | 241    |  65521       |  8           | Sets PS numbers for the other           |
+    || *Numbers for Bank1*      |         |        |              |              | Set requests                            |
+    +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
+                                                 
 .. note::
 
     Provided PS values for all but the "Set Bank of PS Numbers for Bank0/Bank1" Set Commands can be changed by
@@ -210,8 +210,7 @@ Request message as specified earlier. The user can modify the provided requests 
 
 *Set Bank of PS Numbers*
 
-    The following tables provide descriptions of the response payload
-    for Bank0 and Bank1
+    The following tables provide descriptions of the payload for Bank0 and Bank1 set commands
 
     .. table:: *Set Bank of PS Numbers for Bank0 Payload*
         :align: left
@@ -219,11 +218,9 @@ Request message as specified earlier. The user can modify the provided requests 
         +----------+-------------------------------+
         | **Byte** | **Parameters**                |
         +----------+-------------------------------+
-        | 0        | Destination Address           |
+        | 0        | Reset Algorithm PS number     |
         +----------+-------------------------------+
-        | 1        | Set Reset Algorithm PS number |
-        +----------+-------------------------------+
-        | 2-15     | Reserved                      |
+        | 2-7      | Reserved                      |
         +----------+-------------------------------+
 
     .. table::  *Set Bank of PS Numbers for Bank1 Payload*
@@ -232,23 +229,19 @@ Request message as specified earlier. The user can modify the provided requests 
         +----------+------------------------------------------------+
         | **Byte** | **Parameters**                                 |
         +----------+------------------------------------------------+
-        | 0        | Destination Address                            |
+        | 0        | Set Packet Rate PS number                      |
         +----------+------------------------------------------------+
-        | 1        | Set Packet Rate PS number                      |
+        | 1        | Set Packet Type(s) PS number                   |
         +----------+------------------------------------------------+
-        | 2        | Set Packet Type(s) PS number                   |
+        | 2        | Set Digital Filer Cutoff Frequencies PS number |
         +----------+------------------------------------------------+
-        | 3        | Set Digital Filer Cutoff Frequencies PS number |
+        | 3        | Set Orientation PS Number                      |
         +----------+------------------------------------------------+
-        | 4        | Set Orientation PS Number                      |
+        | 4        | Set User Behavior PS Number                    |
         +----------+------------------------------------------------+
-        | 5        | Set User Behavior PS Number                    |
+        | 5        | Set Angle Alarm PS Number                      |
         +----------+------------------------------------------------+
-        | 6        | Set Angle Alarm PS Number                      |
+        | 6        | Set Cone Alarm PS Number                       |
         +----------+------------------------------------------------+
-        | 7        | Set Cone Alarm PS Number                       |
-        +----------+------------------------------------------------+
-        | 8        | Set Acceleration PS Number                     |
-        +----------+------------------------------------------------+
-        | 9:15     | Reserved                                       |
+        | 7        | Set Acceleration PS Number                     |
         +----------+------------------------------------------------+

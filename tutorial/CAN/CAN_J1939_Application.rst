@@ -1,12 +1,7 @@
-CAN J1939 Example Application
-*******************************
+CAN J1939 Example Application For OpenIMU330RI
+**********************************************
 
-.. contents:: Contents
-    :local:
-
-
- custom J1939-based applications for
-    the OpenIMU300RI unit.
+	
 *   The example can be used as is or customized to suit the customer's system requirements.
 *   The SAE J1939 standards document set specifies the requirements for systems based on J1939 messaging.
     The SAE site provides a full list of the J1939 standard document set - `Link <https://www.sae.org/standardsdev/groundvehicle/j1939a.htm>`_
@@ -31,21 +26,14 @@ The following pages describe the CAN J1939 Example Application Details:
 
 *   VSCode project for the J1939 CAN Example Application
 
-*   Example Application User Code Walkthrough
+*   Application Dataflow and Synchronization diagram
 
-*   Diagrams for the Example Application
-
-    *   Data Acquisition Task Dataflow
-    *   CAN Communication Task State Transition Diagram
-    *   Task Synchronization Diagram
-
-*   Descriptions of the example CAN messages implemented in the application.
+*   Examples of the J1939 CAN messages implemented in the application.
 
 .. toctree::
     :maxdepth: 1
     :hidden:
 
     CAN_J1939_ExampleApplication_VSCodeProject
-    CAN_J1939_ExampleApplication_UserCodeWalkthrough
     CAN_J1939_ExampleApplicationDiagrams
     CAN_J1939_CAN_Messages

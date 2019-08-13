@@ -30,12 +30,6 @@ Tutorial - What The User Needs to Know to Build The First Application
     To get you acquainted with the OpenIMU environment, let's walk through the development of the
     following applications:
 
-    **Framework Application**
-
-    All the examples that follow are based on the Framework application that ships installed on the
-    OpenIMU.  This framework serves as a stating point upon which user-applications can be built.
-    Descriptions of all common components are provided in the Framework Application Link below.
-
 
     **IMU Application**
 
@@ -71,18 +65,15 @@ Tutorial - What The User Needs to Know to Build The First Application
 
 **Robust CAN Example Applications**
 
-    There are two CAN example applications, one for each CAN message protocol specifications used:
+|    The CAN applications are based on use of OpenIMU unit with CAN interface, such as the OpenIMU300RI.
+|    Next example applications available for OpenIMU300RI unit:
 
-    *   *SAE J1939 Messaging Standard*.  The SAE J1939 standards document set provides the requirements
-        for the CAN messaging implementation implemented in this example application
+    *   IMU applications which are using *SAE J1939 Messaging Standard*.
 
-    *   *DBC Messaging Specification*.  The Database Communication (DBC) CAN message format is a
-        proprietary format developed and released by the company Vector Informatik GmbH.  It is an
-        optional addition for applications that use J1939 protocols.
+    *   IMU applications which are using private (custom) CAN messages for sending sensors/algorithm output data out.
 
 .. note::   CAN provisioned units can run most of the example applications described in the *EZ Embed* section,
-            so description of those applications are not provided here.  The CAN example applications implement the
-            IMU Application functionality.
+            so description of those applications are not provided here.  
 
 
 .. toctree::
@@ -90,7 +81,6 @@ Tutorial - What The User Needs to Know to Build The First Application
     :hidden:
 
     tutorial/OpenIMU_Core
-    tutorial/Framework_App
     tutorial/IMU_App
     tutorial/Leveler_App
     tutorial/VG_AHRS_App

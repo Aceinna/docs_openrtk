@@ -1,7 +1,7 @@
-VSCode project for the J1939 CAN Example Application
-----------------------------------------------------
+VSCode project for the J1939 CAN IMU Example Application
+--------------------------------------------------------
 
-The *CAN_J1939* project is the VSCode project for the J1939 CAN Example Application.
+The *IMU* project for OpenIMU300RI is the example which implements basic IMU functionality and transmits calibrated sensors data over CAN bus using J1939 protocol.
 
 *   The most important files are found in the bottom level 'include', 'include/API', 'lib/J1939/include', 'lib/J1939/src', 'src', and  'src/user' directories.
 *   These directories provide the user visible and modifiable files, including the example application code and the

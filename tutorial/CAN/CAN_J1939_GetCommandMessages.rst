@@ -13,18 +13,38 @@ Get Requests
 Get requests are used by other ECUs in the network
 to retrieve information from the OpenIMU300RI.  All Get requests are formed as a
 Request message as specified earlier.
-They are used to request PGNs which have a transmission rate of "On Request".
-The format and content of the Request message is To Be Provided.
-The user can modify the
-existing requests and responses and add requests and responses as needed.
-The following Get Requests are implemented in the example application.
+The format and content of the Request message has next format:
+
+Extended header:
+
+    | PF      : 234,
+    | PS      : Destination Address,
+    | DLC     : 3,
+    | Priority: 6,
+    | PGN     : 59904.
+
+.. table::    *Request Payload*
+    :align: left
+
+    +-----------+---------------------------+
+    | **Byte**  | **Description**           |
+    +-----------+---------------------------+
+    | 0         | N/A                       |
+    +-----------+---------------------------+
+    | 1         | PF of requested parameter |
+    +-----------+---------------------------+
+    | 2         | PS of requested parameter |
+    +-----------+---------------------------+
+
+  
+In table below provided list of the parameters which can be requested from ECU, including their PF, PS and payload length of response messages
 
 
-.. table::  *Get Requests*
+.. table::  *List of ECU parameters available for Requests*
     :align: left
 
     +-------------------------------+-------------+-------------+--------------+
-    | **Request**                   || **PF**     || **PS**     || **Payload** |
+    | **Parameter**                 || **PF**     || **PS**     || **Payload** |
     |                               || (dec)      || (dec)      | **Length**   |
     |                               ||            || (See note) | (bytes)      |
     +-------------------------------+-------------+-------------+--------------+
@@ -44,15 +64,15 @@ The following Get Requests are implemented in the example application.
 .. note::
 
     *   Provided PS values for all but the *Get Software Version* and *Get ECU ID* can be changed by the
-        "Set Bank of PS Numbers for Bank0/Bank1" commands.  The given values are the pre-defined values.
-    *   Responses have the same PF+PS values as the request
+        "Set Bank of PS Numbers for Bank1" command.  The given values are the default values.
+    *   In responses values of PF and PS field in extended headers have the same PF+PS values as requested.
 
 Responses to Get Requests
 --------------------------
 The following table describe the payloads for responses to Get Requests
 
 
-.. table::    *Software Version Response*
+.. table::    *Software Version Response Payload*
     :align: left
 
     +-----------+-----------------------+
@@ -69,25 +89,25 @@ The following table describe the payloads for responses to Get Requests
     | 4         | Build Number          |
     +-----------+-----------------------+
 
-.. table::    *ECU ID Response*
+.. table::    *ECU ID 64 Bit Response Payload*
     :align: left
 
-    +----------+---------------------------------+-------------+
-    | **Byte** | **Contents**                    | **Acronym** |
-    +----------+---------------------------------+-------------+
-    | 0        || bits 0:2 - Priority            || Prio       |
-    |          || bit  3   - Extended Data Page  || EDP        |
-    |          || bit  4   - Data Page           || DP         |
-    |          || bits 5:7 - Reserved Bits       || R          |
-    +----------+---------------------------------+-------------+
-    | 1        | PDU Format                      | PF          |
-    +----------+---------------------------------+-------------+
-    | 2        | PDU Specific                    | PS          |
-    +----------+---------------------------------+-------------+
-    | 3        | Source Address                  | SA          |
-    +----------+---------------------------------+-------------+
+    +--------------+-------------------------+
+    |   **Bits**   |   **Contents**          |
+    +--------------+-------------------------+
+    ||  bits 0     || Arbitrary Address      |
+    ||  bit  1:3   || Industry Group         |
+    ||  bit  4:7   || Vehicle System Instance|
+    ||  bits 8:14  || System Bits            |
+    ||  bits 15    || Reserved               |
+    ||  bits 16:23 || Function Bits          |
+    ||  bits 24:28 || Function Instance      |
+    ||  bits 29:31 || ECU Bits               |
+    ||  bits 32:42 || Manufacturer code      |
+    ||  bits 43:63 || ID bits                |
+    +--------------+-------------------------+
 
-.. table::  *Packet Rate Response*
+.. table::  *Packet Rate Response Payload*
 
     +-----------+-----------------------+
     | **Byte**  | **Description**       |
@@ -97,7 +117,7 @@ The following table describe the payloads for responses to Get Requests
     | 1         | Output Data Rate      |
     +-----------+-----------------------+
 
-.. table::  *Packet Type Response*
+.. table::  *Packet Type Response Payload*
 
     +-----------+-----------------------+
     | **Byte**  | **Description**       |
@@ -108,7 +128,7 @@ The following table describe the payloads for responses to Get Requests
     +-----------+-----------------------+
 
 
-.. table:: *Digital Cutoff Frequency Response*
+.. table:: *Digital Cutoff Frequency Response Payload*
 
     +-----------+-----------------------+
     | **Byte**  | **Description**       |
@@ -120,7 +140,7 @@ The following table describe the payloads for responses to Get Requests
     | 2         | Angular Rate Cutoff   |
     +-----------+-----------------------+
 
-.. table:: *Orientation Response*
+.. table:: *Orientation Response Payload*
 
     +-----------+----------------------------------+
     | **Byte**  | **Description**                  |
@@ -131,3 +151,7 @@ The following table describe the payloads for responses to Get Requests
     +-----------+----------------------------------+
     | 2         | Second Byte of Orientation Value |
     +-----------+----------------------------------+
+
+.. note::
+
+    *   For Orientation, Cutoff Frequencies Packet Type and Packet Rate responses values of parameters will be the same as in the set commands for these parameters.

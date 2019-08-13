@@ -1,5 +1,5 @@
 PC Tools Installation
-==================
+=====================
 
 .. contents:: Contents
     :local:
