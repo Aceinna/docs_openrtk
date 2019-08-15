@@ -26,6 +26,8 @@ Request message as specified earlier. The user can modify the provided requests 
     +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
     | *Reset Algorithm*         |  255    | 80     |  65360       |  3           |  Reset algorithm to initial conditions  |
     +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
+    | *Mag Alignment*           |  255    | 94     |  65374       |  2           |  Mag alignment and status request       |
+    +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
     | *Set Packet Rate Divider* |  255    | 85     |  65365       |  2           || Set rate dividers to increase/decrease |
     |                           |         |        |              |              || rate packets are set                   |
     +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
@@ -89,6 +91,45 @@ Request message as specified earlier. The user can modify the provided requests 
         +----------+---------------------------------+
 
 
+*Mag Alignment*
+
+    The following tables provides the descriptions of the payload fields of the
+    command and response messages.
+
+    .. table::  *Mag Alignment Request Payload Fields*
+        :align: left
+
+        +----------+---------------------------------+
+        | **Byte** | **Description/Values**          |
+        +----------+---------------------------------+
+        | 0        | Destination Address             |
+        +----------+---------------------------------+
+        | 1        | Command: 1 = Start, 0 - status  |
+        +----------+---------------------------------+
+
+    .. table::    *Payload Fields of 64 bit response*
+        :align: left
+
+        +--------------+-------------------------+-------------------------------------------------------+
+        |   **Bits**   |   **Description**       |  Value                                                |
+        +--------------+-------------------------+-------------------------------------------------------+
+        ||  bits 0:7   || Command                || 0 - Status request,                                  |
+        ||             ||                        || 1 - Start alignment                                  |
+        +--------------+-------------------------+-------------------------------------------------------+
+        ||  bit  8:15  || Alignment State        || 0  - Idle                                            |
+        ||             ||                        || 12 - Alignment in process                            |
+        ||             ||                        || 13 - Alignment complete                              |
+        +--------------+-------------------------+-------------------------------------------------------+
+        ||  bit  16:27 || Hard Iron X Bias, Gauss|| -8 G to +8 G , scale 1/256 G/bit, offset -8G         |
+        +--------------+-------------------------+-------------------------------------------------------+
+        ||  bits 28:39 || Hard Iron Y Bias, Gauss|| -8 G to +8 G , scale 1/256 G/bit, offset -8G         |
+        +--------------+-------------------------+-------------------------------------------------------+
+        ||  bits 40:49 || Soft Iron Ratio        || 0 to 1   1/1024 per Lsb                              |
+        +--------------+-------------------------+-------------------------------------------------------+
+        ||  bits 50:63 || Soft Iron Angle        || -3.14 to 3.14 RAD, scale 0.0015339, offset -3.14159  |
+        +--------------+-------------------------+-------------------------------------------------------+
+
+
 *Set Packet Rate Divider*
 
     The following table provides the values of the packet rate divider response payload
@@ -132,8 +173,12 @@ Request message as specified earlier. The user can modify the provided requests 
         +--------+----------------+-------------------------------+
         | 1      || Selected Data || Data Packet Type(s) Bitmask  |
         |        || Packet Type(s)|| Bit 0 - SSI2                 |
-        |        |                || Bit 1 - Angular Rate         |
-        |        |                || Bit 2 - Acceleration         |
+        |        || Bitmask (LSB) || Bit 1 - Angular Rate         |
+        |        ||               || Bit 2 - Acceleration         |
+        +--------+----------------+-------------------------------+
+        | 2      || Selected Data ||  Reserved                    |
+        |        || Packet Type(s)||                              |
+        |        || Bitmask (MSB) ||                              |
         +--------+----------------+-------------------------------+
 
 *Set Digital Filter Cutoff Frequencies*
@@ -144,7 +189,7 @@ Request message as specified earlier. The user can modify the provided requests 
         :align: left
 
         +--------------+------------------------------+----------------------------+
-        |  **Payload** | **Description/Values**       | **Values**                 |
+        || **Payload** | **Description/Values**       | **Values**                 |
         || **Byte**    |                              |                            |
         +--------------+------------------------------+----------------------------+
         | 0            | Destination Address          | Unique                     |

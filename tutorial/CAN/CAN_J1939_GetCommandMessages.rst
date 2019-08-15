@@ -54,7 +54,7 @@ In table below provided list of the parameters which can be requested from ECU, 
     +-------------------------------+-------------+-------------+--------------+
     | *Packet Rate*                 | 255         | 85          | 2            |
     +-------------------------------+-------------+-------------+--------------+
-    | *Packet Type*                 | 255         | 86          | 2            |
+    | *Packet Type*                 | 255         | 86          | 3            |
     +-------------------------------+-------------+-------------+--------------+
     | *Digital Cutoff Frequency*    | 255         | 87          | 3            |
     +-------------------------------+-------------+-------------+--------------+
@@ -119,13 +119,15 @@ The following table describe the payloads for responses to Get Requests
 
 .. table::  *Packet Type Response Payload*
 
-    +-----------+-----------------------+
-    | **Byte**  | **Description**       |
-    +-----------+-----------------------+
-    | 0         | Source Address        |
-    +-----------+-----------------------+
-    | 1         | Packet Types Bitmask  |
-    +-----------+-----------------------+
+    +-----------+----------------------------+
+    | **Byte**  | **Description**            |
+    +-----------+----------------------------+
+    | 0         | Source Address             |
+    +-----------+----------------------------+
+    | 1         | Packet Types Bitmask (LSB) |
+    +-----------+----------------------------+
+    | 2         | Packet Types Bitmask (MSB) |
+    +-----------+----------------------------+
 
 
 .. table:: *Digital Cutoff Frequency Response Payload*
