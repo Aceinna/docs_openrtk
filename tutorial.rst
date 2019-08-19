@@ -65,15 +65,13 @@ Tutorial - What The User Needs to Know to Build The First Application
 
 **Robust CAN Example Applications**
 
-|    The CAN applications are based on use of OpenIMU unit with CAN interface, such as the OpenIMU300RI.
+|    The CAN example applications are implemented for OpenIMU300RI unit with CAN interface.
 |    Next example applications available for OpenIMU300RI unit:
 
-    *   IMU applications which are using *SAE J1939 Messaging Standard*.
+    *   IMU application which are using *SAE J1939 Messaging Standard*.
+    *   VG_AHRS application which are using *SAE J1939 Messaging Standard*.
+    *   INS application which are using *SAE J1939 Messaging Standard*.
 
-    *   IMU applications which are using private (custom) CAN messages for sending sensors/algorithm output data out.
-
-.. note::   CAN provisioned units can run most of the example applications described in the *EZ Embed* section,
-            so description of those applications are not provided here.  
 
 
 .. toctree::
@@ -86,4 +84,3 @@ Tutorial - What The User Needs to Know to Build The First Application
     tutorial/VG_AHRS_App
     tutorial/INS_App
     tutorial/CAN/CAN_J1939_Application
-    tutorial/CAN_DBC/CAN_DBC_Application

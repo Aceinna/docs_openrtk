@@ -10,8 +10,8 @@ CAN J1939 Set Request Messages
 **Set Commands**
 
 
-The following Set requests have been implemented in the Example J1939 based Applications.  All Set requests are formed as a
-Request message as specified earlier. The user can modify the provided requests and/or implement unique requests.
+The following Set requests have been implemented in J1939 based application examples.
+Users can modify provided requests and/or implement their own unique commands.
 
 .. table::  *Set Commands*
     :align: left
@@ -49,11 +49,12 @@ Request message as specified earlier. The user can modify the provided requests 
 .. note::
 
     Provided PS values for all but the "Set Bank of PS Numbers for Bank0/Bank1" Set Commands can be changed by
-    the "Set Bank of PS Numbers for Bank0/Bank1" message  The given values are the pre-defined values.
+    the the commands "Set Bank of PS Numbers" (see below). Updated values can be saved in nonvolatile memory ond will be active upon
+    following system restart/power-up. Provided in the table PS values are default values.
 
 
 
-*Save Configuration*
+**Save Configuration**
 
     The next table provides the descriptions of the payload fields of the
     command and response messages.
@@ -72,7 +73,7 @@ Request message as specified earlier. The user can modify the provided requests 
         +----------+---------------------------------+
 
 
-*Reset Algorithm*
+**Reset Algorithm**
 
     The following table provides the descriptions of the payload fields of the
     command and response messages.
@@ -91,7 +92,7 @@ Request message as specified earlier. The user can modify the provided requests 
         +----------+---------------------------------+
 
 
-*Mag Alignment*
+**Mag Alignment (INS Application Example)**
 
     The following tables provides the descriptions of the payload fields of the
     command and response messages.
@@ -99,15 +100,18 @@ Request message as specified earlier. The user can modify the provided requests 
     .. table::  *Mag Alignment Request Payload Fields*
         :align: left
 
-        +----------+---------------------------------+
-        | **Byte** | **Description/Values**          |
-        +----------+---------------------------------+
-        | 0        | Destination Address             |
-        +----------+---------------------------------+
-        | 1        | Command: 1 = Start, 0 - status  |
-        +----------+---------------------------------+
+        +----------+---------------------------+
+        | **Byte** | **Description/Values**    |
+        +----------+---------------------------+
+        | 0        | Destination Address       |
+        +----------+---------------------------+
+        | 1        || Commands:                |
+        |          || 0 - Status Request       |
+        |          || 1 - Start Alignment      |
+        |          || 5 - Confirm and Save     |
+        +----------+---------------------------+
 
-    .. table::    *Payload Fields of 64 bit response*
+    .. table::    *Payload Fields of 64 bit Response*
         :align: left
 
         +--------------+-------------------------+-------------------------------------------------------+
@@ -118,7 +122,7 @@ Request message as specified earlier. The user can modify the provided requests 
         +--------------+-------------------------+-------------------------------------------------------+
         ||  bit  8:15  || Alignment State        || 0  - Idle                                            |
         ||             ||                        || 12 - Alignment in process                            |
-        ||             ||                        || 13 - Alignment complete                              |
+        ||             ||                        || 11, 13 - Data Collection complete                    |
         +--------------+-------------------------+-------------------------------------------------------+
         ||  bit  16:27 || Hard Iron X Bias, Gauss|| -8 G to +8 G , scale 1/256 G/bit, offset -8G         |
         +--------------+-------------------------+-------------------------------------------------------+
@@ -130,7 +134,7 @@ Request message as specified earlier. The user can modify the provided requests 
         +--------------+-------------------------+-------------------------------------------------------+
 
 
-*Set Packet Rate Divider*
+**Set Packet Rate Divider**
 
     The following table provides the values of the packet rate divider response payload
 
@@ -156,10 +160,10 @@ Request message as specified earlier. The user can modify the provided requests 
         |        |               || 50 -  2                         |
         +--------+---------------+----------------+-----------------+
 
-*Set Data Packet Type(s)*
+**Set Periodic Data Packet Type(s)**
 
-    The following table provides the *Set Data Packet Type(s)* payload.  The 3 bits in the "data packet types"
-    are bits in a bitmask that can be combined to use any 1 type, any 2 types, or all 3 types
+    The following table provides the *Set Data Packet Type(s)* payload. Each bit in the request payload enables specific data packet for periodic transmission.
+    Any combination of data packets can be chosen.
 
     .. table::  *Set Data Packet Type(s) Field*
         :align: left
@@ -181,7 +185,7 @@ Request message as specified earlier. The user can modify the provided requests 
         |        || Bitmask (MSB) ||                              |
         +--------+----------------+-------------------------------+
 
-*Set Digital Filter Cutoff Frequencies*
+**Set Digital Filter Cutoff Frequencies**
 
     The following table shows provides descriptions of the response payload
 
@@ -202,7 +206,7 @@ Request message as specified earlier. The user can modify the provided requests 
         +--------------+------------------------------+----------------------------+
 
 
-*Set Orientation*
+**Set Orientation**
 
     The following table shows the payload layout
 
@@ -253,7 +257,7 @@ Request message as specified earlier. The user can modify the provided requests 
         +------------------+-----------------------+------------------+----------------+
 
 
-*Set Bank of PS Numbers*
+**Set Bank of PS Numbers**
 
     The following tables provide descriptions of the payload for Bank0 and Bank1 set commands
 
@@ -263,9 +267,17 @@ Request message as specified earlier. The user can modify the provided requests 
         +----------+-------------------------------+
         | **Byte** | **Parameters**                |
         +----------+-------------------------------+
-        | 0        | Reset Algorithm PS number     |
+        | 0        | Destination Address           |
         +----------+-------------------------------+
-        | 2-7      | Reserved                      |
+        | 1        | Reset Algorithm PS number     |
+        +----------+-------------------------------+
+        | 2        | Save Configuration PS number  |
+        +----------+-------------------------------+
+        | 3        | Status Request  PS number     |
+        +----------+-------------------------------+
+        | 4        | Mag Align Command  PS number  |
+        +----------+-------------------------------+
+        | 5-7      | Reserved                      |
         +----------+-------------------------------+
 
     .. table::  *Set Bank of PS Numbers for Bank1 Payload*
@@ -274,19 +286,17 @@ Request message as specified earlier. The user can modify the provided requests 
         +----------+------------------------------------------------+
         | **Byte** | **Parameters**                                 |
         +----------+------------------------------------------------+
-        | 0        | Set Packet Rate PS number                      |
+        | 0        | Destination Address                            |
         +----------+------------------------------------------------+
-        | 1        | Set Packet Type(s) PS number                   |
+        | 1        | Set Packet Rate PS number                      |
         +----------+------------------------------------------------+
-        | 2        | Set Digital Filer Cutoff Frequencies PS number |
+        | 2        | Set Packet Type(s) PS number                   |
         +----------+------------------------------------------------+
-        | 3        | Set Orientation PS Number                      |
+        | 3        | Set Digital Filer Cutoff Frequencies PS number |
         +----------+------------------------------------------------+
-        | 4        | Set User Behavior PS Number                    |
+        | 4        | Set Orientation PS Number                      |
         +----------+------------------------------------------------+
-        | 5        | Set Angle Alarm PS Number                      |
+        | 5        | Set User Behavior PS Number                    |
         +----------+------------------------------------------------+
-        | 6        | Set Cone Alarm PS Number                       |
-        +----------+------------------------------------------------+
-        | 7        | Set Acceleration PS Number                     |
+        | 6 - 7    | Reserved                                       |
         +----------+------------------------------------------------+
