@@ -8,9 +8,6 @@ The following message categories are used:
 
     **Requests**
 
-        Some requests are broadcast.  In such cases, all other nodes on the network will decode the
-        payload and ignore the request if it is meant for another ECU.
-
         *Set Requests*. Set requests are used by Electronic Control Units (ECUs) to configure the OpenIMU300RI on the network.
 
         *Get Requests*. Get requests are used for requesting information from the OpenIMU300RI.  If the request is for the OpenIMU300RI, it will build and send a response packet to the requesting node.

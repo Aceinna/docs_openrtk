@@ -31,25 +31,25 @@ Users can modify provided requests and/or implement their own unique commands.
     | *Set Packet Rate Divider* |  255    | 85     |  65365       |  2           || Set rate dividers to increase/decrease |
     |                           |         |        |              |              || rate packets are set                   |
     +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
-    | *Set Data Packet Type(s)* |  255    | 86     |  65366       |  2           || Select 1, 2, or 3 packet types to send |
+    | *Set Data Packet Type(s)* |  255    | 86     |  65366       |  2           || Select packet types to be sent         |
     |                           |         |        |              |              || periodically                           |
     +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
-    || *Set Digital Filters*    |  255    | 87     |  65367       |  3           || Set cutoff frequency for rate and      |
-    || *Cutoff Frequencies*     |         |        |              |              || accelerometers                         |
+    || *Set Digital Filters*    |  255    | 87     |  65367       |  3           || Set LPF cutoff frequency for rate      |
+    || *Cutoff Frequencies*     |         |        |              |              || sensors and accelerometers             |
     +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
-    | *Set Orientation*         |  255    | 88     |  65368       |  3           |  Set orientation of X, Y, and Z axes    |
+    | *Set Orientation*         |  255    | 88     |  65368       |  3           |  Set unit orientation                   |
     +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
-    || *Set Bank of PS*         |  255    | 240    |  65520       |  8           || Sets PS number for the Reset Algorithm |
-    || *Numbers for Bank0*      |         |        |              |              || Set request                            |
+    || *Set Bank of PS*         |  255    | 240    |  65520       |  8           || Reconfigure PS numbers for set         |
+    || *Numbers for Bank0*      |         |        |              |              || requests                               |
     +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
-    || *Set Bank of PS*         |  255    | 241    |  65521       |  8           | Sets PS numbers for the other           |
-    || *Numbers for Bank1*      |         |        |              |              | Set requests                            |
+    || *Set Bank of PS*         |  255    | 241    |  65521       |  8           || Reconfigure PS numbers for set         |
+    || *Numbers for Bank1*      |         |        |              |              || requests                               |
     +---------------------------+---------+--------+--------------+--------------+-----------------------------------------+
                                                  
 .. note::
 
-    Provided PS values for all but the "Set Bank of PS Numbers for Bank0/Bank1" Set Commands can be changed by
-    the the commands "Set Bank of PS Numbers" (see below). Updated values can be saved in nonvolatile memory ond will be active upon
+    PS values for all but the "Set Bank of PS Numbers for Bank0/Bank1" Set Commands can be changed by
+    the the commands "Set Bank of PS Numbers" (see below). Updated values can be saved in nonvolatile memory and will be active upon
     following system restart/power-up. Provided in the table PS values are default values.
 
 
@@ -114,24 +114,24 @@ Users can modify provided requests and/or implement their own unique commands.
     .. table::    *Payload Fields of 64 bit Response*
         :align: left
 
-        +--------------+-------------------------+-------------------------------------------------------+
-        |   **Bits**   |   **Description**       |  Value                                                |
-        +--------------+-------------------------+-------------------------------------------------------+
-        ||  bits 0:7   || Command                || 0 - Status request,                                  |
-        ||             ||                        || 1 - Start alignment                                  |
-        +--------------+-------------------------+-------------------------------------------------------+
-        ||  bit  8:15  || Alignment State        || 0  - Idle                                            |
-        ||             ||                        || 12 - Alignment in process                            |
-        ||             ||                        || 11, 13 - Data Collection complete                    |
-        +--------------+-------------------------+-------------------------------------------------------+
-        ||  bit  16:27 || Hard Iron X Bias, Gauss|| -8 G to +8 G , scale 1/256 G/bit, offset -8G         |
-        +--------------+-------------------------+-------------------------------------------------------+
-        ||  bits 28:39 || Hard Iron Y Bias, Gauss|| -8 G to +8 G , scale 1/256 G/bit, offset -8G         |
-        +--------------+-------------------------+-------------------------------------------------------+
-        ||  bits 40:49 || Soft Iron Ratio        || 0 to 1   1/1024 per Lsb                              |
-        +--------------+-------------------------+-------------------------------------------------------+
-        ||  bits 50:63 || Soft Iron Angle        || -3.14 to 3.14 RAD, scale 0.0015339, offset -3.14159  |
-        +--------------+-------------------------+-------------------------------------------------------+
+        +--------------+------------------------------------+-------------------------------------------------------+
+        |   **Bits**   |   **Description**                  |  Value                                                |
+        +--------------+------------------------------------+-------------------------------------------------------+
+        ||  bits 0:7   || Command                           || 0 - Status request,                                  |
+        ||             ||                                   || 1 - Start alignment                                  |
+        +--------------+------------------------------------+-------------------------------------------------------+
+        ||  bit  8:15  || Alignment State                   || 0  - Idle                                            |
+        ||             ||                                   || 12 - Alignment in process                            |
+        ||             ||                                   || 11, 13 - Data Collection complete                    |
+        +--------------+------------------------------------+-------------------------------------------------------+
+        ||  bit  16:27 || Estimated Hard Iron X Bias, Gauss || -8 G to +8 G , scale 1/256 G/bit, offset -8G         |
+        +--------------+------------------------------------+-------------------------------------------------------+
+        ||  bits 28:39 || Estimated Hard ron Y Bias, Gauss  || -8 G to +8 G , scale 1/256 G/bit, offset -8G         |
+        +--------------+------------------------------------+-------------------------------------------------------+
+        ||  bits 40:49 || Estimated Soft Iron Ratio         || 0 to 1   1/1024 per Lsb                              |
+        +--------------+------------------------------------+-------------------------------------------------------+
+        ||  bits 50:63 || Estimated Soft Iron Angle         || -3.14 to 3.14 RAD, scale 0.0015339, offset -3.14159  |
+        +--------------+------------------------------------+-------------------------------------------------------+
 
 
 **Set Packet Rate Divider**
@@ -175,7 +175,7 @@ Users can modify provided requests and/or implement their own unique commands.
         | 0      |  Destination   | Unique                        |
         |        |  Address       |                               |
         +--------+----------------+-------------------------------+
-        | 1      || Selected Data || Data Packet Type(s) Bitmask  |
+        | 1      || Selected Data || Data Packet Type(s) Bitmask: |
         |        || Packet Type(s)|| Bit 0 - SSI2                 |
         |        || Bitmask (LSB) || Bit 1 - Angular Rate         |
         |        ||               || Bit 2 - Acceleration         |
