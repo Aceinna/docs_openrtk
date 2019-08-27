@@ -4,7 +4,7 @@ SPI and UART
 .. contents:: Contents
     :local:
 
-The OpenIMU300ZA can be configured in a number of ways for communication with external world.  There are up to three external UART ports and one external SPI port.
+The OpenIMU300ZI can be configured in a number of ways for communication with external world.  There are up to three external UART ports and one external SPI port.
 
 Typical configurations include:
 

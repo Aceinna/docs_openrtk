@@ -47,6 +47,5 @@ The available sensor information is used as follows:
        (:math:`\vec{r}^{N}` and :math:`\vec{v}^{N}`)
 
 
-.. Based upon these steps, the measurements are ... 
-..
+
 Measurement Details To Be Provided

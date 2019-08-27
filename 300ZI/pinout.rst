@@ -4,13 +4,13 @@ Connector Pinout - Including GPS Sensor Interface
 .. contents:: Contents
     :local:
 
-The OpenIMU300ZA main connector is a SAMTEC FTM-110-02-F-DV-P defined below. The mating connector that pairs with the main connector is the SAMTEC CLM-110-02.
+The OpenIMU300ZI main connector is a SAMTEC FTM-110-02-F-DV-P defined below. The mating connector that pairs with the main connector is the SAMTEC CLM-110-02.
 
 |Connector.png|
 
-                   OpenIMU300ZA Interface Connector
+                   OpenIMU300ZI Interface Connector
 
-J2 is 20-pin connector and it used for connecting the OpenIMU300ZA unit into Open IMU evaluation board.  The connector pin definitions are defined in the table below.  The GPS-related signals are noted.
+J2 is 20-pin connector and it used for connecting the OpenIMU300ZI unit into Open IMU evaluation board.  The connector pin definitions are defined in the table below.  The GPS-related signals are noted.
 
 **Interface Connector Pin Definitions**
 
@@ -69,7 +69,7 @@ J2 is 20-pin connector and it used for connecting the OpenIMU300ZA unit into Ope
 
 **Power Input and Power Input Ground**
 
-Power is applied to the OpenIMU300ZA on pins 10 through 15. Pins 13-15 are
+Power is applied to the OpenIMU300ZI on pins 10 through 15. Pins 13-15 are
 ground; Pins 10-12 accepts 3 to 5 VDC unregulated input. Note that these
 are redundant power ground input pairs.
 

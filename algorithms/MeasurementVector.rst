@@ -9,8 +9,8 @@ Measurement Vector
 .. sectionauthor:: Joseph S Motyka <jmotyka at aceinna.com>
 
 
-Overview
-=========
+Model Overview
+==================
 
 It is possible to choose among various measurement models for a given EKF implementation.  The
 particular model is selected based on many factors, one being the limitations of the available

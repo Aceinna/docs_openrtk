@@ -7,12 +7,12 @@ Overview
 **1. Introduction**
 
 
-    The OpenIMU evaluation kit is a hardware platform to evaluate the OpenIMU300ZA
+    The OpenIMU evaluation kit is a hardware platform to evaluate the OpenIMU300ZI
     inertial navigation system and develop various applications based on this platform.
     Supported by the Aceinna Navigation Studio the kit provides easy access to the features
-    OpenIMU300ZA and explains how to integrate the device in a custom design.
-    The OpenIMU evaluation kit include OpenIMU300ZA, evaluation board with various interface
-    connectors and test adapter for mounting OpenIMU300ZA unit.
+    OpenIMU300ZI and explains how to integrate the device in a custom design.
+    The OpenIMU evaluation kit include OpenIMU300ZI, evaluation board with various interface
+    connectors and test adapter for mounting OpenIMU300ZI unit.
 
     .. image:: ../media/EvalKit.png
 
@@ -20,32 +20,32 @@ Overview
 
     - OpenIMU Evaluation board, which includes:
 
-        - Virtual COM-port USB interface, providing connectivity to OpenIMU300ZA unit from PC
+        - Virtual COM-port USB interface, providing connectivity to OpenIMU300ZI unit from PC
 
         - Connector for programming and debugging target via Serial Wire Debug (SWD) interface
 
-        - Connector for interfacing OpenIMU300ZA from custom-designed system.
+        - Connector for interfacing OpenIMU300ZI from custom-designed system.
 
-        - Test terminals for connecting oscilloscope or logic analyzers to the dedicated OpenIMU300ZA signals.
+        - Test terminals for connecting oscilloscope or logic analyzers to the dedicated OpenIMU300ZI signals.
 
-    - OpenIMU300ZA unit. Please note, that it installed on the bottom side of evaluation board.
+    - OpenIMU300ZI unit. Please note, that it installed on the bottom side of evaluation board.
 
-    - Test fixture adapter for convenient aligned mounting of OpenIMU evaluation board and OpenIMU300ZA unit
+    - Test fixture adapter for convenient aligned mounting of OpenIMU evaluation board and OpenIMU300ZI unit
     - ST-Link debugger for in-system development of application code
 
-**2.1 OpenIMU300ZA unit**
+**2.1 OpenIMU300ZI unit**
 
-    OpenIMU300ZA is 9 DOF (degrees of freedom) fully calibrated inertial unit. It is used as the base for development custom
+    OpenIMU300ZI is 9 DOF (degrees of freedom) fully calibrated inertial unit. It is used as the base for development custom
     inertial navigation applications.
 
 **2.2 OpenIMU Evaluation board**
 
-    OpenIMU Evaluation board designed to provide convenient way for communicating with OpenIMU300ZA unit from PC, to
+    OpenIMU Evaluation board designed to provide convenient way for communicating with OpenIMU300ZI unit from PC, to
     expose serial and SPI interfaces to developer and to debug applications using ST-Link debugger vis SWD interface.
 
 **2.3 OpenIMU test adapter**
 
-    OpenIMU test adapter used to firmly secure OpenIMU300ZA unit and Open IMU evaluation board in precisely aligned position.
+    OpenIMU test adapter used to firmly secure OpenIMU300ZI unit and Open IMU evaluation board in precisely aligned position.
 
 **2.4 ST-Link debugger**
 
@@ -54,9 +54,9 @@ Overview
 **3. Open IMU evaluation board Headers and Connectors**
 
 
-    **3.1 Connector for plugging in OpenIMU300ZA unit (J2).**
+    **3.1 Connector for plugging in OpenIMU300ZI unit (J2).**
 
-    J2 is 20-pin connector and it used for connecting the OpenIMU300ZA unit into Open IMU evaluation board.  The pin functions are described in the table on the "OpenIMU Modules » OpenIMU300ZA - EZ Embed Automotive Module » Connector Pinout - Including GPS Sensor Interface" page
+    J2 is 20-pin connector and it used for connecting the OpenIMU300ZI unit into Open IMU evaluation board.  The pin functions are described in the table on the "OpenIMU Modules » OpenIMU300ZI - EZ Embed Automotive Module » Connector Pinout - Including GPS Sensor Interface" page
     accessible from the Contents bar on the left.
 
 .. _connector-label:

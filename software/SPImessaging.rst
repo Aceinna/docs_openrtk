@@ -7,7 +7,7 @@ OpenIMU SPI Messaging Framework
 
 **1. Introduction**
 
-    OpenIMU supports a SPI interface for data communications as a one of the choices. To enforce SPI interface mode 'Data Ready' signal needs to be forced HIGH of left unconnected on system startup. OpenIMU SPI interface signals described :doc:`here <../300ZA/pinout>`.
+    OpenIMU supports a SPI interface for data communications as a one of the choices. To enforce SPI interface mode 'Data Ready' signal needs to be forced HIGH of left unconnected on system startup. OpenIMU SPI interface signals described :doc:`here <../300ZI/pinout>`.
 	
     OpenIMU operates as a slave device. 
     
@@ -221,7 +221,7 @@ There are 24 possible orientation configurations (see below). Setting/Writing th
     |          |       |     |      |
     +----------+-------+-----+------+
 
-The default factory axis setting for the OpenIMU300ZA for SPI interface is (-Uy, -Ux, -Uz) which defines the connector pointing in the +Z direction and the +X direction going from the connector through the serial number label at the end of the unit. The user axis set (X, Y, Z) as defined by this field setting is depicted in figure below:
+The default factory axis setting for the OpenIMU300ZI for SPI interface is (-Uy, -Ux, -Uz) which defines the connector pointing in the +Z direction and the +X direction going from the connector through the serial number label at the end of the unit. The user axis set (X, Y, Z) as defined by this field setting is depicted in figure below:
 
 .. image:: ../media/SPI_Orientation.png
    :width: 6.0 in
@@ -236,7 +236,7 @@ There are 7 possible low pass filter options (see below). Setting/Writing the fi
      Table 4. OpenIMU Digital filter choices
 
     +-------------+--------------------+--------------+
-    | Value       | Cutoff Frequency   | Filter Type  |     
+    || Value      | Cutoff Frequency   | Filter Type  |     
     || Hex (dec)  |                    |              |
     +-------------+--------------------+--------------+
     | 0x00 (0)    | N/A                | Unfiltered   |

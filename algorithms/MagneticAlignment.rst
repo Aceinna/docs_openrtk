@@ -13,13 +13,11 @@ Magnetic-Alignment
   in the system.  As these disturbances are fixed in the body, the corrections must be applied in the
   body-frame.  The procedure works as follows:
 
-      1) The magnetic-field is measured and recorded as the system undergoes a 360+ degree rotation
-        about the z-axis.  Ideally this is done when the system is level.
+      1) The magnetic-field is measured and recorded as the system undergoes a 360+ degree rotation about the z-axis.  Ideally this is done when the system is level.
 
       2) Upon completion, an algorithm determines the ellipse that best fits the distorted circle.
 
-      3) Ellipse parameters (related to the hard and soft-iron disturbances) are saved in the firmware
-        and used to correct the magnetic-field measurements.
+      3) Ellipse parameters (related to the hard and soft-iron disturbances) are saved in the firmware and used to correct the magnetic-field measurements.
 
 
   In most cases an ellipse describes magnetic-field distortions quite well.  The ellipse parameters

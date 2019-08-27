@@ -34,8 +34,9 @@ custom data structures and packets very simple.
     :hidden:
 
     install
-    run
-    run-OpenIMU300RI
+    setup-OpenIMU300ZI
+    setup-OpenIMU300RI
+    setup-OpenIMU330BI
 
 .. raw:: latex
 
@@ -57,8 +58,9 @@ custom data structures and packets very simple.
     :maxdepth: 1
     :hidden:
 
-    EVB
+    EVB-OpenIMU300ZI
     EVB-OpenIMU300RI
+    EVB-OpenIMU330BI
 
 ..    EvaluationKits
 

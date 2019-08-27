@@ -1,10 +1,10 @@
-OpenIMU300ZA Eval Kit
+OpenIMU330BI Eval Kit
 =====================
 
 .. contents:: Contents
     :local:
     
-The OpenIMU300ZA evaluation kit consists of a robust and easy-to-use eval board, a test fixture, the OpenIMU300ZA IMU module, and an ST-LINK J-TAG pod.
+The OpenIMU330BI evaluation kit consists of a robust and easy-to-use eval board, a test fixture, the OpenIMU330BI IMU module, and an ST-LINK J-TAG pod.
 
 .. image:: media/OpenIMUKit.png
     :height: 300
@@ -24,7 +24,7 @@ The following pages cover:
     :maxdepth: 2
     :hidden:
 
-    EVB/overview
-    EVB/mechanical
-    EVB/schematic
+    EVB-OpenIMU330BI/overview
+    EVB-OpenIMU330BI/mechanical
+    EVB-OpenIMU330BI/schematic
    

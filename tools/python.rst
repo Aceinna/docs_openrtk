@@ -52,7 +52,7 @@ with pip install, then navigate to a directory that contains a valid openimu.jso
 .. code:: python
 
     $openimu
-    Connected ....OpenIMU300ZA - 0.0.1      SN:1808629112
+    Connected ....OpenIMU300ZI - 0.0.1      SN:1808629112
     >>help
     Usage: 
     help : CLI help menu

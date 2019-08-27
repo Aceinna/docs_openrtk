@@ -25,7 +25,7 @@ Tutorial - What The User Needs to Know to Build The First Application
 **EZ Embed Example Applications**
 
 
-    The following applications are implicitly based on use of an *EZ Embed** OpenIMU unit, such as the OpenIMU300ZA.
+    The following applications are implicitly based on use of an *EZ Embed** OpenIMU units, such as the OpenIMU300ZI and OpenIMU330BI.
 
     To get you acquainted with the OpenIMU environment, let's walk through the development of the
     following applications:

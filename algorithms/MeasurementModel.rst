@@ -234,7 +234,7 @@ Measurement Model
 
 
 
-    .. _fig-magfield-strength:
+    .. _fig-magfield-strength1:
 
     .. figure:: ./media/WMM_Field_In_San_Jose.PNG
         :alt: MagFieldStrength
@@ -248,7 +248,7 @@ Measurement Model
     the \perp-frame.  Declination is specified with :math:`\delta` and heading is specified with
     :math:`\psi`.
 
-    .. _fig-magfield-n-and-b-frames:
+    .. _fig-magfield-n-and-b-frames1:
 
     .. figure:: ./media/MagField_N_and_B_Frames.PNG
         :alt: MagFieldNandBFrames

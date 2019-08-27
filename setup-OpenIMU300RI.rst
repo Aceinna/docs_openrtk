@@ -17,7 +17,7 @@ To set up OpenIMU300RI evaluation kit you'll need to perform next steps:
  4. Connect cable connector marked "RS232" to the PC serial port or to UCB-to-Serial adapter.
  5. Connect cable connector marked "CAN" to the CAN bus or to the CAN traffic monitoring unit (like Vestor or Komodo or other).
  6. Connect ST-Link debugger to the PC via USB cable. Make sure that ST-Link device appeared in "Device Manager". 
- 7. Connect 20-pin connector on OpenIMU300ZA evaluation unit to ST-Link debugger using provided 20-pin flat cable.
+ 7. Connect 20-pin connector on OpenIMU300RI evaluation unit to ST-Link debugger using provided 20-pin flat cable.
  8. Connect RED (+) and BLACK (GND) wires to external power supply (5 - 32V, 0.1A)  
  9. Turn ON power supply.
 

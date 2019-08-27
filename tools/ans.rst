@@ -9,7 +9,7 @@ start the server form the command line interface as shown below.
 .. code:: python
 
     $openimu
-    Connected ....OpenIMU300ZA - 0.0.1      SN:1808629112
+    Connected ....OpenIMU300ZI - 0.0.1      SN:1808629112
     >>server_start
 
 Supported browsers are Chrome, Opera, and Edge.  Firefox also works but requires an extra step described here. https://stackoverflow.com/questions/11768221/firefox-websocket-security-issue 

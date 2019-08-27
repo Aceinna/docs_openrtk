@@ -188,7 +188,8 @@ OpenIMU UART Messaging Framework
     different payload.
 
 
-    .. table::    **Messages Table**
+.. table:: **Messages Table**
+
     +---------------+-----------+-------------+--------------+-------------+
     |  **ASCII**    || **Code** || **Payload**|  **Function**|   **Type**  |
     |               || **(U2)** || **Length** |              |             |
