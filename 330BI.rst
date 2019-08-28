@@ -5,9 +5,11 @@ OpenIMU330BI - *EZ Embed* Automotive Module
 
 The following image shows the OpenIMU330BI unit.  
 
-.. image:: media/OpenIMU300EZ.png
+.. image:: media/OpenIMU330BI.png
     :height: 400
+    :align: center
 
+	
 The OpenIMU330BI *EZ Embed* module integrates highly-reliable MEMS inertial
 sensors (acceleration, angular rate/gyro, and
 magnetic field) in a miniature factory-calibrated package to provide
