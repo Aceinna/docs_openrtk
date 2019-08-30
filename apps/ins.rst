@@ -89,11 +89,6 @@ and magnetometers.
     installation for operation. See section `2.1.4 <\l>`__ for information
     and tips regarding antenna installation.
 
-.. note::
-
-    The OpenIMU300Rx (RI and RA) do not provide inputs for GPS or other
-    external sensors, so they can't support the INS App.
-
 .. contents:: Contents
     :local:
 

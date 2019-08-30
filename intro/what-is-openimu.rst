@@ -17,20 +17,17 @@ What is OpenIMU?
 +-------+--------------+---------------------------------------------------------------+
 | Type  | Part Number  | Hardware Features                                             |
 +-------+--------------+---------------------------------------------------------------+
-| *EZ*  | OpenIMU300ZA | Easy to Embed 3-5V UART/SPI Automotive Module                 |
-+-------+--------------+---------------------------------------------------------------+
-| *EZ*  | OpenIMU300ZI | (Future) Easy to Embed 3-5V UART/SPI Industrial Module        |
-+-------+--------------+---------------------------------------------------------------+
-| *CAN* | OpenIMU300RA | (Future) Rugged, Waterproof 5-32V CAN/RS232 Automotive Module |
+| *EZ*  | OpenIMU300ZI | Easy to Embed 3-5V UART/SPI Industrial IMU Module             |
 +-------+--------------+---------------------------------------------------------------+
 | *CAN* | OpenIMU300RI | Rugged, Waterproof 5-32V CAN/RS232 Industrial Module          |
 +-------+--------------+---------------------------------------------------------------+
-| *LC*  | OpenIMU300LA | Low-Cost Surface-Mount Component                              |
+| *SMT* | OpenIMU330BI | Triple Redundant, SMT, 2°/Hr IMU                              |
 +-------+--------------+---------------------------------------------------------------+
 
 **Open-Source Embedded Software**
 
-*   OpenIMU hardware runs an open-source stack written on top of FreeRTOS and standard ARM Cortex libraries.
+*   OpenIMU hardware runs an open-source stack written on top of standard ARM Cortex libraries.
+*   OpenIMU300 use FreeRTOS while OpenIMU330 uses a simple real-time scheduler
 *   The open-source stack includes EKF (Extended Kalman Filter) algorithms that can be used directly or
     customized for application specific use.
 *   The overall system loop is typically configured to run at 800Hz ensuring high quality aliasing-free

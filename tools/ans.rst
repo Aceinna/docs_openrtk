@@ -10,16 +10,13 @@ start the server form the command line interface as shown below.
 
     $openimu
     Connected ....OpenIMU300ZI - 0.0.1      SN:1808629112
-    >>server_start
 
 Supported browsers are Chrome, Opera, and Edge.  Firefox also works but requires an extra step described here. https://stackoverflow.com/questions/11768221/firefox-websocket-security-issue 
 
-Once server_start command has been entered, open the following link https://developers.aceinna.com/connect
+To plot data go to the link https://developers.aceinna.com/record-next and click play. You can also log from this GUI.
 
-The parameters that show up in this table are controlled by *openimu.json* and their corresponding code in *userConfiguration.c*.  Select the
+The settings as well as available packet types that show up in ANS graphical user interface are controlled by *openimu.json* and their corresponding code in *userConfiguration.c*.  Select the
 packet that you would like to display.
-
-To plot data go to the link https://developers.aceinna.com/record and click play. You can also log from this GUI.
 
 Once a file is logged you can retrieve the file at https://developers.aceinna.com/files 
 
