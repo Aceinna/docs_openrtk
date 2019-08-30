@@ -4,34 +4,13 @@ Debugging using the PlatformIO Debugger and the JTAG Debug Adapter
 .. contents:: Contents
     :local:
 
-.. note::
-    *   The Acienna VSCode extension uses the underlying PlatformIO debugging feature.
-    *   The user must have at least the initial license for using the PlatformIO platform,
-        which is the free  "PlatformIO Plus Community" license.
-        That license provides a 30 day trial of the "PlatformIO Plus Professional" features.
-    *   The debug ability depends on have the "PlatformIO Plus Professional" features.
-    *   **You must have a "PlatformIO Plus Professional" license to continue using the
-        debugger after the first 30 days** (https://platformio.org/pricing)*
-    *   Using more advanced debugging features require a PlatformIO Enterprise license
-        (also at:  https://platformio.org/pricing).
-
-.. note::
-
-    Visual Studio Code with installed Aceinna extension provides download of application image into device memory via JTAG by clicking "Right Arrow" icon on the bottom of the screen.
-    This is the fastest method to download code and generally requires just a few seconds.
-
-.. note::
-
-    The documentation and tutorials on this site assume use of the ST-LINK JTAG pod.  The JTAG pod is shipped with every OpenIMU developer's kit.
-
-
 There are two primary methods to debug a program on OpenIMU.
 
 - Use Visual Studio Code with ST-Link JTAG pod.
 
 - Use the debug serial port to output debug messages.
 
-**2. Debugging Using Visual Studio Code and JTAG Debugger**
+**1. Debugging Using Visual Studio Code and JTAG Debugger**
 
     Visual Studio Code with installed Aceinna extension supports in-system debugging via ST-LINK JTAG pod.
     It allows to load and run application, stop in any place of the code by using breakpoints, observe and set values of local and global variables,
@@ -43,7 +22,7 @@ There are two primary methods to debug a program on OpenIMU.
     or alternatively from the menu "Debug->Start Debugging". After entering debug mode use debug control icons
     on top of the screen or commands from "Debug' menu. After clicking "Debug" icon on the left of the screen while in debug mode allows to observe variables, memory, registers, call stack, etc.
 
-**1. Debugging Using Debug Serial Port**
+**2. Debugging Using Debug Serial Port**
 
     User defined ASCII messages can be sent out via debug serial connection. Default baud rate is 38.4 KBaud.
     One can easily change debug port baud rate in main.c file:
@@ -70,3 +49,17 @@ There are two primary methods to debug a program on OpenIMU.
     It allows to send custom ASCII commands to OpenIMU unit via debug serial port using any serial terminal program.
     CLI engine reside in CLI directory in libraries source tree.
     Please note that while unit connected to PC via USB port it is visible as four consecutive virtual serial ports. Third port in a row will be debug serial port.
+
+.. note::
+    *   The Acienna VSCode extension uses the underlying PlatformIO debugging feature.
+    *   PlatformIO now provides free JTAG debugging for all users.
+
+.. note::
+
+    Visual Studio Code with installed Aceinna extension provides download of application image into device memory via JTAG by clicking "Right Arrow" icon on the bottom of the screen.
+    This is the fastest method to download code and generally requires just a few seconds.
+
+.. note::
+
+    The documentation and tutorials on this site assume use of the ST-LINK JTAG pod.  The JTAG pod is shipped with every OpenIMU developer's kit.
+

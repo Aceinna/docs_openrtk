@@ -1,4 +1,4 @@
-OpenIMU300ZI - *EZ Embed* Automotive Module
+OpenIMU300ZI - *EZ Embed* Industrial Module
 ===========================================
 .. contents:: Contents
     :local:

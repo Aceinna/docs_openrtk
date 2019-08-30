@@ -1,5 +1,5 @@
-OpenIMU330BI - *EZ Embed* Automotive Module
-===========================================
+OpenIMU330BI - Triple Redundant, 2 |deg|/Hr, SMT Module
+========================================================
 .. contents:: Contents
     :local:
 

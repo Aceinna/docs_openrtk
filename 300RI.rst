@@ -1,4 +1,4 @@
-OpenIMU300RI - Robust Industrial CAN Module
+OpenIMU300RI - Rugged Industrial CAN Module
 ===========================================
 .. contents:: Contents
     :local:

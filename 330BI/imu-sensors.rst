@@ -17,7 +17,7 @@ OpenIMU330BI Sensors
 | Range: X,Y,Z          | > 400                 |
 | (|deg|/Sec)           |                       |
 +-----------------------+-----------------------+
-| Bias Instability      | < 6                   |
+| Bias Instability      | < 2                   |
 | (|deg|/Hr)            |                       |
 | :sup:`1,2`            |                       |
 +-----------------------+-----------------------+
@@ -28,12 +28,10 @@ OpenIMU330BI Sensors
 +-----------------------+-----------------------+
 | Resolution (|deg|/Sec)| < 0.02                |
 +-----------------------+-----------------------+
-| Scale Factor Accuracy | < 0.1                 |
+| Scale Factor Accuracy | < 0.02                |
 | (%)                   |                       |
 +-----------------------+-----------------------+
-| Non-Linearity (%)     | < 0.1                 |
-+-----------------------+-----------------------+
-| Angle Random Walk     | < 0.3                 |
+| Angle Random Walk     | < 0.2                 |
 | (|deg|/\              |                       |
 | :raw-html:`&radic;`\  |                       |
 | hr)                   |                       |
@@ -74,7 +72,7 @@ OpenIMU330BI Sensors
 +-----------------------+-----------------------+
 | Non-Linearity (%)     | < 0.1                 |
 +-----------------------+-----------------------+
-| Velocity Random Walk  | < 0.05                |
+| Velocity Random Walk  | < 0.04                |
 | (m/s/\                |                       |
 | :raw-html:`&radic;`\  |                       |
 | hr)                   |                       |

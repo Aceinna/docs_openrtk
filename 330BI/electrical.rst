@@ -48,11 +48,12 @@ OpenIMU330BI Environmental, Electrical,  and Physical Specifications
 |                       |                       |
 |                       |                       |
 +-----------------------+-----------------------+
-| Size (mm)             |    TBD                |
+| Size (mm)             | 15x11                 |
 +-----------------------+-----------------------+
-| Weight (gm)           |    TBD                |
+| Weight (gm)           | 1.0                   | 
 +-----------------------+-----------------------+
-| Interface Connector   |    TBD                |
+| Inteface Connector    | 44 ball, BGA          |
 +-----------------------+-----------------------+
+
 
 .. include:: <isonum.txt>
