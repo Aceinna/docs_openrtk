@@ -5,7 +5,7 @@ OpenIMU330BI - Triple Redundant, 2 |deg|/Hr, SMT Module
 
 The following image shows the OpenIMU330BI unit.  
 
-.. image:: media/OpenIMU330BI.png
+.. image:: media/OpenIMU330Ruler.png
     :height: 400
     :align: center
 
