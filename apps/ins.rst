@@ -78,7 +78,7 @@ The unit has a built-in IMU app. The INS app need loaded by yourself. There are 
 
 This is for people who only want to use the precompiled bin file.
 
-The :doc:`Python Driver <../tools/python>` loads the INS app via the built-in bootloader of the OpenIMU300ZI unit.
+The :doc:`Python Driver <../tools/python>` loads the INS app by the built-in bootloader of the OpenIMU300ZI unit.
 Please follow steps below.
 
 1. Connect the unit to the Python Driver.
@@ -97,7 +97,7 @@ Please follow steps below.
 
 3. Burn the INS app.
 
-  Click "UPGRADE" and wait it to complete.
+  Click "UPGRADE" and wait for it to complete.
 
     .. image:: ../media/ins-app-upgrade-fig-300.png
 
@@ -108,7 +108,8 @@ If you want to modify our open-source code, you may want to try this way.
 
 Please first refer to :doc:`PC Tools Installation <../install>` to install required tools and
 then to :doc:`Aceinna Extension <../tools/vscode>` for basic usage of the extention. After importing
-the project of the INS app, you can modify the code, compile the project and upload the bin file to the unit.
+the project of the INS app, you can modify the code, compile the project and upload the bin file to
+the unit via ST-Link.
 
 .. image:: ../media/import-ins-app.png
 
@@ -152,7 +153,7 @@ it is easy for you to add code to decode a new protocol. Let's take uBlox nav-pv
     } enumGPSProtocol;
 
 2. In driverGPSAllEntrance.c, add this new protocol in SetGpsProtocol(). After this, the new protocal can be set
-via Aceinna Navigation Studio Web GUI. ::
+in Aceinna Navigation Studio Web GUI. ::
 
     BOOL  SetGpsProtocol(int protocol, int fApply)
     {
@@ -190,7 +191,7 @@ via Aceinna Navigation Studio Web GUI. ::
             }
     }
 
-4. Implement the decoding routine (parseUbloBinaryMessage) in a proper file. For this example,
+4. Implement the decoding routine (parseUbloBinaryMessage()) in a proper file. For this example,
 it is implemented processUbloxGPS.c.
 
    
