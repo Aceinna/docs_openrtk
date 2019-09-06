@@ -10,29 +10,32 @@ orientation information. The APP name, GPS/INS APP, stands for Inertial
 Navigation System, and it is indicative of the navigation reference
 functionality that APP provides by outputting inertially-aided
 navigation information (Latitude, Longitude, and Altitude),
-inertially-aided 3-axis velocity information, as well as heading, roll,
+inertially-aided 3D velocity information, as well as heading, roll,
 and pitch measurements, in addition to digital IMU data.
 
-At a fixed N rate, the OpenIMU continuously maintains the digital
+The processor performs time-triggered trajectory propagation at 100Hz
+and will synchronize the sensor sampling with the GPS UTC (Universal
+Coordinated Time) second boundary when available.
+
+As with the AHRS/VG APP, the algorithm has two major phases of
+operation. Immediately after power-up, the INS APP uses the
+accelerometers to compute the initial roll and pitch angles. 
+During the first 60 seconds of startup, the INS APP should
+remain approximately motionless in order to properly initialize the rate
+sensor bias. The initialization phase lasts approximately 60 seconds,
+and the initialization phase can be monitored in the operation mode
+transmitted by default in each measurement packet.
+
+After initialization phase, the OpenIMU continuously maintains the digital
 IMU data; the dynamic roll, pitch, and heading data; as well as the
-navigation data. As shown in the software block the calibrated IMU data is passed
-into an “Integration to Orientation” block. The “Integration to
-Orientation” block integrates body frame sensed angular rate to
+navigation data. The body frame sensed angular rate is first integrated to
 orientation at a fixed N times per second. For improved accuracy and to avoid
 singularities when dealing with the cosine rotation matrix, a quaternion
 formulation is used in the algorithm to provide attitude propagation.
-Following the integration to orientation block, the body frame
-accelerometer signals are rotated into the NED level frame and are
-integrated to velocity. At this point, the data is blended with GPS
-position data, and output as a complete navigation solution.
-
-As shown in the diagram, the Integration to Orientation and the
-Integration to Velocity signal processing blocks receive drift
-corrections from the Extended Kalman Filter (EKF) drift correction
-module. The drift correction module uses data from the aiding sensors,
-when they are available, to correct the errors in the velocity,
-attitude, and heading outputs. Additionally, when aiding sensors are
-available corrections to the rate gyro and accelerometers are performed.
+Using the attitude, the body frame accelerometer signals are rotated into the NED frame and
+integrated to velocity. And then, NED velocity is integrated to get position.
+At this point, the data is blended with GPS
+position and velocity data in the EKF, and output as a complete navigation solution.
 
 The INS APP blends GPS derived heading and accelerometer measurements
 into the EKF update depending on the health and status of the associated
@@ -47,47 +50,154 @@ performance will degrade, the heading will freely drift, and the filter
 will revert to the VG only EKF formulation. The UTC packet
 synchronization will drift due to internal clock drift.
 
-The status of GPS signal acquisition can be monitored from the
-hardwareStatus BIT in INS Apps Built
-in Test. From a cold start, it typically takes 40 seconds for GPS to
-lock. The actual lock time depends on the antenna’s view of the sky and
-the number of satellites in view.
+Quick Start
+-----------
 
-The processor performs time-triggered trajectory propagation at 100Hz
-and will synchronize the sensor sampling with the GPS UTC (Universal
-Coordinated Time) second boundary when available.
+In this section, we explain how to get the INS app running with an external GPS receiver that
+outputs NMEA GGA, VTG and RMC messages. The default baud rate for UART is 115200. Although NMEA is not recommended in our INS app due to
+lack of some required information of the algorithm, it is chosen here because its popularity and simplicity.
+Our GPS driver supports NMEA message decoding, so you don't need to write a single line of code.
 
-As with the AHRS/VG APP, the algorithm has two major phases of
-operation. Immediately after power-up, the INS APP uses the
-accelerometers and magnetometers to compute the initial roll, pitch and
-yaw angles. The roll and pitch attitude will be initialized using the
-accelerometer’s reference of gravity, and yaw will be initialized using
-the leveled magnetometers X and Y axis reference of the earth’s magnetic
-field. During the first 60 seconds of startup, the INS APP should
-remain approximately motionless in order to properly initialize the rate
-sensor bias. The initialization phase lasts approximately 60 seconds,
-and the initialization phase can be monitored in the softwareStatus BIT
-transmitted by default in each measurement packet. After the
-initialization phase, the INS APP operates with lower levels of
-feedback (also referred to as EKF gain) from the GPS, accelerometers,
-and magnetometers.
+It is assumed that you are using our :doc:`OpenIMU300ZI EVK <../EVB-OpenIMU300ZI>`.
 
-.. note:: 
+Connect the GPS receiver to the EVK
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-    For proper operation, the INS APP relies on magnetic field readings
-    from its internal 3-axis magnetometer. The INS APP must be installed
-    correctly and calibrated for hard-iron and soft iron effects to avoid
-    any system performance degradation. See section `3.4.1 <\l>`__ for
-    information and tips regarding installation and calibration and why
-    magnetic calibration is necessary. Please review this section of the
-    manual before proceeding to use the INS APP
+In the following picture, the onboard 3.3V and GND are used to power the GPS receiver. 
+You can also choose your own power supply.
 
+.. image:: ../media/gps-receiver-connection.jpg
+
+
+Burn the INS App into The Unit
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The unit has a built-in IMU app. The INS app need loaded by yourself. There are two recommended ways to do that.
+
+**Using the Python Driver**
+
+This is for people who only want to use the precompiled bin file.
+
+The :doc:`Python Driver <../tools/python>` loads the INS app via the built-in bootloader of the OpenIMU300ZI unit.
+Please follow steps below.
+
+1. Connect the unit to the Python Driver.
+
+  Please refer to :doc:`Python Interface <../tools/python>`. If the unit is successfully connected, you will see information like this.
+
+  .. image:: ../media/connected_to_python_driver.png
+
+2. Visist the App page of our Developer Site.
+
+  You can get access to all available apps in our `Developer Site <https://developers.aceinna.com/code/apps>`_.
+  The OpenIMU300ZI INS app is the one you need.
+
+    .. image:: ../media/ins-app-fig-300.png
+
+
+3. Burn the INS app.
+
+  Click "UPGRADE" and wait it to complete.
+
+    .. image:: ../media/ins-app-upgrade-fig-300.png
+
+
+**Using Aceinna Extension in VS Code**
+
+If you want to modify our open-source code, you may want to try this way.
+
+Please first refer to :doc:`PC Tools Installation <../install>` to install required tools and
+then to :doc:`Aceinna Extension <../tools/vscode>` for basic usage of the extention. After importing
+the project of the INS app, you can modify the code, compile the project and upload the bin file to the unit.
+
+.. image:: ../media/import-ins-app.png
+
+
+Get and Visualize the Output
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+1. Connect the unit to the Python Driver.
+
+2. Visit our `Developer Site <https://developers.aceinna.com/devices/record-next>`_.
+  
+  You can see the detailed information about the unit.
+
+  .. image:: ../media/webgui-ins-connected.png
+
+  
+  Choose "Geo Map" as output, and click the play button, and you can see the live position on the map.
+
+  .. image:: ../media/webgui-geomap-play.png
+
+
+How to Add Support of a New GPS Receiver Protocal
+-------------------------------------------------
+
+Currently we support NMEA, uBlox Nav-PVT and NovaTel Bestpos/Bestvel. If your receiver protocal is not in the list,
+it is easy for you to add code to decode a new protocol. Let's take uBlox nav-pvt for example to explain how to do this.
+
+1. define the name (UBLOX_BINARY) of the protocol in GlobalConstas.h. ::
+
+    // Choices for GPS protocol type
+    typedef enum{
+        AUTODETECT              = -1,
+        UBLOX_BINARY            =  0,
+        NOVATEL_BINARY          =  1,
+        NOVATEL_ASCII           =  2,
+        NMEA_TEXT               =  3,
+        DEFAULT_SEARCH_PROTOCOL =  NMEA_TEXT, // 3
+        SIRF_BINARY             =  4,
+        INIT_SEARCH_PROTOCOL    =  SIRF_BINARY, ///< 4 max value, goes through each until we hit AUTODETECT
+        UNKNOWN                 = 0xFF
+    } enumGPSProtocol;
+
+2. In driverGPSAllEntrance.c, add this new protocol in SetGpsProtocol(). After this, the new protocal can be set
+via Aceinna Navigation Studio Web GUI. ::
+
+    BOOL  SetGpsProtocol(int protocol, int fApply)
+    {
+        switch(protocol)
+        {
+            case NMEA_TEXT:
+            case NOVATEL_BINARY:
+            case UBLOX_BINARY:
+                break;
+            default:
+                return FALSE;
+        }
+        if(fApply)
+        {
+            gGpsDataPtr->GPSProtocol = protocol;
+        }
+
+        return TRUE;
+    }
+
+3. In driverGPS.c, call the routine to decode this protocol. ::
+
+    switch(GPSData->GPSProtocol){
+        case NMEA_TEXT: 
+            parseNMEAMessage(tmp, gpsMsg, GPSData);
+            break; 
+        case NOVATEL_BINARY:
+            parseNovotelBinaryMessage(tmp, gpsMsg, GPSData);
+            break;
+        case UBLOX_BINARY:
+            parseUbloBinaryMessage(tmp, gpsMsg, GPSData);
+            break;
+        default:
+            break;
+            }
+    }
+
+4. Implement the decoding routine (parseUbloBinaryMessage) in a proper file. For this example,
+it is implemented processUbloxGPS.c.
+
+   
+  
 .. note::
 
-    For optimal performance the INS APP utilizes GPS readings from an
-    external GPS receiver. The GPS receiver requires proper antennae
-    installation for operation. See section `2.1.4 <\l>`__ for information
-    and tips regarding antenna installation.
+    If you have any question, please search or post a new topic on `Aceinna Forum <https://forum.aceinna.com>`_.
 
 .. contents:: Contents
     :local:
