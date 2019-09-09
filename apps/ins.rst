@@ -194,7 +194,13 @@ in Aceinna Navigation Studio Web GUI. ::
 4. Implement the decoding routine (parseUbloBinaryMessage()) in a proper file. For this example,
 it is implemented processUbloxGPS.c.
 
-   
+
+About the GNSS/INS Fusion Algorithm
+-----------------------------------
+
+In the INS app, an 16-state extended Kalman filter is implemented to process measurements from a GPS receiver and an IMU unit.
+If you want to know more details about the algorithm, please refer to :doc:`EKF Algorithm <../algorithms>`. 
+
   
 .. note::
 
