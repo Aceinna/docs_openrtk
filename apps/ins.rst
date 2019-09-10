@@ -195,6 +195,123 @@ in Aceinna Navigation Studio Web GUI. ::
 it is implemented processUbloxGPS.c.
 
 
+The Definition of The Deaulft Output Packet of The INS App
+
+In the section `Get and Visualize the Output`_, we can get INS app output data via the Python driver.
+The Python driver receives output from the unit, deocde the output packts and then feed decoded results to the Web GUI.
+If you want to decode the output by yourself, you need to know the structure of the output packet, which
+is detailed in :doc:`OpenIMU UART Messaging <../software/UARTmessaging>`.
+The default INS app output packet type is e2, and it is defined in the following two tables.
+
+    +----------------------+-------------+--------+----------------+-------------+
+    |   ('e2' = 0x6532)    |             |        |                |             |
+    +----------------------+-------------+--------+----------------+-------------+
+    | Preamble             | Packet Type | Length | Payload        | Termination |
+    +----------------------+-------------+--------+----------------+-------------+
+    | 0x5555               | 0x6532      |  123   |                | <CRC (U2)>  |
+    +----------------------+-------------+--------+----------------+-------------+
+
+
+    Payload:
+
+    +-----------+--------------------------+-----------+-----------+
+    | Byte      | Name                     | Format    | Notes     |
+    | Offset    |                          |           |           |
+    +-----------+--------------------------+-----------+-----------+
+    | 0         || System Timer of         | U4        || LSB First|
+    |           || sensors sampling        |           || msec     |
+    +-----------+--------------------------+-----------+-----------+
+    |  4        || Above timer converted   | D         || LSB First|
+    |           || to a double type        |           || second   |
+    +-----------+--------------------------+-----------+-----------+
+    |  12       | Roll                     | F4        || LSB First|
+    |           |                          |           || deg      |
+    +-----------+--------------------------+-----------+-----------+
+    |  16       | Pitch                    | F4        || LSB First|
+    |           |                          |           || deg      |
+    +-----------+--------------------------+-----------+-----------+
+    |  20       | Yaw                      | F4        || LSB First|
+    |           |                          |           || deg      |
+    +-----------+--------------------------+-----------+-----------+    
+    |  24       | X acceleration           | F4        || LSB First|
+    |           |                          |           || g        |
+    +-----------+--------------------------+-----------+-----------+
+    |  28       | Y acceleration           | F4        || LSB First|
+    |           |                          |           || g        |
+    +-----------+--------------------------+-----------+-----------+
+    |  32       | Z acceleration           | F4        || LSB First|
+    |           |                          |           || g        |
+    +-----------+--------------------------+-----------+-----------+
+    |  36       | X acceleration bias      | F4        || LSB First|
+    |           |                          |           || m/s/s    |
+    +-----------+--------------------------+-----------+-----------+
+    |  40       | Y acceleration bias      | F4        || LSB First|
+    |           |                          |           || m/s/s    |
+    +-----------+--------------------------+-----------+-----------+
+    |  44       | Z acceleration bias      | F4        || LSB First|
+    |           |                          |           || m/s/s    |
+    +-----------+--------------------------+-----------+-----------+
+    |  48       | X gyro                   | F4        || LSB First|
+    |           |                          |           || deg/s    |
+    +-----------+--------------------------+-----------+-----------+
+    |  52       | Y gyro                   | F4        || LSB First|
+    |           |                          |           || deg/s    |
+    +-----------+--------------------------+-----------+-----------+
+    |  56       | Z gyro                   | F4        || LSB First|
+    |           |                          |           || deg/s    |
+    +-----------+--------------------------+-----------+-----------+
+    |  60       | X gyro bias              | F4        || LSB First|
+    |           |                          |           || deg/s    |
+    +-----------+--------------------------+-----------+-----------+
+    |  64       | Y gyro bias              | F4        || LSB First|
+    |           |                          |           || deg/s    |
+    +-----------+--------------------------+-----------+-----------+
+    |  68       | Z gyro bias              | F4        || LSB First|
+    |           |                          |           || deg/s    |
+    +-----------+--------------------------+-----------+-----------+
+    |  72       | North velocity           | F4        || LSB First|
+    |           |                          |           || m/s      |
+    +-----------+--------------------------+-----------+-----------+
+    |  76       | East velocity            | F4        || LSB First|
+    |           |                          |           || m/s      |
+    +-----------+--------------------------+-----------+-----------+
+    |  80       | Downward velocity        | F4        || LSB First|
+    |           |                          |           || m/s      |
+    +-----------+--------------------------+-----------+-----------+
+    |  84       | X magnetometer           | F4        || LSB First|
+    |           |                          |           || Gauss    |
+    +-----------+--------------------------+-----------+-----------+
+    |  88       | Y magnetometer           | F4        || LSB First|
+    |           |                          |           || Gauss    |
+    +-----------+--------------------------+-----------+-----------+
+    |  92       | Z magnetometer           | F4        || LSB First|
+    |           |                          |           || Gauss    |
+    +-----------+--------------------------+-----------+-----------+
+    |  96       | Latitude                 | D         || LSB First|
+    |           |                          |           || deg      |
+    +-----------+--------------------------+-----------+-----------+
+    |  104      | Longitude                | D         || LSB First|
+    |           |                          |           || deg      |
+    +-----------+--------------------------+-----------+-----------+
+    |  112      | Altitude                 | D         || LSB First|
+    |           |                          |           || m        |
+    +-----------+--------------------------+-----------+-----------+
+    |  120      | Operation mode [1]_      | U1        | LSB First |
+    |           |                          |           |           |
+    +-----------+--------------------------+-----------+-----------+
+    |  121      | Linear accel switch [2]_ | U1        | LSB First |
+    |           |                          |           |           |
+    +-----------+--------------------------+-----------+-----------+
+    |  122      | Turn switch [3]_         | U1        | LSB First |
+    |           |                          |           |           |
+    +-----------+--------------------------+-----------+-----------+
+    
+.. [1] Operation mode of the algorithm. 0 for waiting for the system to stabilize, 1 for initialzing attiude,
+        2 and 3 for VG/AHRS mode, and 4 for INS mode. Please refer to the source code for details.
+.. [2] 0 if linear acceleration is detected, 1 if no linear acceleration. Please refer to the source code for details.
+.. [3] Indicate if the filtered yaw rate exceeds the turn switch threshold. 1 yes, 0 no. Please refer to the source code for details.
+
+
 About the GNSS/INS Fusion Algorithm
 -----------------------------------
 
