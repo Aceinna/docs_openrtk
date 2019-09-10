@@ -196,12 +196,13 @@ it is implemented processUbloxGPS.c.
 
 
 The Definition of The Deaulft Output Packet of The INS App
+-----------------------------------------------------------
 
 In the section `Get and Visualize the Output`_, we can get INS app output data via the Python driver.
 The Python driver receives output from the unit, deocde the output packts and then feed decoded results to the Web GUI.
 If you want to decode the output by yourself, you need to know the structure of the output packet, which
 is detailed in :doc:`OpenIMU UART Messaging <../software/UARTmessaging>`.
-The default INS app output packet type is e2, and it is defined in the following two tables.
+The default INS app output packet type is "e2", and it is defined in the following two tables.
 
     +----------------------+-------------+--------+----------------+-------------+
     |   ('e2' = 0x6532)    |             |        |                |             |
@@ -210,7 +211,6 @@ The default INS app output packet type is e2, and it is defined in the following
     +----------------------+-------------+--------+----------------+-------------+
     | 0x5555               | 0x6532      |  123   |                | <CRC (U2)>  |
     +----------------------+-------------+--------+----------------+-------------+
-
 
     Payload:
 
