@@ -137,7 +137,7 @@ The default VG/AHRS app output packet type is "a1", and it is defined in the fol
 "a2" packet
 ^^^^^^^^^^^^
 
-If you want to output the yaw angle, you can chooose the "a2" packet. For the VG app, the yaw angle is from integrating the gyro rate,
+If you want to output the yaw angle, you can choose the "a2" packet. For the VG app, the yaw angle is from integrating the gyro rate,
 and for the AHRS app, the yaw angle gets corrected by magnetometer measurements.
 
     +----------------------+-------------+--------+----------------+-------------+
@@ -191,7 +191,7 @@ and for the AHRS app, the yaw angle gets corrected by magnetometer measurements.
 "e1" packet
 ^^^^^^^^^^^^
 
-If you further want to output the magnetometer measurements, you can chooose the "e1"
+If you further want to output the magnetometer measurements, you can choose the "e1"
 packet.
 
     +----------------------+-------------+--------+----------------+-------------+
