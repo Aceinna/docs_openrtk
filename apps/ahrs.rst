@@ -20,9 +20,7 @@ after the Sensor Calibration Block, the IMU data is
 passed to the Integration to Orientation block. The Integration to
 Orientation block integrates body frame sensed angular rate to
 orientation at a fixed 200 times per second within all of the OpenIMU
-Series products. For improved accuracy and to avoid singularities when
-dealing with the cosine rotation matrix, a quaternion formulation is
-used in the algorithm to provide attitude propagation.
+Series products.
 
 As also shown in the software block diagram, the Integration to
 Orientation block receives drift corrections from the Extended Kalman
@@ -35,7 +33,7 @@ provides an on-the-fly calibration for drift errors, including the rate
 sensor bias, by providing corrections to the Integration to Orientation
 block and a characterization of the gyro bias state. In the AHRS/VG APP,
 the internally computed gravity reference vector and the distortion
-corrected magnetic field vector provide an attitude and a heading
+corrected magnetic field vector provide an attitude
 reference measurement for the EKF when the unit is in quasi-static
 motion to correct roll, pitch, and heading angle drift and to estimate
 the X, Y and Z gyro rate bias. The AHRS/VG APP adaptively tunes the EKF
@@ -58,16 +56,12 @@ duty cycle does not allow the system to apply enough rate sensor bias
 correction and could allow the attitude estimate to become unstable.
 
 The AHRS/VG APP algorithm also has two major phases of operation. The first phase of
-operation is the high-gain initialization phase. During the
+operation is the attitude initialization phase. During the
 initialization phase, the OpenIMU unit is expected to be stationary or
-quasi-static so the EKF weights the accelerometer gravity reference and
-Earth’s magnetic field reference heavily in order to rapidly estimate
-the X, Y, and Z rate sensor bias, and the initial attitude and heading
-of the AHRSx81ZA. The initialization phase lasts approximately 60
-seconds, and the initialization phase can be monitored in the
-softwareStatus BIT transmitted by default in each measurement packet.
-After the initialization phase, the AHRS/VP APP operates with lower levels
-of feedback (also referred to as EKF gain) from the accelerometers and
+quasi-static to rapidly estimate the X, Y, and Z rate sensor bias, and the initial attitude.
+The initialization phase lasts approximately 2 seconds.
+After the initialization phase, the EKF algorithm in the AHRS/VP APP dynamically tunes the
+feedback (also referred to as EKF gain) from the accelerometers and
 magnetometers to continuously estimate and correct for roll, pitch, and
 heading (yaw) errors, as well as to estimate X, Y, and Z rate sensor
 bias.
