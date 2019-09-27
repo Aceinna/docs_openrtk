@@ -223,7 +223,7 @@ There are 24 possible orientation configurations (see below). Setting/Writing th
 
 The default factory axis setting for the OpenIMU300ZI for SPI interface is (-Uy, -Ux, -Uz) which defines the connector pointing in the +Z direction and the +X direction going from the connector through the serial number label at the end of the unit. The user axis set (X, Y, Z) as defined by this field setting is depicted in figure below:
 
-.. image:: ../media/SPI_Orientation.png
+.. image:: ../media/image6.png
    :width: 6.0 in
    :height: 3.0 in
 
