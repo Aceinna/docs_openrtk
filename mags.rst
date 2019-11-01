@@ -4,7 +4,7 @@ Magnetic Sensor Algorithms
 .. contents:: Contents
     :local:
     
-OpenIMU ships with a number of ready to use, `downloadable applications <https://developers.aceinna.com/apps>`__ 
+OpenIMU ships with a number of ready to use, `downloadable applications <https://developers.aceinna.com/code/apps>`__ 
 to help you get started.
 
 This section discusses algorithms that can make use of the OpenIMU's on-board magnetic sensor.  Currently, this 

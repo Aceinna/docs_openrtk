@@ -9,7 +9,7 @@ These apps can be compiled without modification and downloaded to your unit.  Al
 by default ship with the IMU app described on the IMU App page.
 
 To learn about ready to use apps available for immediate download to your OpenIMU, please see the the following
-page: `Aceinna Navigation Studio - Getting Started <https://developers.aceinna.com/install>`__
+page: `Aceinna Navigation Studio - Getting Started <https://developers.aceinna.com/docs/install>`__
 
 .. note:: Use the browser back button to return to the OpenIMU documentation.
 

@@ -38,7 +38,7 @@ The Aceinna VS Code extension ensures a python environment automatically.  The O
 **Connection**
 
 *   Connection Status is shown on the link symbol at the top right hand side of the page.
-*   Device information is exposed on the main IMU page. (https://developers.aceinna.com/record-next)
+*   Device information is exposed on the main IMU page. (https://developers.aceinna.com/devices/record-next)
 *   The baseline OpenIMU firmware provides a set of "standard settings" such as baud rate, output data rate, and more.
 *   Custom options are added by adding additional options to "UserConfiguration" in *both* the OpenIMU embedded C code as
     well as the the openimu.json file which provides a summary of the descriptions and potential values for the UI.
