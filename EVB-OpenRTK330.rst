@@ -1,5 +1,5 @@
-OpenIMU300RI Eval Kit
-=====================
+OpenRTK 330
+===========
 
 .. contents:: Contents
     :local:

@@ -1,4 +1,4 @@
-OpenIMU Developer Manual
+OpenRTK Developer Manual
 ========================
 .. image:: media/OpenIMU.png
    :align: center
@@ -14,10 +14,10 @@ custom data structures and packets very simple.
 
 .. raw:: latex
 
-   \part{About OpenIMU}
+   \part{About OpenRTK}
 
 .. toctree::
-    :caption: About OpenIMU
+    :caption: About OpenRTK
     :maxdepth: 1
     :hidden:
 
@@ -34,20 +34,19 @@ custom data structures and packets very simple.
     :hidden:
 
     install
-    setup-OpenIMU300ZI
-    setup-OpenIMU300RI
-    setup-OpenIMU330BI
+    setup-OpenRTK
+    MobileApp_Installation
 
 .. raw:: latex
 
-   \part{IMU Modules}
+   \part{RTK/IMU Modules}
 
 .. toctree::
-    :caption: IMU Modules
+    :caption: RTK/IMU Modules
     :maxdepth: 1
     :hidden:
 
-    OpenIMU_Modules
+    OpenRTK330LI
 
 .. raw:: latex
 
@@ -58,9 +57,8 @@ custom data structures and packets very simple.
     :maxdepth: 1
     :hidden:
 
-    EVB-OpenIMU300ZI
-    EVB-OpenIMU300RI
-    EVB-OpenIMU330BI
+    EVB-OpenRTK330LI
+    EVB-OpenRTK330
 
 ..    EvaluationKits
 
@@ -74,16 +72,13 @@ custom data structures and packets very simple.
     :maxdepth: 1
     :hidden:
 
-    tutorial
     software
-    apps
     algorithms
-    mags
 
 .. raw:: latex
 
    \part{Miscellaneous}
-
+`
 .. toctree::
     :caption: Miscellaneous
     :maxdepth: 1
@@ -91,4 +86,4 @@ custom data structures and packets very simple.
 
     simulation
     driver-python
-    driver-c
+    driver-c`

@@ -1,5 +1,5 @@
 
-What is OpenIMU?
+What is OpenRTK?
 ================
 
 .. contents:: Contents

@@ -1,4 +1,4 @@
-OpenIMU Software Support
+OpenRTK Software Support
 =========================
 
 .. contents:: Contents

@@ -19,7 +19,7 @@ sys.path.insert(0, os.path.abspath('.'))
 
 # -- Project information -----------------------------------------------------
 
-project = u'Aceinna OpenIMU Developer Manual'
+project = u'Aceinna OpenRTK Developer Manual'
 copyright = u'2018, Aceinna Inc'
 author = u'Aceinna Engineering'
 
@@ -115,7 +115,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ---------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'OpenIMU'
+htmlhelp_basename = 'OpenRTK'
 
 
 # -- Options for LaTeX output ------------------------------------------------
@@ -144,7 +144,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'OpenIMU.tex', u'OpenIMU Documentation',
+    (master_doc, 'OpenRTK.tex', u'OpenRTK Documentation',
      u'Aceinna Engineering', 'manual'),
 ]
 
@@ -154,7 +154,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'OpenIMU', u'OpenIMU Documentation',
+    (master_doc, 'OpenRTK', u'OpenRTK Documentation',
      [author], 1)
 ]
 
@@ -165,7 +165,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'OpenIMU', u'OpenIMU Documentation',
-     author, 'OpenIMU', 'One line description of project.',
+    (master_doc, 'OpenRTK', u'OpenRTK Documentation',
+     author, 'OpenRTK', 'One line description of project.',
      'Miscellaneous'),
 ]

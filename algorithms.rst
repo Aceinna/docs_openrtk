@@ -1,5 +1,5 @@
 ###############
-EKF Algorithms
+OpenRTK Algorithms
 ###############
 
 .. contents:: Contents

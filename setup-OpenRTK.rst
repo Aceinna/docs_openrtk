@@ -1,4 +1,4 @@
-OpenIMU300ZI Evaluation Kit Setup
+OpenRTK 330 Evaluation Kit Setup
 =================================
 
 .. contents:: Contents
