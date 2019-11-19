@@ -75,15 +75,3 @@ custom data structures and packets very simple.
     software
     algorithms
 
-.. raw:: latex
-
-   \part{Miscellaneous}
-`
-.. toctree::
-    :caption: Miscellaneous
-    :maxdepth: 1
-    :hidden:
-
-    simulation
-    driver-python
-    driver-c`
