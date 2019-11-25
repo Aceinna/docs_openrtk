@@ -1,4 +1,4 @@
-OpenRTK 330 Evaluation Kit Setup
+OpenRTK330LI Evaluation Kit Setup
 =================================
 
 .. contents:: Contents
@@ -8,16 +8,15 @@ OpenRTK 330 Evaluation Kit Setup
     :width: 6.0in
     :height: 6.0in
 
-    **OpenIMU300ZI Evaluation Kit**
+    **OpenRTK330LI Evaluation Kit**
 
-| To set up OpenIMU300ZI evaluation kit for development you'll need to perform next steps:
+| To set up OpenRTK330LI evaluation kit for development you'll need to perform next steps:
 
- 1. Unpack OpenIMU300ZI evaluation kit.
- 2. Push power switch to "OFF" position.
- 3. Connect OpenIMU300ZI evaluation board to the PC via USB cable. USB connection provides power to the test setup as well as connectivity between PC and IMU serial ports.
- 4. Connect ST-Link debugger to the PC via USB cable.
- 5. Connect OpenIMU300ZI evaluation board to ST-Link debugger using provided 20-pin flat cable.
- 6. Push power switch to "ON" position.
+ 1. Unpack OpenRTK330LI evaluation kit.
+ 2. Connect OpenRTK330LI evaluation board to the PC via USB cable. USB connection provides power to the test setup as well as connectivity between PC and IMU serial ports.
+ 3. Connect ST-Link debugger to the PC via USB cable.
+ 4. Connect OpenRTK330LI evaluation board to ST-Link debugger using provided 20-pin flat cable.
+ 5. Connected satellite antenna.
 
 Now you are ready to debug and test your application.
 

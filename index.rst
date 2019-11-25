@@ -4,8 +4,8 @@ OpenRTK Developer Manual
    :align: center
    :scale: 50%
 
-OpenIMU is a precisely calibrated open source Inertial Measurement Unit platform.  Users
-are able to quickly develop and deploy custom navigation/localization algorithms and custom sensor integrations on top of the OpenIMU platform.  OpenIMU also
+OpenRTK is a precisely calibrated open source Inertial Measurement Unit platform.  Users
+are able to quickly develop and deploy custom navigation/localization algorithms and custom sensor integrations on top of the OpenRTK platform.  OpenRTK also
 has pre-built drivers in Python as well as a developer website - Aceinna Navigation Studio (ANS).  These tools make logging and plotting data, including
 custom data structures and packets very simple.
 
