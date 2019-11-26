@@ -1,13 +1,13 @@
 How to use OpenRTK Tool
-=======================
+-------------------------
 
 OpenRTK Tool is work for Aceinna OpenRTK app. APP get RTCM/NMEA data
 from bluetooth in RTK, and then send to Aceinna server,after the
 calculation of the server, the data is returned, and then written to the
 device. The RTK device will calibrate according to the data.
 
-Installation
----------------
+Install
+-------
 
 ::
 
@@ -15,9 +15,8 @@ Installation
 .. image:: media/ercode.png
    :align: center
    :scale: 50%
-
-How to Use
-----------
+Use
+---
 
 1. Sign up. you need a account to login in.The account is same as
    `Aceinna Developer Site <https://developers.aceinna.com/>`__ and
@@ -68,7 +67,7 @@ How to Use
  .. image:: media/livemap.jpg
    :align: center
    :scale: 15%
-
+   
  .. image:: media/networkSetting.jpeg
    :align: center
    :scale: 15%
@@ -96,3 +95,4 @@ How to Use
   -  RTK: get NEMA(GPGGA) from device,get RTCM from Aceinna server.
   -  cloudRTK: get RTCM from device, get NEMA(GPGGA) from Aceinna server.
  16. you can use your local service to process data what from RTK device.
+
