@@ -22,7 +22,6 @@ custom data structures and packets very simple.
     :hidden:
 
     intro
-    tools
 
 .. raw:: latex
 
