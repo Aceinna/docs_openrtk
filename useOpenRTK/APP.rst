@@ -1,4 +1,4 @@
-CloudRTK APP
+Cloud RTK APP
 =======================
 
 OpenRTK Tool is work for Aceinna OpenRTK app. APP get RTCM/NMEA data
@@ -12,7 +12,7 @@ Installation
 ::
 
     You can scan the QR code to download, currently only the android version and make sure you Android version is 8.0 or above. after downloaded open the apk file to install. And please make the app in white list.
-.. image:: media/ercode.png
+.. image:: ../media/ercode.png
    :align: center
    :scale: 50%
 
@@ -23,53 +23,53 @@ How to Use
    `Aceinna Developer Site <https://developers.aceinna.com/>`__ and
    `Aceinna Fourm <https://forum.aceinna.com//>`__. You can apply one,
    or log in quickly using your github account.
- .. image:: media/login.jpg
+ .. image:: ../media/login.jpg
    :align: center
    :scale: 15%   
 
 2. Generate API. If you do not have the API key, you need generate API
    Key.
  -  step 1, click next.
- .. image:: media/generate-step-1.jpg
+ .. image:: ../media/generate-step-1.jpg
    :align: center
    :scale: 15%
 
  -  step 2, enter a number, it means how many devices you can use this account use at same time.
- .. image:: media/generate-step-2.jpg
+ .. image:: ../media/generate-step-2.jpg
    :align: center
    :scale: 15%
 
  -  step 3, click finish to generate APIkey.
- .. image:: media/generate-step-3.jpg
+ .. image:: ../media/generate-step-3.jpg
    :align: center
    :scale: 15%
 
 3. APP screenshots
- .. image:: media/info2_meitu_1.jpg
+ .. image:: ../media/info2_meitu_1.jpg
    :align: center
    :scale: 15%
 
- .. image:: media/info1.jpg
+ .. image:: ../media/info1.jpg
    :align: center
    :scale: 15%
 
- .. image:: media/logs.jpg
+ .. image:: ../media/logs.jpg
    :align: center
    :scale: 15%
 
- .. image:: media/map.jpg
+ .. image:: ../media/map.jpg
    :align: center
    :scale: 15%
 
- .. image:: media/offlinemap.jpg
+ .. image:: ../media/offlinemap.jpg
    :align: center
    :scale: 15%
 
- .. image:: media/livemap.jpg
+ .. image:: ../media/livemap.jpg
    :align: center
    :scale: 15%
 
- .. image:: media/networkSetting.jpeg
+ .. image:: ../media/networkSetting.jpeg
    :align: center
    :scale: 15%
  1.  you can see your api key or generate key.

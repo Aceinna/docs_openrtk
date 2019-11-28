@@ -34,7 +34,8 @@ custom data structures and packets very simple.
 
     install
     setup-OpenRTK
-    MobileApp_Installation
+    useOpenRTK
+    Network
 
 .. raw:: latex
 
