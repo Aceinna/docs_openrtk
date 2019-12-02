@@ -4,6 +4,7 @@ What is OpenRTK?
 
 .. contents:: Contents
     :local:
+    
 
 *   OpenIMU is an open software platform for development of high-performance navigation and localization
     applications on top of a family of low-drift pre-calibrated Inertial Measurement Units (IMU).

@@ -24,7 +24,7 @@ The following pages cover:
     :maxdepth: 2
     :hidden:
 
-    EVB-OpenIMU300ZI/overview
-    EVB-OpenIMU300ZI/mechanical
-    EVB-OpenIMU300ZI/schematic
+    EVB-OpenRTK330LI/overview
+    EVB-OpenRTK330LI/mechanical
+    EVB-OpenRTK330LI/schematic
    

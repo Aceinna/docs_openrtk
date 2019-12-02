@@ -7,12 +7,16 @@ Overview
 
 .. contents:: Contents
     :local:
-	
-OpenRTK is a precisely calibrated, open-source Inertial Measurement Unit platform for the development of navigation and localization algorithms.
-A free Visual Studio Code (VSCode) extension is installed which contains all the software and tools necessary to create and deploy custom
-embedded sensor apps using OpenRTK.  Visual Studio Code is the recommended IDE and the extension configures VS Code to include easy access to compilation, code download, JTAG debug, RTK data logging
-as well as OpenRTK platform updates and news.  A developer website called Aceinna Navigation Studio (ANS) includes additional support tools including
-a GUI for controlling, plotting and managing data files logged by your Custom RTK.
+
+OpenRTK is an integrated GNSS (Global Navigation Satellite System) high precision 
+chip and precisely calibrated Inertial Measurement Unit open-source platform for 
+the development of navigation and localization algorithms. A free Visual Studio Code (VSCode) 
+extension is installed which contains all the software and tools necessary to create 
+and deploy custom embedded sensor apps using OpenRTK. Visual Studio Code is the recommended IDE 
+and the extension configures VS Code to include easy access to compilation, code download, 
+JTAG debug, IMU and GNSS data logging as well as OpenRTK platform updates and news. A developer 
+website called Aceinna Navigation Studio (ANS) includes additional support tools including a GUI 
+for controlling, plotting and managing data files logged by your Custom RTK/IMU module.
 
 .. image:: media/Overview.png
 
