@@ -1,5 +1,5 @@
-PC Tools Installation
-=====================
+Embeded Development Environment on PC
+=====================================
 
 .. contents:: Contents
     :local:
@@ -23,9 +23,9 @@ Visual Studio Code - can be downloaded from here:  https://code.visualstudio.com
     http://www.st.com/en/development-tools/st-link-v2.html
 *   *Ubuntu* - please see step 5.
 
-**Installation of OpenIMU development platform**
+**Installation of OpenRTK development platform**
 
-To install OpenIMU development platform:
+To install OpenRTK development platform:
 
 1. Start Visual Studio Code.
 2. On leftmost toolbar find "Extensions" icon and click on it.

@@ -1,4 +1,4 @@
-OpenRTK330LI Evaluation Kit Setup
+OpenRTK330 Evaluation Kit Setup
 =================================
 
 .. contents:: Contents

@@ -1,5 +1,5 @@
-Cloud RTK APP
-=======================
+Mobile
+======
 
 OpenRTK Tool is work for Aceinna OpenRTK app. APP get RTCM/NMEA data
 from bluetooth in RTK, and then send to Aceinna server,after the
@@ -7,7 +7,7 @@ calculation of the server, the data is returned, and then written to the
 device. The RTK device will calibrate according to the data.
 
 Installation
----------------
+------------
 
 ::
 

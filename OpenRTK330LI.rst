@@ -1,5 +1,5 @@
-OpenRTK330LI Reference Application Specification
-================================================
+OpenRTK330LI
+============
 
 1.0 Introduction
 ----------------
