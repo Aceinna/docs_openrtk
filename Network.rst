@@ -18,5 +18,5 @@ The following pages cover:
     :hidden:
 
     Network/getapikey
-    Network/network
     Network/ntripconfi
+    Network/network
