@@ -1,10 +1,6 @@
 Overview
 ========
 
-.. note::
-
-    Overview.png to be provided.
-
 .. contents:: Contents
     :local:
 

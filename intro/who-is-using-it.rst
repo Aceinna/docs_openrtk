@@ -8,3 +8,4 @@ The system is being used by several autonomous driving teams globally.
 .. contents:: Contents
     :local:
 
+.. image:: ../media/whouseit.jpg
