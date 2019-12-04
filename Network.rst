@@ -11,7 +11,7 @@ The following pages cover:
 
 *   Get API Key
 *   Ntrip configuration
-*   Network
+*   RTK/Cloud RTK
 
 .. toctree::
     :maxdepth: 1
@@ -19,4 +19,4 @@ The following pages cover:
 
     Network/getapikey
     Network/ntripconfi
-    Network/network
+    Network/rtk_cloudrtk

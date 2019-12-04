@@ -1,12 +1,12 @@
 How to use OpenRTK?
 ===================
 
-OpenRTK include two tools，Mobile APP and PC tools. After you 
+OpenRTK include two tools, Mobile APP and PC tools.
 
 The following pages cover:
 
-*   Cloud OpenRTK APP
-*   PC tools
+*   Mobile
+*   PC
 
 .. toctree::
     :maxdepth: 1
