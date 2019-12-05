@@ -6,14 +6,14 @@ What is OpenRTK?
     :local:
     
 
-*   OpenIMU is an open software platform for development of high-performance navigation and localization
+*   OpenRTK is an open software platform for development of high-performance navigation and localization
     applications on top of a family of low-drift pre-calibrated Inertial Measurement Units (IMU).
 *   OpenIMU hardware consists of a 3-axis rate sensor (gyro), 3-axis accelerometer platform, and 3-axis magnetometer module.
 *   The module contains a low-power embedded ARM Cortex-M4 CPU with floating-point math support.  Extra IO and Ports make
     connection of external peripherals such as GPS, Odometer, and other more advanced sensors possible.
 *   The OpenIMU hardware comes in different form-factors including:
 
-**Hardware Configurations**
+**Hardware Config urations**
 
 +-------+--------------+---------------------------------------------------------------+
 | Type  | Part Number  | Hardware Features                                             |

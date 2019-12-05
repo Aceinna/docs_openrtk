@@ -35,7 +35,7 @@ How to Use
    :align: center
    :scale: 15%
 
- -  enter a number, it means how many devices you can use this account use at same time.
+ -  enter a number, it means how many devices you can use this account at the same time.
  .. image:: ../media/generate-step-2.jpg
    :align: center
    :scale: 15%
@@ -51,7 +51,7 @@ How to Use
    :scale: 18%
 
  .. image:: ../media/deviceList.jpeg
-   :align: right
+   :align: left
    :scale: 18%
 
  .. image:: ../media/logs.jpg
@@ -59,7 +59,7 @@ How to Use
    :scale: 18%
 
  .. image:: ../media/offlineMap.jpg
-   :align: right
+   :align: left
    :scale: 18%
 
  .. image:: ../media/livemap.jpg
@@ -67,9 +67,8 @@ How to Use
    :scale: 18%
 
  .. image:: ../media/networkSetting.jpeg
-   :align: right
+   :align: left
    :scale: 18%
-
 
  1.  Save result information in GPGGA format if switch is on. The storage path is `Android/data/com.aceinna.rtk/files/log`.
  2.  It only used when the device type is RTK. It will send data to server if switch is on.
