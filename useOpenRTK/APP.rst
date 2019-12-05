@@ -69,6 +69,7 @@ How to Use
  .. image:: ../media/networkSetting.jpeg
    :align: left
    :scale: 18%
+ ::
 
  1.  Save result information in GPGGA format if switch is on. The storage path is `Android/data/com.aceinna.rtk/files/log`.
  2.  It only used when the device type is RTK. It will send data to server if switch is on.
