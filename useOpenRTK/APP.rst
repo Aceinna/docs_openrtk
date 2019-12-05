@@ -26,24 +26,24 @@ How to Use
    or log in quickly using your github account.
  .. image:: ../media/login.jpg
    :align: center
-   :scale: 15%   
+   :scale: 20%   
 
 2. Generate API. If you do not have the API key, you need generate API
    Key.
  -  click next.
  .. image:: ../media/generate-step-1.jpg
    :align: center
-   :scale: 15%
+   :scale: 20%
 
  -  enter a number, it means how many devices you can use this account at the same time.
  .. image:: ../media/generate-step-2.jpg
    :align: center
-   :scale: 15%
+   :scale: 20%
 
  -  click finish to generate APIkey.
  .. image:: ../media/generate-step-3.jpg
    :align: center
-   :scale: 15%
+   :scale: 20%
 
 3. APP screenshots
  .. image:: ../media/info.jpg
@@ -69,7 +69,7 @@ How to Use
  .. image:: ../media/networkSetting.jpeg
    :align: left
    :scale: 18%
- ::
+ 
 
  1.  Save result information in GPGGA format if switch is on. The storage path is `Android/data/com.aceinna.rtk/files/log`.
  2.  It only used when the device type is RTK. It will send data to server if switch is on.
