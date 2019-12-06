@@ -4,7 +4,13 @@ EVB Schematic
 .. contents:: Contents
     :local:
 
-.. image:: ../media/6310-6000-03_Rev.A.png
+.. image:: ../media/EVB_1.png
+.. image:: ../media/EVB_2.png
+.. image:: ../media/EVB_3.png
+.. image:: ../media/EVB_4.png
+.. image:: ../media/EVB_5.png
+.. image:: ../media/EVB_6.png
+.. image:: ../media/EVB_7.png
 
-Schematic :download:`download <../media/6310-6000-03_Rev.A.PDF>`
+Schematic :download:`download <../media/OpenRTK330_EVB_SCH.pdf>`
 
