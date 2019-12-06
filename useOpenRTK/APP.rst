@@ -77,4 +77,4 @@ How to Use
    - RTK: get NEMA(GPGGA) from device,get RTCM from Aceinna server. 
    - cloudRTK: get RTCM from device, get NEMA(GPGGA) from Aceinna server. 
  4.  you can use your local service to process data what from RTK device.
- 5.  View the offline points, you can only use a NMEA data file (GPGGA)(`example <../_image/example.gga>`__).
+ 5.  View the offline points, you can only use a NMEA data file (GPGGA)(`example <https://navview.blob.core.windows.net/web-resources/exampleFile/example.log>`__).
