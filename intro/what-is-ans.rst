@@ -24,11 +24,11 @@ to load, log, and test your application. The driver leverages the PySerial libra
 In addition, the open-source Python driver can acts as a server connecting the OpenRTK hardware with our ANS developer platform for a GUI experience,
 cloud data storage and retrieval, as well as stored file charting/plotting tools.
 
-The Aceinna VS Code extension ensures a python environment automatically.  The OpenRTK python code can be installed independently by cloning the repository https://github.com/python-openrtk or using pip as shown below.
+The Aceinna VS Code extension ensures a python environment automatically.  The OpenRTK python code can be installed independently by cloning the repository https://github.com/Aceinna/python-openimu or using pip as shown below.
 
 .. code-block:: bash
 
-    pip install openrtk
+    pip install openimu
 
 
 
