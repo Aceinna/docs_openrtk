@@ -1,7 +1,7 @@
 How to use OpenRTK?
 ===================
 
-OpenRTK include two tools, Mobile APP and PC tools.
+The OpenRTK module acts as a NTRIP client fetching GNSS corrections data from a NTRIP server of a GNSS correction service provider. This connectivity requires the OpenRTK module sending out its current position via NMEA GGA every one second to the NTRIP server over the internet.
 
 The following pages cover:
 
