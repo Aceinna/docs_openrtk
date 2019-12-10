@@ -1,21 +1,23 @@
 Mobile
 ======
 
-OpenRTK Tool is work for Aceinna OpenRTK app. APP get RTCM/NMEA data
-from bluetooth in RTK, and then send to Aceinna server, after the
-calculation of the server, the data is returned, and then written to the
-device. The RTK device will calibrate according to the data.
+OpenRTK works for Aceinna OpenRTK app. APP get RTCM/NMEA data
+via Bluetooth from RTK device, and then send to Aceinna server on Internet,
+calculation results to be sent to the device. The RTK device will calibrate according to the data.
+
+.. image:: ../media/Mobile_APP.png
 
 Installation
 ------------
 
-::
 
-  You can scan the QR code to download, currently only the android version and make sure your Android version is 8.0 or above. After downloaded open the apk file to install. Please make the app in white list.
+You can scan the QR code to download, currently only the android version and make sure your Android 
+version is 8.0 or above. After downloaded open the apk file to install. Please make the app in white list.
 
 .. image:: ../media/ercode.png
    :align: center
-   :scale: 50%
+   :scale: 70%
+
 
 How to Use
 ----------

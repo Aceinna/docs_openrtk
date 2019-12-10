@@ -8,15 +8,15 @@ OpenRTK330 Evaluation Kit Setup
     :width: 6.0in
     :height: 6.0in
 
-    **OpenRTK330LI Evaluation Kit**
+    **OpenRTK330 Evaluation Kit**
 
-| To set up OpenRTK330LI evaluation kit for development you'll need to perform next steps:
+To set up OpenRTK330 evaluation kit for development you'll need to perform flowing steps:
 
- 1. Unpack OpenRTK330LI evaluation kit.
- 2. Connect OpenRTK330LI evaluation board to the PC via USB cable. USB connection provides power to the test setup as well as connectivity between PC and IMU serial ports.
+ 1. Unpack OpenRTK330 evaluation kit.
+ 2. Connect OpenRTK330 evaluation board to the PC via USB cable. USB connection provides power to the test setup as well as connectivity between PC and EVK serial ports.
  3. Connect ST-Link debugger to the PC via USB cable.
- 4. Connect OpenRTK330LI evaluation board to ST-Link debugger using provided 20-pin flat cable.
- 5. Connected satellite antenna.
+ 4. Connect OpenRTK330 evaluation board to ST-Link debugger using provided 20-pin flat cable.
+ 5. Connect satellite antenna.
 
 Now you are ready to debug and test your application.
 

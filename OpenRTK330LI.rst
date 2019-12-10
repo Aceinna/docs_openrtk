@@ -1,15 +1,15 @@
-OpenRTK330LI
-============
+OpenRTK330
+==========
 
 1.0 Introduction
 ----------------
 
-The Aceinna OpenRTK330LI module integrates a commercial
+The Aceinna OpenRTK330 module integrates a commercial
 multi-constellation, multi-frequency Global Navigation Satellite System
-(**GNSS**) chipset (supports GPS, GALILEO, GLONASS and Beidou), a
+(**GNSS**) chipset (supports GPS, GALILEO, GLONASS, Beidou, IRNSS and QZSS), a
 triple-redundant 6-axis (3-axis accelerometer and 3-axis gyro) **MEMS**
 Inertial Measurement Unit (**IMU**), and a ST M4 MCU as the processor.
-OpenRTK330LI module is targeted for commecial applicaiton for the mass
+OpenRTK330 module is targeted for commecial applicaiton for the mass
 market that requires a reliable, high-precision and yet cost effective
 **GNSS/INS** integrated positioning solution.
 
@@ -70,7 +70,7 @@ with NTRIP server. There are up to bluetooth mode and ethernet mode.
 Bluetooth mode
 ^^^^^^^^^^^^^^
 
--  OpenRTK330LI acts as NTRIP client connects with NTRIP server via
+-  OpenRTK330 acts as NTRIP client connects with NTRIP server via
    Android smartphone (with 4G) Bluetooth connectivity (with Aceinna
    RTKTool App installed) to fetch GNSS RTK/PPP correction data stream
 -  Default bluetooth device name "OpenRTK\_0001" shows on Android
@@ -82,9 +82,9 @@ Bluetooth mode
 Ethernet mode
 ^^^^^^^^^^^^^
 
--  Plug in a RJ45 cable from a local network to OpenRTK330LI Ethernet
+-  Plug in a RJ45 cable from a local network to OpenRTK330 Ethernet
    port
--  OpenRTK330LI acts as NTRIP client connects with NTRIP server via host
+-  OpenRTK330 acts as NTRIP client connects with NTRIP server via host
    (e.g. Desktop) to fetch GNSS RTK/PPP correction data stream
 -  DHCP IP address is used as default, if no success, manually setup a
    static IP: ip = 192.168.1.110, netmask = 255.255.255.0, gateway =

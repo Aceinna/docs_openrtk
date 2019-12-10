@@ -8,6 +8,8 @@ after the calculation of the server, the data is returned, and then
 written to the device. The RTK device will calibrate according to the
 data.
 
+.. image:: ../media/PC_tool.png
+
 Initial network
 ---------------
 
@@ -27,9 +29,9 @@ Initial network
 
 Example (use desktop) 
 ~~~~~~~~~~~~~~~~~~~~~
-- 1.connect active wifi 
-- 2.set the WLAN to share the network with ethernet, than the ethernet port will be used as a dhcp server 
-- 3.connect openrtk with ethernet port
+1. connect active wifi
+2. set the WLAN to share the network with ethernet, than the ethernet port will be used as a dhcp server 
+3. connect openrtk with ethernet port
 
 How to use
 ----------
