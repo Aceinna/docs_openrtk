@@ -1,7 +1,7 @@
 How to use OpenRTK?
 ===================
 
-The OpenRTK module acts as a NTRIP client fetching GNSS corrections data from a NTRIP server of a GNSS correction service provider. This connectivity requires the OpenRTK module sending out its current position via NMEA GGA every one second to the NTRIP server over the internet.
+The previous section presented the OpenRTK330 EVK setup process. Once the device is ready and loaded with OpenRTK330 firmware, it requires internet connectivity to perform GNSS RTK positioning. The OpenRTK330 module acts as a NTRIP client and requests and fetches GNSS data corrections from a NTRIP server over the internet. This connectivity requires the OpenRTK module sending out its current position via NMEA GGA every one second to the NTRIP server over the internet.
 
 The following pages cover:
 
@@ -12,5 +12,5 @@ The following pages cover:
     :maxdepth: 1
     :hidden:
 
-    useOpenRTK/APP
+    useOpenRTK/mobile
     useOpenRTK/PC
