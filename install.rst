@@ -1,41 +1,38 @@
 Embeded Development Environment on PC
 =====================================
 
-.. contents:: Contents
-    :local:
+System Requirements
+~~~~~~~~~~~~~~~~~~~
+* Windows 10 or 7
+* Ubuntu version 14.0 or later
+* MAC OS
 
 
-**Platforms - Computers with the following Operating Systems**
+Visual Studio Code
+~~~~~~~~~~~~~~~~~~
 
- - Windows 10 or 7
- - Ubuntu version 14.0 or later
- - MAC OS
+ Visual Studio Code - can be downloaded from here: https://code.visualstudio.com
 
-
-**Visual Studio Code**
-
-Visual Studio Code - can be downloaded from here:  https://code.visualstudio.com
-
-**ST-LINK Debugger Driver**
+ST-LINK Debugger Driver
+~~~~~~~~~~~~~~~~~~~~~~~
 
 *   *MacOS* - ST-LINK drivers are automatically installed for MAC OS.
 *   *Windows* - ST-LINK drivers should be also installed automatically. But in case if it was not - ST-LINK V2 driver can be manually installed for Windows.  The Windows driver is downloaded from the following page link:
     http://www.st.com/en/development-tools/st-link-v2.html
-*   *Ubuntu* - please see step 5.
+*   *Ubuntu* - please see Ubuntu_.
 
-**Installation of OpenRTK development platform**
+OpenRTK development platform
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-To install OpenRTK development platform:
+-  **To Install OpenRTK development platform**
 
-1. Start Visual Studio Code.
-2. On leftmost toolbar find "Extensions" icon and click on it.
-3. In the text box "Search extensions on Marketplace" type "Aceinna" and hit enter
-4. Install Aceinna Extension and Follow prompts.
+ 1. Start Visual Studio Code. On leftmost toolbar find "Extensions" icon and click on it.
+ 2. In the text box "Search extensions on Marketplace" type "Aceinna" and hit enter
+ 3. Install Aceinna Extension and Follow prompts.
 
     .. image:: media/AddExtension.png
 
-
-**First steps**
+-  **Import project**
 
     After installation of "Aceinna" extension click on "Home" icon at the bottom of the screen. It will bring
     up Aceinna OpenIMU platform homepage. Click on "Custom IMU examples", chose desired example and click "Import".
@@ -87,7 +84,7 @@ To install OpenRTK development platform:
                            |
 
 
-    **Compile and JTAG Code Loading**
+-  **Compile and JTAG Code Loading**
 
     Once you have imported an example project, a good first step is to compile and download this application using your ST-LINK.
     At the bottom of the VS Code window is the shortcut toolbar shown below.  To load an application to the OpenIMU with JTAG,
@@ -100,7 +97,9 @@ To install OpenRTK development platform:
     on OpenIMU specific information, and it does not attempt to fully discuss all of the IDE's powerful features in depth. For more information on PlatformIO builder and IDE features include command line interface, scripting and more please see the
     `PlatformIO  <https://docs.platformio.org>`__
 
-**5.  ST-LINK Install for Ubuntu (Manual Version)**
+.. _Ubuntu:
+
+ **ST-LINK Install for Ubuntu (Manual Version)**
 
     Go to https://github.com/texane/stlink and read instructions carefully.
 
