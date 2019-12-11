@@ -1,8 +1,5 @@
 PC
 ===
-::
-
-
 
 .. image:: ../media/PC_tool.png
 

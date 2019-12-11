@@ -9,17 +9,6 @@ Please refer to the figure below for setting up the OpenRTK330 Evaluation Kit (E
     :width: 6.0in
     :height: 6.0in
 
-<<<<<<< HEAD
-    **OpenRTK330 Evaluation Kit**
-
-To set up OpenRTK330 evaluation kit for development you'll need to perform flowing steps:
-
- 1. Unpack OpenRTK330 evaluation kit.
- 2. Connect OpenRTK330 evaluation board to the PC via USB cable. USB connection provides power to the test setup as well as connectivity between PC and EVK serial ports.
- 3. Connect ST-Link debugger to the PC via USB cable.
- 4. Connect OpenRTK330 evaluation board to ST-Link debugger using provided 20-pin flat cable.
- 5. Connect satellite antenna.
-=======
 *  Unpack the OpenRTK330 EVK, you will find the following items
 
     * OpenRTK330 Evaluation Board (EVB)
@@ -49,7 +38,6 @@ To set up OpenRTK330 evaluation kit for development you'll need to perform flowi
 At this point, the OpenRTK330 firmware is loaded and ready for GNSS RTK positioning that also requires internet connection to a NTRIP server for GNSS data correction. By default, the ESP32 module on the OpenRTK330 EVB has been programmed and configured to have Bluetooth wireless connectivity, and then connects with Aceinna's OpenRTK Android App for internet connectivity (see next section). Alternatively, the following step can be performed to get internet connectivity
 
 *   (optional) Connect the EVB (RJ45 connector) with a network router/gateway with an Ethernet cable, the usage of this connection will also be addressed in next section
->>>>>>> b7d8ef41578be04f2eb4ba0e80cc3d48b7a3d842
 
 
 
