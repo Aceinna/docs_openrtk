@@ -24,7 +24,7 @@ PC
  **Sign up**. You need a account to login in. The account is same as
  Aceinna Developer Site and Aceinna Fourm. You can click 'Join us' to sign up your account.
 
- .. image:: ../media/login.png
+ .. image:: ../media/login_PC.png
      :align: center
      :scale: 50%
 
