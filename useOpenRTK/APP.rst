@@ -7,76 +7,128 @@ calculation results to be sent to the device. The RTK device will calibrate acco
 
 .. image:: ../media/Mobile_APP.png
 
-Installation
-------------
+**Installation and initialization**
 
+::
 
-You can scan the QR code to download, currently only the android version and make sure your Android 
-version is 8.0 or above. After downloaded open the apk file to install. Please make the app in white list.
+1. You can scan the QR code to download, currently only the android version and make sure
+   your Android version is 8.0 or above.
 
 .. image:: ../media/ercode.png
    :align: center
    :scale: 70%
 
+::
 
-How to Use
-----------
+2. After downloading the OpenRTK app, open the APK file for installation.
 
-1. Sign up. you need a account to login in.The account is same as
-   `Aceinna Developer Site <https://developers.aceinna.com/>`__ and
-   `Aceinna Fourm <https://forum.aceinna.com//>`__. You can apply one,
-   or log in quickly using your github account.
+::
+
+3. Please whitelist the APP.
+
+
+**Account Registration**
+
+ **Sign up**. you need a account to login in. The account is same as
+ `Aceinna Developer Site <https://developers.aceinna.com/>`__ and
+ `Aceinna Fourm <https://forum.aceinna.com//>`__. You can sign up an account,
+ or log in quickly using your github account.
+
  .. image:: ../media/login.jpg
-   :align: center
-   :scale: 20%   
+    :align: center
+    :scale: 18%   
 
-2. Generate API. If you do not have the API key, you need generate API
-   Key.
- -  click next.
- .. image:: ../media/generate-step-1.jpg
-   :align: center
-   :scale: 20%
+**Aceinna Network service subscription**
 
- -  enter a number, it means how many devices you can use this account at the same time.
- .. image:: ../media/generate-step-2.jpg
-   :align: center
-   :scale: 20%
+ **Generate API**. If you do not have the API key, you need generate API
+ Key to use Aceinna RTK network.
+  1. click next.
+   .. image:: ../media/generate-step-1.jpg
+     :align: center
+     :scale: 18%
 
- -  click finish to generate APIkey.
- .. image:: ../media/generate-step-3.jpg
-   :align: center
-   :scale: 20%
+  2. set a number, it means how many devices you can use this account at the same time.
+   .. image:: ../media/generate-step-2.jpg
+     :align: center
+     :scale: 18%
 
-3. APP screenshots
- .. image:: ../media/info.jpg
-   :align: left
-   :scale: 18%
+  3. click finish to generate API key.
+   .. image:: ../media/generate-step-3.jpg
+     :align: center
+     :scale: 18%
 
- .. image:: ../media/deviceList.jpeg
-   :align: left
-   :scale: 18%
+**Configuration**
 
- .. image:: ../media/logs.jpg
-   :align: left
-   :scale: 18%
+ - **Network Configuration**.
 
- .. image:: ../media/offlineMap.jpg
-   :align: left
-   :scale: 18%
+  - *RTK Type*: 
 
- .. image:: ../media/livemap.jpg
-   :align: left
-   :scale: 18%
+     - RTK: get NEMA(GPGGA) from device,get RTCM from Aceinna server. 
+     - cloudRTK: get RTCM from device, get NEMA(GPGGA) from Aceinna server. 
+  - *Use Local Service*:
 
- .. image:: ../media/networkSetting.jpeg
-   :align: left
-   :scale: 18%
+     - ON: you can use other service, and you need input its URL and Port.
+     - OFF: use Aceinna OpenRTK service.
+
+    .. image:: ../media/networkConfig.jpg
+       :align: center
+       :scale: 18%
+      
+
+ - **User Configuration**.
+
+  You can swipe left or click the icon "≡" for more user configuration, as flowing picture.
+
+  .. image:: ../media/leftMenu.png
+       :align: center
+       :scale: 18%
+
+  - *Cloud RTK*: show API key info or generate key.
+
+  .. image:: ../media/CloudRTK.png
+         :align: center
+         :scale: 18%
+
+  - *Device Setting*: change device setting, like Bluetooth name, baud rate, output packet and so on.
+    
+    .. image:: ../media/customDeviceConfig.jpg
+         :align: center
+         :scale: 18%
+
+  - *Debug Mode*: Costum some map settings
+    
+    .. image:: ../media/mapConfig.jpg
+         :align: center
+         :scale: 18%
+
+  - *Save result*: Save result information in GPGGA format if switch is on. The storage path is *Android/data/com.aceinna.rtk/files/log*.
+
+**Connection**
+
+ - Turn on your RTK Bluetooth device and make it discoverable.
+ - Click the "search" icon to search for your device, if it's not on already, please turn on location permissions for your Bluetooth.
+
+  .. image:: ../media/connect.jpg
+    :align: center
+    :scale: 18%   
+
+ - After it’s connected, you can see the following interface.
+
+  .. image:: ../media/connectLog.jpg
+    :align: center
+    :scale: 18%   
  
+**Map**
 
- 1.  Save result information in GPGGA format if switch is on. The storage path is `Android/data/com.aceinna.rtk/files/log`.
- 2.  It only used when the device type is RTK. It will send data to server if switch is on.
- 3.  Make sure which type your device support.
-   - RTK: get NEMA(GPGGA) from device,get RTCM from Aceinna server. 
-   - cloudRTK: get RTCM from device, get NEMA(GPGGA) from Aceinna server. 
- 4.  you can use your local service to process data what from RTK device.
- 5.  View the offline points, you can only use a NMEA data file (GPGGA)(`example <https://navview.blob.core.windows.net/web-resources/exampleFile/example.log>`__).
+ - Livemap
+
+  .. image:: ../media/offlineMap.jpg
+    :align: center
+    :scale: 18%   
+
+ - Track map
+
+  .. image:: ../media/trajectory.jpg
+    :align: center
+    :scale: 18%   
+    

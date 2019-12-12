@@ -1,11 +1,12 @@
 RTK Network
 ===========
 
-At present, the stations we provide services are shown in the figure, but will continue to develop more RTK stations to provide services, you can see the latest RTK stations distribution map from our developer platform.
+Aceinna Network provides high precision correction data in an open standard format (RTCM)
+simply by connecting any GNSS-enabled devices over internet.  This correction data are 
+used on the GNSS device to enhance its autonomous position even down to a centimetre. 
+The advantages clearly outperform the old and complicated process of reference station 
+setup and maintenance.
 
-.. image:: media/network.png
-
-You can use the RTK network provided by us, and we will select the appropriate RTK stations during your use; or you can use other RTK network services.
 
 The following pages cover:
 
@@ -17,6 +18,7 @@ The following pages cover:
     :maxdepth: 1
     :hidden:
 
+    Network/nwcover
     Network/getapikey
     Network/ntripconfi
     Network/rtk_cloudrtk

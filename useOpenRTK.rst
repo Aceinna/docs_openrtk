@@ -6,9 +6,10 @@ from a NTRIP server of a GNSS correction service provider. This connectivity
 requires the OpenRTK module sending out its current position via NMEA GGA 
 every one second to the NTRIP server over the internet.
 
+**Mobile** is OpenRTK Android APP, **PC** is OpenRTK platform.
+
 The following pages cover:
 
-*   RTK Network
 *   Mobile
 *   PC
 
@@ -16,6 +17,5 @@ The following pages cover:
     :maxdepth: 1
     :hidden:
 
-    Network
     useOpenRTK/APP
     useOpenRTK/PC

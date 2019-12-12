@@ -18,46 +18,46 @@ Overview
 
 **2. Components**
 
-    - OpenRTK Evaluation board, which includes:
+ - OpenRTK Evaluation board, which includes:
 
-        - Virtual COM-port USB interface, providing connectivit from PC.
+     - Virtual COM-port USB interface, providing connectivit from PC.
 
-        - Bluetooth interface, providing connectivity from mobile.
+     - Bluetooth interface, providing connectivity from mobile.
 
-        - Ethernet interface, providing connectivity from network device.
+     - Ethernet interface, providing connectivity from network device.
 
-        - Can-bus interface, providing connectivity from car OBD.
+     - Can-bus interface, providing connectivity from car OBD.
 
-        - Connector for interfacing OpenRTK330 from custom-designed system.
+     - Connector for interfacing OpenRTK330 from custom-designed system.
 
-        - Connector for programming and debugging target via Serial Wire
-          Debug (SWD) interface.
+     - Connector for programming and debugging target via Serial Wire
+       Debug (SWD) interface.
 
-    - OpenRTK330 module. Please note, that it installed on the top side of evaluation board.
+ - OpenRTK330 module. Please note, that it installed on the top side of evaluation board.
 
-    - ST-Link debugger for in-system development of application code.
+ - ST-Link debugger for in-system development of application code.
 
-**2.1 OpenRTK330 module**
+ **2.1 OpenRTK330 module**
 
-    OpenRTK330 integrates a multi-constellation,
-    multi-frequency Global Navigation Satellite System (**GNSS**) chipset
-    (supports GPS, GALILEO, GLONASS and Beidou), triple-redundant
-    6-axis (3-axis accelerometer and 3-axis gyro) **MEMS** Inertial
-    Measurement Unit. It is used as the base for development custom RTK/INS
-    applications.
+     OpenRTK330 integrates a multi-constellation,
+     multi-frequency Global Navigation Satellite System (**GNSS**) chipset
+     (supports GPS, GALILEO, GLONASS and Beidou), triple-redundant
+     6-axis (3-axis accelerometer and 3-axis gyro) **MEMS** Inertial
+     Measurement Unit. It is used as the base for development custom RTK/INS
+     applications.
 
-**2.2 OpenRTK Evaluation board**
+ **2.2 OpenRTK Evaluation board**
 
-    OpenRTK Evaluation board designed to provide convenient way for
-    communicating with OpenRTK330 unit from PC, mobile and car, to expose
-    serial and SPI interfaces to developer and to debug applications using
-    ST-Link debugger vis SWD interface.
+     OpenRTK Evaluation board designed to provide convenient way for
+     communicating with OpenRTK330 unit from PC, mobile and car, to expose
+     serial and SPI interfaces to developer and to debug applications using
+     ST-Link debugger vis SWD interface.
 
-**2.3 ST-Link debugger**
+ **2.3 ST-Link debugger**
 
-    St-Link debugger is standard debugger provided by STMicroelectronics
-    company. It used for in-system debugging of applications via SWD
-    interface.
+     St-Link debugger is standard debugger provided by STMicroelectronics
+     company. It used for in-system debugging of applications via SWD
+     interface.
 
 **3. OpenRTK evaluation board Headers and Connectors**
 
@@ -218,7 +218,7 @@ Overview
 
 **9. OpenRTK Evaluation Kit Important Notice**
 
-::
+ ::
 
      This evaluation kit is intended for use for FURTHER ENGINEERING, DEVELOPMENT, 
      DEMONSTRATION, OR EVALUATION PURPOSES ONLY. It is not a finished product and may not 

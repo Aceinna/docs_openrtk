@@ -39,6 +39,7 @@ custom data structures and packets very simple.
 
     install
     setup-OpenRTK
+    Network
     useOpenRTK
 
 .. raw:: latex
