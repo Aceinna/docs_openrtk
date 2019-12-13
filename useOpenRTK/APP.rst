@@ -10,22 +10,22 @@ calculation results to be sent to the device. The RTK device will calibrate acco
 Installation and initialization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
+ ::
 
-1. You can scan the QR code to download, currently only the android version and make sure
-   your Android version is 8.0 or above.
+ 1. You can scan the QR code to download, currently only the android version and make sure
+    your Android version is 8.0 or above.
 
-.. image:: ../media/ercode.png
-   :align: center
-   :scale: 70%
+ .. image:: ../media/ercode.png
+    :align: center
+    :scale: 70%
 
-::
+ ::
 
-2. After downloading the OpenRTK app, open the APK file for installation.
+ 2. After downloading the OpenRTK app, open the APK file for installation.
 
-::
+ .. note::
 
-3. Please whitelist the APP.
+     Please make your Android device allow the OpenRTK app to run in background.
 
 
 Account Registration

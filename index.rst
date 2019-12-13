@@ -36,7 +36,8 @@ custom data structures and packets very simple.
     :caption: Quick Start
     :maxdepth: 1
     :hidden:
-
+    :titlesonly:
+    
     install
     setup-OpenRTK
     Network
@@ -51,7 +52,7 @@ custom data structures and packets very simple.
     :maxdepth: 1
     :hidden:
 
-    OpenRTK330LI
+    OpenRTK330
 
 .. raw:: latex
 

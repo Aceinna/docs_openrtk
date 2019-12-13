@@ -21,7 +21,7 @@ What is OpenRTK?
  +-------+--------------+---------------------------------------------------------------+
  | Type  | Part Number  | Hardware Features                                             |
  +-------+--------------+---------------------------------------------------------------+
- | *LC*  | OpenRTK300LC | Consumer-grade IMU Module without temperature compensation    |
+ | *LC*  | OpenRTK300LC | Consumer grade IMU Module without temperature compensation    |
  +-------+--------------+---------------------------------------------------------------+
  | *LI*  | OpenRTK300LI | Industrial grade IMU Module with temperature compensation     |
  +-------+--------------+---------------------------------------------------------------+

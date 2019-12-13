@@ -1,24 +1,30 @@
 PC
 ===
 
+OpenRTK acts as NTRIP client connects with NTRIP server to fetch
+RTCM/NMEA data from ethernet in RTK, and then send to Aceinna server,
+after the calculation of the server, the data is returned, and then
+written to the device. The RTK device will calibrate according to the
+data.
+
 .. image:: ../media/PC_tool.png
 
 Installation and initialization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-::
+ ::
 
-1. Plug in a RJ45 cable from the host(e.g. Router or Desktop) to the
-   ethernet port of OpenRTK.
-::
+ 1. Plug in a RJ45 cable from the host(e.g. Router or Desktop) to the
+    ethernet port of OpenRTK.
+ ::
 
-2. DHCP IP address is used by OpenRTK as default, if no success,
-   manually setup a STATIC IP (ip = 192.168.1.110, netmask =
-   255.255.255.0, gateway = 192.168.1.1).
-::
+ 2. DHCP IP address is used by OpenRTK as default, if no success,
+    manually setup a STATIC IP (ip = 192.168.1.110, netmask =
+    255.255.255.0, gateway = 192.168.1.1).
+ ::
 
-3. Visit the embedded web site ("http://openrtk") on the same LAN as
-   OpenRTK.
+ 3. Visit the embedded web site ("http://openrtk") on the same LAN as
+    OpenRTK.
 
 Account Registration
 ~~~~~~~~~~~~~~~~~~~~
