@@ -3,7 +3,8 @@ PC
 
 .. image:: ../media/PC_tool.png
 
-**Installation and initialization**
+Installation and initialization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
@@ -19,7 +20,8 @@ PC
 3. Visit the embedded web site ("http://openrtk") on the same LAN as
    OpenRTK.
 
-**Account Registration**
+Account Registration
+~~~~~~~~~~~~~~~~~~~~
 
  **Sign up**. You need a account to login in. The account is same as
  Aceinna Developer Site and Aceinna Fourm. You can click 'Join us' to sign up your account.
@@ -28,18 +30,21 @@ PC
      :align: center
      :scale: 50%
 
-**Aceinna Network service subscription**
+Aceinna Network service subscription
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
- **Generate API**. If you do not have the API key, you need generate API
- Key to use Aceinna RTK network and set the number of allowed devices.
+ **Generate API**. If you do not have the API key, you need `generate API
+ key <https://openrtk.readthedocs.io/en/latest/Network/getapikey.html>`__  
+ to use Aceinna RTK network and set the number of allowed devices.
 
  .. image:: ../media/signup.png
     :align: center
     :scale: 50%
 
-**Configuration**
+Configuration
+~~~~~~~~~~~~~
 
- - **Ntrip Configuration**.
+ **1. Ntrip Configuration**.
 
   - *RTK Ntrip*: If you choose Local Service, ntrip client will use
     username and apikey in login. Otherwise, ntrip client will use
@@ -58,7 +63,7 @@ PC
      :align: center
      :scale: 50%
 
- - **User Configuration**.
+ **2. User Configuration**.
 
     - change device setting, like baud rate, output packet and so on.
 
@@ -77,7 +82,8 @@ PC
        :align: center
        :scale: 50%
 
-**Connection**
+Connection
+~~~~~~~~~~
 
  you can visit https://developers.aceinna.com/devices/files to see
  RTK LOGIN LOGS.

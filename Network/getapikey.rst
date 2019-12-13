@@ -1,5 +1,5 @@
-Aceinna Network service subscription
-====================================
+Generate API key
+================
 
 1. Login developers website. https://developers.aceinna.com/
 

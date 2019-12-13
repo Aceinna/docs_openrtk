@@ -7,7 +7,8 @@ calculation results to be sent to the device. The RTK device will calibrate acco
 
 .. image:: ../media/Mobile_APP.png
 
-**Installation and initialization**
+Installation and initialization
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 ::
 
@@ -27,7 +28,8 @@ calculation results to be sent to the device. The RTK device will calibrate acco
 3. Please whitelist the APP.
 
 
-**Account Registration**
+Account Registration
+~~~~~~~~~~~~~~~~~~~~
 
  **Sign up**. you need a account to login in. The account is same as
  `Aceinna Developer Site <https://developers.aceinna.com/>`__ and
@@ -38,7 +40,8 @@ calculation results to be sent to the device. The RTK device will calibrate acco
     :align: center
     :scale: 18%   
 
-**Aceinna Network service subscription**
+Aceinna Network service subscription
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  **Generate API**. If you do not have the API key, you need generate API
  Key to use Aceinna RTK network.
@@ -57,9 +60,10 @@ calculation results to be sent to the device. The RTK device will calibrate acco
      :align: center
      :scale: 18%
 
-**Configuration**
+Configuration
+~~~~~~~~~~~~~
 
- - **Network Configuration**.
+ **1. Network Configuration**.
 
   - *RTK Type*: 
 
@@ -75,7 +79,7 @@ calculation results to be sent to the device. The RTK device will calibrate acco
        :scale: 18%
       
 
- - **User Configuration**.
+ **2. User Configuration**.
 
   You can swipe left or click the icon "≡" for more user configuration, as flowing picture.
 
@@ -103,7 +107,8 @@ calculation results to be sent to the device. The RTK device will calibrate acco
 
   - *Save result*: Save result information in GPGGA format if switch is on. The storage path is *Android/data/com.aceinna.rtk/files/log*.
 
-**Connection**
+Connection
+~~~~~~~~~~
 
  - Turn on your RTK Bluetooth device and make it discoverable.
  - Click the "search" icon to search for your device, if it's not on already, please turn on location permissions for your Bluetooth.
@@ -118,7 +123,8 @@ calculation results to be sent to the device. The RTK device will calibrate acco
     :align: center
     :scale: 18%   
  
-**Map**
+Map
+~~~
 
  - Livemap
 
