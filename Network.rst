@@ -16,14 +16,13 @@ will do RTK for customers and return centimetre-level position.
 The following pages cover:
 
 *   Aceinna Network Coverage
-*   Get API Key
+*   API key generation
 *   Ntrip configuration
 *   RTK/Cloud RTK
 
 .. toctree::
     :maxdepth: 1
     :hidden:
-    :titlesony:
 
     Network/coverage
     Network/getapikey

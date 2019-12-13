@@ -20,8 +20,8 @@ market that requires a reliable, high-precision and yet cost effective
    (B1I/B2I),QZSS (L1), and SBAS
 -  RTK/PPP algorithms on-board for up to centimetre accuracy
 
-1.0 Technical characteristics
------------------------------
+Technical characteristics
+-------------------------
 
  +-------------------------------------------------------------------+
  | **Accuracy** [#f1]_                                               |
@@ -133,8 +133,8 @@ market that requires a reliable, high-precision and yet cost effective
  .. [#f6] Using ephemeris and last known position.
 
 
-2.0 Detailed specifications
----------------------------
+Detailed specifications
+-----------------------
 
 UART PORTS
 ~~~~~~~~~~
