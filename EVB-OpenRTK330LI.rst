@@ -1,13 +1,13 @@
-OpenRTK 330 LI Eval Kit
-=======================
+OpenRTK330LI Eval Kit
+===================
 
 .. contents:: Contents
     :local:
     
-The OpenIMU300ZI evaluation kit consists of a robust and easy-to-use eval board, a test fixture, the OpenIMU300ZI IMU module, and an ST-LINK J-TAG pod.
+The OpenRTK330LI evaluation kit consists of a robust and easy-to-use eval board, a test fixture, the OpenRTK330LI RTK module, and an ST-LINK J-TAG pod.
 
-.. image:: media/OpenIMUKit.png
-    :height: 300
+.. image:: media/OpenRTKKit.png
+    :height: 220
 
 .. image:: media/STLink.png
     :height: 200

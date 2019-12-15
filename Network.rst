@@ -1,15 +1,22 @@
-RTK Network
-===========
+Aceinna Cloud Server
+====================
 
-At present, the stations we provide services are shown in the figure, but will continue to develop more RTK stations to provide services, you can see the latest RTK stations distribution map from our developer platform.
+Aceinna Cloud server includes Aceinna Network, Aceinna Computing Server 
+and Aceinna Ntrip Caster. Aceinna Cloud server provides high precision 
+correction data in an open standard format (RTCM) simply by connecting 
+any GNSS-enabled devices over internet. This correction data are used 
+on the GNSS device to enhance its position even down to a centimetre 
+based on RTK technology. The advantages clearly outperform the old and 
+complicated process of reference station setup and maintenance. Furthermore, 
+Aceinna Cloud server also supports cloudRTK mode, instead of receiving correction data, 
+GNSS device transmits observation to Aceinna Cloud server. Aceinna Computing Server 
+will do RTK for customers and return centimetre-level position.
 
-.. image:: media/network.png
-
-You can use the RTK network provided by us, and we will select the appropriate RTK stations during your use; or you can use other RTK network services.
 
 The following pages cover:
 
-*   Get API Key
+*   Aceinna Network Coverage
+*   API key generation
 *   Ntrip configuration
 *   RTK/Cloud RTK
 
@@ -17,6 +24,7 @@ The following pages cover:
     :maxdepth: 1
     :hidden:
 
+    Network/coverage
     Network/getapikey
     Network/ntripconfi
     Network/rtk_cloudrtk
