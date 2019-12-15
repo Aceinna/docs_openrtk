@@ -133,33 +133,29 @@ Technical characteristics
  .. [#f6] Using ephemeris and last known position.
 
 
-Detailed specifications
+Communication ports definitions
 -----------------------
+There are six serial communicatoins ports available on the OpenRTK330 module, including four configurable UART ports, one SPI port and one CAN port.
 
 UART PORTS
 ~~~~~~~~~~
+The default configuration of the four UART ports is listed as follows
 
--  Debug UART
--  Default Baud Rate: 460.8kb/s
--  Default Message: gga and rtk algorithm time
--  USER UART
--  Default Baud Rate: 460.8kb/s
--  Default User Message: e1 packet, output rate 100Hz, including scaled
-   Lat/Long, Roll, Pitch, Heading, and Angular Rate
--  Default Map Message: pos packet('pS'), snr packet('sR') and skyview
-   packet('sK'), output rate 10Hz
--  Input User Messages: 'pG' - ping, 'gV' - version, 'gA' - get all
-   params, 'gP' - get a param, 'sC' - save current configuration
-   permanently, 'uP'- update param. Params include Baud Rate, Packet
-   Type, Packet Rate, Accel LPF, Rate LPF, and Orientation
--  GNSS UART
--  Update GNSS chipset firmware
--  Default Baud Rate: 460.8kb/s
--  Default Message: rtcm3, 10Hz
--  ESP32 UART
--  Update bluetooth firmware
--  Default Baud Rate: 460.8kb/s
--  Default Message: Bluetooth Debug
+-  USER port
+
+    -  default baud rate: 460800 b/s
+    -  default navigation messages: GNSS PV (positioin and velocity) packet ('pS'), satellite SNR (Signal-to-Noise Ratio), elevation and azimuth packet ('sK')
+-  ESP32 port
+
+    -  default baud rate: 460800 b/s
+-  DEBUG port
+
+    -  default baud rate: 460800 b/s
+    -  default message: raw IMU data packet ('e1')
+-  GNSS RTCM data port
+
+    -  default baud rate: 460800 b/s
+    -  default message: RTCMv3 GNSS data stream (10 Hz)
 
 SPI PORT
 ~~~~~~~~
@@ -171,33 +167,33 @@ CAN PORT
 
 -  TBD
 
-Bluetooth and Ethernet mode
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. Bluetooth and Ethernet mode
+.. ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The OpenRTK300LI can be configured in a number of ways for communication
-with NTRIP server. There are up to bluetooth mode and ethernet mode.
+.. The OpenRTK300LI can be configured in a number of ways for communication
+.. with NTRIP server. There are up to bluetooth mode and ethernet mode.
 
-Bluetooth mode
-^^^^^^^^^^^^^^
+.. Bluetooth mode
+.. ^^^^^^^^^^^^^^
 
--  OpenRTK330 acts as NTRIP client connects with NTRIP server via
-   Android smartphone (with 4G) Bluetooth connectivity (with Aceinna
-   RTKTool App installed) to fetch GNSS RTK/PPP correction data stream
--  Default bluetooth device name "OpenRTK\_0001" shows on Android
-   smartphone, which can be changed through installed Aceinna RTKTool
-   App
--  Configure NTRIP server settings on Anroid smartphone in the provided
-   Aceinna RTKTool App
+.. -  OpenRTK330 acts as NTRIP client connects with NTRIP server via
+..    Android smartphone (with 4G) Bluetooth connectivity (with Aceinna
+..    RTKTool App installed) to fetch GNSS RTK/PPP correction data stream
+.. -  Default bluetooth device name "OpenRTK\_0001" shows on Android
+..    smartphone, which can be changed through installed Aceinna RTKTool
+..    App
+.. -  Configure NTRIP server settings on Anroid smartphone in the provided
+..    Aceinna RTKTool App
 
-Ethernet mode
-^^^^^^^^^^^^^
+.. Ethernet mode
+.. ^^^^^^^^^^^^^
 
--  Plug in a RJ45 cable from a local network to OpenRTK330 Ethernet
-   port
--  OpenRTK330 acts as NTRIP client connects with NTRIP server via host
-   (e.g. Desktop) to fetch GNSS RTK/PPP correction data stream
--  DHCP IP address is used as default, if no success, manually setup a
-   static IP: ip = 192.168.1.110, netmask = 255.255.255.0, gateway =
-   192.168.1.1
--  The embedded webserver address is "http://opentrk"
+.. -  Plug in a RJ45 cable from a local network to OpenRTK330 Ethernet
+..    port
+.. -  OpenRTK330 acts as NTRIP client connects with NTRIP server via host
+..    (e.g. Desktop) to fetch GNSS RTK/PPP correction data stream
+.. -  DHCP IP address is used as default, if no success, manually setup a
+..    static IP: ip = 192.168.1.110, netmask = 255.255.255.0, gateway =
+..    192.168.1.1
+.. -  The embedded webserver address is "http://opentrk"
 
