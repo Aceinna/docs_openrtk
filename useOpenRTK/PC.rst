@@ -77,7 +77,7 @@ Configuration
        :align: center
        :scale: 50%
 
- - **Ethernet Configuration**.
+ **3. Ethernet Configuration**.
 
     -  *IP mode*: static ip or dhcp ip,if dhcp fail, it will use static ip.
     -  *Static ip*: include ip, netmask and gateway.
@@ -91,9 +91,33 @@ Configuration
 Connection
 ~~~~~~~~~~
 
- you can visit https://developers.aceinna.com/devices/files to see
- RTK LOGIN LOGS.
+ - You should download python driver from https://github.com/Aceinna/python-openimu/tree/ans-devices. 
+   Then, you need to run main.py (python main.py -p 9753).
 
-.. image:: ../media/serverrtk.png
+ - Device information is exposed on the DEVICE INFO page (https://developers.aceinna.com/devices/rtk). 
+   The default webserver port for rtk is 9753. If you change the port on the web, you should also 
+   change the port when running main.py.
+
+ - Connection Status is shown on the link symbol at the top right hand side of the page.
+ 
+ .. image:: ../media/connect.png
+   :align: center
+   
+ - You can visit https://developers.aceinna.com/devices/files to see      RTK LOGIN LOGS.
+
+    .. image:: ../media/serverrtk.png
+        :align: center 
+
+Map
+~~~
+
+ Play button will be enabled when openrtk is connected. Click 'play' to see the openrtk output information.
+
+ .. image:: ../media/map.png
    :align: center
    :scale: 50%
+
+ .. image:: ../media/skyview.png
+   :align: center
+   :scale: 50%
+
