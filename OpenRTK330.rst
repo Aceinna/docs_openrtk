@@ -145,14 +145,14 @@ The default configuration of the four UART ports is listed as follows
 
     -  default baud rate: 460800 b/s
     -  default navigation messages: GNSS PV (positioin and velocity) packet ('pS'), satellite SNR (Signal-to-Noise Ratio), elevation and azimuth packet ('sK')
--  ESP32 port
+-  ST_UART1 port
 
     -  default baud rate: 460800 b/s
 -  DEBUG port
 
     -  default baud rate: 460800 b/s
     -  default message: raw IMU data packet ('e1')
--  GNSS RTCM data port
+-  ST_UART_PROG port
 
     -  default baud rate: 460800 b/s
     -  default message: RTCMv3 GNSS data stream (10 Hz)
@@ -167,10 +167,10 @@ CAN PORT
 
 -  TBD
 
-OpenRTK330LI Pin Definition Rev
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+OpenRTK330 Pin Definition Rev
+-----------------------------
 
- .. image:: media/OpenRTK330LI_pin.png
+ .. image:: media/OpenRTK330LI_pin_n.png
 
  +---------+-------------------+----------+-----------------------------------------------------------------+
  | **No.** | **Name**          | **Type** | **Description**                                                 |
