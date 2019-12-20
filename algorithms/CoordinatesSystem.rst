@@ -21,11 +21,11 @@ longitude :math:`\lambda_r` and the ellipsoidal height :math:`h` can be transfor
 
 .. math::
   
- e^2 = f(2-f)
-
- v = \frac{a}{\sqrt{(1-{e}^{2}sin{\phi_r}^2)}}
-
- r_r=\begin{pmatrix}
+ &e^2 = f(2-f)\\
+ {\hspace{5mm}} \\
+ &v = \frac{a}{\sqrt{(1-{e}^{2}sin{\phi_r}^2)}}\\
+ {\hspace{5mm}} \\
+ &r_r=\begin{pmatrix}
  {(v + h)cos\phi_{r}cos\lambda_r}\\ 
  {(v+h)cos\phi_{r}sin\lambda_r}\\
  {v(1 - e^2)sin\phi_r}
@@ -56,18 +56,18 @@ the following procedure is applied. The geodetic latitude is derived by an itera
 
 .. math::
 
-  r = \sqrt {x^2 + y^2}
-
-  \phi_{r,0} = 0
-
-  \phi_{r,i+1} = arctan(\frac{z}{r} - \frac{ae^2tan\phi_{r,i}}{r\sqrt{1 + (1 - e^2){tan}^2\phi_{r,i}}})
-
-  \phi_r = \lim_{i \to \infty}\phi_{r,i}
-
-  \lambda = ATANA(y,x)
-
-  h = \frac{r}{cos\phi_r} - \frac{a}{\sqrt{(1-e^2){sin}^2\phi_r}}
-
+  &r = \sqrt {x^2 + y^2}\\
+  {\hspace{5mm}} \\
+  &\phi_{r,0} = 0\\
+  {\hspace{5mm}} \\
+  &\phi_{r,i+1} = arctan(\frac{z}{r} - \frac{ae^2tan\phi_{r,i}}{r\sqrt{1 + (1 - e^2){tan}^2\phi_{r,i}}})\\
+  {\hspace{5mm}} \\
+  &\phi_r = \lim_{i \to \infty}\phi_{r,i}\\
+  {\hspace{5mm}} \\
+  &\lambda = ATANA(y,x)\\
+  {\hspace{5mm}} \\
+  &h = \frac{r}{cos\phi_r} - \frac{a}{\sqrt{(1-e^2){sin}^2\phi_r}}
+  
 
 Azimuth and elevation angles of satellite direction
 ---------------------------------------------------
@@ -85,11 +85,11 @@ site can be derived from:
 
 .. math::
 
-  {\pmb e}_{r,enu}^s = {\pmb E}_r{\pmb e}_r^s = {(e_e,e_n,e_u)}^T
-
-  Az_r^s = ATAN2(e_e,e_n)
-
-  El_r^s = arcsin(e_u)
+  &{\pmb e}_{r,enu}^s = {\pmb E}_r{\pmb e}_r^s = {(e_e,e_n,e_u)}^T\\
+  {\hspace{5mm}} \\
+  &Az_r^s = ATAN2(e_e,e_n)\\
+  {\hspace{5mm}} \\
+  &El_r^s = arcsin(e_u)
 
 where :math:`\pmb E_r` is the coordinates rotation matrix from ECEF to the local coordinates at the receiver position.
 
