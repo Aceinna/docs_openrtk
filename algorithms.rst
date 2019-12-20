@@ -36,8 +36,8 @@ another, as follows:
     :maxdepth: 3
     :hidden:
 
-    algorithms/CoordFrames
-    algorithms/AttitudeParameters
+    algorithms/TimeSystem
+    algorithms/CoordinatesSystem
     algorithms/Sensors
     algorithms/KalmanFilter
     algorithms/StateTransitionModels

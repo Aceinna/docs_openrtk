@@ -1,11 +1,18 @@
 PC
 ===
 
-OpenRTK acts as NTRIP client connects with NTRIP server to fetch
-RTCM/NMEA data from ethernet in RTK, and then send to Aceinna server,
-after the calculation of the server, the data is returned, and then
-written to the device. The RTK device will calibrate according to the
-data.
+.. OpenRTK platform acts as NTRIP client
+   connects with NTRIP server to gets/sends RTCM/NMEA data via ethernet. For more
+   details, please refer to RTK/Cloud RTK.
+
+OpenRTK PC platform acts as an auxiliary tool, connected to the OpenRTK module via USB to 
+configure parameters during data transmission. Finally display trajectory in map.
+
+.. OpenRTK acts as NTRIP client connects with NTRIP server to fetch
+   RTCM/NMEA data from ethernet in RTK, and then send to Aceinna server,
+   after the calculation of the server, the data is returned, and then
+   written to the device. The RTK device will calibrate according to the
+   data.
 
 .. image:: ../media/PC_tool.png
 

@@ -1,9 +1,8 @@
 Mobile
 ======
 
-OpenRTK works for Aceinna OpenRTK app. APP get RTCM/NMEA data
-via Bluetooth from RTK device, and then send to Aceinna server on Internet,
-calculation results to be sent to the device. The RTK device will calibrate according to the data.
+Aceinna OpenRTK app connects to OpenRTK module and server with Bluetooth and Internet, respectively, 
+to configure parameters during data transmission. Finally, APP shows trajectory in map
 
 .. image:: ../media/Mobile_APP.png
 
@@ -69,6 +68,8 @@ Configuration
 
      - RTK: get NEMA(GPGGA) from device,get RTCM from Aceinna server. 
      - cloudRTK: get RTCM from device, get NEMA(GPGGA) from Aceinna server. 
+
+   For more details, please refer to `RTK/Cloud RTK <https://openrtk.readthedocs.io/en/latest/Network/rtk_cloudrtk.html>`__.
   - *Use Local Service*:
 
      - ON: you can use other service, and you need input its URL and Port.
