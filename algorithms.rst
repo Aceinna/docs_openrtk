@@ -20,10 +20,10 @@ conditions.  Finally, a series of examples illustrate existing VG, AHRS, and INS
 The algorithm development description is broken up into a series of sections that build upon one
 another, as follows:
 
-*   Coordinate Frames
-*   Attitude Parameters
-*   Sensors
-*   Extended Kalman Filter
+*   Time System
+*   Coordinates System
+*   GNSS Signal Measurement Models
+.. *   Extended Kalman Filter
 *   Process Models
 *   Measurement Model
 *   Measurement Vector
@@ -38,8 +38,8 @@ another, as follows:
 
     algorithms/TimeSystem
     algorithms/CoordinatesSystem
-    algorithms/Sensors
-    algorithms/KalmanFilter
+    algorithms/GNSSmodel
+..    algorithms/KalmanFilter
     algorithms/StateTransitionModels
     algorithms/ProcessModels
     algorithms/MeasurementModel
