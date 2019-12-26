@@ -34,7 +34,7 @@ another, as follows:
 
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 4
     :hidden:
 
     algorithms/TimeSystem
