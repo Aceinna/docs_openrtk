@@ -22,14 +22,15 @@ another, as follows:
 
 *   Time System
 *   Coordinates System
-*   GNSS Signal Measurement Models
+*   GNSS RTK algorithms
+*   GNSS RTK/IMU loosely coupled integration
 .. *   Extended Kalman Filter
-*   Process Models
-*   Measurement Model
-*   Measurement Vector
-*   Innovation (Measurement Error)
-*   Magnetic Alignment
-*   References
+   *   Process Models
+   *   Measurement Model
+   *   Measurement Vector
+   *   Innovation (Measurement Error)
+   *   Magnetic Alignment
+   *   References
 
 
 .. toctree::
@@ -38,15 +39,8 @@ another, as follows:
 
     algorithms/TimeSystem
     algorithms/CoordinatesSystem
-    algorithms/GNSSmodel
-..    algorithms/KalmanFilter
-    algorithms/StateTransitionModels
-    algorithms/ProcessModels
-    algorithms/MeasurementModel
-    algorithms/MeasurementVector
-    algorithms/Innovation
-    algorithms/MagneticAlignment
-    algorithms/References
+    algorithms/GNSSrtk
+    algorithms/RTK_IMU
 
 
 .. [#caveat] This discussion presupposes a certain amount of knowledge.  Details related to

@@ -70,3 +70,4 @@ where:
 
 :math:`N_{r,i}^s` is often called as carrier‐phase integer ambiguity, carrier‐cycle ambiguity or simply ambiguity. 
 For the detailed formulation of the carrier‐phase correction terms.
+ 

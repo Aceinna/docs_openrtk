@@ -78,5 +78,16 @@ custom data structures and packets very simple.
     :hidden:
 
     software
+
+.. raw:: latex
+
+   \part{Software Development}
+
+
+.. toctree::
+    :caption: OpenRTK Algorithms
+    :maxdepth: 1
+    :hidden:
+
     algorithms
 

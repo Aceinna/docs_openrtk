@@ -2,7 +2,7 @@ Mobile
 ======
 
 Aceinna OpenRTK app connects to OpenRTK module and server with Bluetooth and Internet, respectively, 
-to configure parameters during data transmission. Finally, APP shows trajectory in map
+to configure parameters during data transmission. Finally, APP shows trajectory in map.
 
 .. image:: ../media/Mobile_APP.png
 
@@ -11,7 +11,7 @@ Installation and initialization
 
  ::
 
- 1. You can scan the QR code to download, currently only the android version and make sure
+ 1. You can scan the QR code to download, or download app form `here <https://developers.aceinna.com/static/appDownload.html/>`__. Currently only the android version and make sure
     your Android version is 8.0 or above.
 
  .. image:: ../media/ercode.png
