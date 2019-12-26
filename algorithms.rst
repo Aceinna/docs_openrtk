@@ -40,7 +40,7 @@ another, as follows:
     algorithms/TimeSystem
     algorithms/CoordinatesSystem
     algorithms/GNSSrtk
-    algorithms/RTK_IMU
+    algorithms/RTKIMU
 
 
 .. [#caveat] This discussion presupposes a certain amount of knowledge.  Details related to

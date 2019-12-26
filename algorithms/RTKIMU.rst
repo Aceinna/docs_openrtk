@@ -1,3 +1,6 @@
+GNSS RTK/IMU loosely coupled integration
+========================================
+
 The GNSS RTK/IMU algorithms includes:
 
 .. toctree::
