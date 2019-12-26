@@ -11,7 +11,7 @@ Installation and initialization
 
  ::
 
- 1. You can scan the QR code to download, or download app form `here <https://developers.aceinna.com/static/appDownload.html/>`__. Currently only the android version and make sure
+ 1. You can scan the QR code to download, or `download app form here <https://developers.aceinna.com/static/appDownload.html/>`__. Currently only the android version and make sure
     your Android version is 8.0 or above.
 
  .. image:: ../media/ercode.png
