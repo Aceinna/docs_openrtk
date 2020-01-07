@@ -27,8 +27,8 @@ Installation and initialization
      Please make your Android device allow the OpenRTK app to run in background.
 
 
-Account Registration
-~~~~~~~~~~~~~~~~~~~~
+Aceinna Network service subscription
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  **Sign up**. you need a account to login in. The account is same as
  `Aceinna Developer Site <https://developers.aceinna.com/>`__ and
@@ -38,9 +38,6 @@ Account Registration
  .. image:: ../media/login.jpg
     :align: center
     :scale: 18%   
-
-Aceinna Network service subscription
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  **Generate API**. If you do not have the API key, you need generate API
  Key to use Aceinna RTK network.
