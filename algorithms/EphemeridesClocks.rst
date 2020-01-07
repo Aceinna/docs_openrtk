@@ -121,7 +121,7 @@ navigation messages as:
   \pmb{P}_{eph}(t_{oe},t_{oc}) = {(a,e,i_0,\Omega_0,\omega,M_0,\Delta{n},\dot{I},\dot{\Omega},C_{us},C_{uc},C_{rs},C_{rc},C_{is},C_{ic},af_0,af_1,af_2,T_GD)}^T
 
 For MEO and IGSO satellites of BeiDou, the same formulations for GPS ephemeris and clock, except for
-:math:`\mu = 3.986004418\times10^14`, :math:`\omega_e = 7.2921150\times10^(-5)` rad/s and the time :math:`t` is expressed in BDT. 
+:math:`\mu = 3.986004418\times10^{14}`, :math:`\omega_e = 7.2921150\times10^{-5}` rad/s and the time :math:`t` is expressed in BDT. 
 
 To obtain the satellite position :math:`\pmb{r}^s(t)` of BeiDou GEO satellites at the time :math:`t` in BDT, the equation above should be replaced by: 
 
