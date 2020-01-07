@@ -9,6 +9,9 @@ Please refer to the figure below for setting up the OpenRTK330 Evaluation Kit (E
     :width: 6.0in
     :height: 6.0in
 
+EVK setup and firmware download
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 *  Unpack the OpenRTK330 EVK, you will find the following items
 
     * OpenRTK330 Evaluation Board (EVB)
@@ -39,5 +42,22 @@ At this point, the OpenRTK330 firmware is loaded and ready for GNSS RTK position
 
 *   (optional) Connect the EVB (RJ45 connector) with a network router/gateway with an Ethernet cable, the usage of this connection will also be addressed in next section
 
+ 
+Online firmware upgrade
+~~~~~~~~~~~~~~~~~~~~~~~
+There are two steps to upgrade the OpenRTK330 firmware online. First, go to Aceinna's github page and clone the repo "python-openimu", click here (https://github.com/Aceinna/python-openimu), and checkout the "ans-devices" branch. Run the following commands:
+
+.. code-block:: python
+
+    cd .\python-openimu
+    python main.py
+
+The python driver automatically scans available USB-serial ports and finds the right com port.    
+
+Secondly, log in to Aceinna's developer website (https://developers.aceinna.com) and navigate to Code->Apps on the left side menu, click the OpenRTK330 App as shown in the following figure. If the correct com port is found by the python driver, the "upgrade" button is highlighted. Click the "upgrade" button and wait for the firmware upgrade completes.
+
+.. figure:: media/app_upgrade_openrtk.png
+    :width: 7.0in
+    :height: 4.0in
 
 
