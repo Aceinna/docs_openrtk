@@ -59,5 +59,3 @@ Secondly, log in to Aceinna's developer website (https://developers.aceinna.com)
 .. figure:: media/app_upgrade_openrtk.png
     :width: 7.0in
     :height: 4.0in
-
-
