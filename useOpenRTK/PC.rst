@@ -59,18 +59,16 @@ Configuration
 
  **1. Ntrip Configuration**.
 
-  - *RTK Ntrip*: If you choose Local Service, ntrip client will use
-    username and apikey in login. Otherwise, ntrip client will use
-    username and password in ntripcfg.
-  - *RTK Type*: 
+  - *IP*: NTRIP server ip, it can be ip like "106.12.40.121", or be the hostname like "rtk.aceinna.com".
+  - *PORT*: NTRIP server port.
+  - *MOUNT POINT*: NTRIP mount point, if you use Aceinna Cloud Server, it will be "/RTK".
+  - *USER NAME*: If you use Aceinna Cloud Server, it will be the user name.
+  - *PASSWORD*: If you use Aceinna Cloud Server, it will be the Apikey.
+  - *NTRIP STATUS*: CONNECTET/DISCONNECTED: indication of ntrip connection status.
+  - *BSAE STREAM*: AVAILABLE/UNAVAILABLE: indication of base rtcm stream.
 
-        - LocalRTK: get NEMA(GPGGA) from device, get RTCM from Aceinna server. 
-        - cloudRTK: get RTCM from device, get NEMA(GPGGA) from Aceinna server.
-  - *Ntrip state*:
-
-        - ON: etnernet ntrip on, forbid bluetooth rtcm from mobile.
-        - OFF: ethernet ntrip off, allow bluetooth rtcm from mobile.
-          state can be controlled by 'START' button.
+  You can click 'SAVE', if the NTRIP STATUS is CONNECTED, it will be effective next time. So, you should 
+  reconnect the network or restart the OpenRTK board.
 
   .. image:: ../media/ntripcfg.png
      :align: center
@@ -86,12 +84,23 @@ Configuration
 
  **3. Ethernet Configuration**.
 
-    -  *IP mode*: static ip or dhcp ip,if dhcp fail, it will use static ip.
-    -  *Static ip*: include ip, netmask and gateway.
-    -  *RESTART*: if dhcp over and fail, you can click "RESTART" to restart
-       DHCP.
+    -  *MAC*: It can be modified in the code, the last three bytes is the CPU's device ID.
+    -  *MODE*: 
+
+         - *DHCP mode*: it will do dhcp util success. 
+         - *STATIC IP*: STATIC NETMASK and STATIC GATEWAY. You should config the same gateway of your net device and config a free ip.
+
+    You can click 'SAVE' to let the configuration be effective immediately. If the NTRIP STATUS is CONNECTED, it will reconnect immediately.
 
     .. image:: ../media/ethcfg.png
+       :align: center
+       :scale: 50%
+
+ **4. Device Info**
+
+    You can see all the device infomation.
+
+    .. image:: ../media/deviceinfo.png
        :align: center
        :scale: 50%
 
