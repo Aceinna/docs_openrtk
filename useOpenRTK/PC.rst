@@ -60,7 +60,7 @@ Configuration
   You can click 'SAVE', if the NTRIP STATUS is CONNECTED, it will be effective next time. So, you should 
   reconnect the network or restart the OpenRTK board.
 
-  .. image:: ../media/ntripcfg.png
+  .. image:: ../media/ntripconfi.png
      :align: center
      :scale: 50%
 
@@ -68,7 +68,7 @@ Configuration
 
     - change device setting, like baud rate, output packet and so on.
 
-    .. image:: ../media/userconfi.png
+    .. image:: ../media/usercfg.png
        :align: center
        :scale: 50%
 
