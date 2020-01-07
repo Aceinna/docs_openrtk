@@ -68,7 +68,7 @@ Configuration
 
     - change device setting, like baud rate, output packet and so on.
 
-    .. image:: ../media/usercfg.png
+    .. image:: ../media/userconfi.png
        :align: center
        :scale: 50%
 
