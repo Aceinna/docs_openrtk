@@ -1,11 +1,7 @@
 OpenRTK Developer Manual
 ========================
 
-.. note::
-
-    OpenRTKbox.png to be provided.
-
-.. image:: media/OpenIMU.png
+.. image:: media/OpenRTK.png
    :align: center
    :scale: 50%
 
