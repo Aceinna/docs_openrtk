@@ -56,6 +56,6 @@ The python driver automatically scans available USB-serial ports and finds the r
 
 Secondly, log in to Aceinna's developer website (https://developers.aceinna.com) and navigate to Code->Apps on the left side menu, click the OpenRTK330 App as shown in the following figure. If the correct com port is found by the python driver, the "upgrade" button is highlighted. Click the "upgrade" button and wait for the firmware upgrade completes.
 
-.. figure:: media/app_upgrade_openrtk.png
+.. figure:: media/app_upgrade_openRTK.png
     :width: 7.0in
     :height: 4.0in
