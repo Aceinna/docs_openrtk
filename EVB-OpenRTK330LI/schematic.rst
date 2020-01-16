@@ -12,5 +12,5 @@ EVB Schematic
 .. image:: ../media/EVB_6.png
 .. image:: ../media/EVB_7.png
 
-Schematic :download:`download <../media/OpenRTK330_EVB_SCH.pdf>`
+Schematic :download:`download link <../media/OpenRTK330_EVB_SCH.pdf>`
 

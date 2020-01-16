@@ -12,7 +12,8 @@ and deploy custom embedded sensor apps using OpenRTK. Visual Studio Code is the 
 and the extension configures VS Code to include easy access to compilation, code download, 
 JTAG debug, IMU and GNSS data logging as well as OpenRTK platform updates and news. A developer 
 website called Aceinna Navigation Studio (ANS) includes additional support tools including a GUI 
-for controlling, plotting and managing data files logged by your Custom RTK/IMU module.
+for controlling, plotting and managing data files logged by your Custom RTK/IMU module. About OpenIMU,
+you can refer to `Aceinna OpenIMU Developer Manual <https://openimu.readthedocs.io/en/latest/>`_.
 
 .. image:: media/Overview.png
 
