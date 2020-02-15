@@ -10,8 +10,8 @@ OpenRTK330 module is targeted for commecial applicaiton for the mass
 market that requires a reliable, high-precision and yet cost effective
 **GNSS/INS** integrated positioning solution.
 
--  100 Hz GNSS/INS integrated position, velocity and attitude solution
--  Integrated tripple redundant 6 axis IMU sensors
+-  Up to 50 Hz GNSS/INS integrated position, velocity and attitude solution
+-  Integrated tripple redundant 6-axis IMU sensors
 -  Integrated multi-frequency GNSS chipset
 -  180MHz STM32 M4 CPU with FPU
 -  UART / SPI / CAN / Ethernet Interfaces
@@ -80,9 +80,7 @@ Technical characteristics
  +----------------------------------------+--------------------------+
  | RTK Initialization Time                | <1 min                   |
  +----------------------------------------+--------------------------+
- | Update Rate                            | 10 Hz                    |
- +----------------------------------------+--------------------------+
- | Output Data Rate                       | 100 Hz (200 Hz MAX)      |
+ | INS PVA output rate                    | Up to 50 Hz              |
  +----------------------------------------+--------------------------+
  | **Sensitivity**                                                   |
  +----------------------------------------+--------------------------+
@@ -144,14 +142,15 @@ The default configuration of the four UART ports is listed as follows
 -  USER port
 
     -  default baud rate: 460800 b/s
-    -  default navigation messages: GNSS PV (positioin and velocity) packet ('pS'), satellite SNR (Signal-to-Noise Ratio), elevation and azimuth packet ('sK')
+    -  default navigation messages: INS PVA packet ('pS'), satellite SNR, elevation and azimuth packet ('sK')
 -  ST_UART1 port
 
     -  default baud rate: 460800 b/s
+    -  not applicable for output
 -  DEBUG port
 
     -  default baud rate: 460800 b/s
-    -  default message: raw IMU data packet ('e1')
+    -  default message: extended INS PVA plus raw IMU data packet ('p1')
 -  ST_UART_PROG port
 
     -  default baud rate: 460800 b/s
