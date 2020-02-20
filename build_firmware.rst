@@ -1,4 +1,4 @@
-Embeded Development Environment on PC
+Firmware Build from Source
 =====================================
 
 .. contents:: Contents

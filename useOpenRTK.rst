@@ -1,4 +1,4 @@
-How to use OpenRTK?
+How to Use OpenRTK?
 ===================
 
 The OpenRTK module acts as a NTRIP client fetching GNSS corrections data

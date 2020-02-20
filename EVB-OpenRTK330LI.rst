@@ -1,10 +1,10 @@
-OpenRTK330LI Eval Kit
+OpenRTK330 EVK
 ===================
 
 .. contents:: Contents
     :local:
     
-The OpenRTK330LI evaluation kit consists of a robust and easy-to-use eval board, a test fixture, the OpenRTK330LI RTK module, and an ST-LINK J-TAG pod.
+The OpenRTK330 EVK consists of a robust and easy-to-use evaluation board, a test fixture, the OpenRTK330LI RTK module, and an ST-LINK J-TAG pod.
 
 .. image:: media/OpenRTKKit.png
     :height: 220

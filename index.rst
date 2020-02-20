@@ -36,11 +36,11 @@ including custom data structures and packets very simple.
     :maxdepth: 1
     :hidden:
     :titlesonly:
-    
-    install
+
     setup-OpenRTK
     Network
     useOpenRTK
+    build_firmware.rst
 
 .. raw:: latex
 
