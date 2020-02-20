@@ -65,9 +65,6 @@ the N-Frame while the dashed blue lines indicate the projection of the B-Frame a
 .. |ySubB| replace:: :math:`y_\perp`
 .. |zSubB| replace:: :math:`z_\perp`
 
-.. [#inertial] Strictly speaking, neither the ECEF-frame nor the NED-frame are inertial.  Both move
-               and rotate relative to the stars; the NED-frame changes with location as well.
-               However, the two are sufficient for use with the OpenIMU line of products.
 
 *************************
 Coordinate Transformation
@@ -168,3 +165,14 @@ where :math:`\pmb E_r` is the coordinates rotation matrix from ECEF to the local
 .. image:: media/Azimuth.png
     :scale: 50%
     :align: center
+
+.. [#inertial] Strictly speaking, neither the ECEF-frame nor the NED-frame are inertial.  Both move
+               and rotate relative to the stars; the NED-frame changes with location as well.
+               However, the two are sufficient for use with the OpenIMU line of products.
+
+
+.. math::
+
+  & E{U_k} = E{V_k} = E{U_k \cdot V_j^T} = 0 \\ 
+  & E{U_k \cdot U_j^T} = \begin{cases} Q_k, j = k \\ 0, j \ne k \end{cases} \\ 
+  & E\{V_k \cdot V_j^T} = \begin{cases} R_k, j = k \\ 0, j \ne k \end{cases}  
