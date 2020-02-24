@@ -1,4 +1,4 @@
-Coordinates System
+Coordinates system
 ==================
 
 ******************

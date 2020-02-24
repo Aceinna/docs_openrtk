@@ -64,20 +64,6 @@ including custom data structures and packets very simple.
 
     EVB-OpenRTK330LI
 
-..    EvaluationKits
-
-.. raw:: latex
-
-   \part{Software Development}
-
-
-.. toctree::
-    :caption: Software Development
-    :maxdepth: 1
-    :hidden:
-
-    software
-
 .. raw:: latex
 
    \part{Software Development}
@@ -87,6 +73,10 @@ including custom data structures and packets very simple.
     :caption: OpenRTK Algorithms
     :maxdepth: 1
     :hidden:
+    :titlesonly:
 
-    algorithms
+    algorithms/TimeSystem
+    algorithms/CoordinatesSystem
+    algorithms/GNSSrtk
+    algorithms/RTKIMU
 

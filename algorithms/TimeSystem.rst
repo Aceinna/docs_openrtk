@@ -1,4 +1,4 @@
-Time System
+Time system
 ===========
 
 OpenRTK internally uses GPST (GPS Time) for GNSS data handling and positioning algorithms. 

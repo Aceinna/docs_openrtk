@@ -1,4 +1,4 @@
-Integer ambiguity resolution
+Integer Ambiguity Resolution
 ============================
 
 Once the estimated states obtained in the EKF measurement update, the float 

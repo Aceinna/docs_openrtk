@@ -157,7 +157,7 @@ The coefficient matrix is:
 
 .. math::
 
- H_k = \begin{bmatrix}& O & O & O & \partial X & \partial Y & \partial Z & O & O & O & I\end{bmatrix}
+ H_k = \begin{bmatrix}O & O & O & \partial X & \partial Y & \partial Z & O & O & O & I\end{bmatrix}
 
 Finally, calculating the carrier observation equation. In addition to the parameters in the 
 pseudorange model, the parameters to be estimated also added ambiguity parameters. The ambiguity 
