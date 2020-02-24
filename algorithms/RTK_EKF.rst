@@ -167,7 +167,7 @@ satellite :math:`\Delta \nabla N_{rov}`. The expression of the parameter to be e
 
 .. math::
 
- X_k = \begin{bmatrix}dX & dY & dZ & dV_X & dV_Y & dV_Z & da_X & da_Y & da_Z & cdt_r & cdt_{bias} & \Delta N_{ref} & \Delta \nabla N_{rov} \end{bmatrix}
+ X_k = \begin{bmatrix}dX&dY&dZ&dV_X&dV_Y&dV_Z&da_X&da_Y&da_Z&cdt_r&cdt_{bias}&\Delta N_{ref}&\Delta \nabla N_{rov}\end{bmatrix}
 
 The carrier observation equation is:
 
