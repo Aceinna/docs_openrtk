@@ -1,4 +1,4 @@
-GNSS RTK algorithms
+GNSS RTK Algorithms
 ===================
 
 The GNSS RTK algorithms includes:

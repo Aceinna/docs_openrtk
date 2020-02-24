@@ -1,4 +1,4 @@
-GNSS RTK/IMU loosely coupled integration
+GNSS RTK/IMU Loosely Coupled Integration
 ========================================
 
 The GNSS RTK/IMU algorithms includes:
