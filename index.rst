@@ -1,7 +1,7 @@
 OpenRTK Developer Manual
 ========================
 
-.. image:: media/OpenRTK.png
+.. image:: media/OpenRTK.jpg
    :align: center
    :scale: 50%
 OpenRTK is an integrated GNSS (Global Navigation Satellite System) high precision 
