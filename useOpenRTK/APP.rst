@@ -1,12 +1,7 @@
-Mobile
-======
+Android
+=======
 
-Aceinna OpenRTK app connects to OpenRTK module and server with Bluetooth and Internet, respectively, 
-to configure parameters during data transmission. Finally, APP shows trajectory in map.
-
-.. image:: ../media/Mobile_APP.png
-
-Installation and initialization
+Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
  ::
@@ -26,37 +21,7 @@ Installation and initialization
 
      Please make your Android device allow the OpenRTK app to run in background.
 
-
-Aceinna Network service subscription
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
- **Sign up**. you need a account to login in. The account is same as
- `Aceinna Developer Site <https://developers.aceinna.com/>`__ and
- `Aceinna Fourm <https://forum.aceinna.com//>`__. You can sign up an account,
- or log in quickly using your github account.
-
- .. image:: ../media/login.jpg
-    :align: center
-    :scale: 18%   
-
- **Generate API**. If you do not have the API key, you need generate API
- Key to use Aceinna RTK network.
-  1. click next.
-   .. image:: ../media/generate-step-1.jpg
-     :align: center
-     :scale: 18%
-
-  2. set a number, it means how many devices you can use this account at the same time.
-   .. image:: ../media/generate-step-2.jpg
-     :align: center
-     :scale: 18%
-
-  3. click finish to generate API key.
-   .. image:: ../media/generate-step-3.jpg
-     :align: center
-     :scale: 18%
-
-Configuration
+Usage
 ~~~~~~~~~~~~~
 
  **1. Network Configuration**.
@@ -135,4 +100,35 @@ Map
   .. image:: ../media/trajectory.jpg
     :align: center
     :scale: 18%   
+
+
+Aceinna Network service subscription
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ **Sign up**. you need a account to login in. The account is same as
+ `Aceinna Developer Site <https://developers.aceinna.com/>`__ and
+ `Aceinna Fourm <https://forum.aceinna.com//>`__. You can sign up an account,
+ or log in quickly using your github account.
+
+ .. image:: ../media/login.jpg
+    :align: center
+    :scale: 18%   
+
+ **Generate API**. If you do not have the API key, you need generate API
+ Key to use Aceinna RTK network.
+  1. click next.
+   .. image:: ../media/generate-step-1.jpg
+     :align: center
+     :scale: 18%
+
+  2. set a number, it means how many devices you can use this account at the same time.
+   .. image:: ../media/generate-step-2.jpg
+     :align: center
+     :scale: 18%
+
+  3. click finish to generate API key.
+   .. image:: ../media/generate-step-3.jpg
+     :align: center
+     :scale: 18%
+
     
