@@ -14,7 +14,6 @@ configure parameters during data transmission. Finally display trajectory in map
    written to the device. The RTK device will calibrate according to the
    data.
 
-.. image:: ../media/PC_tool.png
 
 Installation and initialization
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

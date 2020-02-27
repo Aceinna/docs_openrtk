@@ -1,5 +1,5 @@
 How to Use OpenRTK330?
-===================
+========================
 
 Note the usage of OpenRTK330 is described with the OpenRTK330 EVK. There are two types of user APP provided to interact with both the module and a NTRIP server over the internet providing GNSS correction data for RTK positioning:
 
@@ -18,6 +18,7 @@ Note the usage of OpenRTK330 is described with the OpenRTK330 EVK. There are two
   * Module settings on positioning parameters and user configuration with a web GUI embedded in firmware
   * Map and positioning information display on the online web GUI (`"OpenRTK Monitor" <https://developers.aceinna.com/devices/rtk>`_) of Aceinna developer website
 
+    .. image:: /media/PC_tool.png
 
 The following two subsections cover the detailed steps of using the two types of user App.
 

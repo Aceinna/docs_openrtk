@@ -1,30 +1,48 @@
 Android
 =======
 
+The following describes the installation and usage of the "OpenRTK" Android App.
+
 Installation
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~
 
- ::
-
- 1. You can scan the QR code to download, or `download app from here <https://developers.aceinna.com/static/appDownload.html/>`__. Currently only the android version and make sure
-    your Android version is 8.0 or above.
+1. Scan the QR code below or click `here <https://developers.aceinna.com/static/appDownload.html/>`_ to download the Android apk installation file. Make sure your Android version is 8.0 or above.
 
  .. image:: ../media/ercode.png
     :align: center
     :scale: 70%
 
- ::
 
- 2. After downloading the OpenRTK app, open the APK file for installation.
+2. Open the downloaded APK file to install the App 
 
  .. note::
 
-     Please make your Android device allow the OpenRTK app to run in background.
+     Please grant the OpenRTK App access to run in Android system's backend.
 
 Usage
 ~~~~~~~~~~~~~
+1. Power on the OpenRTK330 EVB using a 9-12 v DC adaptor or a microUSB cable connected to a PC (desktop, Raspberry Pi etc.), and check the YELLOW, RED AND GREEN LED lights to confirm valid firmware
 
- **1. Network Configuration**.
+  - YELLOW: flashing light indicating GNSS chipsets is powered on with 1PPS signal output correctly 
+  - GREEN: flashing light indicating OpenRTK330 RTK or INS App is running correctly 
+
+2. **Connection**
+
+ - Enable "Bluetooth" on your Anroid device
+ - Open the OpenRTK Andorid App and enable "Location" access for "OpenRTK" App on your Anroid device 
+ - As shown by the picture below, go to the "Connect" tab and click the "search" icon to search for your device. If your OpenRTK330 device is found, a Bluetooth device ID appears on the "Connect" list. By factory setting, the Bluetooth device ID is "OpenRTK_<four digits>" and the four digits are the last four digits of your OpenRTK330 module S/N.
+
+  .. image:: ../media/connect.jpg
+    :align: center
+    :scale: 18%   
+
+ - After it’s connected, you can see the following interface.
+
+  .. image:: ../media/connectLog.jpg
+    :align: center
+    :scale: 18%   
+
+3. **Network Configuration**
 
   - *RTK Type*: 
 
@@ -70,21 +88,6 @@ Usage
 
   - *Save result*: Save result information in GPGGA format if switch is on. The storage path is *Android/data/com.aceinna.rtk/files/log*.
 
-Connection
-~~~~~~~~~~
-
- - Turn on your RTK Bluetooth device and make it discoverable.
- - Click the "search" icon to search for your device, if it's not on already, please turn on location permissions for your Bluetooth.
-
-  .. image:: ../media/connect.jpg
-    :align: center
-    :scale: 18%   
-
- - After it’s connected, you can see the following interface.
-
-  .. image:: ../media/connectLog.jpg
-    :align: center
-    :scale: 18%   
  
 Map
 ~~~
