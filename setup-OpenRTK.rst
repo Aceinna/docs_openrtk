@@ -39,20 +39,26 @@ By factory settings, the ESP32 module on the OpenRTK330 EVB has been programmed 
             :height: 4.0in
 
     1. (Recommended) The **online upgrade** way  
-    
-        - Download and run the python driver executables from a command line
-          
-            - `Windows 10 <https://github.com/Aceinna/python-openimu/files/4211970/ans-devices-win.zip>`_
 
-            - `Mac OS <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_
+       - Run the python driver for OpenRTK330 to get connectted with Aceinna developer website. There are two options
 
-        - If you prefer building from source, go to Aceinna's github page and clone the repo `python-openimu <https://github.com/Aceinna/python-openimu>`_, and checkout the "ans-devices" branch. Run the OpenRTK Python driver with the following commands:
+            - Download executable files (version 1.1.0) and run in a command line          
 
-            .. code-block:: python
+                - `Windows 10 <https://github.com/Aceinna/python-openimu/files/4211970/ans-devices-win.zip>`_
 
-                cd .\python-openimu
-                pip install -r requirements.txt
-                python main.py
+                - `Mac OS <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_
+
+                - `Linux (Ubuntu 19.10) <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_
+
+                - `Raspberry Pi (Raspbian GNU/Linux 9) <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_ 
+
+            - If you prefer building from source, go to Aceinna's github page and clone the repo `python-openimu <https://github.com/Aceinna/python-openimu>`_, and checkout the "ans-devices" branch. Run the OpenRTK Python driver with the following commands:
+
+                .. code-block:: python
+
+                    cd .\python-openimu
+                    pip install -r requirements.txt
+                    python main.py
 
         The python driver automatically scans available USB-serial ports and finds the right com port. If the correct com port is found, the "UPGRADE" button circled by cyan rectrangle will be highlighted. Then click the "UPGRADE" button to start the firmware upgrade process and wait it completes.  
 

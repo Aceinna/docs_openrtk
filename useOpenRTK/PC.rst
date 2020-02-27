@@ -1,128 +1,100 @@
 PC
 ===
 
-.. OpenRTK platform acts as NTRIP client
-   connects with NTRIP server to gets/sends RTCM/NMEA data via ethernet. For more
-   details, please refer to RTK/Cloud RTK.
+Using OpenRTK330 with a PC needs to access the web based Aceinna developer website via ethernet connection.
 
-OpenRTK PC platform acts as an auxiliary tool, connected to the OpenRTK module via USB to 
-configure parameters during data transmission. Finally display trajectory in map.
-
-.. OpenRTK acts as NTRIP client connects with NTRIP server to fetch
-   RTCM/NMEA data from ethernet in RTK, and then send to Aceinna server,
-   after the calculation of the server, the data is returned, and then
-   written to the device. The RTK device will calibrate according to the
-   data.
-
-
-Installation and initialization
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
- ::
-
- 1. Plug in a RJ45 cable from the host(e.g. Router or Desktop) to the
-    ethernet port of OpenRTK.
- ::
-
- 2. DHCP IP address is used by OpenRTK as default, if no success,
-    manually setup a STATIC IP (ip = 192.168.1.110, netmask =
-    255.255.255.0, gateway = 192.168.1.1).
- ::
-
- 3. Visit the embedded web site ("http://openrtk") on the same LAN as
-    OpenRTK.
-
-Aceinna Network service subscription
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
- **Generate API**. If you do not have the API key, you need `generate API
- key <https://openrtk.readthedocs.io/en/latest/Network/getapikey.html>`__  
- to use Aceinna RTK network and set the number of allowed devices.
-
- .. image:: ../media/signup.png
-    :align: center
-    :scale: 50%
-
-Configuration
+Usage
 ~~~~~~~~~~~~~
+1. Power on the OpenRTK330 EVB using a 9-12 v DC adaptor or a microUSB cable connected to a PC, then connect the EVB with a GNSS antenna, and lastly check the YELLOW, RED AND GREEN LED lights to confirm valid firmware
 
- **1. Ntrip Configuration**.
+  - YELLOW: flashing light indicating GNSS chipsets is powered on with valid 1PPS signal output
+  - GREEN: flashing light indicating OpenRTK330 RTK or INS App is running correctly with valid GNSS signal receiving 
 
-  - *IP*: NTRIP server ip, it can be ip like "106.12.40.121", or be the hostname like "rtk.aceinna.com".
-  - *PORT*: NTRIP server port.
-  - *MOUNT POINT*: NTRIP mount point, if you use Aceinna Cloud Server, it will be "/RTK".
-  - *USER NAME*: If you use Aceinna Cloud Server, it will be the user name.
-  - *PASSWORD*: If you use Aceinna Cloud Server, it will be the Apikey.
-  - *NTRIP STATUS*: CONNECTET/DISCONNECTED: indication of ntrip connection status.
-  - *BSAE STREAM*: AVAILABLE/UNAVAILABLE: indication of base rtcm stream.
+2. **Connection**
 
-  You can click 'SAVE', if the NTRIP STATUS is CONNECTED, it will be effective next time. So, you should 
-  reconnect the network or restart the OpenRTK board.
+ - Plug in a RJ45 cable connected with the same router as the PC to the ethernet port of OpenRTK330 EVB. By factory setting, an IP address is allocated to OpenRTK330 device in the way of DHCP. Make sure the ligths on the RJ45 interface are flashing, which means valid ethernet connection. 
 
-  .. image:: ../media/ntripconfi.png
-     :align: center
-     :scale: 50%
+ - Run the python driver for OpenRTK330 to get connectted with Aceinna developer website. There are two options
 
- **2. User Configuration**.
+    - Download executable files (version 1.1.0) and run in a command line          
 
-    - change device setting, like baud rate, output packet and so on.
+        - `Windows 10 <https://github.com/Aceinna/python-openimu/files/4211970/ans-devices-win.zip>`_
+
+        - `Mac OS <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_
+
+        - `Linux (Ubuntu 19.10) <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_
+
+        - `Raspberry Pi (Raspbian GNU/Linux 9) <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_
+
+    - If you prefer building from source, go to Aceinna's github page and clone the repo `python-openimu <https://github.com/Aceinna/python-openimu>`_, and checkout the "ans-devices" branch. Run the OpenRTK Python driver with the following commands:
+
+            .. code-block:: python
+
+                cd .\python-openimu
+                pip install -r requirements.txt
+                python main.py
+
+    The python driver automatically scans available USB-serial ports and finds the right com port that reports positioning information packets. If ethernet connection is established successfully via python driver, the "WS Server connected" notification appears and the "Play" button is highlighted on `OpenRTK Monitor <https://developers.aceinna.com/devices/rtk>`_, as shown below
+
+     .. image:: ../media/web_gui_connect.png
+       :align: center
+
+3. **Map Presentation**
+
+ - Click "Play", Device information is exposed on the DEVICE INFO page (https://developers.aceinna.com/devices/rtk). 
+
+ .. image:: ../media/web_gui_play.png
+   :align: center
+   :scale: 50%
+
+
+4. **NTRIP and User Configurations**
+
+ A lightweight TCP/IP web service is started inside the OpenRTK330 firmware after power on, user can get access to the web service via a simple `web GUI <http://openrtk>`_ (http://openrtk)
+
+    
+
+    .. manually setup a STATIC IP (ip = 192.168.1.110, netmask =  255.255.255.0, gateway = 192.168.1.1).
+
+            **Generate API**. If you do not have the API key, you need `generate API
+         ``key <https://openrtk.readthedocs.io/en/latest/Network/getapikey.html>`__  
+         to use Aceinna RTK network and set the number of allowed devices.
+
+         .. image:: ../media/signup.png
+            :align: center
+            :scale: 50%
+
+- On the home page, user can change and save NTRIP settings of user's GNSS correction data provider. 
+
+  - "NTRIP STATUS" field with "CONNECTED" string indicates that the ethernet connection to NTRIP server is valid 
+  - "BASE STREAM" field with string value "AVAILABLE" indicates GNSS correction data stream from NTRIP server is valid. 
+
+    .. image:: ../media/ntripconfi.png
+             :align: center
+             :scale: 50%
+ 
+
+- On the User Configuration page, user can change and save OpenRTK330 device settings, like lever arm, output packet and so on.
 
     .. image:: ../media/usercfg.png
        :align: center
        :scale: 50%
 
- **3. Ethernet Configuration**.
+ - Ethernet Configuration
 
-    -  *MAC*: It can be modified in the code, the last three bytes is the CPU's device ID.
-    -  *MODE*: 
+  - *DHCP*: factory setting 
+  - *STATIC IP*: STATIC NETMASK and STATIC GATEWAY. You should config the same gateway as your network equipment and choose an available IP address.
 
-         - *DHCP mode*: it will do dhcp util success. 
-         - *STATIC IP*: STATIC NETMASK and STATIC GATEWAY. You should config the same gateway of your net device and config a free ip.
-
-    You can click 'SAVE' to let the configuration be effective immediately. If the NTRIP STATUS is CONNECTED, it will reconnect immediately.
+  You can click 'SAVE' to let the configuration be effective immediately. If the NTRIP STATUS is CONNECTED, it will reconnect immediately.
 
     .. image:: ../media/ethcfg.png
        :align: center
        :scale: 50%
 
- **4. Device Info**
-
-    You can see all the device infomation.
+- Device Info page: user can see all the product infomation of the connected device.
 
     .. image:: ../media/deviceinfo.png
        :align: center
        :scale: 50%
 
-Connection
-~~~~~~~~~~
-
- - You should download python driver from https://github.com/Aceinna/python-openimu/tree/ans-devices. 
-   Then, you need to run main.py (python main.py -p 9753).
-
- - Device information is exposed on the DEVICE INFO page (https://developers.aceinna.com/devices/rtk). 
-   The default webserver port for rtk is 9753. If you change the port on the web, you should also 
-   change the port when running main.py.
-
- - Connection Status is shown on the link symbol at the top right hand side of the page.
- 
- .. image:: ../media/connect.png
-   :align: center
-   
- - You can visit https://developers.aceinna.com/devices/files to see      RTK LOGIN LOGS.
-
-    .. image:: ../media/serverrtk.png
-        :align: center 
-
-Map
-~~~
-
- Play button will be enabled when openrtk is connected. Click 'play' to see the openrtk output information.
-
- .. image:: ../media/map.png
-   :align: center
-   :scale: 50%
-
- .. image:: ../media/skyview.png
-   :align: center
-   :scale: 50%
 

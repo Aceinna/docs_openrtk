@@ -21,9 +21,9 @@ Installation
 
 Usage
 ~~~~~~~~~~~~~
-1. Power on the OpenRTK330 EVB using a 9-12 v DC adaptor or a microUSB cable connected to a PC (desktop, Raspberry Pi etc.), then connect the EVB with a GNSS antenna, and lastly check the YELLOW, RED AND GREEN LED lights to confirm valid firmware
+1. Power on the OpenRTK330 EVB using a 9-12 v DC adaptor or a micro-USB cable to a powered USB outlet, then connect the EVB with a GNSS antenna, and lastly check the YELLOW, RED AND GREEN LED lights to confirm valid firmware
 
-  - YELLOW: flashing light indicating GNSS chipsets is powered on with 1PPS signal output correctly 
+  - YELLOW: flashing light indicating GNSS chipsets is powered on with valid 1PPS signal output
   - GREEN: flashing light indicating OpenRTK330 RTK or INS App is running correctly with valid GNSS signal receiving 
 
 2. **Connection**
