@@ -78,7 +78,11 @@ By factory settings, the ESP32 module on the OpenRTK330 EVB has been programmed 
 ..
     (optional) Connect the EVB (RJ45 connector) with a network router/gateway with an Ethernet cable, the usage of this connection will also be addressed in next section
 
+
+EVK Vehicle Installation
+~~~~~~~~~~~~~~~~~~~~~~~~
  
+
 Troubleshooting
 ~~~~~~~~~~~~~~~~~~~~~~~
 

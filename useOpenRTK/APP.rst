@@ -21,117 +21,73 @@ Installation
 
 Usage
 ~~~~~~~~~~~~~
-1. Power on the OpenRTK330 EVB using a 9-12 v DC adaptor or a microUSB cable connected to a PC (desktop, Raspberry Pi etc.), and check the YELLOW, RED AND GREEN LED lights to confirm valid firmware
+1. Power on the OpenRTK330 EVB using a 9-12 v DC adaptor or a microUSB cable connected to a PC (desktop, Raspberry Pi etc.), then connect the EVB with a GNSS antenna, and lastly check the YELLOW, RED AND GREEN LED lights to confirm valid firmware
 
   - YELLOW: flashing light indicating GNSS chipsets is powered on with 1PPS signal output correctly 
-  - GREEN: flashing light indicating OpenRTK330 RTK or INS App is running correctly 
+  - GREEN: flashing light indicating OpenRTK330 RTK or INS App is running correctly with valid GNSS signal receiving 
 
 2. **Connection**
 
  - Enable "Bluetooth" on your Anroid device
  - Open the OpenRTK Andorid App and enable "Location" access for "OpenRTK" App on your Anroid device 
- - As shown by the picture below, go to the "Connect" tab and click the "search" icon to search for your device. If your OpenRTK330 device is found, a Bluetooth device ID appears on the "Connect" list. By factory setting, the Bluetooth device ID is "OpenRTK_<four digits>" and the four digits are the last four digits of your OpenRTK330 module S/N.
+ - As shown by the picture below, go to the "Connect" tab and click the "search" icon (right bottom) to search for your device. If your OpenRTK330 device is found, a Bluetooth device ID appears on the "Connect" list. By factory setting, the Bluetooth device ID is "OpenRTK_<four digits>" and the four digits are the last four digits of your OpenRTK330 module S/N. Click your Bluetooth device ID and if connected successfully, a notification appears
 
-  .. image:: ../media/connect.jpg
+  .. image:: ../media/connect_success.jpeg
     :align: center
     :scale: 18%   
 
- - After it’s connected, you can see the following interface.
+ - Besides, detailed Bluetooth connection and user configuration information of the device can be found on the lower window of the "Log" tab, and NMEA GGA messages are reporting the OpenRTK330 device position on the upper window of the "Log" tab. 
 
   .. image:: ../media/connectLog.jpg
     :align: center
     :scale: 18%   
 
-3. **Network Configuration**
+3. **Map Presentation**
 
-  - *RTK Type*: 
+ - Once the Bluetooth connection made successfully, and OpenRTK330 is reporting positioning information to Android App, go to "Map" tab and click "Start Live Data" to start a live map presentation 
 
-     - RTK: get NEMA(GPGGA) from device,get RTCM from Aceinna server. 
-     - cloudRTK: get RTCM from device, get NEMA(GPGGA) from Aceinna server. 
+  .. image:: ../media/live_map_start.jpg
+    :align: center
+    :scale: 18%   
 
-   For more details, please refer to `RTK/Cloud RTK <https://openrtk.readthedocs.io/en/latest/Network/rtk_cloudrtk.html>`__.
-  - *Use Local Service*:
+ - Real time positioning information and trajectory is shown 
 
-     - ON: you can use other service, and you need input its URL and Port.
-     - OFF: use Aceinna OpenRTK service.
+  .. image:: ../media/live_map.jpg
+    :align: center
+    :scale: 18%  
 
-    .. image:: ../media/networkConfig.jpg
+4. **NTRIP Configuration**
+
+ - In order to get GNSS RTK positioning, go to "NTRIP" tab and configure the NTRIP server settings of your GNSS correction data provider 
+
+    .. image:: ../media/ntrip_config.jpeg
+       :align: center
+       :scale: 18%
+
+ - Click "SAVE" to save your NTRIP server settings to your OpenRTK330 module, and then switch on "Pull Base" to get GNSS correction data for RTK  
+
+    .. image:: ../media/ntrip_success.jpeg
        :align: center
        :scale: 18%
       
 
- **2. User Configuration**.
+5. **User Configuration**.
 
-  You can swipe left or click the icon "≡" for more user configuration, as flowing picture.
+  From anyone of the four tabs, you can access the menu for user configuration by clicking the icon "≡" at the upper left corner 
 
   .. image:: ../media/leftMenu.png
        :align: center
        :scale: 18%
 
-  - *Cloud RTK*: show API key info or generate key.
-
-  .. image:: ../media/CloudRTK.png
-         :align: center
-         :scale: 18%
-
-  - *Device Setting*: change device setting, like Bluetooth name, baud rate, output packet and so on.
+  - Click "Device Advanced": user can change and save OpenRTK330 device settings, like Bluetooth ID, lever arm and so on.
     
     .. image:: ../media/customDeviceConfig.jpg
          :align: center
          :scale: 18%
 
-  - *Debug Mode*: Costum some map settings
-    
-    .. image:: ../media/mapConfig.jpg
+  - Click "Developer Option": user can configure the Android App on map presentation and switch on/off of saving positioning results (NMEA GGA messages only) to Android phone storage. The defualt storage path is "Android/data/com.aceinna.rtk/files/log"   
+
+    .. image:: ../media/android_app_config.jpeg
          :align: center
          :scale: 18%
 
-  - *Save result*: Save result information in GPGGA format if switch is on. The storage path is *Android/data/com.aceinna.rtk/files/log*.
-
- 
-Map
-~~~
-
- - Livemap
-
-  .. image:: ../media/offlineMap.jpg
-    :align: center
-    :scale: 18%   
-
- - Track map
-
-  .. image:: ../media/trajectory.jpg
-    :align: center
-    :scale: 18%   
-
-
-Aceinna Network service subscription
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
- **Sign up**. you need a account to login in. The account is same as
- `Aceinna Developer Site <https://developers.aceinna.com/>`__ and
- `Aceinna Fourm <https://forum.aceinna.com//>`__. You can sign up an account,
- or log in quickly using your github account.
-
- .. image:: ../media/login.jpg
-    :align: center
-    :scale: 18%   
-
- **Generate API**. If you do not have the API key, you need generate API
- Key to use Aceinna RTK network.
-  1. click next.
-   .. image:: ../media/generate-step-1.jpg
-     :align: center
-     :scale: 18%
-
-  2. set a number, it means how many devices you can use this account at the same time.
-   .. image:: ../media/generate-step-2.jpg
-     :align: center
-     :scale: 18%
-
-  3. click finish to generate API key.
-   .. image:: ../media/generate-step-3.jpg
-     :align: center
-     :scale: 18%
-
-    
