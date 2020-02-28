@@ -10,7 +10,7 @@ The OpenRTK330 Evalution Kit (EVK) is designed to evaluate the performance of th
     :width: 6.0in
     :height: 6.0in
 
-EVK setup and firmware installation
+Firmware Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Unpack the OpenRTK330 EVK, you will find the following items for the EVK quick setup and firmware installation
@@ -26,7 +26,7 @@ By factory settings, the ESP32 module on the OpenRTK330 EVB has been programmed 
 
 2. Connect the micro USB port on the OpenRTK330 EVB to a PC via a USB cable, four serial ports will be established on your PC, and the EVB is also powered up by this USB connection. Alternatively, the EVB can be powered up directly by a 9-12v DC adapter/generator. In this case, the USB connection is just a data link. The red LED by the micro-USB is always on if powered up.
 
-3. Install the OpenRTK330 module firmware from App center of `Aceinna's developer website <https://developers.aceinna.com/code/apps>`_, as shown by
+3. Install the OpenRTK330 module firmware from `App center <https://developers.aceinna.com/code/apps>`_ on Aceinna's developer website, as shown by
 
     .. figure:: media/download_openrtk330_firmware.png
         :width: 6.5in
@@ -62,7 +62,7 @@ By factory settings, the ESP32 module on the OpenRTK330 EVB has been programmed 
 
         The python driver automatically scans available USB-serial ports and finds the right com port. If the correct com port is found, the "UPGRADE" button circled by cyan rectrangle will be highlighted. Then click the "UPGRADE" button to start the firmware upgrade process and wait it completes.  
 
-    2. (Option 2) **Download** the firmware bin file and **flash** it into OpenRTK330 module. In order to fullfill this, first install the STM32 ST-LINK Utility software from https://www.st.com/en/development-tools/stsw-link004.htm on your PC. Then open the STM32 ST-LINK Utility software and connect the OpenRTK330 EVB with PC using the ST-LINK debugger,
+    2. (Option 2) **Download** the firmware bin file and **flash** it into OpenRTK330 module. In order to fullfill this, first install the STM32 ST-LINK Utility software from `here <https://www.st.com/en/development-tools/stsw-link004.html>`_ on your PC. Then open the STM32 ST-LINK Utility software and connect the OpenRTK330 EVB with PC using the ST-LINK debugger,
 
         1. Click the red circled "1" to establish a connection with the OpenRTK EVB
 
@@ -91,6 +91,36 @@ EVK Vehicle Installation
 
 Troubleshooting
 ~~~~~~~~~~~~~~~~~~~~~~~
+1. **SAVE BEFORE DEVELOPMENT START**: it's strongly recommended to save your factory OpenRTK330 module system image file to a binary file to be able to recover the whole system if something unexpected happened! Especially, if the system bootloader and IMU calibration tables are damaged, OpenRTK330 will not work properly.
+
+ - Save system image
+
+   1. Download and install ST-Link Utility from `here <https://www.st.com/en/development-tools/stsw-link004.html>`_
+   2. Connect ST-Link debugger between OpenRTK330 EVB and PC and power on the EVB
+   3. Open ST-Link Utility software on the PC and go to Target->Connect
+   4. Enter value 0x100000 in Size bo and hit enter
+   5. Click File->Save As to save the system image file
+
+    .. figure:: media/save_image.png
+                :width: 6.5in
+                :height: 4.0in
+
+ - Recover system image
+
+   1. Connect ST-Link debugger between OpenRTK330 EVB and PC and power on the EVB
+   2. Open ST-Link Utility software on the PC and go to Target->Connect
+   3. Click File->Open and open previously saved image file
+   4. Click Target->Program & Verify and make sure that the start address is 0x08000000 before you click Start button to re-programming the OpenRTK330 module
+
+    .. figure:: media/re-download_image.png
+                    :width: 6.5in
+                    :height: 4.0in
+   
+   5. Click Target->Option Bytes and select "sector 0", "sector 1", "sector 2", "sector 3" and "sector 11" to perform write protection. Click Apply button for make it effective. 
+
+     .. figure:: media/protect_sections.png
+                    :width: 6.5in
+                    :height: 12.0in
 
 
 Note
