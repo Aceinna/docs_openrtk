@@ -13,20 +13,20 @@ The OpenRTK330 Evalution Kit (EVK) is designed to evaluate the performance of th
 Firmware Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Unpack the OpenRTK330 EVK, you will find the following items for the EVK quick setup and firmware installation
+1. Unpack the OpenRTK330 EVK, you will find the following items for the EVK quick setup and firmware installation
 
     * OpenRTK330 Evaluation Board (EVB)
     * ST-Link Debugger
     * Micro USB cable
     * Mounting plate
 
-By factory settings, the ESP32 module on the OpenRTK330 EVB has been programmed and configured to provide Bluetooth wireless connectivity. The Ethernet and CAN drivers are also set.
+    By factory settings, the ESP32 module on the OpenRTK330 EVB has been programmed and configured to provide Bluetooth wireless connectivity. The Ethernet and CAN drivers are also set.
 
-1. Mount the EVB on the mounting plate for easy operation.
+2. Mount the EVB on the mounting plate for easy operation.
 
-2. Connect the micro USB port on the OpenRTK330 EVB to a PC via a USB cable, four serial ports will be established on your PC, and the EVB is also powered up by this USB connection. Alternatively, the EVB can be powered up directly by a 9-12v DC adapter/generator. In this case, the USB connection is just a data link. The red LED by the micro-USB is always on if powered up.
+3. Connect the micro USB port on the OpenRTK330 EVB to a PC via a USB cable, four serial ports will be established on your PC, and the EVB is also powered up by this USB connection. Alternatively, the EVB can be powered up directly by a 9-12v DC adapter/generator. In this case, the USB connection is just a data link. The red LED by the micro-USB is always on if powered up.
 
-3. Install the OpenRTK330 module firmware from `App center <https://developers.aceinna.com/code/apps>`_ on Aceinna's developer website, as shown by
+4. Install the OpenRTK330 module firmware from `App center <https://developers.aceinna.com/code/apps>`_ on Aceinna's developer website, as shown by
 
     .. figure:: media/download_openrtk330_firmware.png
         :width: 6.5in

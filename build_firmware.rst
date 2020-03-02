@@ -4,47 +4,69 @@ Firmware Build from Source
 .. contents:: Contents
     :local:
     
-System Requirements
+System Setup
 ~~~~~~~~~~~~~~~~~~~
-* Windows 10 or 7
-* Ubuntu version 14.0 or later
-* MAC OS
+The following is a list of prerequisite software and hardware stack. 
+
+* **Operating System Supported**
+
+  - Windows 10 or 7
+  - Linux (Ubuntu 14.0 or later)
+  - MAC OS
 
 
-Visual Studio Code
-~~~~~~~~~~~~~~~~~~
+* **Visual Studio Code and Aceinna Navigation Studio Extension**
 
- Visual Studio Code - can be downloaded from here: https://code.visualstudio.com
+  - Download and install Visual Studio Code (VS Code) from `here <https://code.visualstudio.com>`_
+  - Intall "Aceinna Navigation Studio" extenion on VS Code
 
-ST-LINK Debugger Driver
-~~~~~~~~~~~~~~~~~~~~~~~
-
-*   *MacOS* - ST-LINK drivers are automatically installed for MAC OS.
-*   *Windows* - ST-LINK drivers should be also installed automatically. But in case if it was not - ST-LINK V2 driver can be manually installed for Windows.  The Windows driver is downloaded from the following page link:
-    http://www.st.com/en/development-tools/st-link-v2.html
-*   *Ubuntu* - please see Ubuntu_.
-
-OpenRTK development platform
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
--  **To Install OpenRTK development platform**
-
- 1. Start Visual Studio Code. On leftmost toolbar find "Extensions" icon and click on it.
- 2. In the text box "Search extensions on Marketplace" type "Aceinna" and hit enter
- 3. Install Aceinna Extension and Follow prompts.
+    1. Start Visual Studio Code, and on leftmost toolbar find "Extensions" icon and click on it.
+    2. In the text box "Search extensions on Marketplace" type "Aceinna" and hit enter
+    3. Install "Aceinna" Extension and Follow prompts.
 
     .. image:: media/AddExtension.png
 
--  **Import project**
+      The "Aceinna" VS Code extension integrates the `PlatformIO <https://platformio.org/>`_ IDE that is a cross-platform new ecosystem for embedded development.
 
-    After installation of "Aceinna" extension click on "Home" icon at the bottom of the screen. It will bring
-    up Aceinna OpenIMU platform homepage. Click on "Custom IMU examples", chose desired example and click "Import".
 
-    .. image:: media/HomePage.png
+* **ST-LINK Debugger Driver**
 
-    The required example will be imported into working directory in folder:
+  * *Mac OS* - comes with MAC OS
+  * *Windows* - download and install from `here <http://www.st.com/en/development-tools/st-link-v2.html>`_
+  * *Ubuntu* - as follows 
 
-    C:\\Users\\<username>\\Documents\\platformio\\Projects\\ProjectName
+    * Clone the github repo on `Open Source STLink Tools <https://github.com/texane/stlink>`_ and read the instructions carefully.
+
+    * Run the following commands to install ST-LINK V2 driver
+
+        .. code:: bash
+
+            # Run from source directory stlink/
+            $ make Release
+            $ cd build/Release
+            $ sudo make install
+
+            # Plug ST-LINK/V2 into USB, and check the device is present
+            $ ls /dev/stlink-v2
+
+* **Hardware**
+ An OpenRTK330 EVK is required with a PC.
+
+Import and Build Firmware from Source 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+1. **Open Aceinna Navigation Studio on VS Code**
+   
+  After installation of "Aceinna" extension, go to the lest most menu bar and click the "ant" icon of PlatformIO extension, it will bring up panel 1 and 2 (red numbered blue rectangle areas in the following figure) of PlatformIO, and then click "Quick Access->PIO Home->Open" will bring up the "Aceinna Navigation Studio" home page
+
+    .. image:: media/AceinnaPlatformIOHome.jpg
+
+  Alternatively, you can click the "Home" icon in blue rectangle #4 to bring up the home page.
+  
+2. **Import or Open Project** 
+
+  The required example will be imported into working directory in folder:
+
+    <PlatformIO Installaton Folder>/platformio/Projects/ProjectName
 
     Now you can edit, build and test the project. All your changes will remain in the above-mentioned directory and subdirectories.
     Next time when you return to development - open Aceinna "Home" page and click "Open Project", choose "Projects" and select
@@ -87,38 +109,13 @@ OpenRTK development platform
                            |
 
 
--  **Compile and JTAG Code Loading**
+3. **Compile and Load Firmware via JTAG**
 
-    Once you have imported an example project, a good first step is to compile and download this application using your ST-LINK.
-    At the bottom of the VS Code window is the shortcut toolbar shown below.  To load an application to the OpenIMU with JTAG,
+  Once you have imported an example project, a good first step is to compile and download this application using your ST-LINK.
+    At the bottom of the VS Code window is the shortcut toolbar shown below.  To load an application to the OpenRTK330 with JTAG,
     simply click the Install/Download button while the ST-LINK is connected to your EVB.
 
     .. image:: media/VSCodeToolBar.png
         :height: 200
 
-    The OpenIMU development environment uses PlatformIO's powerful open-source builder and IDE.  This on-line manual focuses on
-    on OpenIMU specific information, and it does not attempt to fully discuss all of the IDE's powerful features in depth. For more information on PlatformIO builder and IDE features include command line interface, scripting and more please see the
-    `PlatformIO  <https://docs.platformio.org>`__
 
-.. _Ubuntu:
-
- **ST-LINK Install for Ubuntu (Manual Version)**
-
-    Go to https://github.com/texane/stlink and read instructions carefully.
-
-    On local Ubuntu machine, you will clone the aforementioned repository and make the project.  This requires
-    the following packages to be installed:
-
-        * CMake > v2.8.7
-        * Gcc compiler
-        * Libusb v1.0
-
-    .. code:: bash
-
-        # Run from source directory stlink/
-        $make release
-        $cd build/Release
-        $sudo make install
-
-        # Plug ST-LINK/V2 into USB, and check the device is present
-        $ls /dev/stlink-v2

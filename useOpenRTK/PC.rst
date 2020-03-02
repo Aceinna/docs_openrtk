@@ -82,8 +82,8 @@ Usage
 
  - Ethernet Configuration
 
-  - DHCP: factory setting 
-  - STATIC IP: STATIC NETMASK and STATIC GATEWAY. You should config the same gateway as your network equipment and choose an available IP address.
+   - DHCP: factory setting 
+   - STATIC IP: STATIC NETMASK and STATIC GATEWAY. You should config the same gateway as your network equipment and choose an available IP address.
 
   You can click 'SAVE' to let the configuration be effective immediately. If the NTRIP STATUS is CONNECTED, it will reconnect immediately.
 
