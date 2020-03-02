@@ -82,8 +82,8 @@ Usage
 
  - Ethernet Configuration
 
-  - *DHCP*: factory setting 
-  - *STATIC IP*: STATIC NETMASK and STATIC GATEWAY. You should config the same gateway as your network equipment and choose an available IP address.
+  - DHCP: factory setting 
+  - STATIC IP: STATIC NETMASK and STATIC GATEWAY. You should config the same gateway as your network equipment and choose an available IP address.
 
   You can click 'SAVE' to let the configuration be effective immediately. If the NTRIP STATUS is CONNECTED, it will reconnect immediately.
 
@@ -97,4 +97,19 @@ Usage
        :align: center
        :scale: 50%
 
+5. **Data Logging**
+ * If the aforemetioned python driver for OpenRTK330 is running on your PC or Raspberry Pi, a "data" folder is generated under the path of the command line and the following binary files are logged inside this foder
+
+    - user_<time>.bin: USER com port output
+    - debug_<time>.bin: DEBUG com port output
+    - rtcm_<time>.bin: GNSS RTCM com port output 
+
+ * Run the following python script (requires clone of the github repo `python-openimu <https://github.com/Aceinna/python-openimu>`_) to parse the OpenRTK330 binary files
+
+     .. code-block:: python
+
+                    cd .\python-openimu\openrtk_data_parse
+                    python openrtk_parse.py -p <file path>
+
+   A few decoded "csv" files are generated from the "user_<time>.bin" and "debug_<time>.bin" output, each of the "csv" contents are described in its file header. 
 

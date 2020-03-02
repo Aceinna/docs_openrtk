@@ -91,3 +91,18 @@ Usage
          :align: center
          :scale: 18%
 
+6. **Data Logging**
+ * To log OpenRTK330 com port output when using the Anroid App, you have to connect OpenRTK330 with a PC or Raspberry Pi via micro-USB and run the aforementioned python driver on your PC or Raspberry Pi. Then, a "data" folder is generated under the path of the command line and the following binary files are logged inside this foder
+
+    - user_<time>.bin: USER com port output
+    - debug_<time>.bin: DEBUG com port output
+    - rtcm_<time>.bin: GNSS RTCM com port output 
+
+ * Run the following python script (requires clone of the github repo `python-openimu <https://github.com/Aceinna/python-openimu>`_) to parse the OpenRTK330 binary files
+
+     .. code-block:: python
+
+                    cd .\python-openimu\openrtk_data_parse
+                    python openrtk_parse.py -p <file path>
+
+   A few decoded "csv" files are generated from the "user_<time>.bin" and "debug_<time>.bin" output, each of the "csv" contents are described in its file header. 
