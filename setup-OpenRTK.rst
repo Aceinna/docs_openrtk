@@ -32,51 +32,51 @@ Firmware Installation
         :width: 6.5in
         :height: 3.0in
 
-    Click "RTK_INS" App, there are **two options** to install the OpenRTK330 firmware online:
+  Taking the "RTK_INS" App as an example, click it, and there appears **two options** to install the OpenRTK330 firmware online:
 
         .. figure:: media/app_upgrade.png
             :width: 6.5in
             :height: 4.0in
 
-    1. (Recommended) The **online upgrade** way  
+  a. (Recommended) The **online upgrade** way  
 
-       - Run the python driver for OpenRTK330 to get connectted with Aceinna developer website. There are two options
+    - Run the python driver for OpenRTK330 to get connectted with Aceinna developer website. There are two options
 
-            - Download executable files (version 1.1.0) and run in a command line          
+      - Download executable files (version 1.1.0) and run in a command line          
 
-                - `Windows 10 <https://github.com/Aceinna/python-openimu/files/4211970/ans-devices-win.zip>`_
+        - `Windows 10 <https://github.com/Aceinna/python-openimu/files/4211970/ans-devices-win.zip>`_
 
-                - `Mac OS <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_
+        - `Mac OS <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_
 
-                - `Linux (Ubuntu 19.10) <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_
+        - `Linux (Ubuntu 19.10) <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_
 
-                - `Raspberry Pi (Raspbian GNU/Linux 9) <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_ 
+        - `Raspberry Pi (Raspbian GNU/Linux 9) <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_ 
 
-            - If you prefer building from source, go to Aceinna's github page and clone the repo `python-openimu <https://github.com/Aceinna/python-openimu>`_, and checkout the "ans-devices" branch. Run the OpenRTK Python driver with the following commands:
+      - If you prefer building from source, go to Aceinna's github page and clone the repo `python-openimu <https://github.com/Aceinna/python-openimu>`_, and checkout the "ans-devices" branch. Run the OpenRTK Python driver with the following commands:
 
-                .. code-block:: python
+            .. code-block:: python
 
-                    cd .\python-openimu
-                    pip install -r requirements.txt
-                    python main.py
+                cd .\python-openimu
+                pip install -r requirements.txt
+                python main.py
 
         The python driver automatically scans available USB-serial ports and finds the right com port. If the correct com port is found, the "UPGRADE" button circled by cyan rectrangle will be highlighted. Then click the "UPGRADE" button to start the firmware upgrade process and wait it completes.  
 
-    2. (Option 2) **Download** the firmware bin file and **flash** it into OpenRTK330 module. In order to fullfill this, first install the STM32 ST-LINK Utility software from `here <https://www.st.com/en/development-tools/stsw-link004.html>`_ on your PC. Then open the STM32 ST-LINK Utility software and connect the OpenRTK330 EVB with PC using the ST-LINK debugger,
+  b. **Download** the firmware bin file and **flash** it into OpenRTK330 module. In order to fullfill this, first install the STM32 ST-LINK Utility software from `here <https://www.st.com/en/development-tools/stsw-link004.html>`_ on your PC. Then open the STM32 ST-LINK Utility software and connect the OpenRTK330 EVB with PC using the ST-LINK debugger,
 
-        1. Click the red circled "1" to establish a connection with the OpenRTK EVB
+    1. Click the red circled "1" to establish a connection with the OpenRTK EVB
 
             .. figure:: media/st-link_utility_flash_firmware1.png
                 :width: 6.5in
                 :height: 4.0in
 
-        2. Click the red circled "2" to open the firmware flashing dialog, change the start address to "0x8010000", and browse to load the downloaded OpenRTK330 firmware bin file, then click "Start"
+    2. Click the red circled "2" to open the firmware flashing dialog, change the start address to "0x8010000", and browse to load the downloaded OpenRTK330 firmware bin file, then click "Start"
 
             .. figure:: media/st-link_utility_flash_firmware2.png
                 :width: 6.5in
                 :height: 4.0in
 
-#. **Check** the **LED** indicator: there are Yellow, Red and Green three LED lights on the OpenRTK330 EVB, if the firmware is loaded correctly, the Yellow LED is flashing first, indicating the 1PPS signal from ST GNSS chipset is available. Then, connect the SMA female connector with a satellite antenna (OpenRTK330 EVB can power on the antenna if passive, otherwise use a DC blocker), the Green LED starts flashing, indicating the OpenRTK330 INS App is running with valid GNSS signal. At this point, the firmware is loaded completely.
+5. **Check** the **LED** indicator: there are Yellow, Red and Green three LED lights on the OpenRTK330 EVB, if the firmware is loaded correctly, the Yellow LED is flashing first, indicating the 1PPS signal from ST GNSS chipset is available. Then, connect the SMA female connector with a satellite antenna (OpenRTK330 EVB can power on the antenna if passive, otherwise use a DC blocker), the Green LED starts flashing, indicating the OpenRTK330 INS App is running with valid GNSS signal. At this point, the firmware is loaded completely.
 
 ..
     At this point, the OpenRTK330 firmware is loaded and ready for GNSS RTK positioning that also requires internet connection to a NTRIP server for GNSS data correction.  and then connects with Aceinna's OpenRTK Android App for internet connectivity (see next section). Alternatively, the following step can be performed to get internet connectivity
@@ -84,6 +84,32 @@ Firmware Installation
 ..
     (optional) Connect the EVB (RJ45 connector) with a network router/gateway with an Ethernet cable, the usage of this connection will also be addressed in next section
 
+Firmware Options
+~~~~~~~~~~~~~~~~~
+The previous section demonstrates the firmware installation process for OpenRTK330 with "RTK_INS" App as an example. In order to fullfill various user requirements, there are a few firmware options provided with OpenRTK330, as listed on the `App center <https://developers.aceinna.com/code/apps>`_. The following are introductions on these Apps:
+
+  * RAWDATA APP - without GNSS or INS algorithm
+
+    * 10 Hz raw GNSS data output in RTCM format
+    * Up to 100 Hz raw IMU data output (synchronized by 1PPS, data rate configurable)
+    * Logging the raw data to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
+    * Embedding your own RTK/INS algorithms, refer to `Firmware Build from Source <https://openrtk.readthedocs.io/en/latest/build_firmware.html>`_ 
+
+  * RTK APP - with GNSS RTK algorithm
+
+    * 10 Hz raw GNSS data output in RTCM format
+    * Up to 100 Hz raw IMU data output (synchronized by 1PPS, data rate configurable)
+    * GNSS RTK position, velocity and accuracy metrics output
+    * Logging the raw data and RTK solution to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
+
+  * RTK_INS APP - with GNSS RTK and INS integrated algorithm
+
+    * 10 Hz raw GNSS data output in RTCM format
+    * Up to 100 Hz raw IMU data output (synchronized by 1PPS, data rate configurable)
+    * GNSS RTK integrated with INS solution output, include position, velocity and attitude and accuracy metrics
+    * Logging the raw data and RTK solution to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
+
+  .. * DEMO APP - GNSS RTK playback
 
 EVK Vehicle Installation
 ~~~~~~~~~~~~~~~~~~~~~~~~
@@ -91,7 +117,7 @@ EVK Vehicle Installation
 
 Troubleshooting
 ~~~~~~~~~~~~~~~~~~~~~~~
-1. **SAVE BEFORE DEVELOPMENT START**: it's strongly recommended to save your factory OpenRTK330 module system image file to a binary file to be able to recover the whole system if something unexpected happened! Especially, if the system bootloader and IMU calibration tables are damaged, OpenRTK330 will not work properly.
+I. **SAVE BEFORE DEVELOPMENT START**: it's strongly recommended to save your factory OpenRTK330 module system image file to a binary file to be able to recover the whole system if something unexpected happened! Especially, if the system bootloader and IMU calibration tables are damaged, OpenRTK330 will not work properly.
 
  - Save system image
 
