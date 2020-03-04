@@ -111,11 +111,15 @@ Import and Build Firmware from Source
 
 3. **Compile and Load Firmware via JTAG**
 
-  Once you have imported an example project, a good first step is to compile and download this application using your ST-LINK.
-    At the bottom of the VS Code window is the shortcut toolbar shown below.  To load an application to the OpenRTK330 with JTAG,
-    simply click the Install/Download button while the ST-LINK is connected to your EVB.
+ Once you have imported an example project, a good first step is to compile and download this application using your ST-LINK. At the bottom of the VS Code window is the shortcut toolbar shown below.  To load an application to the OpenRTK330 with JTAG, simply click the Install/Download button while the ST-LINK is connected to your EVB.
 
     .. image:: media/VSCodeToolBar.png
         :height: 200
 
+
+The following contents of this section present the user APIs for each of the firmware options
+
+* RAWDATA APP
+* RTK APP
+* RTK_INS APP
 
