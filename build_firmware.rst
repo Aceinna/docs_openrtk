@@ -26,7 +26,8 @@ The following is a list of prerequisite software and hardware stack.
 
     .. image:: media/AddExtension.png
 
-      The "Aceinna" VS Code extension integrates the `PlatformIO <https://platformio.org/>`_ IDE that is a cross-platform new ecosystem for embedded development.
+
+    The "Aceinna" VS Code extension integrates the `PlatformIO <https://platformio.org/>`_ IDE that is a cross-platform new ecosystem for embedded development.
 
 
 * **ST-LINK Debugger Driver**
@@ -64,15 +65,15 @@ Import and Build Firmware from Source
   
 2. **Import or Open Project** 
 
-  The required example will be imported into working directory in folder:
+ On the "Aceinna Home" page, ,as shown by the figure above, you will find the blue rectangle area #5 the entry to import or open OpenRTK/OpenIMU example projects with firmware open-sourced. For the first time, click "Custom IMU Examples" to import a new project which will be installed at the following location by default
 
-    <PlatformIO Installaton Folder>/platformio/Projects/ProjectName
+     .. code-block:: bash
 
-    Now you can edit, build and test the project. All your changes will remain in the above-mentioned directory and subdirectories.
-    Next time when you return to development - open Aceinna "Home" page and click "Open Project", choose "Projects" and select
-    required project from the list.
+            <PlatformIO Installaton Folder>/platformio/Projects/ProjectName
 
-    The source tree of imported project tree has the following structure:
+ Now you can edit, build and test the project. All your changes will remain in the above-mentioned directory and subdirectories. Next time when you return to development - open Aceinna "Home" page and click "Open Project", choose "Projects" and select required project from the list.
+
+ The source tree of imported project tree has the following structure:
 
     ::
 
@@ -123,3 +124,9 @@ The following contents of this section present the user APIs for each of the fir
 * RTK APP
 * RTK_INS APP
 
+.. toctree::
+    :maxdepth: 1
+    :hidden:
+
+    firmwareBuild/RAWDATA
+    firmwareBuild/RTK_App

@@ -42,7 +42,7 @@ Firmware Installation
 
     - Run the python driver for OpenRTK330 to get connectted with Aceinna developer website. There are two options
 
-      - Download executable files (version 1.1.0) and run in a command line          
+      - Download executable files (version 1.1.0) of python driver 
 
         - `Windows 10 <https://github.com/Aceinna/python-openimu/files/4211970/ans-devices-win.zip>`_
 
@@ -51,6 +51,12 @@ Firmware Installation
         - `Linux (Ubuntu 19.10) <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_
 
         - `Raspberry Pi (Raspbian GNU/Linux 9) <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_ 
+
+        and run in a command line          
+
+            .. code-block:: bash
+
+                ./ans-devices
 
       - If you prefer building from source, go to Aceinna's github page and clone the repo `python-openimu <https://github.com/Aceinna/python-openimu>`_, and checkout the "ans-devices" branch. Run the OpenRTK Python driver with the following commands:
 

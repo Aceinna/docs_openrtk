@@ -16,7 +16,7 @@ Usage
 
  - Run the python driver for OpenRTK330 to get connectted with Aceinna developer website. There are two options
 
-    - Download executable files (version 1.1.0) and run in a command line          
+    - Download executable files (version 1.1.0) of python driver 
 
         - `Windows 10 <https://github.com/Aceinna/python-openimu/files/4211970/ans-devices-win.zip>`_
 
@@ -25,6 +25,12 @@ Usage
         - `Linux (Ubuntu 19.10) <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_
 
         - `Raspberry Pi (Raspbian GNU/Linux 9) <https://github.com/Aceinna/python-openimu/files/4211966/ans-devices-mac.zip>`_
+
+      and run in a command line          
+
+            .. code-block:: bash
+
+               ./ans-devices
 
     - If you prefer building from source, go to Aceinna's github page and clone the repo `python-openimu <https://github.com/Aceinna/python-openimu>`_, and checkout the "ans-devices" branch. Run the OpenRTK Python driver with the following commands:
 
@@ -41,7 +47,7 @@ Usage
 
 3. **Map Presentation**
 
- - Click "Play", Device information is exposed on the DEVICE INFO page (https://developers.aceinna.com/devices/rtk). 
+ - Click "Play", you will find a live map showing the position trajectory, a navigation infromation display panel, and two panels for satellite information on SNR, azimuth, and elevation angles. In addtion, on the most right side, click "chart" icon you will get a satellite Skyview Chart.
 
  .. image:: ../media/web_gui_play.png
    :align: center
@@ -98,11 +104,34 @@ Usage
        :scale: 50%
 
 5. **Data Logging**
- * If the aforemetioned python driver for OpenRTK330 is running on your PC or Raspberry Pi, a "data" folder is generated under the path of the command line and the following binary files are logged inside this foder
+ * Run the python driver on a PC or a Raspberry Pi, 
+   - either
 
-    - user_<time>.bin: USER com port output
-    - debug_<time>.bin: DEBUG com port output
-    - rtcm_<time>.bin: GNSS RTCM com port output 
+     .. code-block:: bash
+
+            ./ans-devices -nolog 0
+
+   - or 
+
+     .. code-block:: python
+
+            cd ./python-openimu/
+            python main.py -nolog 0
+
+   A "data" folder is generated under the path of the command line and the following binary files are logged inside this foder. The contents of "USER" and "DEBUG" com port output are different between Apps
+
+   - user_<time>.bin: USER com port output
+      
+     - RAWDATA App: raw IMU data in "S1" packet format
+     - RTK App: GNSS RTK solution in "sR" and "pS" packets
+     - RTK_INS App: GNSS RTK and INS integraed solution in "sR" and "pS" packets
+   - debug_<time>.bin: DEBUG com port output
+
+     - RAWDATA App: empty NMEA GGA messages
+     - RTK App: GNSS RTK solution in "p1" packets
+     - RTK_INS App: GNSS RTK and INS integraed solution in "p1" packets
+   - rtcm_<time>.bin: GNSS RTCM com port output 
+
 
  * Run the following python script (requires clone of the github repo `python-openimu <https://github.com/Aceinna/python-openimu>`_) to parse the OpenRTK330 binary files
 

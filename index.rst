@@ -7,7 +7,7 @@ OpenRTK Developer Manual
    :height: 5.7in
 OpenRTK is an integrated GNSS (Global Navigation Satellite System) high precision 
 chip and precisely calibrated Inertial Measurement Unit open-source platform for 
-the development of navigation and localization algorithms. Usersare able to quickly 
+the development of navigation and localization algorithms. Users are able to quickly 
 develop and deploy custom navigation/localization algorithms and custom sensor integrations 
 on top of the OpenRTK platform.  OpenRTK also has pre-built drivers in Python as well as 
 a developer website - Aceinna Navigation Studio (ANS). These tools make logging and plotting data, 
