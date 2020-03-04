@@ -65,19 +65,3 @@ including custom data structures and packets very simple.
 
     EVB-OpenRTK330LI
 
-.. raw:: latex
-
-   \part{Software Development}
-
-
-.. toctree::
-    :caption: OpenRTK Algorithms
-    :maxdepth: 1
-    :hidden:
-    :titlesonly:
-
-    algorithms/TimeSystem
-    algorithms/CoordinatesSystem
-    algorithms/GNSSrtk
-    algorithms/RTKIMU
-
