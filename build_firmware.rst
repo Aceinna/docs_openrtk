@@ -15,21 +15,6 @@ The following is a list of prerequisite software and hardware stack.
   - MAC OS
 
 
-* **Visual Studio Code and Aceinna Navigation Studio Extension**
-
-  - Download and install Visual Studio Code (VS Code) from `here <https://code.visualstudio.com>`_
-  - Intall "Aceinna Navigation Studio" extenion on VS Code
-
-    1. Start Visual Studio Code, and on leftmost toolbar find "Extensions" icon and click on it.
-    2. In the text box "Search extensions on Marketplace" type "Aceinna" and hit enter
-    3. Install "Aceinna" Extension and Follow prompts.
-
-    .. image:: media/AddExtension.png
-
-
-    The "Aceinna" VS Code extension integrates the `PlatformIO <https://platformio.org/>`_ IDE that is a cross-platform new ecosystem for embedded development.
-
-
 * **ST-LINK Debugger Driver**
 
   * *Mac OS* - comes with MAC OS
@@ -50,6 +35,23 @@ The following is a list of prerequisite software and hardware stack.
             # Plug ST-LINK/V2 into USB, and check the device is present
             $ ls /dev/stlink-v2
 
+* **Visual Studio Code and Aceinna Navigation Studio Extension**
+
+  - Download and install Visual Studio Code (VS Code) from `here <https://code.visualstudio.com>`_
+  - Intall "Aceinna Navigation Studio" extenion on VS Code
+
+    1. Start Visual Studio Code, and on leftmost toolbar find "Extensions" icon and click on it.
+    2. In the text box "Search extensions on Marketplace" type "Aceinna" and hit enter
+    3. Install "Aceinna" Extension and Follow prompts.
+
+    .. figure:: media/AddExtension.png
+            :width: 7.0 in
+            :height: 5.0 in
+    
+
+    The "Aceinna" VS Code extension integrates the `PlatformIO <https://platformio.org/>`_ IDE that is a cross-platform new ecosystem for embedded development.
+
+
 * **Hardware**
  An OpenRTK330 EVK is required with a PC.
 
@@ -61,7 +63,7 @@ Import and Build Firmware from Source
 
     .. image:: media/AceinnaPlatformIOHome.jpg
 
-  Alternatively, you can click the "Home" icon in blue rectangle #4 to bring up the home page.
+  Alternatively, you can click the "Home" icon in blue rectangle #4 to bring up the home page. Through the icons inside the blue rectangle area #3, you can navigate between different pages of "Aceinna" extension.
   
 2. **Import or Open Project** 
 
@@ -129,4 +131,4 @@ The following contents of this section present the user APIs for each of the fir
     :hidden:
 
     firmwareBuild/RAWDATA
-    firmwareBuild/RTK_App
+    ..firmwareBuild/RTK_App

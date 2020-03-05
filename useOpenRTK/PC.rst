@@ -127,7 +127,7 @@ Usage
      - RTK_INS App: GNSS RTK and INS integraed solution in "sR" and "pS" packets
    - debug_<time>.bin: DEBUG com port output
 
-     - RAWDATA App: empty NMEA GGA messages
+     - RAWDATA App: N/A, reserved for user 
      - RTK App: GNSS RTK solution in "p1" packets
      - RTK_INS App: GNSS RTK and INS integraed solution in "p1" packets
    - rtcm_<time>.bin: GNSS RTCM com port output 
