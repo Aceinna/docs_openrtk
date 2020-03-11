@@ -39,7 +39,7 @@ including custom data structures and packets very simple.
     :titlesonly:
 
     setup-OpenRTK
-    Network
+    ..Network
     useOpenRTK
     build_firmware.rst
 
