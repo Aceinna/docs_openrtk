@@ -109,17 +109,18 @@ Usage
 
    A "data" folder is generated under the path of the command line and the following binary files are logged inside this foder. The contents of "USER" and "DEBUG" com port output are different between Apps
 
-   - user_<time>.bin: USER com port output
+   - *user_<time>.bin*: USER com port output
       
-     - RAWDATA App: raw IMU data in "S1" packet format
+     - RAWDATA App: 100 Hz raw IMU data in "s1" packet format
      - RTK App: GNSS RTK solution in "sR" and "pS" packets
      - RTK_INS App: GNSS RTK and INS integraed solution in "sR" and "pS" packets
-   - debug_<time>.bin: DEBUG com port output
+   - *debug_<time>.bin*: DEBUG com port output
 
-     - RAWDATA App: empty NMEA GGA messages
-     - RTK App: GNSS RTK solution in "p1" packets
+     - RAWDATA App: N/A or base GNSS RTCM data if you configured a NTRIP server with RTCM correction, in this case, the output bin file is named *rtcm_base_<time>.bin* 
+     - RTK App: GNSS RTK solution in "k1" packets
      - RTK_INS App: GNSS RTK and INS integraed solution in "p1" packets
-   - rtcm_<time>.bin: GNSS RTCM com port output
+   - *rtcm_rover_<time>.bin*: GNSS RTCM com port output 
+
 
  * Run the following python script (requires clone of the github repo `python-openimu <https://github.com/Aceinna/python-openimu>`_) to parse the OpenRTK330 binary files
 
@@ -128,4 +129,9 @@ Usage
                     cd .\python-openimu\openrtk_data_parse
                     python openrtk_parse.py -p <file path>
 
-   A few decoded "csv" files are generated from the "user_<time>.bin" and "debug_<time>.bin" output, each of the "csv" contents are described in its file header. 
+   A few decoded "csv" files are generated from the "user_<time>.bin" and "debug_<time>.bin" output, the content of each of the "csv" files is described in its file header. 
+
+
+ * (Optional) Run the "convbin.exe" program inside "bin" folder after cloning the github repo `RTKLIB <https://github.com/tomojitakasu/RTKLIB>`_ to decode the logged RTCM files to obtain RINEX format of GNSS raw data.
+
+

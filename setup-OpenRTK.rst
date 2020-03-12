@@ -97,23 +97,23 @@ The previous section demonstrates the firmware installation process for OpenRTK3
   * RAWDATA APP - without GNSS or INS algorithm
 
     * 10 Hz raw GNSS data output in RTCM format
-    * Up to 100 Hz raw IMU data output (synchronized by 1PPS, data rate configurable)
+    * 100 Hz raw IMU data output in binary format
     * Logging the raw data to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
     * Embedding your own RTK/INS algorithms, refer to `Firmware Build from Source <https://openrtk.readthedocs.io/en/latest/build_firmware.html>`_ 
 
   * RTK APP - with GNSS RTK algorithm
 
     * 10 Hz raw GNSS data output in RTCM format
-    * Up to 100 Hz raw IMU data output (synchronized by 1PPS, data rate configurable)
+    * 100 Hz raw IMU data output 
     * GNSS RTK position, velocity and accuracy metrics output
     * Logging the raw data and RTK solution to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
 
   * RTK_INS APP - with GNSS RTK and INS integrated algorithm
 
     * 10 Hz raw GNSS data output in RTCM format
-    * Up to 100 Hz raw IMU data output (synchronized by 1PPS, data rate configurable)
-    * GNSS RTK integrated with INS solution output, include position, velocity and attitude and accuracy metrics
-    * Logging the raw data and RTK solution to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
+    * 100 Hz raw IMU data output 
+    * INS/GNSS RTK integrated solution output, include position, velocity and attitude and accuracy metrics
+    * Logging the raw data and INS solution to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
 
   .. * DEMO APP - GNSS RTK playback
 
@@ -181,9 +181,6 @@ I. **SAVE BEFORE DEVELOPMENT START**: it's strongly recommended to save your fac
 
      .. figure:: media/protect_sections.png
                     :width: 6.5in
-                    :height: 12.0in
+                    :height: 11.0in
 
 
-Note
-~~~~~~~~~~~~~~~~~~~~~~~
-The following section elaborate on Aceinna's Cloud Service on Cloud RTK, GNSS base station network and NTRIP server, followed by the section describes two types of user interface to use OpenRTK330 EVK for GNSS/INS real time positioning.
