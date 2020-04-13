@@ -3,22 +3,20 @@ OpenRTK330 Module
 
 The Aceinna OpenRTK330 module integrates a ST Teseo V automotive grade
 multi-constellation, multi-frequency Global Navigation Satellite System
-(**GNSS**) chipset (supports GPS, GALILEO, GLONASS, Beidou, QZSS and NAVIC), a
+(**GNSS**) chipset (supports GPS, GALILEO, GLONASS, Beidou, QZSS and SBAS), a
 triple-redundant 6-axis (3-axis accelerometer and 3-axis gyro) **MEMS**
 Inertial Measurement Unit (**IMU**), and a ST M4 MCU as the processor.
 OpenRTK330 module is targeted for commecial applicaiton for the mass
 market that requires a reliable, high-precision and yet cost effective
 **GNSS/INS** integrated positioning solution.
 
--  Up to 50 Hz GNSS/INS integrated position, velocity and attitude solution
+-  100 Hz GNSS/INS integrated position, velocity and attitude solution
 -  Integrated tripple redundant 6-axis IMU sensors
 -  Integrated multi-frequency GNSS chipset
--  180MHz STM32 M4 CPU with FPU
--  UART / SPI / CAN / Ethernet Interfaces
--  Sensors Update Rate to xxxHz
 -  GPS (L1/L2 or L1/L5), GLONASS (L1/L2), GALILEO (E1/E5), Beidou
    (B1I/B2I),QZSS (L1), and SBAS
 -  RTK/PPP algorithms on-board for up to centimetre accuracy
+-  UART / SPI / CAN / Ethernet Interfaces
 
 Technical characteristics
 -------------------------
@@ -70,17 +68,17 @@ Technical characteristics
  +-------------------------------------------------------------------+
  | *Time to First Fix* [#f4]_                                        |
  +----------------------------------------+--------------------------+
- | Cold Start [#f5]_                      | <60 s                    |
+ | Cold Start [#f5]_                      | < 60 s                   |
  +----------------------------------------+--------------------------+
- | Warm Start [#f6]_                      | <45 s                    |
+ | Warm Start [#f6]_                      | < 45 s                   |
  +----------------------------------------+--------------------------+
- | Hot Start                              | <11 s                    |
+ | Hot Start                              | < 11 s                   |
  +----------------------------------------+--------------------------+
- | Signal Re-acquisition                  | <2 s                     |
+ | Signal Re-acquisition                  | < 2 s                    |
  +----------------------------------------+--------------------------+
- | RTK Initialization Time                | <1 min                   |
+ | RTK Initialization Time                | < 1 min                  |
  +----------------------------------------+--------------------------+
- | INS PVA output rate                    | Up to 50 Hz              |
+ | INS PVA output rate                    | 100 Hz                   |
  +----------------------------------------+--------------------------+
  | **Sensitivity**                                                   |
  +----------------------------------------+--------------------------+
@@ -104,7 +102,7 @@ Technical characteristics
  +----------------------------------------+--------------------------+
  | Power Consumption (W)                  | 1.0 (Typical)            |
  +----------------------------------------+--------------------------+
- | Digital Interface                      | Ethernet, CAN, UART, SPI |
+ | Digital Interface                      | UART, CAN, SPI, Ethernet |
  +----------------------------------------+--------------------------+
  | **Physical**                                                      |
  +----------------------------------------+--------------------------+
@@ -115,9 +113,11 @@ Technical characteristics
  | Weight (gm)                            | 5                        |
  +----------------------------------------+--------------------------+
   
+
  .. rubric:: Notes
  
- .. [#f1] Typ values, subject to ionospheric/tropospheric conditions, satellite geometry, 
+
+ .. [#f1] Typical values, subject to ionospheric/tropospheric conditions, satellite geometry, 
           baseline length, multipath and interference effects.
 
  .. [#f2] Add 1ppm of baseline length.
@@ -131,43 +131,10 @@ Technical characteristics
  .. [#f6] Using ephemeris and last known position.
 
 
-Communication ports definitions
------------------------
-There are six serial communicatoins ports available on the OpenRTK330 module, including four configurable UART ports, one SPI port and one CAN port.
-
-UART PORTS
-~~~~~~~~~~
-The default configuration of the four UART ports is listed as follows
-
--  USER port
-
-    -  default baud rate: 460800 b/s
-    -  default navigation messages: INS PVA packet ('pS'), satellite SNR, elevation and azimuth packet ('sK')
--  ST_UART1 port
-
-    -  default baud rate: 460800 b/s
-    -  not applicable for output
--  DEBUG port
-
-    -  default baud rate: 460800 b/s
-    -  default message: extended INS PVA plus raw IMU data packet ('p1')
--  ST_UART_PROG port
-
-    -  default baud rate: 460800 b/s
-    -  default message: RTCMv3 GNSS data stream (10 Hz)
-
-SPI PORT
-~~~~~~~~
-
--  TBD
-
-CAN PORT
-~~~~~~~~
-
--  TBD
 
 OpenRTK330 Pin Definition Rev
 -----------------------------
+
 
  .. image:: media/OpenRTK330LI_pin_n.png
 
@@ -242,7 +209,7 @@ OpenRTK330 Pin Definition Rev
  +---------+-------------------+----------+-----------------------------------------------------------------+
  |      34 |  ST_BOOT_MODE     |     I    | Boot mode control signal for internal ST GNSS chip              |
  +---------+-------------------+----------+-----------------------------------------------------------------+
- |      35 |  WIFI/BT_UART2_RX |     I    | Receive data from external WiFi/BTmodule                        |
+ |      35 |  WIFI/BT_UART2_RX |     I    | Receive data from external WiFi/BT module                        |
  +---------+-------------------+----------+-----------------------------------------------------------------+
  |      36 |  WIFI/BT_UART2_TX |     O    | Transmit data to external WiFi/BT module                        |
  +---------+-------------------+----------+-----------------------------------------------------------------+
@@ -274,17 +241,17 @@ OpenRTK330 Pin Definition Rev
  +---------+-------------------+----------+-----------------------------------------------------------------+
  |      50 |  ST_UART_PROG_RX  |     I    | Transmit data to internal ST GNSS UART2 (GNSS program burning)  |
  +---------+-------------------+----------+-----------------------------------------------------------------+
- |      51 |  DEBUG-TX         |     O    | Transmit data. Debug serial port                                |
+ |      51 |  DEBUG_TX         |     O    | Transmit data. DEBUG serial port                                |
  +---------+-------------------+----------+-----------------------------------------------------------------+
- |      52 |  DEBUG-RX         |     I    | Receive data. Debug serial port                                 |
+ |      52 |  DEBUG_RX         |     I    | Receive data. DEBUG serial port                                 |
  +---------+-------------------+----------+-----------------------------------------------------------------+
  |      53 |  CAN_RX           |     I    | Receive data from CAN bus                                       |
  +---------+-------------------+----------+-----------------------------------------------------------------+
  |      54 |  CAN_TX           |     O    | Transmit data to CAN bus                                        |
  +---------+-------------------+----------+-----------------------------------------------------------------+
- |      55 |  USER_UART1_RX    |     I    | Receive data. User serial channel 1                             |
+ |      55 |  USER_UART1_RX    |     I    | Receive data. USER port 
  +---------+-------------------+----------+-----------------------------------------------------------------+
- |      56 |  USER_UART1_TX    |     O    | Transmit data. User serial channel 1                            |
+ |      56 |  USER_UART1_TX    |     O    | Transmit data. USER port
  +---------+-------------------+----------+-----------------------------------------------------------------+
  |      57 |  SWDIO            |     I/O  | Data IO of SWD debug interface                                  |
  +---------+-------------------+----------+-----------------------------------------------------------------+
@@ -300,7 +267,7 @@ OpenRTK330 Pin Definition Rev
  +---------+-------------------+----------+-----------------------------------------------------------------+
  |      63 |  LNA_EN           |     O    | Control signal of external LNA power                            |
  +---------+-------------------+----------+-----------------------------------------------------------------+
- |      64 |  ANT_EN           |     O    | ANtenna enable, reserved                                        |
+ |      64 |  ANT_EN           |     O    | Antenna enable, reserved                                        |
  +---------+-------------------+----------+-----------------------------------------------------------------+
  |      65 |  ANT_SENSE        |     I    | Antenna sensing detection, reserved                             |
  +---------+-------------------+----------+-----------------------------------------------------------------+
@@ -312,35 +279,42 @@ OpenRTK330 Pin Definition Rev
  +---------+-------------------+----------+-----------------------------------------------------------------+
 
 
+Communication ports definitions
+--------------------------------
+There are six serial communicatoins ports available on the OpenRTK330 module, including four configurable UART ports, one SPI port and one CAN port.
 
+UART PORTS
+~~~~~~~~~~
+The default configuration of the four UART ports is listed as follows
 
-.. Bluetooth and Ethernet mode
-.. ~~~~~~~~~~~~~~~~~~~~~~~~~~~
+-  User port
+    
+    - Pin: USER_UART_RX (#55), USER_UART_TX (#56)
+    - Default baud rate: 460800 b/s
+    - Default messages: output INS PVA packet ('pS'), satellite SNR, elevation and azimuth packet ('sK'),plus raw IMU data packet ('s1')
+-  GNSS chipset firmware programming port
 
-.. The OpenRTK300LI can be configured in a number of ways for communication
-.. with NTRIP server. There are up to bluetooth mode and ethernet mode.
+    - Pin: ST_UART_PROG_TX (#49), ST_UART_PROG_RX (#50)
+    - Default baud rate: 460800 b/s
+    - Reserved for programming GNSS chipset, not applicable for output
+-  Debug port
 
-.. Bluetooth mode
-.. ^^^^^^^^^^^^^^
+    - Pin: DEBUG_TX (#51), DEBUG_RX (#52)
+    - Default baud rate: 460800 b/s
+    - Default message: output extended INS PVA packets ('p1')
+-  GNSS Data port
 
-.. -  OpenRTK330 acts as NTRIP client connects with NTRIP server via
-..    Android smartphone (with 4G) Bluetooth connectivity (with Aceinna
-..    RTKTool App installed) to fetch GNSS RTK/PPP correction data stream
-.. -  Default bluetooth device name "OpenRTK\_0001" shows on Android
-..    smartphone, which can be changed through installed Aceinna RTKTool
-..    App
-.. -  Configure NTRIP server settings on Anroid smartphone in the provided
-..    Aceinna RTKTool App
+    - Pin: ST_UART1_TX (#59), ST_UART1_RX (#60)
+    - Default baud rate: 460800 b/s
+    - Default message: output RTCMv3 GNSS data stream (10 Hz)
 
-.. Ethernet mode
-.. ^^^^^^^^^^^^^
+SPI PORT
+~~~~~~~~
 
-.. -  Plug in a RJ45 cable from a local network to OpenRTK330 Ethernet
-..    port
-.. -  OpenRTK330 acts as NTRIP client connects with NTRIP server via host
-..    (e.g. Desktop) to fetch GNSS RTK/PPP correction data stream
-.. -  DHCP IP address is used as default, if no success, manually setup a
-..    static IP: ip = 192.168.1.110, netmask = 255.255.255.0, gateway =
-..    192.168.1.1
-.. -  The embedded webserver address is "http://opentrk"
+-  TBD
 
+CAN PORT
+~~~~~~~~
+
+- Pin: CAN_RX (#53), CAN_TX (#54)
+- Default message: output SAE J1939 messages 
