@@ -311,7 +311,14 @@ The default configuration of the four UART ports is listed as follows
 SPI PORT
 ~~~~~~~~
 
--  TBD
+- Pin: USER_MOSI (#29), USER_SCK (#30), USER_NSS (#31), USER_MISO (#32)
+- Default Configuration
+
+    - Frame format: Motorola
+    - Data size: 8 bits
+    - First bit: MSB first
+    - CPOL: High
+    - CPHA: 2Edge
 
 CAN PORT
 ~~~~~~~~
