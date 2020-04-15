@@ -132,8 +132,8 @@ Technical characteristics
 
 
 
-OpenRTK330 Pin Definition Rev
------------------------------
+OpenRTK330 Module Pin Definitions
+----------------------------------
 
 
  .. image:: media/OpenRTK330LI_pin_n.png

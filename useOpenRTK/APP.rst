@@ -132,6 +132,6 @@ Usage
    A few decoded "csv" files are generated from the "user_<time>.bin" and "debug_<time>.bin" output, the content of each of the "csv" files is described in its file header. 
 
 
- * (Optional) Run the "convbin.exe" program inside "bin" folder after cloning the github repo `RTKLIB <https://github.com/tomojitakasu/RTKLIB>`_ to decode the logged RTCM files to obtain RINEX format of GNSS raw data.
+ * (Optional) On Windows 10, download `convbin.exe <https://virtualmachinesdiag817.blob.core.windows.net/tools/convbin.exe>`_ and run the program to decode the logged GNSS RTCM binary files to obtain `RINEX <https://www.igscb.org/wg/rinex/>`_ text files for viewing.
 
 
