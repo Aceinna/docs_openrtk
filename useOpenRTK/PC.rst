@@ -109,16 +109,16 @@ Usage
 
      .. code-block:: bash
 
-            ./ans-devices -nolog 0
+            ./ans-devices -r
 
    - or 
 
      .. code-block:: python
 
             cd ./python-openimu/
-            python main.py -nolog 0
+            python main.py -r
 
-   A "data" folder is generated under the path of the command line and the following binary files are logged inside this foder. The contents of "USER" and "DEBUG" com port output are different between Apps
+   where "-r" means raw data logging. A "data" folder is generated under the path of the command line and the following binary files are logged inside this foder. The contents of "USER" and "DEBUG" com port output are different between Apps
 
    - *user_<time>.bin*: USER com port output
       
