@@ -42,15 +42,15 @@ Firmware Installation
 
     - Run the python driver for OpenRTK330 to get connectted with Aceinna developer website. There are two options
 
-      - Download executable files (version 1.3.0) of python driver 
+      - Download executable files (version 1.6.0) of python driver 
 
-        - `Windows 10 <https://github.com/Aceinna/python-openimu/files/4449007/develop-win.zip>`_
+        - `Windows 10 <https://github.com/Aceinna/python-openimu/files/4626456/develop-win.zip>`_
 
-        - `Mac OS <https://github.com/Aceinna/python-openimu/files/4449011/develop-mac.zip>`_
+        - `Mac OS <https://github.com/Aceinna/python-openimu/files/4626462/develop-mac.zip>`_
 
-        - `Linux (Ubuntu 19.10) <https://github.com/Aceinna/python-openimu/files/4449018/develop-ubuntu.zip>`_
+        - `Linux (Ubuntu 19.10) <https://github.com/Aceinna/python-openimu/files/4626464/develop-ubuntu.zip>`_
 
-        - `Raspberry Pi (Raspbian GNU/Linux 9) <https://github.com/Aceinna/python-openimu/files/4449019/develop-rpi.zip>`_ 
+        .. - `Raspberry Pi (Raspbian GNU/Linux 9) <https://github.com/Aceinna/python-openimu/files/4449019/develop-rpi.zip>`_ 
 
         and run in a command line          
 
@@ -58,7 +58,7 @@ Firmware Installation
 
                 ./ans-devices
 
-      - If you prefer building from source, go to Aceinna's github page and clone the repo `python-openimu <https://github.com/Aceinna/python-openimu>`_, and checkout the "ans-devices" branch. Run the OpenRTK Python driver with the following commands:
+      - If you prefer building from source, go to Aceinna's github page and clone the repo `python-openimu <https://github.com/Aceinna/python-openimu>`_, and checkout the "master" branch. Run the OpenRTK Python driver with the following commands:
 
             .. code-block:: python
 
@@ -68,7 +68,7 @@ Firmware Installation
 
         The python driver automatically scans available USB-serial ports and finds the right com port. If the correct com port is found, the "UPGRADE" button circled by cyan rectrangle will be highlighted. Then click the "UPGRADE" button to start the firmware upgrade process and wait it completes.  
 
-  b. **Download** the firmware bin file and **flash** it into OpenRTK330 module. In order to fullfill this, first install the STM32 ST-LINK Utility software from `here <https://www.st.com/en/development-tools/stsw-link004.html>`_ on your PC. Then open the STM32 ST-LINK Utility software and connect the OpenRTK330 EVB with PC using the ST-LINK debugger,
+  b. (**WARNING!** Checkout **Troubleshooting** #1 at the end of this page, before you go down this path) **Download** the firmware bin file and **flash** it into OpenRTK330 module. In order to fullfill this, first install the STM32 ST-LINK Utility software from `here <https://www.st.com/en/development-tools/stsw-link004.html>`_ on your PC. Then open the STM32 ST-LINK Utility software and connect the OpenRTK330 EVB with PC using the ST-LINK debugger,
 
     1. Click the red circled "1" to establish a connection with the OpenRTK EVB
 

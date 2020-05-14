@@ -9,6 +9,6 @@ cd docs_openrtk/
 make html
 ```
 
-### Preview
+## Preview
 
 Go to *docs_openrtk/_build/html*, open *index.html* with your browser for local preview.

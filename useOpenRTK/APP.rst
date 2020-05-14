@@ -91,8 +91,10 @@ Usage
          :align: center
          :scale: 18%
 
-6. **Data Logging**
- * To log OpenRTK330 com port output when using the Anroid App, you have to connect OpenRTK330 with a PC or Raspberry Pi via micro-USB and run the aforementioned python driver on your PC or Raspberry Pi 
+6. **Data Logging and Parsing**
+ All OpenRTK330 solution output can be logged from the serial ports when you connect a OpenRTK330 with a PC or Raspberry Pi via micro-USB, 
+ 
+ * **Logging**: run the aforementioned python driver on your PC or Raspberry Pi 
 
    - either
 
@@ -112,26 +114,26 @@ Usage
    - *user_<time>.bin*: USER com port output
       
      - RAWDATA App: 100 Hz raw IMU data in "s1" packet format
-     - RTK App: GNSS RTK solution in "sR" and "pS" packets
-     - RTK_INS App: GNSS RTK and INS integraed solution in "sR" and "pS" packets
+     - RTK App: GNSS RTK solution in "sK" and "pS" packets
+     - RTK_INS App: GNSS RTK and INS integraed solution in "sK" and "pS" packets
    - *debug_<time>.bin*: DEBUG com port output
 
      - RAWDATA App: N/A or base GNSS RTCM data if you configured a NTRIP server with RTCM correction, in this case, the output bin file is named *rtcm_base_<time>.bin* 
-     - RTK App: GNSS RTK solution in "k1" packets
+     - RTK App: N/A
      - RTK_INS App: GNSS RTK and INS integraed solution in "p1" packets
    - *rtcm_rover_<time>.bin*: GNSS RTCM com port output 
 
 
- * Run the following python script (requires clone of the github repo `python-openimu <https://github.com/Aceinna/python-openimu>`_) to parse the OpenRTK330 binary files
+ * **Parsing**: Run the following python script (requires clone of the github repo `python-openimu <https://github.com/Aceinna/python-openimu>`_) to parse the logged OpenRTK330 binary files
 
      .. code-block:: python
 
-                    cd .\python-openimu\openrtk_data_parse
-                    python openrtk_parse.py -p <file path>
+          git clone https://github.com/Aceinna/python-openimu.git
+          cd .\python-openimu\openrtk_data_parse
+          python openrtk_parse.py -p ..\data\<OpenRTK log data folder>
 
-   A few decoded "csv" files are generated from the "user_<time>.bin" and "debug_<time>.bin" output, the content of each of the "csv" files is described in its file header. 
+   A few "csv" files are decoded from the "user_<time>.bin" and "debug_<time>.bin" output, the content of each of the "csv" files is described in its file header. 
 
-
- * (Optional) On Windows 10, download `convbin.exe <https://virtualmachinesdiag817.blob.core.windows.net/tools/convbin.exe>`_ and run the program to decode the logged GNSS RTCM binary files to obtain `RINEX <https://www.igscb.org/wg/rinex/>`_ text files for viewing.
+   (Optional) On Windows 10, download `convbin.exe <https://virtualmachinesdiag817.blob.core.windows.net/tools/convbin.exe>`_ and run the program to decode the logged GNSS RTCM binary files to obtain `RINEX <https://www.igscb.org/wg/rinex/>`_ text files for viewing.
 
 
