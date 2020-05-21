@@ -4,33 +4,49 @@ OpenRTK330 EVK Setup
 .. contents:: Contents
     :local:
 
-The OpenRTK330 Evalution Kit (EVK) is designed to evaluate the performance of the GNSS/INS positioning with OpenRTK330 module and the OpenRTK software stack. The major components of the OpenRTK330 EVK are shown by the figure below, followed by steps to quickly setup the EVK and install the firmware on the OpenRTK330 module. 
+The OpenRTK330 Evalution Kit (EVK) is designed to evaluate the OpenRTK330 module with the  online Aceinna Navigation Studio (ANS) and related software stack. A full set of OpenRTK330 EVK is shown below after you unpack the product box. 
 
 .. figure:: media/EvalKit.png
     :width: 6.0in
     :height: 6.0in
 
-Firmware Installation
+The OpenRTK330 EVK is all set to be functional before shipping out, you could skip the following firmware installation/update process. Otherwise if you want to update the module with the latest firmware, follow the instructions below carefully.
+
+Firmware Installation/Update
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. **Unpack** the OpenRTK330 EVK, you will find the following **items** for the EVK quick setup and firmware installation
+
+    .. figure:: media/EvalBoard.png
+      :width: 6.0in
+      :height: 6.0in
 
     * OpenRTK330 Evaluation Board (EVB)
     * ST-Link Debugger
     * Micro USB cable
     * Mounting plate
 
-    By factory settings, the ESP32 module on the OpenRTK330 EVB has been programmed and configured to provide Bluetooth wireless connectivity. The Ethernet and CAN drivers are also set.
+    By factory settings, the ESP32 module on the OpenRTK330 EVB has been programmed and configured to provide Bluetooth wireless connectivity.
 
-2. **Mount** the EVB on the mounting plate for easy operation.
+.. 2. **Mount** the EVB on the mounting plate for easy operation.
 
-3. **Connect** the micro USB port on the OpenRTK330 EVB to a PC via a USB cable, four serial ports will be established on your PC, and the EVB is also powered up by this USB connection. Alternatively, the EVB can be powered up directly by a 9-12v DC adapter/generator. In this case, the USB connection is just a data link. The red LED by the micro-USB is always on if powered up.
+2. **Connect** the micro USB port on the OpenRTK330 EVB to a PC via a USB cable, four serial ports will be established on your PC, and the EVB is also powered up by this USB connection. Alternatively, the EVB can be powered up directly by a 9-12v DC adapter/generator. In this case, the USB connection is just a data link. The red LED by the micro-USB is always on if powered up.
 
-4. **Install** the OpenRTK330 module **firmware** from `App center <https://developers.aceinna.com/code/apps>`_ on Aceinna's developer website, as shown by
+  **WARNING**: Checkout **Troubleshooting** #1 at the end of this page, before you perform any operation on the EVB.
 
-    .. figure:: media/download_openrtk330_firmware.png
-        :width: 6.5in
-        :height: 3.0in
+3. Work with the online App Center of ANS (click `here <https://developers.aceinna.com/code/apps>`_) to **install/update** the OpenRTK330 module **firmware**, as shown below
+  
+  .. figure:: media/download_openrtk330_firmware.png
+          :width: 7.0in
+          :height: 3.0in
+
+  There are two major steps:
+  
+    a) Firstly, update "GNSS firmware"
+      * Put the "boot mode switch" in position away from RJ45 jack
+      * Click the ""
+
+      
 
   Taking the "RTK_INS" App as an example, click it, and there appears **two options** to install the OpenRTK330 firmware online:
 
@@ -68,7 +84,7 @@ Firmware Installation
 
         The python driver automatically scans available USB-serial ports and finds the right com port. If the correct com port is found, the "UPGRADE" button circled by cyan rectrangle will be highlighted. Then click the "UPGRADE" button to start the firmware upgrade process and wait it completes.  
 
-  b. (**WARNING!** Checkout **Troubleshooting** #1 at the end of this page, before you go down this path) **Download** the firmware bin file and **flash** it into OpenRTK330 module. In order to fullfill this, first install the STM32 ST-LINK Utility software from `here <https://www.st.com/en/development-tools/stsw-link004.html>`_ on your PC. Then open the STM32 ST-LINK Utility software and connect the OpenRTK330 EVB with PC using the ST-LINK debugger,
+..  b. (**WARNING!** Checkout **Troubleshooting** #1 at the end of this page, before you go down this path) **Download** the firmware bin file and **flash** it into OpenRTK330 module. In order to fullfill this, first install the STM32 ST-LINK Utility software from `here <https://www.st.com/en/development-tools/stsw-link004.html>`_ on your PC. Then open the STM32 ST-LINK Utility software and connect the OpenRTK330 EVB with PC using the ST-LINK debugger,
 
     1. Click the red circled "1" to establish a connection with the OpenRTK EVB
 
@@ -82,7 +98,7 @@ Firmware Installation
                 :width: 6.5in
                 :height: 4.0in
 
-5. **Check** the **LED** indicator: there are Yellow, Red and Green three LED lights on the OpenRTK330 EVB, if the firmware is loaded correctly, the Yellow LED is flashing first, indicating the 1PPS signal from ST GNSS chipset is available. Then, connect the SMA female connector with a satellite antenna (OpenRTK330 EVB can power on the antenna if passive, otherwise use a DC blocker), the Green LED starts flashing, indicating the OpenRTK330 INS App is running with valid GNSS signal. At this point, the firmware is loaded completely.
+4. **Check** the **LED** indicator: there are Yellow, Red and Green three LED lights on the OpenRTK330 EVB, if the firmware is loaded correctly, the Yellow LED is flashing first, indicating the 1PPS signal from ST GNSS chipset is available. Then, connect the SMA female connector with a satellite antenna (OpenRTK330 EVB can power on the antenna if passive, otherwise use a DC blocker), the Green LED starts flashing, indicating the OpenRTK330 INS App is running with valid GNSS signal. At this point, the firmware is loaded completely.
 
 ..
     At this point, the OpenRTK330 firmware is loaded and ready for GNSS RTK positioning that also requires internet connection to a NTRIP server for GNSS data correction.  and then connects with Aceinna's OpenRTK Android App for internet connectivity (see next section). Alternatively, the following step can be performed to get internet connectivity
