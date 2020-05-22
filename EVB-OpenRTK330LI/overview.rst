@@ -18,7 +18,21 @@ Overview
 
 **2. Components**
 
- - OpenRTK Evaluation board, which includes:
+OpenRTK Evaluation board, which includes:
+
+ .. figure:: media/EvalBoard.png
+    :width: 6.0in
+    :height: 6.0in
+
+where some of the parts are listed here
+
+  * 1: OpenRTK330 GNSS/IMU integrated module
+  * 2: GNSS antenna SMA interface
+  * 3: Espressif ESP32 bluetooth module
+  * 4: SWD/JTAG connector, 20-pin
+  * 5: Extension connector with 6-pin interfaces from left to right
+      - GND
+      - 
 
      - Virtual COM-port USB interface, providing connectivit from PC.
 

@@ -1,5 +1,5 @@
-How to Use OpenRTK330?
-========================
+How to Use OpenRTK330 EVK?
+============================
 
 Note the usage of OpenRTK330 is described with the OpenRTK330 EVK. There are two types of user APP provided to interact with both the module and a NTRIP server over the internet providing GNSS correction data for RTK positioning:
 
