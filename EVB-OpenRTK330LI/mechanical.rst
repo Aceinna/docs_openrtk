@@ -1,4 +1,4 @@
-OpenRTK300LI EVK Mechanical Drawing
+OpenRTK300 EVB Mechanical Drawing
 ===================================
 
 .. contents:: Contents

@@ -4,7 +4,7 @@ OpenRTK330 EVK and Setup
 .. contents:: Contents
     :local:
 
-EVK and EVB introduction
+EVK Introduction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 The OpenRTK330 Evalution Kit (EVK) is designed to evaluate the OpenRTK330 module with the  online Aceinna Navigation Studio (ANS) and related software stack. A full set of OpenRTK330 EVK is shown below after you unpack the product box. 
@@ -112,45 +112,47 @@ Go to the online App Center of ANS (click `here <https://developers.aceinna.com/
             :width: 6.0in
             :height: 1.0in
 
-      * On the above App Center webpage, click "RTK_INS" App, If the correct com port is found by the python driver, the "UPGRADE" button circled by cyan rectrangle will be highlighted. Then click the "UPGRADE" button to start the firmware upgrade process. During the process, only the GREEN LED keeps blinking. 
+      * On the above App Center webpage, click "RTK_INS" App, If the correct com port is found by the python driver, the "UPGRADE" button circled by cyan rectrangle will be highlighted. Then click the "UPGRADE" button to start the App update process, and only the GREEN LED keeps blinking during the process. 
       
         .. figure:: media/app_upgrade.png
             :width: 6.5in
             :height: 4.0in
 
- 
+      * Upon finishing, you will see the dialog below on the App Center webpage, indicating successful App update. The GREEN LED stops blinking fast, and the YELLOW LED starts to blink first then the GREEN LED is lighted. The blinking YELLOW LED indicates ST GNSS chipset is powered on and working properly, and blinking GREEN LED indicates App is running properly with valid GNSS signal receiving and valid GNSS antenna connection. Note GREEN LED stays on if no antenna is connected.
 
-  
-      * **Check** the **LED** indicator: there are Yellow, Red and Green three LED lights on the OpenRTK330 EVB, if the firmware is loaded correctly, the Yellow LED is flashing first, indicating the 1PPS signal from ST GNSS chipset is available. Then, connect the SMA female connector with a satellite antenna (OpenRTK330 EVB can power on the antenna if passive, otherwise use a DC blocker), the Green LED starts flashing, indicating the OpenRTK330 INS App is running with valid GNSS signal. At this point, the firmware is loaded completely.
+        .. figure:: media/App_Upgrade_Suc.png
+            :width: 6.5in
+            :height: 4.0in
+      
+.. Then, connect the SMA female connector with a satellite antenna (OpenRTK330 EVB can power on the antenna if passive, otherwise use a DC blocker), the Green LED starts flashing, indicating the OpenRTK330 INS App is running with valid GNSS signal. At this point, the firmware is loaded completely.
 
-..
-    At this point, the OpenRTK330 firmware is loaded and ready for GNSS RTK positioning that also requires internet connection to a NTRIP server for GNSS data correction.  and then connects with Aceinna's OpenRTK Android App for internet connectivity (see next section). Alternatively, the following step can be performed to get internet connectivity
+.. At this point, the OpenRTK330 firmware is loaded and ready for GNSS RTK positioning that also requires internet connection to a NTRIP server for GNSS data correction.  and then connects with Aceinna's OpenRTK Android App for internet connectivity (see next section). Alternatively, the following step can be performed to get internet connectivity
 
-..
-    (optional) Connect the EVB (RJ45 connector) with a network router/gateway with an Ethernet cable, the usage of this connection will also be addressed in next section
+.. (optional) Connect the EVB (RJ45 connector) with a network router/gateway with an Ethernet cable, the usage of this connection will also be addressed in next section
 
 Firmware Options
 ~~~~~~~~~~~~~~~~~
-The previous section demonstrates the firmware installation process for OpenRTK330 with "RTK_INS" App as an example. In order to fullfill various user requirements, there are a few firmware options provided with OpenRTK330, as listed on the `App center <https://developers.aceinna.com/code/apps>`_. The following are introductions on these Apps:
+The previous section demonstrates the firmware installation process for OpenRTK330 with "RTK_INS" App as an example. In order to fullfill various user requirements, there are a few firmware options provided with OpenRTK330, as listed on the online `App center <https://developers.aceinna.com/code/apps>`_. The following are introductions on these Apps:
 
   * RAWDATA APP - without GNSS or INS algorithm
 
-    * 10 Hz raw GNSS data output in RTCM format
-    * 100 Hz raw IMU data output in binary format
+    * 10 Hz raw GNSS data output in RTCMv3 format
+    * Configurable rate (50, 100, and 200 Hz) of raw IMU data output in binary format
     * Logging the raw data to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
     * Embedding your own RTK/INS algorithms, refer to `Firmware Build from Source <https://openrtk.readthedocs.io/en/latest/build_firmware.html>`_ 
 
+
   * RTK APP - with GNSS RTK algorithm
 
-    * 10 Hz raw GNSS data output in RTCM format
-    * 100 Hz raw IMU data output 
+    * 10 Hz raw GNSS data output in RTCMv3 format
+    * Configurable rate (50, 100, and 200 Hz) of raw IMU data output 
     * GNSS RTK position, velocity and accuracy metrics output
     * Logging the raw data and RTK solution to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
 
   * RTK_INS APP - with GNSS RTK and INS integrated algorithm
 
-    * 10 Hz raw GNSS data output in RTCM format
-    * 100 Hz raw IMU data output 
+    * 10 Hz raw GNSS data output in RTCMv3 format
+    * Configurable rate (50, 100, and 200 Hz) of raw IMU data output 
     * INS/GNSS RTK integrated solution output, include position, velocity and attitude and accuracy metrics
     * Logging the raw data and INS solution to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
 
