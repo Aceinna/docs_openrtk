@@ -71,7 +71,7 @@ Go to the online App Center of ANS (click `here <https://developers.aceinna.com/
       * Put the "boot mode switch" (#7 in the EVB picture above) in position **"A"**
       * Power on the EVB via connecting a Micro-USB cable between the EVB and your PC, only the GREEN LED keeps blinking. There are four serial com ports established on the PC, as shown by the example below, "COM3" refers to the first and "COM6" refers to the fourth serial port
 
-        .. figure:: media/FourSerialPorts.png
+        .. figure:: media/FourSerialPorts.PNG
           :width: 5.0in
           :height: 2.0in
 
@@ -108,7 +108,7 @@ Go to the online App Center of ANS (click `here <https://developers.aceinna.com/
 
         The python driver keeps scanning available serial ports to find the correct one for OpenRTK/OpenIMU, if found, you will see the following console output
 
-          .. figure:: media/python_driver_connects.png
+          .. figure:: media/python_driver_connects.PNG
             :width: 6.0in
             :height: 1.0in
 
@@ -120,7 +120,7 @@ Go to the online App Center of ANS (click `here <https://developers.aceinna.com/
 
       * Upon finishing, you will see the dialog below on the App Center webpage, indicating successful App update. The GREEN LED stops blinking fast, and the YELLOW LED starts to blink first then the GREEN LED is lighted. The blinking YELLOW LED indicates ST GNSS chipset is powered on and working properly, and blinking GREEN LED indicates App is running properly with valid GNSS signal receiving and valid GNSS antenna connection. Note GREEN LED stays on if no antenna is connected.
 
-        .. figure:: media/App_Upgrade_Suc.png
+        .. figure:: media/App_Upgrade_Suc.PNG
             :width: 6.5in
             :height: 4.0in
       
