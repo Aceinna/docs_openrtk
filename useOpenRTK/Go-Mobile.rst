@@ -1,5 +1,5 @@
-Android
-=======
+With an Android Smartphone
+============================
 
 The following describes the installation and usage of the "OpenRTK" Android App.
 
@@ -21,6 +21,7 @@ Installation
 
 Usage
 ~~~~~~~~~~~~~
+
 1. Power on the OpenRTK330 EVB using a 9-12 v DC adaptor or a micro-USB cable to a powered USB outlet, then connect the EVB with a GNSS antenna, and lastly check the YELLOW, RED AND GREEN LED lights to confirm valid firmware
 
   - YELLOW: flashing light indicating GNSS chipsets is powered on with valid 1PPS signal output
@@ -92,6 +93,7 @@ Usage
          :scale: 18%
 
 6. **Data Logging and Parsing**
+
  All OpenRTK330 solution output can be logged from the serial ports when you connect a OpenRTK330 with a PC or Raspberry Pi via micro-USB, 
  
  * **Logging**: run the aforementioned python driver on your PC or Raspberry Pi 

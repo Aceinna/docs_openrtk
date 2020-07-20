@@ -39,8 +39,9 @@ including custom data structures and packets very simple.
     :titlesonly:
 
     setup-OpenRTK
-    ..Network
+    .. Network
     useOpenRTK
+    firmware_upgrade.rst
     build_firmware.rst
 
 .. raw:: latex

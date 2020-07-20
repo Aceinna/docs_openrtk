@@ -26,5 +26,6 @@ The following two subsections cover the detailed steps of using the two types of
     :maxdepth: 1
     :hidden:
 
-    useOpenRTK/APP
-    useOpenRTK/PC
+    useOpenRTK/On-a-PC
+    useOpenRTK/Go-Mobile
+    useOpenRTK/EVK-Vehicle-Installation

@@ -1,10 +1,11 @@
-PC
-===
+With a PC
+===========
 
 Using OpenRTK330 with a PC for product evaluation requires access to the online web based Aceinna Navigation Studio (ANS) via the ethernet connection on the EVB.
 
 Usage
 ~~~~~~~~~~~~~
+
 1. Power on the OpenRTK330 EVB using a 9-12 v DC adaptor or a microUSB cable connected to a PC, then connect the EVB with a GNSS antenna, and lastly check the **YELLOW and GREEN** LED lights to confirm valid firmware
 
   - YELLOW: flashing light indicating GNSS chipsets is powered on with valid 1PPS signal output
@@ -102,6 +103,7 @@ Usage
        :scale: 50%
 
 5. **Data Logging and Parsing**
+
  * **Logging**: Run the python driver on a PC or a Raspberry Pi, 
 
    - either
