@@ -1,5 +1,5 @@
 OpenRTK330 EVK and Setup
-=================================
+==========================
 
 .. contents:: Contents
     :local:
@@ -46,9 +46,13 @@ where some of the parts are listed here
 
 Quick Setup
 ~~~~~~~~~~~~~
+1. Put the "boot mode switch" (#7 on the EVB picture above) in position **"B"**
 
+2. Connect the EVB with a PC using a Micro-USB cable to power on the EVB and to establish UART com ports on the PC, **YELLOW** LED (#12 on the EVB figure above) flashes
 
-Please refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_ section of this manual to carry out the user configuration operations through the Anroid App and Web GUI.
+3. Connect a GNSS multi-frequency antenna to the SMA interface (#2 on the EVB figure), **GREEN** LED flashes if valid incoming signal
+
+4. Refer to next section `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_ to utilize the provided user App for RTK/INS operation, data logging and etc.
 
 
 

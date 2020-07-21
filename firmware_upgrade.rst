@@ -18,7 +18,7 @@ I. **SAVE BEFORE DEVELOPMENT START**: it's strongly recommended to save your fac
    5. Click File->Save As to save the system image file
 
     .. figure:: media/save_image.png
-                :width: 6.5in
+                :width: 5.5in
                 :height: 4.0in
 
  - Recover system image
@@ -42,7 +42,7 @@ I. **SAVE BEFORE DEVELOPMENT START**: it's strongly recommended to save your fac
 Firmware Installation/Update
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**WARNING**: Checkout **Troubleshooting** #1 at the end of this page, before you perform any firmware operation.
+**NOTE**: **NO ST-LINK Debugger** is needed to perform firmware upgrade in the procedure below.
 
 .. 2. **Connect** the OpenRTK330 EVB to a PC via a Micro-USB cable, four serial ports are established on your PC as shown below (e.g. on Windows 10), meanwhile the EVB is powered up by this USB connection. In the context of this manual, we refer "COM3" to the FIRST serial port and refer the other three serial ports to the SECOND, THRID and FOURTH serial port in increasing order.
 
@@ -63,7 +63,7 @@ Go to the online App Center of ANS (click `here <https://developers.aceinna.com/
 
       * Download the flashing tool ("AceinnaGnssTool.exe") from `here <https://virtualmachinesdiag817.blob.core.windows.net/tools/AceinnaGnssTool.exe>`_
       * Click the "GNSS_RTK_SDK" App and click the "Download" button to download the App bin file to your PC, store it in, e.g. *C:\GNSS_RTK_SDK.bin*
-      * Put the "boot mode switch" (#7 in the EVB picture above) in position **"A"**
+      * Put the "boot mode switch" (#7 in the EVB picture) in position **"A"**
       * Power on the EVB via connecting a Micro-USB cable between the EVB and your PC, only the GREEN LED keeps blinking. There are four serial com ports established on the PC, as shown by the example below, "COM3" refers to the first and "COM6" refers to the fourth serial port
 
         .. figure:: media/FourSerialPorts.PNG
@@ -85,7 +85,7 @@ Go to the online App Center of ANS (click `here <https://developers.aceinna.com/
 
     2. Then, install/update OpenRTK330 App (supports Windows 10, Mac OS, Ubuntu and Raspberry Pi platforms) 
     
-      * Put the "boot mode switch" (#7 in the EVB picture above) in position **"B"**
+      * Put the "boot mode switch" (#7 in the EVB picture) in position **"B"**
       * Power (Re-power) on the EVB via connecting a Micro-USB cable between the EVB and your PC, the YELLOW LED keeps blinking
       * Download the excutable OpenRTK/OpenIMU python driver (version 1.6.0) from `here <https://github.com/Aceinna/python-openimu/releases>`_ , and run in a command line          
 
