@@ -39,7 +39,7 @@ I. **SAVE BEFORE DEVELOPMENT START**: it's strongly recommended to save your fac
                     :height: 9.5in    
 
 
-Firmware Installation/Update
+Firmware Upgrade Online
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 **NOTE**: **NO ST-LINK Debugger** is needed to perform firmware upgrade in the procedure below.
@@ -57,67 +57,45 @@ Go to the online App Center of ANS (click `here <https://developers.aceinna.com/
           :width: 7.0in
           :height: 3.0in
 
-  There are two major steps to install/update OpenRTK330 firmware:
-  
-    1. Firstly, install/update "GNSS firmware" (Windows 10 only)
+Follow the steps below to upgrade OpenRTK330 firmware:
 
-      * Download the flashing tool ("AceinnaGnssTool.exe") from `here <https://virtualmachinesdiag817.blob.core.windows.net/tools/AceinnaGnssTool.exe>`_
-      * Click the "GNSS_RTK_SDK" App and click the "Download" button to download the App bin file to your PC, store it in, e.g. *C:\GNSS_RTK_SDK.bin*
-      * Put the "boot mode switch" (#7 in the EVB picture) in position **"A"**
-      * Power on the EVB via connecting a Micro-USB cable between the EVB and your PC, only the GREEN LED keeps blinking. There are four serial com ports established on the PC, as shown by the example below, "COM3" refers to the first and "COM6" refers to the fourth serial port
+    1. Click `here <https://github.com/Aceinna/python-openimu/releases>`_ to download the latest Python driver, e.g. "pythondriver-win.zip" for Windows 10
 
-        .. figure:: media/FourSerialPorts.PNG
-          :width: 5.0in
-          :height: 2.0in
+    2. Unzip the Python driver on a PC, and run the excutable file "ans-devices.exe" in a command line, e.g. 
+      .. code-block:: python
 
-      * Run the command below to flash the firmware, and change both the path to the firmware bin file and the com port number (use the fourth serial port)
+          c:\pythondriver-win\ans-devices.exe
 
-        .. code-block:: python
-
-          .\AceinnaGnssTool.exe program -f t5 -iÂ C:\GNSS_RTK_SDK.binÂ -o log.txt -c COM6Â -b 115200 -m SQI -e TRUE -r TRUE
-
-      * Check the output file "log.txt" in the same directory of the executable file, if the below log is found at the end of the "log.txt" file, firmware flasing is done successfully
-
-        .. code-block:: python
-
-          Program OK: instance 0
-
-
-    2. Then, install/update OpenRTK330 App (supports Windows 10, Mac OS, Ubuntu and Raspberry Pi platforms) 
+    3. Upgrade OpenRTK330 INS App 
     
       * Put the "boot mode switch" (#7 in the EVB picture) in position **"B"**
-      * Power (Re-power) on the EVB via connecting a Micro-USB cable between the EVB and your PC, the YELLOW LED keeps blinking
-      * Download the excutable OpenRTK/OpenIMU python driver (version 1.6.0) from `here <https://github.com/Aceinna/python-openimu/releases>`_ , and run in a command line          
-
-          .. code-block:: bash
-
-              ./ans-devices
-
-        - (Optional) The OpenRTK/OpenIMU python driver is open sourced on GitHub, if you prefer building from source, clone the repo from `here <https://github.com/Aceinna/python-openimu>`_, and checkout the "master" branch. Install and run it with the following commands:
-
-            .. code-block:: python
-
-                cd .\python-openimu
-                pip install -r requirements.txt
-                python main.py
-
-        The python driver keeps scanning available serial ports to find the correct one for OpenRTK/OpenIMU, if found, you will see the following console output
+      * Power on the EVB via connecting a Micro-USB cable between the EVB and a PC, the YELLOW LED starts flashing
+      * The python driver keeps scanning available serial ports to connect with OpenRTK330, if connected successfully, you will see the following console output
 
           .. figure:: media/python_driver_connects.PNG
             :width: 6.0in
             :height: 1.0in
 
-      * On the above App Center webpage, click "RTK_INS" App, If the correct com port is found by the python driver, the "UPGRADE" button circled by cyan rectrangle will be highlighted. Then click the "UPGRADE" button to start the App update process, and only the GREEN LED keeps blinking during the process. 
+      * On the above App Center webpage, click "RTK_INS" App, and then click the highlighted "UPGRADE" button, the YELLOW LED stops blinking and the GREEN LED starts blinking quickly 
       
         .. figure:: media/app_upgrade.png
             :width: 6.5in
             :height: 4.0in
 
-      * Upon finishing, you will see the dialog below on the App Center webpage, indicating successful App update. The GREEN LED stops blinking fast, and the YELLOW LED starts to blink first then the GREEN LED is lighted. The blinking YELLOW LED indicates ST GNSS chipset is powered on and working properly, and blinking GREEN LED indicates App is running properly with valid GNSS signal receiving and valid GNSS antenna connection. Note GREEN LED stays on if no antenna is connected.
+      * Upon finishing, you will see the dialog below on the App Center webpage. USER DO NOT have to do any operation, wait for the YELLOW LED to recover blinking. The GREEN LED will start blinking if connected to a GNSS antenna with valid signal receiving
 
         .. figure:: media/App_Upgrade_Suc.PNG
             :width: 6.5in
             :height: 4.0in
+
+    4. Upgrade GNSS firmware: 
+      * Put the "boot mode switch" (#7 in the EVB picture) to position **"A"**
+      * **Re-power** on the EVB, and only the GREEN LED blinks quickly
+      * On the above App Center webpage, click "RTK_INS" App, and then click the highlighted "UPGRADE" button, wait till the upgrading finishes
+      * **Recover** the "boot mode switch" (#7 in the EVB picture) to position **"B"**
+      * **Re-power** on the EVB,  wait for the YELLOW LED to recover blinking and the GREEN LED will start blinking if connected to a GNSS antenna with valid signal receiving
+
+    
       
 .. Then, connect the SMA female connector with a satellite antenna (OpenRTK330 EVB can power on the antenna if passive, otherwise use a DC blocker), the Green LED starts flashing, indicating the OpenRTK330 INS App is running with valid GNSS signal. At this point, the firmware is loaded completely.
 
@@ -126,7 +104,8 @@ Go to the online App Center of ANS (click `here <https://developers.aceinna.com/
 .. (optional) Connect the EVB (RJ45 connector) with a network router/gateway with an Ethernet cable, the usage of this connection will also be addressed in next section
 
 Firmware Options
-~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~
+
 The previous section demonstrates the firmware installation process for OpenRTK330 with "RTK_INS" App as an example. In order to fullfill various user requirements, there are a few firmware options provided with OpenRTK330, as listed on the online `App center <https://developers.aceinna.com/code/apps>`_. The following are introductions on these Apps:
 
   * RAWDATA APP - without GNSS or INS algorithm

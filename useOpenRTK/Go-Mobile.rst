@@ -1,10 +1,13 @@
 With an Android Smartphone
 ============================
 
-The following describes the installation and usage of the "OpenRTK" Android App.
+Using the OpenRTK330L EVK to evaluate the module requires
 
-Installation
-~~~~~~~~~~~~~~~~~
+* the installation the "OpenRTK" Android App: provides 4G access to NTRIP server over the internet
+* Micro-USB connection to a PC for power and data logging connection
+
+"OpenRTK" App Installation
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 1. Scan the QR code below or click `here <https://developers.aceinna.com/static/appDownload.html/>`_ to download the Android apk installation file. Make sure your Android version is 8.0 or above.
 
@@ -22,16 +25,14 @@ Installation
 Usage
 ~~~~~~~~~~~~~
 
-1. Power on the OpenRTK330 EVB using a 9-12 v DC adaptor or a micro-USB cable to a powered USB outlet, then connect the EVB with a GNSS antenna, and lastly check the YELLOW, RED AND GREEN LED lights to confirm valid firmware
+1. **Connection**
+  * Connect the OpenRTK330 EVB to a PC via a Micro-USB cable, then connect the EVB with a GNSS antenna, checking the LED lights for working status
 
   - YELLOW: flashing light indicating GNSS chipsets is powered on with valid 1PPS signal output
-  - GREEN: flashing light indicating OpenRTK330 RTK or INS App is running correctly with valid GNSS signal receiving 
+  - GREEN: flashing light indicating OpenRTK330L INS App is running correctly with valid GNSS signal receiving 
 
-2. **Connection**
-
- - Enable "Bluetooth" on your Anroid device
- - Open the OpenRTK Andorid App and enable "Location" access for "OpenRTK" App on your Anroid device 
- - As shown by the picture below, go to the "Connect" tab and click the "search" icon (right bottom) to search for your device. If your OpenRTK330 device is found, a Bluetooth device ID appears on the "Connect" list. By factory setting, the Bluetooth device ID is "OpenRTK_<four digits>" and the four digits are the last four digits of your OpenRTK330 module S/N. Click your Bluetooth device ID and if connected successfully, a notification appears
+  * Enable "Bluetooth" function and "Location" access right for "OpenRTK" App on your Anroid device 
+  * Open the "OpenRTK" Andorid App, as shown by the picture below, go to the "Connect" tab and click the "search" icon (right bottom) to search for your device. If your OpenRTK330 device is found, a Bluetooth device ID appears on the "Connect" list. By factory setting, the Bluetooth device ID is "OpenRTK_<four digits>" and the four digits are the last four digits of your OpenRTK330 module S/N. Click your Bluetooth device ID and if connected successfully, a notification appears
 
   .. image:: ../media/connect_success.jpeg
     :align: center
@@ -93,49 +94,39 @@ Usage
          :scale: 18%
 
 6. **Data Logging and Parsing**
-
- All OpenRTK330 solution output can be logged from the serial ports when you connect a OpenRTK330 with a PC or Raspberry Pi via micro-USB, 
  
- * **Logging**: run the aforementioned python driver on your PC or Raspberry Pi 
+ * **Logging**: Download the latest version of Python driver executable (click `here <https://github.com/Aceinna/python-openimu/releases>`_), unzip the file, and run the following command, e.g. on Windows 10
 
-   - either
+    .. code-block:: bash
 
-     .. code-block:: bash
+          C:\pythondriver-win\ans-devices.exe 
 
-            ./ans-devices -r
+    The running Python driver automatically logs all UART output from OpenRTK330L module. A "data" folder is created inside the Python driver folder and a "log file" folder is created inside the "data" foder. Each "log file" folder includes the following files:
 
-   - or 
+    - *configuration.txt*: the parameter settings of the current module
 
-     .. code-block:: python
-
-            cd ./python-openimu/
-            python main.py -r
-
-   where "-r" means raw data logging. A "data" folder is generated under the path of the command line and the following binary files are logged inside this foder. The contents of "USER" and "DEBUG" com port output are different between Apps
-
-   - *user_<time>.bin*: USER com port output
+    - *user_<time>.bin*: USER com port output
       
-     - RAWDATA App: 100 Hz raw IMU data in "s1" packet format
-     - RTK App: GNSS RTK solution in "sK" and "pS" packets
-     - RTK_INS App: GNSS RTK and INS integraed solution in "sK" and "pS" packets
-   - *debug_<time>.bin*: DEBUG com port output
+      - RAWDATA App: raw IMU data in "s1" packet format
+      - RTK App: GNSS RTK solution in "sK" and "pS" packets
+      - RTK_INS App: GNSS RTK and INS integraed solution in "sK" and "pS" packets
+    - *debug_<time>.bin*: DEBUG com port output
 
-     - RAWDATA App: N/A or base GNSS RTCM data if you configured a NTRIP server with RTCM correction, in this case, the output bin file is named *rtcm_base_<time>.bin* 
-     - RTK App: N/A
-     - RTK_INS App: GNSS RTK and INS integraed solution in "p1" packets
-   - *rtcm_rover_<time>.bin*: GNSS RTCM com port output 
+      - RAWDATA App: N/A or base GNSS RTCM data if you configured a NTRIP server with RTCM correction, in this case, the output bin file is named *rtcm_base_<time>.bin* 
+      - RTK App: N/A
+      - RTK_INS App: GNSS RTK and INS integraed solution in "p1" packets
+    - *rtcm_rover_<time>.bin*: GNSS RTCM com port output 
 
 
- * **Parsing**: Run the following python script (requires clone of the github repo `python-openimu <https://github.com/Aceinna/python-openimu>`_) to parse the logged OpenRTK330 binary files
+ * **Parsing**: Run the following python script inside the Python driver folder to parse the logged OpenRTK330L binary files
 
      .. code-block:: python
 
-          git clone https://github.com/Aceinna/python-openimu.git
-          cd .\python-openimu\openrtk_data_parse
-          python openrtk_parse.py -p ..\data\<OpenRTK log data folder>
+          cd C:\pythondriver-win\openrtk_data_parse
+          python openrtk_parse.py -p ..\data\<OpenRTK data log folder>
 
-   A few "csv" files are decoded from the "user_<time>.bin" and "debug_<time>.bin" output, the content of each of the "csv" files is described in its file header. 
+    A few "csv" files are decocded from the "user_<time>.bin" and "debug_<time>.bin" output, the content of each of the "csv" files is described in its file header. 
 
-   (Optional) On Windows 10, download `convbin.exe <https://virtualmachinesdiag817.blob.core.windows.net/tools/convbin.exe>`_ and run the program to decode the logged GNSS RTCM binary files to obtain `RINEX <https://www.igscb.org/wg/rinex/>`_ text files for viewing.
+    (Optional) On Windows 10, download `convbin.exe <https://virtualmachinesdiag817.blob.core.windows.net/tools/convbin.exe>`_ and run the program to decode the logged GNSS RTCM binary files to obtain `RINEX <https://www.igscb.org/wg/rinex/>`_ text files for quick checking.
 
 
