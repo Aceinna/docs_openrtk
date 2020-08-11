@@ -1,3 +1,6 @@
+OpenRTK330 Module
+=================
+
 The Aceinna OpenRTK330 module integrates a ST Teseo V automotive grade
 multi-constellation, multi-frequency Global Navigation Satellite System
 (**GNSS**) chipset (supports GPS, GALILEO, GLONASS, Beidou, QZSS and SBAS), a
@@ -16,7 +19,7 @@ market that requires a reliable, high-precision and yet cost effective
 -  UART / SPI / CAN / Ethernet Interfaces
 
 Technical characteristics
-=========================
+-------------------------
 
  +-------------------------------------------------------------------+
  | **Accuracy** [#f1]_                                               |
@@ -130,7 +133,7 @@ Technical characteristics
 
 
 OpenRTK330 Module Pin Definitions
-=================================
+----------------------------------
 
 
  .. image:: media/OpenRTK330LI_pin_n.png
@@ -276,4 +279,50 @@ OpenRTK330 Module Pin Definitions
  |      68 |  AGND             |     P    | Internal GNSS RF path ground                                    |
  +---------+-------------------+----------+-----------------------------------------------------------------+
 
+
+ Communication ports definitions
+ --------------------------------
+ There are six serial communicatoins ports available on the OpenRTK330 module, including four configurable UART ports, one SPI port and one CAN port.
  
+ UART PORTS
+ ~~~~~~~~~~
+ The default configuration of the four UART ports is listed as follows
+ 
+ -  User port
+     
+     - Pin: USER_UART_RX (#55), USER_UART_TX (#56)
+     - Default baud rate: 460800 b/s
+     - Default messages: output INS PVA packet ('pS'), satellite SNR, elevation and azimuth packet ('sK'),plus raw IMU data packet ('s1')
+ -  GNSS chipset firmware programming port
+ 
+     - Pin: ST_UART_PROG_TX (#49), ST_UART_PROG_RX (#50)
+     - Default baud rate: 460800 b/s
+     - Reserved for programming GNSS chipset, not applicable for output
+ -  Debug port
+ 
+     - Pin: DEBUG_TX (#51), DEBUG_RX (#52)
+     - Default baud rate: 460800 b/s
+     - Default message: output extended INS PVA packets ('p1')
+ -  GNSS Data port
+ 
+     - Pin: ST_UART1_TX (#59), ST_UART1_RX (#60)
+     - Default baud rate: 460800 b/s
+     - Default message: output RTCMv3 GNSS data stream (10 Hz)
+ 
+ SPI PORT
+ ~~~~~~~~
+ 
+ - Pin: USER_MOSI (#29), USER_SCK (#30), USER_NSS (#31), USER_MISO (#32)
+ - Default Configuration
+ 
+     - Frame format: Motorola
+     - Data size: 8 bits
+     - First bit: MSB first
+     - CPOL: High
+     - CPHA: 2Edge
+ 
+ CAN PORT
+ ~~~~~~~~
+ 
+ - Pin: CAN_RX (#53), CAN_TX (#54)
+ - Default message: output SAE J1939 messages 

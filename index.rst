@@ -52,8 +52,11 @@ including custom data structures and packets very simple.
     :caption: OpenRTK330 Modules
     :maxdepth: 1
     :hidden:
+    :titlesonly:
 
     OpenRTK330
+    Communication_ports.rst
+    ST_GNSS_UART1.rst
 
 .. raw:: latex
 
