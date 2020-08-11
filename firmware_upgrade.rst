@@ -14,7 +14,7 @@ I. **SAVE BEFORE DEVELOPMENT START**: it's strongly recommended to save your fac
    1. Download and install ST-Link Utility from `here <https://www.st.com/en/development-tools/stsw-link004.html>`_
    2. Connect ST-Link debugger between OpenRTK330 EVB and PC and power on the EVB
    3. Open ST-Link Utility software on the PC and go to Target->Connect
-   4. Enter value 0x100000 in Size bo and hit enter
+   4. Enter value **0x08000000** in *Address* box and **0x100000** in *Size* box as shown by the figure below, then hit enter
    5. Click File->Save As to save the system image file
 
     .. figure:: media/save_image.png
@@ -91,7 +91,7 @@ Follow the steps below to upgrade OpenRTK330 firmware:
     4. Upgrade GNSS firmware: 
       * Put the "boot mode switch" (#7 in the EVB picture) to position **"A"**
       * **Re-power** on the EVB, and only the GREEN LED blinks quickly
-      * On the above App Center webpage, click "RTK_INS" App, and then click the highlighted "UPGRADE" button, wait till the upgrading finishes
+      * On the above App Center webpage, click "GNSS_RTK_SDK" App, and then click the highlighted "UPGRADE" button, wait till the upgrading finishes
       * **Recover** the "boot mode switch" (#7 in the EVB picture) to position **"B"**
       * **Re-power** on the EVB,  wait for the YELLOW LED to recover blinking and the GREEN LED will start blinking if connected to a GNSS antenna with valid signal receiving
 
