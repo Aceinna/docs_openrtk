@@ -51,7 +51,7 @@ Firmware Upgrade Online
 
 
 
-Go to the online App Center of ANS (click `here <https://developers.aceinna.com/code/apps>`_) to **install/update** the OpenRTK330 module **firmware**, as shown below
+Go to the online App Center of ANS (click `here <https://developers.aceinna.com/code/apps>`_) to **install/update** the OpenRTK330 module **firmware**, as shown by
   
   .. figure:: media/download_openrtk330_firmware.png
           :width: 7.0in
@@ -68,7 +68,7 @@ Follow the steps below to upgrade OpenRTK330 firmware:
 
     3. Upgrade OpenRTK330 INS App 
     
-      * Put the "boot mode switch" (#7 in the EVB picture) in position **"B"**
+      .. * Put the "boot mode switch" (#7 in the EVB picture) in position **"B"**
       * Power on the EVB via connecting a Micro-USB cable between the EVB and a PC, the YELLOW LED starts flashing
       * The python driver keeps scanning available serial ports to connect with OpenRTK330, if connected successfully, you will see the following console output
 
@@ -76,7 +76,7 @@ Follow the steps below to upgrade OpenRTK330 firmware:
             :width: 6.0in
             :height: 1.0in
 
-      * On the above App Center webpage, click "RTK_INS" App, and then click the highlighted "UPGRADE" button, the YELLOW LED stops blinking and the GREEN LED starts blinking quickly 
+      * On the above App Center webpage, click "GNSS_RTK_INS" App, and then click the highlighted "UPGRADE" button, the YELLOW LED stops blinking and the GREEN LED starts blinking quickly 
       
         .. figure:: media/app_upgrade.png
             :width: 6.5in
@@ -88,12 +88,13 @@ Follow the steps below to upgrade OpenRTK330 firmware:
             :width: 6.5in
             :height: 4.0in
 
-    4. Upgrade GNSS firmware: 
-      * Put the "boot mode switch" (#7 in the EVB picture) to position **"A"**
-      * **Re-power** on the EVB, and only the GREEN LED blinks quickly
-      * On the above App Center webpage, click "GNSS_RTK_SDK" App, and then click the highlighted "UPGRADE" button, wait till the upgrading finishes
-      * **Recover** the "boot mode switch" (#7 in the EVB picture) to position **"B"**
-      * **Re-power** on the EVB,  wait for the YELLOW LED to recover blinking and the GREEN LED will start blinking if connected to a GNSS antenna with valid signal receiving
+    .. 
+    .. 4. Upgrade GNSS firmware: 
+    ..  * Put the "boot mode switch" (#7 in the EVB picture) to position **"A"**
+    .. * **Re-power** on the EVB, and only the GREEN LED blinks quickly
+    ..  * On the above App Center webpage, click "GNSS_RTK_SDK" App, and then click the ..highlighted "UPGRADE" button, wait till the upgrading finishes
+    ..   * **Recover** the "boot mode switch" (#7 in the EVB picture) to position **"B"**
+    ..  * **Re-power** on the EVB,  wait for the YELLOW LED to recover blinking and the GREEN LED will start blinking if connected to a GNSS antenna with valid signal receiving
 
     
       
