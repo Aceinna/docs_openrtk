@@ -75,7 +75,7 @@ including custom data structures and packets very simple.
 
 .. toctree::
     :caption: Communication protocol
-    :maxdepth: 1
+    :maxdepth: 2
     :hidden:
 
     communication_port/User_uart
