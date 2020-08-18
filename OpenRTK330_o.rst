@@ -133,7 +133,7 @@ Technical characteristics
 
 
 OpenRTK330 Module Pin Definitions
-----------------------------------
+---------------------------------
 
 
  .. image:: media/OpenRTK330LI_pin_n.png

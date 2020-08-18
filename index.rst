@@ -69,3 +69,18 @@ including custom data structures and packets very simple.
 
     EVB-OpenRTK330LI
 
+.. raw:: latex
+
+   \part{Communication protocol}
+
+.. toctree::
+    :caption: Communication protocol
+    :maxdepth: 1
+    :hidden:
+
+    communication_port/User_uart
+    communication_port/Debug_uart
+    communication_port/Can_port
+    communication_port/nmea
+
+
