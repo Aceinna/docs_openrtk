@@ -42,7 +42,7 @@ I. **SAVE BEFORE DEVELOPMENT START**: it's strongly recommended to save your fac
 Firmware Upgrade Online
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**NOTE**: **NO ST-LINK Debugger** is needed to perform firmware upgrade in the procedure below.
+.. **NOTE**: **NO ST-LINK Debugger** is needed to perform firmware upgrade in the procedure below.
 
 .. 2. **Connect** the OpenRTK330 EVB to a PC via a Micro-USB cable, four serial ports are established on your PC as shown below (e.g. on Windows 10), meanwhile the EVB is powered up by this USB connection. In the context of this manual, we refer "COM3" to the FIRST serial port and refer the other three serial ports to the SECOND, THRID and FOURTH serial port in increasing order.
 
@@ -51,15 +51,31 @@ Firmware Upgrade Online
 
 
 
-Go to the online App Center of ANS (click `here <https://developers.aceinna.com/code/apps>`_) to **install/update** the OpenRTK330 module **firmware**, as shown by
+Work with the online **App Center** of ANS (click `here <https://developers.aceinna.com/code/apps>`_) to **install/update** the OpenRTK330 module **firmware**, as shown by
   
   .. figure:: media/download_openrtk330_firmware.png
-          :width: 7.0in
+          :width: 6.5in
           :height: 3.0in
 
-Follow the steps below to upgrade OpenRTK330 firmware:
+**First**, upgrade OpenRTK330LI bootloader (to v1.1.1 and later, Win10 only):
 
-    1. Click `here <https://github.com/Aceinna/python-openimu/releases>`_ to download the latest Python driver, e.g. "pythondriver-win.zip" for Windows 10
+  1. Connect ST-LINK debugger between a PC and the EVB
+
+  2. Use a Micro-USB cable to connect the PC and the EVB and power on the EVB
+
+  3. Download the Bootloader bin file from the App center as shown by the above figure
+
+  4. Open ST Utility software, click Target->Connect, then click Target->Program & Verify, on the pop dialog as shown below, load the downloaded bootloader bin file from step 3, check "Verify while programming" and "Reset after programming", click "Start" button
+
+      .. figure:: media/programming_bootloader.PNG
+            :width: 5.0in
+            :height: 3.5in
+
+  5. Remove ST-LINK debugger from the EVB
+
+**Secondly**, follow the steps below to upgrade OpenRTK330 firmware:
+
+    1. Click `here <https://github.com/Aceinna/python-openimu/releases>`_ to download the latest Python driver (v2.1.6 and later), e.g. "pythondriver-win.zip" for Windows 10
 
     2. Unzip the Python driver on a PC, and run the excutable file "ans-devices.exe" in a command line, e.g. 
       .. code-block:: python
@@ -73,8 +89,8 @@ Follow the steps below to upgrade OpenRTK330 firmware:
       * The python driver keeps scanning available serial ports to connect with OpenRTK330, if connected successfully, you will see the following console output
 
           .. figure:: media/python_driver_connects.PNG
-            :width: 6.0in
-            :height: 1.0in
+            :width: 7.0in
+            :height: 3.0in
 
       * On the above App Center webpage, click "GNSS_RTK_INS" App, and then click the highlighted "UPGRADE" button, the YELLOW LED stops blinking and the GREEN LED starts blinking quickly 
       
@@ -117,12 +133,12 @@ The previous section demonstrates the firmware installation process for OpenRTK3
     * Embedding your own RTK/INS algorithms, refer to `Firmware Build from Source <https://openrtk.readthedocs.io/en/latest/build_firmware.html>`_ 
 
 
-  * RTK APP - with GNSS RTK algorithm
+  .. * RTK APP - with GNSS RTK algorithm
 
-    * 10 Hz raw GNSS data output in RTCMv3 format
-    * Configurable rate (50, 100, and 200 Hz) of raw IMU data output 
-    * GNSS RTK position, velocity and accuracy metrics output
-    * Logging the raw data and RTK solution to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
+    .. * 10 Hz raw GNSS data output in RTCMv3 format
+    ..* Configurable rate (50, 100, and 200 Hz) of raw IMU data output 
+    ..* GNSS RTK position, velocity and accuracy metrics output
+    ..* Logging the raw data and RTK solution to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
 
   * RTK_INS APP - with GNSS RTK and INS integrated algorithm
 
