@@ -1,13 +1,13 @@
-OpenRTK330 EVK and Setup
+Quick Start
 ==========================
 
 .. contents:: Contents
     :local:
 
-EVK Introduction
+OpenRTK330LI EVK Introduction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-The OpenRTK330 Evalution Kit (EVK) is designed to evaluate the OpenRTK330 module with the  online Aceinna Navigation Studio (ANS) and related software stack. A full set of OpenRTK330 EVK is shown below after you unpack the product box. 
+The OpenRTK330LI Evalution Kit (EVK) is designed to evaluate the OpenRTK330LI module with the  online Aceinna Navigation Studio (ANS) and related software stack. A full set of OpenRTK330 EVK is shown below after you unpack the product box. 
 
 .. figure:: media/EvalKit.png
     :width: 7.0in
@@ -44,15 +44,18 @@ where some of the parts are listed here
 .. The OpenRTK330 EVK is all set as a high precision GNSS/INS positioning platform before shipping out, you could skip the following firmware installation/update process and directly go to learn `How to Use OpenRTK330 EVK <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_. Otherwise, if you want to update the module with the latest firmware, follow the instructions below carefully.
 
 
+OpenRTK Python driver
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
 Quick Setup
 ~~~~~~~~~~~~~
-1. Put the "boot mode switch" (#7 on the EVB picture above) in position **"B"**
 
-2. Connect the EVB with a PC using a Micro-USB cable to power on the EVB and to establish UART com ports on the PC, **YELLOW** LED (#12 on the EVB figure above) flashes
+1. Connect the EVB with a PC using a Micro-USB cable, and the **YELLOW** LED (#12 on the EVB figure above) flashes. The EVB is powered on, and four UART com ports are established on the PC, 
 
-3. Connect a GNSS multi-frequency antenna to the SMA interface (#2 on the EVB figure), **GREEN** LED flashes if valid incoming signal
+2. Connect a GNSS multi-frequency antenna to the SMA interface (#2 on the EVB figure), the **GREEN** LED (#12 on the EVB figure above) flashes if the incoming GNSS signal is valid
 
-4. Refer to next section `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_ to utilize the provided user App for RTK/INS operation, data logging and etc.
+3. Refer to next section `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_ to utilize the provided user App for RTK/INS operation, data logging and etc.
 
 
 

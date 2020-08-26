@@ -67,7 +67,7 @@ Work with the online **App Center** of ANS (click `here <https://developers.acei
 
   4. Open ST Utility software, click Target->Connect, then click Target->Program & Verify, on the pop dialog as shown below, load the downloaded bootloader bin file from step 3, check "Verify while programming" and "Reset after programming", click "Start" button
 
-      .. figure:: media/programming_bootloader.PNG
+      .. figure:: media/programming_bootloader.png
             :width: 5.0in
             :height: 3.5in
 

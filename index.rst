@@ -30,10 +30,10 @@ including custom data structures and packets very simple.
 
 .. raw:: latex
 
-   \part{Quick Start}
+   \part{Tutorial}
 
 .. toctree::
-    :caption: Quick Start
+    :caption: Tutorial
     :maxdepth: 1
     :hidden:
     :titlesonly:
