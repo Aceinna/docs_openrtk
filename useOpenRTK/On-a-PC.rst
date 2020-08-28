@@ -49,7 +49,7 @@ Usage
 
   A lightweight TCP/IP web service is started inside the OpenRTK330 firmware after power on, then user can get access to ANS `web GUI <http://openrtk>`_ (http://openrtk) via the Ethernet connection
 
-    .. manually setup a STATIC IP (ip = 192.168.1.110, netmask =  255.255.255.0, gateway = 192.168.1.1).
+    .. manually setup a STATIC IP (ip = 192.168.137.110, netmask =  255.255.255.0, gateway = 192.168.137.1).
 
             **Generate API**. If you do not have the API key, you need `generate API
          ``key <https://openrtk.readthedocs.io/en/latest/Network/getapikey.html>`__  
@@ -64,7 +64,7 @@ Usage
       - "NTRIP STATUS" field with "CONNECTED" string indicates that the ethernet connection to NTRIP server is valid 
       - "BASE STREAM" field with string value "AVAILABLE" indicates GNSS correction data stream from NTRIP server is valid. 
 
-        .. image:: ../media/ntripconfi.png
+        .. image:: ../media/ntrip_config.png
              :align: center
              :scale: 50%
  
