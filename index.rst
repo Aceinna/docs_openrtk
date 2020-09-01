@@ -74,7 +74,7 @@ including custom data structures and packets very simple.
    \part{Communication protocol}
 
 .. toctree::
-    :caption: Communication protocol
+    :caption: Communication Protocol and Data
     :maxdepth: 2
     :hidden:
 

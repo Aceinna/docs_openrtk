@@ -1,6 +1,3 @@
-Communication Protocol and Data
-===============================
-
 ACEINNA protocol data format definition
 ---------------------------------------
 
