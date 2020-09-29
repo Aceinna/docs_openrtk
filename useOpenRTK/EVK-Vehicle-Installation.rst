@@ -45,7 +45,7 @@ Depends on the vehicle installation of the OpenRTK330 system, user has to config
  
  * Translation offset
    
-   * *GNSS antenna lever-arm*: GNSS position is estimated to the phase center of the GNSS antenna, and INS position is estimated to the center of the navigation of the IMU. The translation from the IMU center to the phase center of the GNSS antenna has to be known and applied to the integrated system via user configuration of the antenna lever-arm. The GNSS/INS integrated solution outputs position at the IMU center. For example, the lever arm in the figure below is [x, y, z] = [-1.0, -1.0, 1.0] meter.
+   * *GNSS antenna lever-arm*: GNSS position is estimated to the phase center of the GNSS antenna, and INS position is estimated to the center of the navigation of the IMU. The translation from the IMU center to the phase center of the GNSS antenna has to be known and applied to the integrated system via user configuration of the antenna lever-arm. The GNSS/INS integrated solution outputs position at the IMU center. For example, the lever arm in the figure below is [x, y, z] = [-1.0, -1.0, -1.0] meter.
 
     .. figure:: ../media/LeverArm.jpg
           :width: 5.5 in

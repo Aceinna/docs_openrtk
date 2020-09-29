@@ -232,9 +232,11 @@ INS position, velocity and attitude solution
  |  104  |double             | azimuth                        |  yaw angle: unit: deg                 |
  +-------+-------------------+--------------------------------+---------------------------------------+
  |  112  |int32              | status                         |Combined solution status: 0: invalid 1:|
- |       |                   |                                |INS alignment status 2: INS solution is|
- |       |                   |                                |unreliable 3: INS solution is good 4:  |
- |       |                   |                                |pure INS solution (no GNSS update)     |
+ |       |                   |                                |INS alignment ongoing 2: INS solution i|
+ |       |                   |                                |s unreliable 3: INS solution is good 4:|
+ |       |                   |                                |INS free (no GNSS update) 5: Estimating|
+ |       |                   |                                | installation angle 6: Completed estima|
+ |       |                   |                                |installation angle estimation          |
  +-------+-------------------+--------------------------------+---------------------------------------+
  |  116  |int8 * 4           | crc[4]                         |  check code                           |
  +-------+-------------------+--------------------------------+---------------------------------------+
