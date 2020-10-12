@@ -10,6 +10,7 @@ Usage
 ~~~~~~~~~~~~~
 
 1. **Connection**
+
   - Connect the OpenRTK330 EVB to a PC via a Micro-USB cable, then connect the EVB with a GNSS antenna, checking the LED lights for working status
 
     - YELLOW: flashing light indicating GNSS chipsets is powered on with valid 1PPS signal output
@@ -34,11 +35,11 @@ Usage
      .. image:: ../media/web_gui_connect.png
        :align: center
 
-  - Use RJ45 cables to connect the EVB and the PC to the **SAME** router/network switch, and by factory setting, an IP address is allocated to OpenRTK330 device in the way of DHCP. Make sure the ligths on the RJ45 interface are flashing, which means valid ethernet connection. 
+  - Use RJ45 cables to connect the EVB and the PC (PC could use WiFi if within the same local subnetwork) to the **SAME** router/network switch, and by factory setting, an IP address is allocated to OpenRTK330 device in the way of DHCP. Make sure the ligths on the RJ45 interface are flashing, which means valid ethernet connection. 
 
 3. **Map Presentation**
 
-  Click "Play", you will find a live map showing the position trajectory, a navigation infromation display panel, and two panels for satellite information on SNR, azimuth, and elevation angles. In addtion, on the most right side, click "chart" icon you will get a satellite Skyview Chart.
+  Click "Play", you will find a live map showing the position trajectory, a navigation information display panel, and two panels for satellite information on SNR, azimuth, and elevation angles. In addtion, on the most right side, click "chart" icon you will get a satellite Skyview Chart.
 
     .. image:: ../media/web_gui_play.png
       :align: center
@@ -86,7 +87,7 @@ Usage
           :align: center
           :scale: 50%
 
-    - Device Info page: user can see all the product infomation of the connected device.
+    - Device Info page: user can see all the product information of the connected device.
 
       .. image:: ../media/deviceinfo.png
          :align: center
@@ -101,12 +102,12 @@ Usage
     - *user_<time>.bin*: USER com port output
       
       - RAWDATA App: raw IMU data in "s1" packet format
-      - RTK App: GNSS RTK solution in "sK" and "pS" packets
+    .. - RTK App: GNSS RTK solution in "sK" and "pS" packets
       - RTK_INS App: GNSS RTK and INS integraed solution in "sK" and "pS" packets
     - *debug_<time>.bin*: DEBUG com port output
 
       - RAWDATA App: N/A or base GNSS RTCM data if you configured a NTRIP server with RTCM correction, in this case, the output bin file is named *rtcm_base_<time>.bin* 
-      - RTK App: N/A
+    .. - RTK App: N/A
       - RTK_INS App: GNSS RTK and INS integraed solution in "p1" packets
     - *rtcm_rover_<time>.bin*: GNSS RTCM com port output 
 

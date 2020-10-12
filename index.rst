@@ -5,6 +5,7 @@ OpenRTK Developer Manual
    :align: center
    :width: 5.0in
    :height: 5.7in
+
 OpenRTK is an integrated GNSS (Global Navigation Satellite System) high precision 
 chip and precisely calibrated Inertial Measurement Unit open-source platform for 
 the development of navigation and localization algorithms. Users are able to quickly 
@@ -39,7 +40,6 @@ including custom data structures and packets very simple.
     :titlesonly:
 
     setup-OpenRTK
-    ..Network
     useOpenRTK
     firmware_upgrade.rst
     build_firmware.rst
@@ -56,7 +56,6 @@ including custom data structures and packets very simple.
 
     OpenRTK330
     Communication_ports.rst
-    ST_GNSS_UART1.rst
 
 .. raw:: latex
 

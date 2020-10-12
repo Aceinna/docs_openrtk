@@ -1,5 +1,5 @@
 Firmware Build from Source
-=====================================
+=================================
 
 .. contents:: Contents
     :local:
@@ -53,7 +53,9 @@ The following is a list of prerequisite software and hardware stack.
 
 
 * **Hardware**
- An OpenRTK330 EVK is required with a PC.
+
+  - An OpenRTK330 EVK set
+  - A PC
 
 Import and Build Firmware from Source 
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -123,7 +125,6 @@ Import and Build Firmware from Source
 The following contents of this section present the user APIs for each of the firmware options
 
 * RAWDATA APP
-* RTK APP
 * RTK_INS APP
 
 .. toctree::
@@ -131,4 +132,5 @@ The following contents of this section present the user APIs for each of the fir
     :hidden:
 
     firmwareBuild/RAWDATA
-    ..firmwareBuild/RTK_App
+
+..  firmwareBuild/RTK_App
