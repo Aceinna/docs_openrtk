@@ -6,7 +6,8 @@ Using the OpenRTK330L EVK to evaluate the OpenRTK330L product with a PC requires
  * access to the online web based Aceinna Navigation Studio (ANS) via the Micro-USB connection between the EVB and the PC
  * access to NTRIP server over the internet via a Ethernet connection between the EVB and the PC
 
-Usage
+
+Usage 
 ~~~~~~~~~~~~~
 
 1. **Connection**
@@ -95,30 +96,35 @@ Usage
 
 5. **Data Logging and Parsing**
 
-  The running Python driver automatically logs all UART output from OpenRTK330L module. A "data" folder is created inside the Python driver folder and a "log file" folder is created inside the "data" foder. Each "log file" folder includes the following files:
+  * **Logging**: Download the latest version of Python driver executable (click `here <https://github.com/Aceinna/python-openimu/releases>`_), unzip the file, and run the following command, e.g. on Windows 10
+
+    .. code-block:: bash
+
+          C:\pythondriver-win\ans-devices.exe 
+
+    The running Python driver automatically logs all UART output from OpenRTK330L module. A "data" folder is created inside the Python driver folder and a "log file" folder is created inside the "data" foder. Each "log file" folder includes the following files:
 
     - *configuration.txt*: the parameter settings of the current module
 
     - *user_<time>.bin*: USER com port output
       
       - RAWDATA App: raw IMU data in "s1" packet format
-    .. - RTK App: GNSS RTK solution in "sK" and "pS" packets
       - RTK_INS App: GNSS RTK and INS integraed solution in "sK" and "pS" packets
     - *debug_<time>.bin*: DEBUG com port output
 
       - RAWDATA App: N/A or base GNSS RTCM data if you configured a NTRIP server with RTCM correction, in this case, the output bin file is named *rtcm_base_<time>.bin* 
-    .. - RTK App: N/A
       - RTK_INS App: GNSS RTK and INS integraed solution in "p1" packets
     - *rtcm_rover_<time>.bin*: GNSS RTCM com port output 
 
 
- **Parsing**: Run the following python script inside the Python driver folder to parse the logged OpenRTK330L binary files
+ * **Parsing**: Run the OpenRTK data decoder executable inside the parser folder to parse the logged OpenRTK330L binary files
 
      .. code-block:: python
 
           cd C:\pythondriver-win\openrtk_data_parse
-          python openrtk_parse.py -p ..\data\<OpenRTK data log folder>
+          .\openrtk_parse.exe -p ..\data\<OpenRTK data log folder>
 
     A few "csv" files are decocded from the "user_<time>.bin" and "debug_<time>.bin" output, the content of each of the "csv" files is described in its file header. 
+
 
     (Optional) On Windows 10, download `convbin.exe <https://virtualmachinesdiag817.blob.core.windows.net/tools/convbin.exe>`_ and run the program to decode the logged GNSS RTCM binary files to obtain `RINEX <https://www.igscb.org/wg/rinex/>`_ text files for quick checking.

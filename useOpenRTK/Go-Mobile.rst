@@ -22,10 +22,12 @@ Using the OpenRTK330L EVK to evaluate the module requires
 
      Please grant the OpenRTK App access to run in Android system's backend.
 
-Usage
-~~~~~~~~~~~~~
+
+Usage Steps
+~~~~~~~~~~~~~~
 
 1. **Connection**
+
   * Connect the OpenRTK330 EVB to a PC via a Micro-USB cable, then connect the EVB with a GNSS antenna, checking the LED lights for working status
 
   - YELLOW: flashing light indicating GNSS chipsets is powered on with valid 1PPS signal output
@@ -108,22 +110,20 @@ Usage
     - *user_<time>.bin*: USER com port output
       
       - RAWDATA App: raw IMU data in "s1" packet format
-      - RTK App: GNSS RTK solution in "sK" and "pS" packets
       - RTK_INS App: GNSS RTK and INS integraed solution in "sK" and "pS" packets
     - *debug_<time>.bin*: DEBUG com port output
 
       - RAWDATA App: N/A or base GNSS RTCM data if you configured a NTRIP server with RTCM correction, in this case, the output bin file is named *rtcm_base_<time>.bin* 
-      - RTK App: N/A
       - RTK_INS App: GNSS RTK and INS integraed solution in "p1" packets
     - *rtcm_rover_<time>.bin*: GNSS RTCM com port output 
 
 
- * **Parsing**: Run the following python script inside the Python driver folder to parse the logged OpenRTK330L binary files
+ * **Parsing**: Run the OpenRTK data decoder executable inside the parser folder to parse the logged OpenRTK330L binary files
 
      .. code-block:: python
 
           cd C:\pythondriver-win\openrtk_data_parse
-          python openrtk_parse.py -p ..\data\<OpenRTK data log folder>
+          .\openrtk_parse.exe -p ..\data\<OpenRTK data log folder>
 
     A few "csv" files are decocded from the "user_<time>.bin" and "debug_<time>.bin" output, the content of each of the "csv" files is described in its file header. 
 
