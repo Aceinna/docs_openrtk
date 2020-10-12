@@ -39,7 +39,7 @@ including custom data structures and packets very simple.
     :hidden:
     :titlesonly:
 
-    setup-OpenRTK
+    quick_start.rst
     useOpenRTK
     firmware_upgrade.rst
     build_firmware.rst
