@@ -38,7 +38,7 @@ Usage
 
   - Use RJ45 cables to connect the EVB and the PC (PC could use WiFi if within the same local subnetwork) to the **SAME** router/network switch, and by factory setting, an IP address is allocated to OpenRTK330 device in the way of DHCP. Make sure the ligths on the RJ45 interface are flashing, which means valid ethernet connection. 
 
-3. **Map Presentation**
+2. **Map Presentation**
 
   Click "Play", you will find a live map showing the position trajectory, a navigation information display panel, and two panels for satellite information on SNR, azimuth, and elevation angles. In addtion, on the most right side, click "chart" icon you will get a satellite Skyview Chart.
 
@@ -47,7 +47,7 @@ Usage
       :scale: 50%
 
 
-4. **NTRIP and User Configurations**
+3. **NTRIP and User Configurations**
 
   A lightweight TCP/IP web service is started inside the OpenRTK330 firmware after power on, then user can get access to ANS `web GUI <http://openrtk>`_ (http://openrtk) via the Ethernet connection
 
@@ -94,7 +94,7 @@ Usage
          :align: center
          :scale: 50%
 
-5. **Data Logging and Parsing**
+4. **Data Logging and Parsing**
 
   * **Logging**: Download the latest version of Python driver executable (click `here <https://github.com/Aceinna/python-openimu/releases>`_), unzip the file, and run the following command, e.g. on Windows 10
 

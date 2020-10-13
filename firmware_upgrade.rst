@@ -100,7 +100,7 @@ Work with the online **App Center** of ANS (click `here <https://developers.acei
 
       * Upon finishing, you will see the dialog below on the App Center webpage. USER DO NOT have to do any operation, wait for the YELLOW LED to recover blinking. The GREEN LED will start blinking if connected to a GNSS antenna with valid signal receiving
 
-        .. figure:: media/App_Upgrade_Suc.PNG
+        .. figure:: media/App_Upgrade_Suc.png
             :width: 6.5in
             :height: 4.0in
 

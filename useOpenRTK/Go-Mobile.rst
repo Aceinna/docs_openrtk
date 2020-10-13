@@ -46,7 +46,7 @@ Usage Steps
     :align: center
     :scale: 18%   
 
-3. **Map Presentation**
+2. **Map Presentation**
 
  - Once the Bluetooth connection made successfully, and OpenRTK330 is reporting positioning information to Android App, go to "Map" tab and click "Start Live Data" to start a live map presentation 
 
@@ -60,7 +60,7 @@ Usage Steps
     :align: center
     :scale: 18%  
 
-4. **NTRIP Configuration**
+3. **NTRIP Configuration**
 
  - In order to get GNSS RTK positioning, go to "NTRIP" tab and configure the NTRIP server settings of your GNSS correction data provider 
 
@@ -75,7 +75,7 @@ Usage Steps
        :scale: 18%
       
 
-5. **User Configuration**.
+4. **User Configuration**.
 
   From anyone of the four tabs, you can access the menu for user configuration by clicking the icon "≡" at the upper left corner 
 
@@ -95,7 +95,7 @@ Usage Steps
          :align: center
          :scale: 18%
 
-6. **Data Logging and Parsing**
+5. **Data Logging and Parsing**
  
  * **Logging**: Download the latest version of Python driver executable (click `here <https://github.com/Aceinna/python-openimu/releases>`_), unzip the file, and run the following command, e.g. on Windows 10
 
