@@ -10,7 +10,7 @@ What is OpenRTK?
     of multi-constellation, multi-frequency Global Navigation Satellite System (GNSS) chips, a family of low-drift pre-calibrated 
     Inertial Measurement Units (IMU) and cloud based server supports .
 *   OpenRTK hardware consists of a multi-frequency GNSS triple 3-axis rate sensor (gyro), 3-axis accelerometer platform.
-*   The module contains a high performance embedded ARM Cortex-M4 CPU with floating-point math support. RTK/PPP and GNSS/IMU integration 
+*   The module contains a high performance embedded ARM Cortex-M4 CPU with floating-point math support. RTK and GNSS/IMU integration 
     algorithms are embedded in firmware for up to centimetre accuracy in various situations.
 *   Extra IO and Ports make connection of external peripherals such as Odometer, and other more advanced sensors possible.
 *   OpenRTK server provides GNSS network and cloud computation services, which ensure users to achieve fast centimeter-decimeter level position services.
@@ -18,13 +18,13 @@ What is OpenRTK?
 
  **Hardware Configurations**
 
- +-------+--------------+---------------------------------------------------------------+
- | Type  | Part Number  | Hardware Features                                             |
- +-------+--------------+---------------------------------------------------------------+
- | *LC*  | OpenRTK300LC | Consumer grade IMU Module without temperature compensation    |
- +-------+--------------+---------------------------------------------------------------+
- | *LI*  | OpenRTK300LI | Industrial grade IMU Module with temperature compensation     |
- +-------+--------------+---------------------------------------------------------------+
+ +----------------+------------------------------------------------------------------------+
+ | **Model**      |     **Description**                                                    |
+ +----------------+------------------------------------------------------------------------+
+ |  OpenRTK300LI  | Inertial Navigation System Module – Industrial Grade                   |
+ +----------------+------------------------------------------------------------------------+
+ |  RTK300LA      | Inertial Navigation System Module – Automotive Grade (Contact Aceinna) |
+ +----------------+------------------------------------------------------------------------+
 
 
 **Open-Source Embedded Software**
@@ -42,7 +42,7 @@ What is OpenRTK?
     * Extended Kalman Filter Algorithms
     * High-Speed Deterministic Sampling
     * Messaging
-    * GNSS RTK/PPP engine
+    * GNSS RTK engine
     * GNSS/IMU integration
     * Accurate Time Service
     * Sensor Filtering
