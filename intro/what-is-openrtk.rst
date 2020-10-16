@@ -21,9 +21,9 @@ What is OpenRTK?
  +----------------+------------------------------------------------------------------------+
  | **Model**      |     **Description**                                                    |
  +----------------+------------------------------------------------------------------------+
- |  OpenRTK300LI  | Inertial Navigation System Module – Industrial Grade                   |
+ |  OpenRTK330LI  | Inertial Navigation System Module – Industrial Grade                   |
  +----------------+------------------------------------------------------------------------+
- |  RTK300LA      | Inertial Navigation System Module – Automotive Grade (Contact Aceinna) |
+ |  RTK330LA      | Inertial Navigation System Module – Automotive Grade (Contact Aceinna) |
  +----------------+------------------------------------------------------------------------+
 
 
