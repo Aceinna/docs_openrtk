@@ -37,6 +37,9 @@ where some of the parts are listed here
   * 8: RJ45 jack for Ethernet connection
   * 9: Micro-USB port
   * 10: 9-pin CAN interface
+      
+      - Pin-7: CAN_H signal
+      - Pin-2: CAN_L signal
   * 12: EVB working status LEDs, yellow, red, and green LED from left to right
 
 .. The ESP32 bluetooth module on the OpenRTK330 EVB has been programmed and configured to provide bluetooth wireless connectivity, and user do not have to get hands on it.

@@ -96,35 +96,41 @@ Usage
 
 4. **Data Logging and Parsing**
 
-  * **Logging**: Download the latest version of Python driver executable (click `here <https://github.com/Aceinna/python-openimu/releases>`_), unzip the file, and run the following command, e.g. on Windows 10
+  - Using the UART
 
-    .. code-block:: bash
+    * **Logging**: Download the latest version of Python driver executable (click `here <https://github.com/Aceinna/python-openimu/releases>`_), unzip the file, and run the following command, e.g. on Windows 10
 
-          C:\pythondriver-win\ans-devices.exe 
+      .. code-block:: python
 
-    The running Python driver automatically logs all UART output from OpenRTK330L module. A "data" folder is created inside the Python driver folder and a "log file" folder is created inside the "data" foder. Each "log file" folder includes the following files:
+            C:\pythondriver-win\ans-devices.exe 
 
-    - *configuration.txt*: the parameter settings of the current module
+      The running Python driver automatically logs all UART output from OpenRTK330L module. A "data" folder is created inside the Python driver folder and a "log file" folder is created inside the "data" foder. Each "log file" folder includes the following files:
 
-    - *user_<time>.bin*: USER com port output
-      
-      - RAWDATA App: raw IMU data in "s1" packet format
-      - RTK_INS App: GNSS RTK and INS integraed solution in "sK" and "pS" packets
-    - *debug_<time>.bin*: DEBUG com port output
+      - *configuration.txt*: the parameter settings of the current module
 
-      - RAWDATA App: N/A or base GNSS RTCM data if you configured a NTRIP server with RTCM correction, in this case, the output bin file is named *rtcm_base_<time>.bin* 
-      - RTK_INS App: GNSS RTK and INS integraed solution in "p1" packets
-    - *rtcm_rover_<time>.bin*: GNSS RTCM com port output 
+      - *user_<time>.bin*: USER com port output
+        
+        - RAWDATA App: raw IMU data in "s1" packet format
+        - RTK_INS App: GNSS RTK and INS integraed solution in "sK" and "pS" packets
+      - *debug_<time>.bin*: DEBUG com port output
 
-
- * **Parsing**: Run the OpenRTK data decoder executable inside the parser folder to parse the logged OpenRTK330L binary files
-
-     .. code-block:: python
-
-          cd C:\pythondriver-win\openrtk_data_parse
-          .\openrtk_parse.exe -p ..\data\<OpenRTK data log folder>
-
-    A few "csv" files are decocded from the "user_<time>.bin" and "debug_<time>.bin" output, the content of each of the "csv" files is described in its file header. 
+        - RAWDATA App: N/A or base GNSS RTCM data if you configured a NTRIP server with RTCM correction, in this case, the output bin file is named *rtcm_base_<time>.bin* 
+        - RTK_INS App: GNSS RTK and INS integraed solution in "p1" packets
+      - *rtcm_rover_<time>.bin*: GNSS RTCM com port output 
 
 
-    (Optional) On Windows 10, download `convbin.exe <https://virtualmachinesdiag817.blob.core.windows.net/tools/convbin.exe>`_ and run the program to decode the logged GNSS RTCM binary files to obtain `RINEX <https://www.igscb.org/wg/rinex/>`_ text files for quick checking.
+    * **Parsing**: Run the OpenRTK data decoder executable inside the parser folder to parse the logged OpenRTK330L binary files
+
+      .. code-block:: python
+
+            cd C:\pythondriver-win\openrtk_data_parse
+            .\openrtk_parse.exe -p ..\data\<OpenRTK data log folder>
+
+      A few "csv" files are decocded from the "user_<time>.bin" and "debug_<time>.bin" output, the content of each of the "csv" files is described in its file header. 
+
+
+      (Optional) On Windows 10, download `convbin.exe <https://virtualmachinesdiag817.blob.core.windows.net/tools/convbin.exe>`_ and run the program to decode the logged GNSS RTCM binary files to obtain `RINEX <https://www.igscb.org/wg/rinex/>`_ text files for quick checking.
+
+  - Using the CAN
+
+    User could use a CAN-USB (e.g. https://canable.io/) or CAN-TTL adapter to connect with the DB-9 male interface on the EVB to log and parse the CAN messages (definition click `here <https://openrtk.readthedocs.io/en/latest/communication_port/Can_port.html>`_). Note that user have to write parsing code using the provided lib or open-source code by the adapter provider. 
