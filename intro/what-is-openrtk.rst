@@ -6,44 +6,50 @@ What is OpenRTK?
     :local:
     
 
-*   OpenRTK is an open software platform for development of high-performance navigation and localization applications on top 
-    of multi-constellation, multi-frequency Global Navigation Satellite System (GNSS) chips, a family of low-drift pre-calibrated 
-    Inertial Measurement Units (IMU) and cloud based server supports .
-*   OpenRTK hardware consists of a multi-frequency GNSS triple 3-axis rate sensor (gyro), 3-axis accelerometer platform.
-*   The module contains a high performance embedded ARM Cortex-M4 CPU with floating-point math support. RTK and GNSS/IMU integration 
-    algorithms are embedded in firmware for up to centimetre accuracy in various situations.
-*   Extra IO and Ports make connection of external peripherals such as Odometer, and other more advanced sensors possible.
-*   OpenRTK server provides GNSS network and cloud computation services, which ensure users to achieve fast centimeter-decimeter level position services.
-*   The OpenRTK hardware comes in different form-factors including:
+OpenRTK is an open source hardware and software platform for development of high-performance navigation and localization applications on top of multi-constellation, multi-frequency Global Navigation Satellite System (GNSS) chips, a family of low-drift pre-calibrated Inertial Measurement Units (IMU) and cloud based server supports.
 
- **Hardware Configurations**
+    * **Hardware**
 
- +----------------+------------------------------------------------------------------------+
- | **Model**      |     **Description**                                                    |
- +----------------+------------------------------------------------------------------------+
- |  OpenRTK330LI  | Inertial Navigation System Module – Industrial Grade                   |
- +----------------+------------------------------------------------------------------------+
- |  RTK330LA      | Inertial Navigation System Module – Automotive Grade (Contact Aceinna) |
- +----------------+------------------------------------------------------------------------+
+      * OpenRTK hardware features of a multi-frequency, multi-constellation GNSS chipset from STMicroelectronics (aka ST), a triple-redudant 6-axis IMU sensor module from Aceinna, and an embedded STM32 ARM Cortex-M4 MCU with floating-point computation support for complex positioning engine
+      * Spare I/O and ports for external sensors such as Odometer, camera for enhanced sensor fusion navigation
+      * There comes two form-factors as follows:
+
+        +----------------+------------------------------------------------------------------------+
+        | **Model**      |     **Description**                                                    |
+        +----------------+------------------------------------------------------------------------+
+        |  OpenRTK330LI  | Inertial Navigation System Module – Industrial Grade                   |
+        +----------------+------------------------------------------------------------------------+
+        |  RTK330LA      | Inertial Navigation System Module – Automotive Grade (Contact Aceinna) |
+        +----------------+------------------------------------------------------------------------+
 
 
-**Open-Source Embedded Software**
+    * **Software**
 
-*   OpenRTK hardware runs an open-source stack written on top of standard ARM Cortex libraries.
-*   OpenRTK330 use FreeRTOS while OpenRTK330 uses a simple real-time scheduler.
-*   The overall system loop is typically configured to run at 800Hz ensuring high quality 
-    aliasing-free measurements for processing.
-*   Also included in the OpenRTK embedded software platform are drivers for various, customizable SPI, 
-    CAN, and UART messaging, and customizable settings that can be adjusted run-time and/or permanently.
-*   A number of predefined settings are defined for baud rate, output date rate, sensor filter settings, and XYZ axis transformations.
-*   The Core OpenRTK embedded software consists of the following:
+      * OpenRTK embedded software (i.e. the module firmware) is developped on top of the standard STM32 Cortex MCU library
+      * Utilizes the FreeRTOS as the real time operating system for MCU
+      * Provides a cost-free embedded environment and toolchain using `VS Code <https://code.visualstudio.com/>`_ and the associated Aceinna extension (based on `PlatformIO <https://platformio.org/>`_) 
+      * Features with open-sourced firmware in the drivers and user interfaces, user can use or modify the provided firmware code to utilize or customize:
 
-    * FreeRTOS
-    * Extended Kalman Filter Algorithms
-    * High-Speed Deterministic Sampling
-    * Messaging
-    * GNSS RTK engine
-    * GNSS/IMU integration
-    * Accurate Time Service
-    * Sensor Filtering
-    * Settings Module for Dynamic and Permanent Unit Configuration
+        - raw IMU data generation in sensor data extraction, pre-filtering and output data rate/format/interface and so on
+        - UART input/output baudrate/mode/messages
+        - CAN input/output mode/messages
+        - Ethernet driver and input/output mode/messages
+        - SPI driver
+        - Bluetooth driver
+
+      * Features with proprietary positioning engine library (NOT open-sourced):
+
+            * GNSS Real Time Kinematic (RTK) positioning engine
+            * GNSS/IMU integrated Inertial Navigation System (INS) positioning engine
+            
+
+    * **Cloud Service**
+
+      * OpenRTK cloud service provides Networked Transport of RTCM via Internet Protocol (NTRIP) server and caster service for GNSS correction data
+      * Provides online `developer site <https://developers.aceinna.com/>`_ for user interface
+
+        - Web GUI
+        - Data and algorithm simulation
+        - Database for storage
+        - Live support forum
+        
