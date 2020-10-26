@@ -1,6 +1,6 @@
 
 What is OpenRTK?
-================
+=================
 
 .. contents:: Contents
     :local:
