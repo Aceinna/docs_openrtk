@@ -1,5 +1,5 @@
-CAN prot data protocol
-----------------------
+CAN Interface Data Protocol
+=============================
 
 CAN port settings
 ~~~~~~~~~~~~~~~~~
