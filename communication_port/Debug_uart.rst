@@ -20,7 +20,7 @@ Each piece of data contains three parts: packet header, content and check code.
  +-------+-------------+-------------------+---------------------------------------+
  |  3    |uint8        | header_length     |  Length of packet header: 0x1C        |
  +-------+-------------+-------------------+---------------------------------------+
- |  4    |uint16       | message_id        | data id: 268-"imu" 42-"gnss" 99-"vel" |
+ |  4    |uint16       | message_id        |data id: 268-"imu" 42-"gnss" 99-"vel"  |
  |       |             |                   |507-"ins"                              |
  +-------+-------------+-------------------+---------------------------------------+
  |  6    |uint8        | message_type      |  N/A                                  |
@@ -91,20 +91,20 @@ Original IMU packet
  +-------+-------------------+-------------------+---------------------------------------+
  |  0    |OpenRTKPacketHeader| header            |  header                               |
  +-------+-------------------+-------------------+---------------------------------------+
- |  28   |uint32             | gps_week          |  gps week                             |
+ |  28   |uint32             | gps_week          |  GPS week                             |
  +-------+-------------------+-------------------+---------------------------------------+
- |  32   |double             | gps_millisecs     |  GPS seconds within a week: unit: ms  |
+ |  32   |double             | gps_millisecs     |  GPS seconds within a week (ms)       |
  +-------+-------------------+-------------------+---------------------------------------+
  |  40   |uint32             | imuStatus         |  N/A                                  |
  +-------+-------------------+-------------------+---------------------------------------+
- |  44   |float              | z_acceleration    | Accelerometer z, accelerometer y,     |
- +-------+-------------------+-------------------+accelerometer x: unit: g               +
+ |  44   |float              | z_acceleration    | Accelerometer data on z-axis, y-axis, |
+ +-------+-------------------+-------------------+ x-axis (g)                            +
  |  48   |float              | y_acceleration    |                                       |
  +-------+-------------------+-------------------+                                       +
  |  52   |float              | x_acceleration    |                                       |
  +-------+-------------------+-------------------+---------------------------------------+
- |  56   |float              | z_gyro_rate       |gyroscope z, gyroscope y, gyroscope x: |
- +-------+-------------------+-------------------+unit: rad/s                            +
+ |  56   |float              | z_gyro_rate       | Gyroscope data on z-axis, y-axis,     |
+ +-------+-------------------+-------------------+ x-axis (rad/s)                        +
  |  60   |float              | y_gyro_rate_neg   |                                       |
  +-------+-------------------+-------------------+                                       +
  |  64   |float              | x_gyro_rate       |                                       |
@@ -128,11 +128,11 @@ GNSS position solution
  |       |                   |                                |point solution 4: Fixed solution       |
  |       |                   |                                |5: Floating point solution             |
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  36   |double             | latitude                       |  longitude: deg                       |
+ |  36   |double             | latitude                       |  longitude (deg)                      |
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  44   |double             | longitude                      |  Latitude: deg                        |
+ |  44   |double             | longitude                      |  Latitude (deg)                       |
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  52   |double             | height                         |  Altitude: m                          |
+ |  52   |double             | height                         |  Altitude (m)                         |
  +-------+-------------------+--------------------------------+---------------------------------------+
  |  60   |float              | undulation                     |  N/A                                  |
  +-------+-------------------+--------------------------------+---------------------------------------+
@@ -188,11 +188,11 @@ GNSS velocity solution
  +-------+-------------------+--------------------------------+---------------------------------------+
  |  40   |float              | age                            |  N/A                                  |
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  44   |double             | horizontal_speed               | Horizontal speed: Unit: m/s           |
+ |  44   |double             | horizontal_speed               | Horizontal speed (m/s)                |
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  52   |double             | track_over_ground              | Ground speed: Unit: deg/s             |
+ |  52   |double             | track_over_ground              | Ground speed (m/s)                    |
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  60   |double             | vertical_speed                 | Vertical direction speed: Unit: m/s   |
+ |  60   |double             | vertical_speed                 | Vertical speed (m/s)                  |
  +-------+-------------------+--------------------------------+---------------------------------------+
  |  68   |float              | reserved                       |  N/A                                  |
  +-------+-------------------+--------------------------------+---------------------------------------+
@@ -209,27 +209,27 @@ INS position, velocity and attitude solution
  +-------+-------------------+--------------------------------+---------------------------------------+
  |  0    |OpenRTKPacketHeader| header                         |  header                               |
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  28   |uint32             | gps_week                       |  gps week                             |
+ |  28   |uint32             | gps_week                       |  GPS week                             |
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  32   |double             | gps_millisecs                  | GPS seconds within a week: Unit: s    |
+ |  32   |double             | gps_millisecs                  | GPS seconds within a week (ms)        |
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  40   |double             | latitude                       |  Latitude: Unit: deg                  |
+ |  40   |double             | latitude                       |  Latitude (deg)                       | 
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  48   |double             | longitude                      |  Longitude: Unit: deg                 |
+ |  48   |double             | longitude                      |  Longitude (deg)                      |
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  56   |double             | height                         |  Height: Unit: m                      |
+ |  56   |double             | height                         |  Height (m)                           |
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  64   |double             | north_velocity                 |  speed (north): unit: m/s             |
+ |  64   |double             | north_velocity                 |  Velocity (north) (m/s)               |
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  72   |double             | east_velocity                  |  Speed (East): Unit: m/s              |
+ |  72   |double             | east_velocity                  |  Velocity (East) (m/s)                |
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  80   |double             | up_velocity                    |  speed (up): unit: m/s                |
+ |  80   |double             | up_velocity                    |  Velocity (up) (m/s)                  |
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  88   |double             | roll                           |  roll angle: unit: deg                |
+ |  88   |double             | roll                           |  Roll angle (deg)                     |
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  96   |double             | pitch                          |  pitch angle: unit: deg               |
+ |  96   |double             | pitch                          |  Pitch angle (deg)                    |
  +-------+-------------------+--------------------------------+---------------------------------------+
- |  104  |double             | azimuth                        |  yaw angle: unit: deg                 |
+ |  104  |double             | azimuth                        |  Yaw angle (deg)                      |
  +-------+-------------------+--------------------------------+---------------------------------------+
  |  112  |int32              | status                         |Combined solution status: 0: invalid 1:|
  |       |                   |                                |INS alignment ongoing 2: INS solution  |
@@ -242,41 +242,44 @@ INS position, velocity and attitude solution
  +-------+-------------------+--------------------------------+---------------------------------------+
 
 Port command
-------------
+-------------
 
 Get module configuration information
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Send: **get configuration\r\n**
+Command: **get configuration\\r\\n**
+
 Return: string in json format
 
 .. code:: json
 
  {
 	"openrtk configuration":	
- {
-		"Product Name":	"",
-		"Product PN":	"",
-		"Product SN":	,
-		"Version":	"",
-		"userPacketType":	"s1",
-		"userPacketRate":	100,
-		"leverArmBx":	0,
-		"leverArmBy":	0,
-		"leverArmBz":	0,
-		"pointOfInterestBx":	0,
-		"pointOfInterestBy":	0,
-		"pointOfInterestBz":	0,
-		"rotationRbvx":	0,
-		"rotationRbvy":	0,
-		"rotationRbvz":	0
-	 }
+    {
+		"Product Name":	        "",
+		"Product PN":	        "",
+		"Product SN":	        "",
+		"Version":	            "",
+		"userPacketType":       "s1",
+		"userPacketRate":       100,
+		"leverArmBx":	        0.0,
+		"leverArmBy":	        0.0,
+		"leverArmBz":	        0.0,
+		"pointOfInterestBx":	0.0,
+		"pointOfInterestBy":	0.0,
+		"pointOfInterestBz":	0.0,
+		"rotationRbvx":	        0,
+		"rotationRbvy":	        0,
+		"rotationRbvz":	        0
+	}
  }
 
 At the same time, the module will close the P1 packet output of the DEBUG port.
 
-Enable P1 packet output
-~~~~~~~~~~~~~~~~~~~~~~~
 
-Send: **log debug on\r\n**
-No return, the module will directly output P1 packet data after a delay of 1 second.
+Enable P1 packet output
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+Command: **log debug on\\r\\n**
+
+Return: N/A, the module will directly output P1 packet data after a delay of 1 second.
