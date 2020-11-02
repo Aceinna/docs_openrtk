@@ -11,8 +11,7 @@ Description:
  - Frame type: 2 bytes, high byte first.
  - Data length: 1 byte, refers to the byte length of the data content.
  - Data content: maximum 255 bytes.
- - Check: crc16 check, 2 bytes, low byte first, from the beginning of the frame type to the end of the data 
-content is included in the check calculation, the check algorithm is as follows:
+ - Check: crc16 check, 2 bytes, low byte first, bytes from the beginning of the "Frame type" to the end of the "Data content" are included in the check calculation, and the check algorithm C code is as follows:
 
 .. code:: c
 
@@ -31,6 +30,7 @@ content is included in the check calculation, the check algorithm is as follows:
             }
         }
     }
+    
     return ((crc << 8 ) & 0xFF00) | ((crc >> 8) & 0xFF);
  }
 
@@ -56,13 +56,13 @@ Get the hardware version number
  +-------------+-------------+-------------+-------------+-------------+------------------+
  |Data content:  ascii, each item is separated by a space character                       |
  +-----------------------------+----------------------------------------------------------+
- |          Product name       | such as: OpenRTK330L                                     |
+ |          Product name       | e.g. OpenRTK330L                                     |
  +-----------------------------+----------------------------------------------------------+
- |          Sensor name        | such as: OpenIMU330BI                                    |
+ |          Sensor name        | e.g. OpenIMU330BI                                    |
  +-----------------------------+----------------------------------------------------------+
- |Software platform numner(P/N)| such as: 8350-3021-01 0.1.1                              |
+ |Software platform numner(P/N)| e.g. 8350-3021-01 0.1.1                              |
  +-----------------------------+----------------------------------------------------------+
- |  Module serial number(S/N)  | such as: 1975000001                                      |
+ |  Module serial number(S/N)  | e.g. 1975000001                                      |
  +-----------------------------+----------------------------------------------------------+
 
 Get the software version number
@@ -83,7 +83,7 @@ Get the software version number
  +-------------+-------------+-------------+-------------+-------------+------------------+
  |Data content:  ascii                                                                    |
  +-------------+---------------+----------------------------------------------------------+
- |Software name| such as: OpenRTK330L  RAWDATA App 1.1.1                                  |
+ |Software name| e.g. OpenRTK330L  RAWDATA App 1.1.1                                  |
  +-----------------------------+----------------------------------------------------------+
 
 Get user parameters
@@ -185,7 +185,7 @@ Set user parameters
  +-------------+-------------+-------------+-------------+-------------+------------------+
  |Data content:                                                                           |
  +------+--------------+-------------------+------+---------------------------------------+
- |  0   | uint32       | parameter numbe   |      |Parameter number, such as:the parameter|
+ |  0   | uint32       | parameter numbe   |      |Parameter number, e.g.the parameter|
  |      |              |                   |      |number of "UART data" is 2, and the    |
  |      |              |                   |      |parameter number of "UART data         |
  |      |              |                   |      |frequency" is 3, add 1 in turn.        |
