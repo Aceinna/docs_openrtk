@@ -1,36 +1,6 @@
-The Aceinna OpenRTK330 module integrates a ST Teseo V automotive grade
-multi-constellation, multi-frequency Global Navigation Satellite System
-(**GNSS**) chipset (supports GPS, GALILEO, GLONASS, Beidou, QZSS), a
-triple-redundant 6-axis (3-axis accelerometer and 3-axis gyro) **MEMS**
-Inertial Measurement Unit (**IMU**), and a ST M4 MCU as the processor.
-OpenRTK330 module is targeted for commecial applicaiton for the mass
-market that requires a reliable, high-precision and yet cost effective
-**GNSS/INS** integrated positioning solution.
-
-* 100 Hz GNSS/INS integrated position, velocity and attitude solution
-* Integrated tripple redundant 6-axis IMU sensors
-* Integrated multi-frequency GNSS chipset
-* Supported GNSS
- 
-  +-----------+-----------------------+-----------------------+
-  | GNSS      | L1/L2 plan            | L1/L5 plan            |
-  +-----------+-----------------------+-----------------------+
-  | GPS       | L1 C/A + L2C          | L1 C/A + L5           |
-  +-----------+-----------------------+-----------------------+
-  | GLONASS   | G1                    | G1                    |
-  +-----------+-----------------------+-----------------------+
-  | BeiDou    | B1I + B2I             | B1I + B2A             |
-  +-----------+-----------------------+-----------------------+
-  | Galileo   | E1 + E5b              | E1 + E5b              |
-  +-----------+-----------------------+-----------------------+
-  | QZSS      | L1 C/A + L2C          | L1 C/A + L5           |
-  +-----------+-----------------------+-----------------------+
-
-* RTK algorithms on-board for up to centimetre accuracy
-* UART / SPI / CAN / Ethernet Interfaces
 
 Technical characteristics
-=========================
+==========================
 
  +-------------------------------------------------------------------+
  | **Accuracy** [#f1]_                                               |
@@ -139,11 +109,11 @@ Technical characteristics
 
 
 
-OpenRTK330 Module Pin Definitions
+Pin Definitions
 =================================
 
 
- .. image:: media/OpenRTK330LI_pin_n.png
+ .. image:: ../media/OpenRTK330LI_pin_n.png
 
 
  +---------+-------------------+----------+-----------------------------------------------------------------+

@@ -49,24 +49,23 @@ including custom data structures and packets very simple.
    \part{RTK/IMU Modules}
 
 .. toctree::
-    :caption: OpenRTK330 Modules
+    :caption: The OpenRTK330LI Module
     :maxdepth: 1
     :hidden:
     :titlesonly:
 
-    OpenRTK330
-    Communication_ports.rst
+    Module-OpenRTK330LI
 
 .. raw:: latex
 
    \part{Evaluation Kits}
 
 .. toctree::
-    :caption: Evaluation Kits
+    :caption: The OpenRTK330LI EVK
     :maxdepth: 1
     :hidden:
 
-    EVB-OpenRTK330LI
+    EVK-OpenRTK330LI
 
 .. raw:: latex
 

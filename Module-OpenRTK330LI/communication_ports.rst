@@ -94,7 +94,7 @@ set these two serial port numbers.
 *Case 1*: The GNSS/DEBUG of OpenRTK330 EVK is the USER serial port number plus 1 and 2 respectively. 
 Just configure the "useDefaultUart" field to 1, and the "uart" field does not work at this time.
 
-.. image:: media/Fig_27_Micro_USB.png
+.. image:: ../media/Fig_27_Micro_USB.png
 
 *Case 2*: If the user needs to specify the GNSS/DEBUG serial port number, or does not use the GNSS/DEBUG 
 serial port (the user has not made a hardware connection), the "useDefaultUart" needs to be configured 

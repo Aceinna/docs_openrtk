@@ -170,7 +170,7 @@ Usage Steps
 Note
 ~~~~~~~
 
-This section presents a brief introduction and quick start on using OpenRTK330LI EVK for RTK and INS positioning. Please refer to the remaining sections of this tutorial chapter for more detailed descriptions on the EVK's features and usage.
+This section presents a brief introduction and quick start on using OpenRTK330LI EVK for RTK and INS positioning. Please refer to the remaining sections of this tutorial chapter to explore more on OpenRTK330LI's features and its usage.
 
 
 

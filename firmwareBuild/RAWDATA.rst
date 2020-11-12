@@ -28,7 +28,7 @@ Build
 
 Algorithm Code Interfaces
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
- This section describes the detail code interfaces for user to briefly understand the firmware frame and to embedd their own algorithms quickly. It's recommended to refer to the `OpenRTK330 module hardware <https://openrtk.readthedocs.io/en/latest/OpenRTK330.html>`_ and `EVB hardware and layout <https://openrtk.readthedocs.io/en/latest/EVB-OpenRTK330LI/schematic.html>`_ for understanding of the firmware here.
+ This section describes the detail code interfaces for user to briefly understand the firmware frame and to embedd their own algorithms quickly. It's recommended to refer to the `OpenRTK330 module hardware <https://openrtk.readthedocs.io/en/latest/OpenRTK330.html>`_ and `EVB hardware and layout <https://openrtk.readthedocs.io/en/latest/EVK-OpenRTK330LI/schematic.html>`_ for understanding of the firmware here.
 
  Checking the "main.c" source file, the whole system is initialized here, and the four UART ports of the MCU are initialzed with a baud rate of 460800 per seconds and are used as the system's primary I/O. Most importantly, there are four RTOS tasks created as the follows:
 
