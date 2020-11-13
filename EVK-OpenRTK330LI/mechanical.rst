@@ -4,7 +4,7 @@ EVB Mechanical Drawing
 .. contents:: Contents
     :local:
 
-The following mechanical drawing shows the EVB dimension (in mm) and the position of IMU navigation center (the z-axis offset between IMU sensor and EVB PCB board is about 1 mm):
+The following mechanical drawing shows the EVB dimension (in mm) and the position of IMU navigation center. The IMU navigation center is fixed to the left-bottom corner of the OpenRTK330LI module on the EVB. User is recommended to measure the level arm from the GNSS antenna phase center to the IMU Navigation center as accurate as possible.
 
     .. image:: ../media/EVB_IMU_Center_dimension.png
 
