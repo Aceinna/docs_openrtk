@@ -13,7 +13,7 @@ Field explanation:
  - **<3>** Latitude hemisphere, N or S (north latitude or south latitude)
  - **<4>** Longitude, the format is dddmm.mmmmmmm
  - **<5>** Longitude hemisphere, E or W (east longitude or west longitude)
- - **<6>** GNSS positioning status: 0 not positioned, 1 single point positioning, 4 fixed solution, 5 floating point solution
+ - **<6>** GNSS positioning status: 0 not positioned, 1 single point positioning, 2 differential GPS fixed solution, 4 fixed solution, 5 floating point solution
  - **<7>** Number of satellites used
  - **<8>** HDOP level precision factor
  - **<9>** Altitude

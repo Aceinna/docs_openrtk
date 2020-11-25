@@ -88,7 +88,7 @@ Work with the online **App Center** of ANS (click `here <https://developers.acei
       * Power on the EVB via connecting a Micro-USB cable between the EVB and a PC, the YELLOW LED starts flashing
       * The python driver keeps scanning available serial ports to connect with OpenRTK330, if connected successfully, you will see the following console output
 
-          .. figure:: media/python_driver_connects.PNG
+          .. figure:: media/python_driver_connects.png
             :width: 7.0in
             :height: 3.0in
 
