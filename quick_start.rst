@@ -16,7 +16,13 @@ The OpenRTK330LI Evalution Kit (EVK) is designed to evaluate the OpenRTK330LI mo
 where
 
   * 1: ST-Link debugger
-  * 2: Multi-frequency GNSS antenna
+  * 2: Multi-Constellation and Multi-frequency GNSS antenna, supports
+
+    - GPS L1/L2/L5
+    - GLONASS L1/L2
+    - GALILEO E1/E5/E6
+    - BEIDOU B1/B2
+
   * 3: Micro-USB cable
   * 4: OpenRTK330 Evaluation Board (EVB) with metal flat mounting board
   * 5: 12-V DC adapter with 5.5 x 2.1 mm power jack
@@ -33,7 +39,10 @@ where some of the parts are listed here
   * 2: GNSS antenna SMA interface
   * 3: Espressif ESP32 bluetooth module
   * 4: SWD/JTAG connector, 20-pin
-  * 7: Boot mode swtich, with two positions (A, B) to select from
+  * 7: Boot mode swtich
+
+      - Position A: booting from bootloader
+      - Position B: normal working mode
   * 8: RJ45 jack for Ethernet connection
   * 9: Micro-USB port
   * 10: 9-pin CAN interface

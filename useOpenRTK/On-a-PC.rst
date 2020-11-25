@@ -133,4 +133,4 @@ Usage
 
   - Using the CAN
 
-    User could use a CAN-USB (e.g. https://canable.io/) or CAN-TTL adapter to connect with the DB-9 male interface on the EVB to log and parse the CAN messages (definition click `here <https://openrtk.readthedocs.io/en/latest/communication_port/Can_port.html>`_). Note that user have to write parsing code using the provided lib or open-source code by the adapter provider. 
+    User could use a CAN-USB (e.g. https://canable.io/) or CAN-TTL adapter to connect with the DB-9 male interface on the EVB to log and parse the CAN messages (click `here <https://openrtk.readthedocs.io/en/latest/communication_port/Can_port.html>`_ for definitions). Note that user has to write their own CAN message parsing code using the provided lib or open-source code from the adapter provider. 
