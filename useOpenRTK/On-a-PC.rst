@@ -88,11 +88,34 @@ Usage
           :align: center
           :scale: 50%
 
+    ..   The other way is to connect the EVB and the PC directly, which requires network sharing between the PC and the EVB. For example, with a Windows 10 PC, 
+
+    .. * Go to Control Panel\Network and Internet\Network Connections, an Ethernet subnetwork is established for the Ethernet connection between the EVB and the PC, e.g. “Ethernet 2” as shown below. 
+    
+    ..   .. figure:: media/network_connections.png
+    ..     :width: 6.5in
+    ..     :height: 3.0in
+    
+    .. * Right-click “Ethernet 2”, and then click “Properties”, on the “Networking” tab, click “Internet Protocol Version 4 (TCP/IPv4)”, configure the IP settings as follows: the gateway has to be 192.168.137.1, and the subnet mask has to be 255.255.255.0, while the IP address can be assigned to one that has not been taken in the network 192.168.137.xx.
+
+    ..     .. figure:: media/network_setting_eth.png
+    ..       :width: 6.0in
+    ..       :height: 3.5in
+
+    .. * Then, right-click WLAN (assuming the PC uses WiFi for internet access), go to Properties->Sharing, check the “Allow other network users to connect through this computer’s internet connection”, and select “Ethernet 2” on the drop down menu below, click “OK” to enable the EVB to have access to internet shared by the PC. 
+
+    ..     .. image:: media/network_sharing.png
+    ..         :align: center
+    ..         :scale: 50%
+
+
     - Device Info page: user can see all the product information of the connected device.
 
       .. image:: ../media/deviceinfo.png
          :align: center
          :scale: 50%
+
+    
 
 4. **Data Logging and Parsing**
 

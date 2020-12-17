@@ -4,6 +4,8 @@ Quick Start
 .. contents:: Contents
     :local:
 
+**Note: if the figures are blur, click on the figure to see the clearer version**
+
 OpenRTK330LI EVK Introduction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -94,56 +96,58 @@ Usage Steps
 
 2. **Antenna**: connect a GNSS multi-frequency antenna to the SMA interface (#2 on the EVB figure), the **GREEN** LED (#12 on the EVB figure above) flashes if the incoming GNSS signal is valid
 
-3. **Network**: Plug in an Ethernet calbe to the RJ45 port on the EVB, then there are two approaches to get access to OpenRKT330LI's internal embedded web interface from the PC, and also get the EVB access to internet:
+3. **Network**: Use an Ethernet calbe to connect the EVB with a network router or switch, and then connect a PC to the same router/switch using an Ethernet cable. The OpenRTK330LI EVB gets internet access and assigned an IP address in the local network via DHCP.
 
-  * Get a network router or switch, and connect the EVB and the PC to the same router/switch using Ethernet cables. The OpenRTK330LI EVB gets internet access and assigned an IP address in the local network via DHCP.
-  * The other way is to connect the EVB and the PC directly, which requires network sharing between the PC and the EVB. For example, with a Windows 10 PC, 
+4. **GNSS RTK and INS Configuration**: open a browser (Google Chrome is recommended), visit http://openrtk, 
 
-    * Go to Control Panel\Network and Internet\Network Connections, an Ethernet subnetwork is established for the Ethernet connection between the EVB and the PC, e.g. “Ethernet 2” as shown below. 
-    
-      .. figure:: media/network_connections.png
-        :width: 6.5in
-        :height: 3.0in
-    
-    * Right-click “Ethernet 2”, and then click “Properties”, on the “Networking” tab, click “Internet Protocol Version 4 (TCP/IPv4)”, configure the IP settings as follows: the gateway has to be 192.168.137.1, and the subnet mask has to be 255.255.255.0, while the IP address can be assigned to one that has not been taken in the network 192.168.137.xx.
+  * You will firstly see the following device running status page
 
-        .. figure:: media/network_setting_eth.png
-          :width: 6.0in
-          :height: 3.5in
-
-    * Then, right-click WLAN (assuming the PC uses WiFi for internet access), go to Properties->Sharing, check the “Allow other network users to connect through this computer’s internet connection”, and select “Ethernet 2” on the drop down menu below, click “OK” to enable the EVB to have access to internet shared by the PC. 
-
-        .. image:: media/network_sharing.png
-            :align: center
-            :scale: 50%
-
-
-4. **RTK and INS Configuration**: open a browser (Chrome is recommended), visit http://openrtk, on the left side menu bar, 
-
-  * click "NTRIP Setting" tab to configure NTRIP server information for RTK operation
-
-        .. image:: media/ntrip_config.png
+      .. image:: media/Web_RunningStatus.png
                 :align: center
-                :scale: 50%
+                :scale: 40%
 
-  * click "User Configuration" tab to configure INS related parameters, such as lever arm and so on
+  * On the left side menu bar, click "Work Configuration" tab to choose the following working mode of the device and configure it accordingly: 
+  
+    - Rover: works as a nomarl GNSS positioning unit that is also referring to "NTRIP client" receiving GNSS data correction
+    - Base: works as a GNSS reference station with known position and sending GNSS data to "NTRIP server" to be used as GNSS data correction
 
-        .. image:: media/usercfg.png
+    Please refer to the `"How-to-use" <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_ chapter for the detailed configurations.
+
+        .. image:: media/Web_WorkModeNtrip.png
+                :align: center
+                :scale: 40%
+
+  .. * On the left side menu bar, click "INS Configuration" tab to enter necessary parameters for INS algoritm to work
+
+  ..       .. image:: media/Web_INSConfig.png
+  ..               :align: center
+  ..               :scale: 40%
+
+
+  * On the left side menu bar, click "User Configuration" tab to select the user output data and rate among the options provided, including NMEA0183 messages and Aceinna format binaries
+
+        .. image:: media/Web_UserConfig.png
               :align: center
-              :scale: 50%
+              :scale: 40%
 
-5. **Firmware Version Check**: unzip the previously downloaded Python driver executables (v2.1.6 and later), and run the driver executable on a command line, for example:
+  * On the left side menu bar, click "Device Info" tab to have the detailed device information displayed, including firmware version, product number and serial number etc..
 
-  .. code-block:: python
-
-          cd c:\pythondriver-win
-          .\ans-devices.exe
-
-  Check the console output like below, make sure the RTK_INS App version is v2.0.0 and later. Otherwise, follow `these steps <https://openrtk.readthedocs.io/en/latest/firmware_upgrade.html>`_ to upgrade the device's firmware first
-
-         .. image:: media/python_driver_connects.png
+        .. image:: media/Web_DeviceInfo.png
               :align: center
-              :scale: 50%
+              :scale: 40%       
+
+.. 5. **Firmware Version Check**: unzip the previously downloaded Python driver executables (v2.1.6 and later), and run the driver executable on a command line, for example:
+
+..   .. code-block:: python
+
+..           cd c:\pythondriver-win
+..           .\ans-devices.exe
+
+..   Check the console output like below, make sure the RTK_INS App version is v2.0.0 and later. Otherwise, follow `these steps <https://openrtk.readthedocs.io/en/latest/firmware_upgrade.html>`_ to upgrade the device's firmware first
+
+..          .. image:: media/python_driver_connects.png
+..               :align: center
+..               :scale: 50%
 
 6. **Live Web GUI**: when the Python driver is running and connects with the device correctly, 
 
@@ -173,7 +177,7 @@ Usage Steps
           cd c:\pythondriver-win\openrtk_data_parse
           .\openrtk_parse.exe -p ..\data\openrtk_log_20200828_153600
 
-  Then, the logged binary files are decoded into text files for post-processing analysis.
+  Then, the logged binary files are decoded into text files for post-processing and analysis.
 
 
 Note
