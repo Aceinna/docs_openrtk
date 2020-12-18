@@ -42,7 +42,7 @@ including custom data structures and packets very simple.
     quick_start.rst
     useOpenRTK
     firmware_upgrade.rst
-    build_firmware.rst
+..  build_firmware.rst
 
 .. raw:: latex
 

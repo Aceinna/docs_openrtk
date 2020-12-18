@@ -149,35 +149,64 @@ Usage Steps
 ..               :align: center
 ..               :scale: 50%
 
-6. **Live Web GUI**: when the Python driver is running and connects with the device correctly, 
+5. **Live Web GUI**: download the latest Python driver executable (v2.2.4 and later), and run it in a command line, for example:
 
-  * Go to online ANS (deverlopers.aceinna.com), on the left side menu bar, click "Devices"->"OpenRTK", then we will have the "OpenRTK Monitor" webpage as shown below, and the center "Play" button is highlighted indicating correct device connection with the Web GUI, 
+      .. code-block:: python
 
-        .. image:: media/web_gui_connect.png
+          cd c:\pythondriver-win
+          .\ans-devices.exe
+
+  * Check the console output, the Python driver connects the device and the online ANS website, if successfully, the following connection information is displayed
+
+        .. image:: media/Web_PythonDriverConnect.png
+              :align: center
+              :scale: 50%
+
+  * Go to the `online ANS <https://developers.aceinna.com/>`_, on the left side menu bar, click "Devices"->"OpenRTK", then we will have the "OpenRTK Monitor" webpage as shown below, and the center "Play" button is highlighted indicating correct device connection with the Web GUI, 
+
+        .. image:: media/Web_OpenRTKMonitor.png
               :align: center
               :scale: 50%
   
-  * Click "Play", you will have a live web GUI showing positioning information, map presentation and other satellites information
+  * Click "Play", you will have a live web GUI showing positioning information, map presentation and associated satellites information
 
       .. image:: media/web_gui_play.png
               :align: center
               :scale: 50%
 
 
-7. **Data Logging and Parsing**: every time the Python driver is running, the Python driver is logging all raw data, positioning solution and debug information output from the device, and create a subfolder contains all the binary file logs in the same folder as the Python driver executable
+6. **Data Logging and Parsing**: when the device is connected with the PC via the micro-USB cable, the running Python driver is logging all serial port output into files, including raw GNSS/IMU data, positioning solution and the device configuration. These files are located in a subfolder labelled ".\pythondriver-win\data\openrtk_log_xxxxxxxx_xxxxxx", e.g.
 
-      .. image:: media/python_driver_logging.png
+      .. image:: media/python_driver_logged_data.png
               :align: center
               :scale: 50%
 
-  Navigate to the "openrtk_data_parse" subfolder, run the parser executable as below
+  which, 
+
+    * configuration.json: is the device configuration information
+    * rtcm_base_xxxx_xx_xx_xx_xx_xx.bin: is the received GNSS RTK correction data through internet, in RTCM format
+    * rtcm_rover_xxxx_xx_xx_xx_xx_xx.bin: is the GNSS raw data from the device, in RTCM format
+    * user_xxxx_xx_xx_xx_xx_xx.bin: is the output from the USER UART, including NMEA0183 messages in ASCII format, raw IMU data and GNSS RTK/INS solution in binary format
+
+Go to the "openrtk_data_parse" subfolder, run the parser executable as below
 
     .. code-block:: python
 
           cd c:\pythondriver-win\openrtk_data_parse
-          .\openrtk_parse.exe -p ..\data\openrtk_log_20200828_153600
+          .\openrtk_parse.exe -p ..\data\openrtk_log_20201217_141618
 
-  Then, the logged binary files are decoded into text files for post-processing and analysis.
+A subfolder with the name "user_xxxx_xx_xx_xx_xx_xx_p" is created and contains the decoded files all in ASCII format, e.g.
+
+    .. image:: media/python_driver_parsed_data.png
+              :align: center
+              :scale: 50%
+
+which:
+
+* user_xxxx_xx_xx_xx_xx_xx.nmea: contains the GGA and RMC NMEA0183 messages
+* user_xxxx_xx_xx_xx_xx_xx_g1.csv: is the GNSS RTK solution
+* user_xxxx_xx_xx_xx_xx_xx_s1.csv: is the raw IMU data
+* user_xxxx_xx_xx_xx_xx_xx_y1.csv: is the GNSS satellites information that are used in the solution
 
 
 Note
