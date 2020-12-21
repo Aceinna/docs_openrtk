@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.abspath('.'))
 # -- Project information -----------------------------------------------------
 
 project = u'Aceinna OpenRTK Developer Manual'
-copyright = u'2018, Aceinna Inc'
+copyright = u'2020, Aceinna Inc'
 author = u'Aceinna Engineering'
 
 # The short X.Y version
