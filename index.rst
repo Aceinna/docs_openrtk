@@ -81,4 +81,15 @@ including custom data structures and packets very simple.
     communication_port/Can_port
     communication_port/nmea
 
+.. raw:: latex
+
+   \part{RTKlib tools}
+
+.. toctree::
+    :caption: RTKlib tools supporting Aceinna Format
+    :maxdepth: 3
+    :hidden:
+
+    rtklib_tool/overview
+    rtklib_tool/strsvr_user
 
