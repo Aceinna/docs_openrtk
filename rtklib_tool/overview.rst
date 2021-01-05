@@ -15,6 +15,12 @@ RTKlib tools supporting Aceinna Format
 RTKlib tools supporting Aceinna Format is s special version of RTKlib which supports aceinna data 
 format to display data, decode data, save data, and also plotting and RTK processing.
 
+RTKLIB_with Aceinna format binary version:
+https://github.com/Aceinna/rtklib_bin_aceinna
+
+RTKLIB_with Aceinna format_source version:
+https://github.com/Aceinna/rtklib_aceinna
+
 Aceinna data format
 ^^^^^^^^^^^^^^^^^^^
 
@@ -72,7 +78,7 @@ Aceianna-raw is composed of four format types of $GPGGA，$GPIMU，$GPROV，$GPR
 
 **$GPGGA**
 
-$GPGGA is the standard GGA format.
+$GPGGA is the standard NMEA GGA format.
 
 **$GPIMU**
 
@@ -82,7 +88,7 @@ $GPIMU is the IMU information in NMEA format.
  | $GPIMU | time of week | accel-x | accel-y | accel-z | gyro-x  | gyro-y  | gyro-z  |
  +--------+--------------+---------+---------+---------+---------+---------+---------+
  
-**GPROV**
+**$GPROV**
 
 $GPROV contains the RTCM package from Rover.
 
@@ -90,7 +96,7 @@ $GPROV contains the RTCM package from Rover.
  | $GPROV | time of week | left length | RTCM bin |          |
  +--------+--------------+-------------+----------+----------+
 
-**GPREF**
+**$GPREF**
 
 $GPREF contains the RTCM package from Base.
 
