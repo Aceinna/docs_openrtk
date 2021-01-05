@@ -82,7 +82,7 @@ $GPIMU is the IMU information in NMEA format.
  | $GPIMU | time of week | accel-x | accel-y | accel-z | gyro-x  | gyro-y  | gyro-z  |
  +--------+--------------+---------+---------+---------+---------+---------+---------+
  
-**GPROV**
+**$GPROV**
 
 $GPROV contains the RTCM package from Rover.
 
@@ -90,7 +90,7 @@ $GPROV contains the RTCM package from Rover.
  | $GPROV | time of week | left length | RTCM bin |          |
  +--------+--------------+-------------+----------+----------+
 
-**GPREF**
+**$GPREF**
 
 $GPREF contains the RTCM package from Base.
 

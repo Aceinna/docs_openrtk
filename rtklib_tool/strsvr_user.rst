@@ -29,7 +29,7 @@ Bitrate select 460800.
 Set output files path
 ---------------------
 
-Select the path to save the file. example: C:\Users\zhangchen\Desktop\rtklog\
+Select the path to save the file. example: C:/\Users/\zhangchen/\Desktop/\rtklog/\.
 
  .. image:: ../media/path.png
         :height: 200
@@ -117,7 +117,7 @@ Format select Aceinna-raw.
 Set output log files path
 -------------------------
 
-Select the path to save the file. example: C:\Users\zhangchen\Desktop\rtklog\.
+Select the path to save the file. example: C:/\Users/\zhangchen/\Desktop/\rtklog/\.
 
 Click the ‘L’ button to open Log Streams dialog.
 
