@@ -95,7 +95,7 @@ Select "serial" in the type option.
  .. image:: ../media/select_serial.png
         :height: 200
 
-Click the "opt" button to open the Serial Options dialog.
+Click "opt" button to open the Serial Options dialog.
 
  .. image:: ../media/opt_button.png
         :height: 200
@@ -125,7 +125,7 @@ Click the ‘L’ button to open Log Streams dialog.
  .. image:: ../media/Lbutton.png
         :height: 200
 
-Check (6)Rover ,select File type and input the log file paths. Click OK button.
+Check (6) Rover ,select File type and input the log file paths. Click "OK" button.
 
  .. image:: ../media/OKbutton.png
         :height: 200
@@ -133,7 +133,7 @@ Check (6)Rover ,select File type and input the log file paths. Click OK button.
 Start to receive data
 ---------------------
 
-Click the start button to start receiving the data. 
+Click the "start" button to start receiving the data. 
 
  .. image:: ../media/start_button2.png
         :height: 200
@@ -144,7 +144,7 @@ When receiving the data, the SNR bar is plotted.
         :height: 200
 
 Click the arrow button to switch view (SNR bar, sky map, positioning coordinates, horizontal error scatter, 
-position error timeseries in north, east and up)
+position error timeseries in north, east and up).
 
  .. image:: ../media/arrow_button.png
         :height: 200
@@ -184,7 +184,7 @@ The Position views.
  .. image:: ../media/position_views.png
         :height: 200
 
-Click Stop button to stop receiving data.
+Click "stop" button to stop receiving data.
 
  .. image:: ../media/stop_button.png
         :height: 200
@@ -222,7 +222,7 @@ Select serial in the type option.
  .. image:: ../media/select_serial2.png
         :height: 200
 
-Click the opt button to open the Serial Options dialog.
+Click "opt" button to open the Serial Options dialog.
 
  .. image:: ../media/opt_button2.png
         :height: 200
@@ -258,7 +258,7 @@ In the options dialog, choose the RTK posting mode option as “kinematic” or 
 Start to receive data
 ---------------------
 
-Click the start button to start receiving the data.
+Click "start" button to start receiving the data.
 
  .. image:: ../media/start_button3.png
         :height: 200
@@ -269,7 +269,7 @@ will be displayed.
  .. image:: ../media/displayed2.png
         :height: 200
 
-Click the arrow button to switch view. (SNR bar, sky map, positioning coordinates, horizontal error scatter, 
+Click the arrow button to switch view (SNR bar, sky map, positioning coordinates, horizontal error scatter, 
 position error timeseries in north, east and up).
 
  .. image:: ../media/arrow_button2.png
@@ -290,7 +290,7 @@ The Gnd Trk.
  .. image:: ../media/gnd_trk2.png
         :height: 200
 
-Click the Plot button to Open RTKPLOT.
+Click "Plot" button to Open RTKPLOT.
 
  .. image:: ../media/rtkplot2.png
         :height: 200
