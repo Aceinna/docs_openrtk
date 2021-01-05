@@ -54,14 +54,50 @@ Usage
                 :align: center
                 :scale: 40%
 
+    Besides the positioning information, this web page displays the working mode and status of the device on the most left-upper conner, 
+
+      * *Station Mode*, has the following two values:
+
+        * NTRIP-CLIENT: the device works as a NTRIP client (Rover), and is used as a positioning/navigation equipment
+        * NTRIP-SERVER: the device works as a NTRIP server (Base), and broadcasts its GNSS data to NTRIP clients for differential GNSS operation 
+        and the mode changes when the user configures the device differently in the "Work Configuration" tab.
+
+      * *Station Status*, has the following thirteen values:
+
+        * "Waiting...": waiting for changes to take effective 
+        * "NTRIP-CLIENT & CONNECT...": trying to connect with a NTRIP server
+        * "NTRIP-CLIENT & CONNECT FAIL": failed to connect with a NTRIP server
+        * "NTRIP-CLIENT & CONNECTED": connect with a NTRIP server successfully, waiting for GNSS correction data
+        * "NTRIP-CLIENT & RTCM AVAILABLE": received GNSS correction data successfully from the NTRIP server
+        * "NTRIP-SERVER & CONNECT...": trying to connect with a NTRIP caster
+        * "NTRIP-SERVER & CONNECT FAIL": failed to connect with a NTRIP caster
+        * "NTRIP-SERVER & CONNECTED": connect with a NTRIP caster successfully, waiting to output GNSS correction data
+        * "NTRIP-SERVER & RTCM OUTPUT": outputting GNSS correction data 
+        * "OpenARC CONNECT...": trying to connect with Aceinna's OpenARC cloud service (e.g. NTRIP server and data service)
+        * "OpenARC CONNECT FAIL": failed to connect with Aceinna's OpenARC cloud service 
+        * "OpenARC CONNECTED": connect with a  Aceinna's OpenARC cloud service successfully, waiting for GNSS correction data
+        * "OpenARC RTCM AVAILABLE": received GNSS correction data successfully from Aceinna's OpenARC cloud service 
+
+
   * On the left side menu bar, click "Work Configuration" tab to choose the following working mode of the device and configure it accordingly: 
   
-    - Rover: works as a nomarl GNSS positioning unit that is also referring to "NTRIP client" receiving GNSS data correction
+    - Rover: works as a nomarl GNSS positioning device that is also referring to "NTRIP client", and receives GNSS data correction from a NTRIP server that has to be configured with the following information, as shown by the "OpenARC Client" tab below
+
+      * *IP: openarc.aceinna.com*
+      * *PORT: 8011*
+      * *Mount Point: RTK*
+      * *User Name: username*
+      * *Password: password*
+
+      .. image:: ../media/Web_WorkModeNtrip.png
+                  :align: center
+                  :scale: 50%
+
+      OpenARC is a cloud service provided by Aceinna for users in the United States to receive nation-wide GNSS correction data for RTK operation, without the need to set up a local GNSS base station. More details refer to the section "OpenARC Service" (click `here <https://openrtk.readthedocs.io/en/latest/openarc_service.html>`_) in this tutorial.
+
     - Base: works as a GNSS reference station with known position and sending GNSS data to "NTRIP server" to be used as GNSS data correction
 
-        .. image:: ../media/Web_WorkModeNtrip.png
-                :align: center
-                :scale: 40%
+       
 
   .. * On the left side menu bar, click "INS Configuration" tab to enter necessary parameters for INS algoritm to work
 

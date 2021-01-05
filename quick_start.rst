@@ -179,7 +179,7 @@ Usage Steps
 
       .. image:: media/python_driver_logged_data.png
               :align: center
-              :scale: 50%
+              :scale: 100%
 
   which, 
 
@@ -199,7 +199,7 @@ A subfolder with the name "user_xxxx_xx_xx_xx_xx_xx_p" is created and contains t
 
     .. image:: media/python_driver_parsed_data.png
               :align: center
-              :scale: 50%
+              :scale: 100%
 
 which:
 

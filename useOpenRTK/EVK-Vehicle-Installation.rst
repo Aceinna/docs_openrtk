@@ -139,7 +139,7 @@ To fully explore the dead reckoning (DR) for vehicular positioning, OpenRTK330LI
          :align: center
          :scale: 70%
   
-  In the current design, the wheel-tich input processing takes over the interrupter of the MCU from the SPI communication ports, thus user needs to choose one of two working mode on the internal web interface page, as shown by the red circle in the figure below
+  In the current design, the wheel-tick input processing takes over the interrupter of the MCU from the SPI communication ports, thus user needs to choose one of two working mode on the internal web interface page, as shown by the red circle in the figure below
 
     .. image:: ../media/wheel-tick_odo_config.png
          :align: center

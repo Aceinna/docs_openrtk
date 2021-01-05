@@ -42,6 +42,7 @@ including custom data structures and packets very simple.
     quick_start.rst
     useOpenRTK
     firmware_upgrade.rst
+    openarc_service.rst
 ..  build_firmware.rst
 
 .. raw:: latex
@@ -72,7 +73,7 @@ including custom data structures and packets very simple.
    \part{Communication protocol}
 
 .. toctree::
-    :caption: Communication Protocol and Data
+    :caption: Interface and Protocol
     :maxdepth: 2
     :hidden:
 
@@ -86,7 +87,7 @@ including custom data structures and packets very simple.
    \part{RTKlib tools}
 
 .. toctree::
-    :caption: RTKlib tools supporting Aceinna Format
+    :caption: RTKLIB Tools for OpenRTK
     :maxdepth: 3
     :hidden:
 
