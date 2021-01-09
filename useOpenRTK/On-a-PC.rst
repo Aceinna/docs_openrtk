@@ -134,7 +134,7 @@ Usage
 
 5. **Live Web GUI on the Online ANS Website**
 
-  Download the latest Python driver executable (v2.2.4 and later), and run it in a command line, for example:
+  Download (click `here <https://github.com/Aceinna/python-openimu/releases/tag/v2.2.4>`_) the latest Python driver executable (v2.2.4 and later), and run it in a command line, for example:
 
       .. code-block:: python
 
