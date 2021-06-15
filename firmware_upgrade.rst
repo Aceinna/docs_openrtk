@@ -75,7 +75,7 @@ Work with the online **App Center** of ANS (click `here <https://developers.acei
 
 **Secondly**, follow the steps below to upgrade OpenRTK330 firmware:
 
-    1. Click `here <https://github.com/Aceinna/python-openimu/releases>`_ to download the latest Python driver (v2.1.6 and later), e.g. "pythondriver-win.zip" for Windows 10
+    1. Click `here <https://github.com/Aceinna/python-openimu/releases>`_ to download the latest Python driver (v2.3.0 and later), e.g. "pythondriver-win.zip" for Windows 10
 
     2. Unzip the Python driver on a PC, and run the excutable file "ans-devices.exe" in a command line, e.g. 
       .. code-block:: python
@@ -120,17 +120,17 @@ Work with the online **App Center** of ANS (click `here <https://developers.acei
 
 .. (optional) Connect the EVB (RJ45 connector) with a network router/gateway with an Ethernet cable, the usage of this connection will also be addressed in next section
 
-Firmware Options
+.. Firmware Options
 ~~~~~~~~~~~~~~~~~~~
 
-The previous section demonstrates the firmware installation process for OpenRTK330 with "RTK_INS" App as an example. In order to fullfill various user requirements, there are a few firmware options provided with OpenRTK330, as listed on the online `App center <https://developers.aceinna.com/code/apps>`_. The following are introductions on these Apps:
+.. The previous section demonstrates the firmware installation process for OpenRTK330 with "RTK_INS" App as an example. In order to fullfill various user requirements, there are a few firmware options provided with OpenRTK330, as listed on the online `App center <https://developers.aceinna.com/code/apps>`_. The following are introductions on these Apps:
 
-  * RAWDATA APP - without GNSS or INS algorithm
+  .. * RAWDATA APP - without GNSS or INS algorithm
 
-    * 10 Hz raw GNSS data output in RTCMv3 format
-    * Configurable rate (50, 100, and 200 Hz) of raw IMU data output in binary format
-    * Logging the raw data to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
-    * Embedding your own RTK/INS algorithms, refer to `Firmware Build from Source <https://openrtk.readthedocs.io/en/latest/build_firmware.html>`_ 
+  ..  * 10 Hz raw GNSS data output in RTCMv3 format
+  ..  * Configurable rate (50, 100, and 200 Hz) of raw IMU data output in binary format
+  ..  * Logging the raw data to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
+  ..  * Embedding your own RTK/INS algorithms, refer to `Firmware Build from Source <https://openrtk.readthedocs.io/en/latest/build_firmware.html>`_ 
 
 
   .. * RTK APP - with GNSS RTK algorithm
@@ -140,12 +140,12 @@ The previous section demonstrates the firmware installation process for OpenRTK3
     ..* GNSS RTK position, velocity and accuracy metrics output
     ..* Logging the raw data and RTK solution to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
 
-  * RTK_INS APP - with GNSS RTK and INS integrated algorithm
+  .. * RTK_INS APP - with GNSS RTK and INS integrated algorithm
 
-    * 10 Hz raw GNSS data output in RTCMv3 format
-    * Configurable rate (50, 100, and 200 Hz) of raw IMU data output 
-    * INS/GNSS RTK integrated solution output, include position, velocity and attitude and accuracy metrics
-    * Logging the raw data and INS solution to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
+  ..  * 10 Hz raw GNSS data output in RTCMv3 format
+  ..  * Configurable rate (50, 100, and 200 Hz) of raw IMU data output 
+  ..  * INS/GNSS RTK integrated solution output, include position, velocity and attitude and accuracy metrics
+  ..  * Logging the raw data and INS solution to file, refer to `How to Use OpenRTK330 <https://openrtk.readthedocs.io/en/latest/useOpenRTK.html>`_
 
   .. * DEMO APP - GNSS RTK playback
   
