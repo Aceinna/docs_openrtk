@@ -181,8 +181,8 @@ Usage
 
       .. code-block:: python
 
-            cd c:\pythondriver-win\openrtk_data_parse
-            .\openrtk_parse.exe -p ..\data\openrtk_log_20201217_141618
+            cd c:\pythondriver-win\
+            .\ans-devices.exe parse -t openrtk -p ..\data\openrtk_log_20201217_141618
 
   A subfolder with the name "user_xxxx_xx_xx_xx_xx_xx_p" is created and contains the decoded files all in ASCII format, e.g.
 
