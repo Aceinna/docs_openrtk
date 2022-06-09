@@ -62,6 +62,7 @@ where
   - 8. RJ45 jack for Ethernet interface
   
      - Not compatible with power over ethernet devices
+     - Warning! Connecting POE devices can damage the OpenRTK330LI EVK
      
   - 9. Micro-USB port
   - 10. CAN interface
