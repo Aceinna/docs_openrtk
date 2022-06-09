@@ -60,6 +60,9 @@ where
 
   - 7. Boot mode switch with two positions (A and B)
   - 8. RJ45 jack for Ethernet interface
+  
+     - Not compatible with power over ethernet devices
+     
   - 9. Micro-USB port
   - 10. CAN interface
   - 11. Power jack for 12-v adapter
