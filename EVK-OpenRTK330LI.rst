@@ -61,8 +61,7 @@ where
   - 7. Boot mode switch with two positions (A and B)
   - 8. RJ45 jack for Ethernet interface
   
-     - Not compatible with power over ethernet devices
-     - Warning! Connecting POE devices can damage the OpenRTK330LI EVK
+     - Warning! Risk of damage if connecting to PoE switches that are not compliant to IEEE 802.3af PoE standard
      
   - 9. Micro-USB port
   - 10. CAN interface
